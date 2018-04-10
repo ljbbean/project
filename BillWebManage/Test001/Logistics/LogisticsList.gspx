@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="物流信息" ActionType="Test001.Logistics.LogisticsListAction, Logistics/LogisticsList.js">
+  <VPanel>
+    <Label FontSize="32" BoldFont="true" Text="我新建的 Carpa 表单" />
+  </VPanel>
+</Page>

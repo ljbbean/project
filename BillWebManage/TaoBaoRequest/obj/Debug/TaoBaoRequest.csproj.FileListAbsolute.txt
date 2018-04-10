@@ -1,0 +1,12 @@
+D:\Test001\TaoBaoRequest\bin\Debug\TaoBaoRequest.dll
+D:\Test001\TaoBaoRequest\bin\Debug\TaoBaoRequest.pdb
+D:\Test001\TaoBaoRequest\bin\Debug\Carpa.Web.dll
+D:\Test001\TaoBaoRequest\bin\Debug\MySql.Data.dll
+D:\Test001\TaoBaoRequest\bin\Debug\NPOI.dll
+D:\Test001\TaoBaoRequest\bin\Debug\NPOI.OOXML.dll
+D:\Test001\TaoBaoRequest\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Test001\TaoBaoRequest\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\Test001\TaoBaoRequest\bin\Debug\NPOI.OpenXml4Net.dll
+D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.dll
+D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.pdb
+D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.csprojResolveAssemblyReference.cache

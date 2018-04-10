@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="订单管理" ActionType="Test001.BillManageAction, BillManage.js" DataSource="${detail}">
+  <VPanel>
+    <VPanel>
+      <HPanel>
+        <DateEdit Label="订单日期" DataField="date" />
+        <TextEdit Label="客户淘宝号" DataField="taobaocode" />
+        <TextEdit Label="客户姓名" DataField="cname"/>
+        <TextEdit Label="联系电话" DataField="ctel"/>
+      </HPanel>
+      <HPanel>
+        <TextEdit Label="地区" DataField="carea"/>
+        <TextEdit Label="联系地址" DataField="caddress" />
+        <TextEdit Label="派送方式" DataField="csendway"/>
+        <TextEdit Label="备注" DataField="cremark"/>
+      </HPanel>
+    </VPanel>
+    <Grid ID="grid" DataField="grid" Width="${ClientWidth - 200}" Height="${ClientHeight - 400}" ReadOnly="false">
+      <TextColumn Caption="订单编号" DataField="code"/>
+      <DropDownColumn Caption="订单尺寸" DropDownStyle="DropDownEdit" DataField="size">
+        <ListItem Text="40*150" Value="40*150" />
+        <ListItem Text="50*150" Value="50*150" />
+      </DropDownColumn>
+      <NumberColumn MinValue="1" Caption="数量" DataField="amount" />
+      <DropDownColumn Caption="花色" DataField="color" DropDownStyle="DropDownEdit">
+        <ListItem Text="烫金白" Value="烫金白" />
+        <ListItem Text="素雅白" Value="素雅白" />
+        <ListItem Text="咖啡金" Value="咖啡金" />
+        <ListItem Text="古典红" Value="古典红" />
+      </DropDownColumn>
+      <TextColumn Caption="联系方式" DataField="address" />
+      <TextColumn Caption="地区" DataField="area" />
+      <NumberColumn MinValue="0" Caption="原价" DataField="stotal" />
+      <NumberColumn MinValue="0" Caption="实收款" DataField="total" />
+      <TextColumn Caption="派送方式" DataField="sendway" />
+      <TextColumn Caption="备注"  DataField="remark"/>
+      <NumberColumn Caption="提成" MinValue="0" DataField="btotal" />
+      <NumberColumn Caption="回款" MinValue="0" DataField="ltotal" />
+      <NumberColumn Caption="优惠" MinValue="0" DataField="preferential"/>
+    </Grid>
+    <HPanel HAlign="Right">
+      <Label Label="总价：" Visible="false" Text="0" TextColor="red"/>
+      <Button Text="保存" OnClick="doSave"/>
+      <CancelButton/>
+    </HPanel>
+  </VPanel>
+</Page>

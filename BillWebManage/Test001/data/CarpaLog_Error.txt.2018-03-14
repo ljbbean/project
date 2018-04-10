@@ -1,0 +1,360 @@
+
+2018-03-14 10:39:52,308 [15] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605113227758, sessionID = imm0jnivy23t35kouy2fla5g, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: An attempt was made to call the method 'Test' using a GET request, which is not allowed.
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:40:58,779 [22] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605119876815, sessionID = 5zogienrvwls0killvtk0mjz, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: An attempt was made to call the method 'Test' using a GET request, which is not allowed.
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:42:28,656 [13] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605128864503, sessionID = akrtulbfbbiuaxezubze23v5, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：application/x-www-form-urlencoded; charset=UTF-8
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:42:31,864 [10] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605129185232, sessionID = g4xirfozzno5t2rq3ufxnohl, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：application/x-www-form-urlencoded; charset=UTF-8
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:43:05,063 [22] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605132505113, sessionID = 1u4d0ob3hf4i301jajksuadz, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：application/x-www-form-urlencoded; charset=UTF-8
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:43:21,347 [7] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome23, userIP = 127.0.0.1, requestID = 8109324605134133577, sessionID = l4sc4l4v2ey3lqpmegflcvsw, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：application/x-www-form-urlencoded; charset=UTF-8
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:50:42,680 [11] ERROR - /Test001/Test001.Login.ajax/Test 出错：未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Carpa.Web.Common.InternalUtils.GetBrowserNameVersion()
+   在 Carpa.Web.Common.InternalUtils.LogError(String message, Exception ex, HttpRequest request, HttpSessionState session)
+   在 Carpa.Web.Ajax.AjaxHandler.WriteExceptionJsonString(HttpContext context, Exception ex)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2018-03-14 10:51:26,837 [9] ERROR - /Test001/Test001.Login.ajax/Test 出错：未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Carpa.Web.Common.InternalUtils.GetBrowserNameVersion()
+   在 Carpa.Web.Common.InternalUtils.LogError(String message, Exception ex, HttpRequest request, HttpSessionState session)
+   在 Carpa.Web.Ajax.AjaxHandler.WriteExceptionJsonString(HttpContext context, Exception ex)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2018-03-14 10:52:17,185 [9] ERROR - /Test001/Test001.Login.ajax/Test 出错：未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Carpa.Web.Common.InternalUtils.GetBrowserNameVersion()
+   在 Carpa.Web.Common.InternalUtils.LogError(String message, Exception ex, HttpRequest request, HttpSessionState session)
+   在 Carpa.Web.Ajax.AjaxHandler.WriteExceptionJsonString(HttpContext context, Exception ex)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2018-03-14 10:52:51,250 [43] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605191123551, sessionID = g40hl03rq4uj52ibn3jnyicc, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: Invalid web service call,'Test' missing value for parameter: 'cookie'.
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethod(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethodFromRawParams(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 10:53:31,988 [46] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605194923540, sessionID = ts05neab2fejlknfpngwej4v, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 66
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test(String cookie) 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 10:54:53,224 [52] ERROR - /Test001/Test001.Login.ajax/Test 出错：未将对象引用设置到对象的实例。
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Carpa.Web.Common.InternalUtils.GetBrowserNameVersion()
+   在 Carpa.Web.Common.InternalUtils.LogError(String message, Exception ex, HttpRequest request, HttpSessionState session)
+   在 Carpa.Web.Ajax.AjaxHandler.WriteExceptionJsonString(HttpContext context, Exception ex)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2018-03-14 11:05:48,513 [72] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605268849176, sessionID = nzoyyfjrckn4u2hfoqbha0km, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 11:05:55,006 [74] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605269499441, sessionID = va32ccd4idqvrl4y2nudaml3, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 11:06:27,070 [69] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605272705879, sessionID = fihg3rs0lbjg0kocbjpewntk, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.InvalidOperationException: 不支持的 ContentType：application/x-www-form-urlencoded; charset=UTF-8
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParamsFromPostRequest(HttpContext context, JavaScriptSerializer serializer, WebServiceMethodData methodData)
+   在 Carpa.Web.Ajax.AjaxHandler.GetRawParams(WebServiceMethodData methodData, HttpContext context)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 11:07:17,561 [69] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605276855256, sessionID = rel0eqqdxizm3vtfbh3aplkk, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8877
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 56
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 11:08:02,350 [76] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605281413802, sessionID = v2bg4gx1hvabpqrkrptraqd1, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8877
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 56
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 11:09:18,968 [69] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605286304581, sessionID = 551juwsdzvj5wxzhwjzmtzqc, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8877
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 56
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 11:09:58,600 [77] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324605290959942, sessionID = u3hqm5tirxg0tquye2m2kzh1, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.Net.WebException: 无法连接到远程服务器 ---> System.Net.Sockets.SocketException: 由于目标计算机积极拒绝，无法连接。 127.0.0.1:8877
+   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 56
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 13:53:37,365 [267] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606275679039, sessionID = 2uzlusfzaxjyimuo20vo3eam, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 66
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test(String cookie) 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 13:53:53,003 [269] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606277268010, sessionID = fba1qw2sx5ap0dd0l5bysjca, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 66
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test(String cookie) 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 13:54:26,866 [267] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606280038795, sessionID = uzda1lfc4jxfggftvpbfrbno, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 66
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test(String cookie) 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 13:55:08,182 [270] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606281292333, sessionID = q03o4xoux5kfqzkg40n1wz3x, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = , message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 66
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 21
+   在 Test001.Login.Test(String cookie) 位置 D:\Test001\Test001\Login.cs:行号 27
+
+2018-03-14 14:58:49,935 [337] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606666708380, sessionID = fg41nb3kskg5p5vf2tzq0ori, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 14:59:01,684 [337] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606668061029, sessionID = 55fcjasbytmwogyearwdppso, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 14:59:41,700 [339] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606671092255, sessionID = shczgr32uchjqs4plw2pgext, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 15:00:02,974 [337] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606673404463, sessionID = y0cdvjkti3z5shy0r44lh12m, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 15:01:13,791 [337] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606680811534, sessionID = 55gpxpshmtpebak05o2c2qi2, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-03-14 15:01:36,881 [341] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324606682710117, sessionID = 3mmq2qouk4spy3cb5ugmz1ma, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: A circular reference was detected while serializing an object of type 'System.RuntimeType'.
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeEnumerable(IEnumerable enumerable, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeCustomObject(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValueInternal(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.SerializeValue(Object o, StringBuilder sb, Int32 depth, Hashtable objectsInUse, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, StringBuilder output, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Serialize(Object obj, SerializationFormat serializationFormat)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)

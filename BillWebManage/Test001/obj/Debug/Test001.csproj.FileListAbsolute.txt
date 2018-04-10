@@ -1,0 +1,17 @@
+h:\users\administrator\documents\visual studio 2010\Projects\Test001\Test001\bin\Test001.dll
+h:\users\administrator\documents\visual studio 2010\Projects\Test001\Test001\bin\Test001.pdb
+h:\users\administrator\documents\visual studio 2010\Projects\Test001\Test001\obj\Debug\Test001.dll
+h:\users\administrator\documents\visual studio 2010\Projects\Test001\Test001\obj\Debug\Test001.pdb
+H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\bin\Test001.dll.config
+H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\bin\MySql.Data.dll
+H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\obj\Debug\Test001.csprojResolveAssemblyReference.cache
+D:\Test001\Test001\bin\Test001.dll
+D:\Test001\Test001\bin\Test001.pdb
+D:\Test001\Test001\obj\Debug\Test001.dll
+D:\Test001\Test001\obj\Debug\Test001.pdb
+D:\Test001\Test001\obj\Debug\Test001.csprojResolveAssemblyReference.cache
+D:\Test001\Test001\bin\TaoBaoRequest.dll
+D:\Test001\Test001\bin\TaoBaoRequest.pdb
+D:\Test001\Test001\bin\Test001.dll.config
+D:\Test001\Test001\bin\MySql.Data.dll
+D:\Test001\Test001\bin\ICSharpCode.SharpZipLib.dll

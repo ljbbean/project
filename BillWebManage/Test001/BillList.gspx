@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="Carpa.UI" Title="订单明细" ActionType="Test001.BillListAction, BillList.js">
+  <VPanel ShowBorder="true" HAlign="Center">
+    <HPanel>
+      <TextEdit Label="订单号" DataField="code"/>
+      <TextEdit Label="快递单号" DataField="scode"/>
+      <HPanel Label="日期">
+        <DateEdit DataField="startDate" Value="${startDate}"/>
+        <Label Text="-"/>
+        <DateEdit DataField="endDate"/>
+      </HPanel>
+      <DropDownEdit Label="订单状态" SelectedIndex="5" DataField="status">
+        <ListItem Text="新订单" Value="0"/>
+        <ListItem Text="已发货" Value="1"/>
+        <ListItem Text="已签收" Value="2"/>
+        <ListItem Text="已确认收货" Value="3"/>
+        <ListItem Text="已核算" Value="4"/>
+        <ListItem Text="全部" Value="5"/>
+      </DropDownEdit>
+      <Button Text="搜索" OnClick="doSearch"/>
+      <Button Text="批量录单" OnClick="doAdd" Visible="false"/>
+      <Button Text="逐条录单" OnClick="doSimpleAdd"/>
+      <Button Text="货单总汇" OnClick="doStock"/>
+      <Button Text="配送简版" OnClick="doSendSimple"/>
+      <Button Text="回款明细管理" OnClick="doBackSectionDetail" Visible="${!backSection}"/>
+      <Button Text="回款管理" OnClick="doBackSection" Visible="${backSection}"/>
+      <Button Text="快递对单" OnClick="excelSure" />
+      <Button Text="商品配置" OnClick="doBtypeConfig"/>
+      <Button Text="数据抓取" OnClick="doDataCatch"/>
+    </HPanel>
+
+    <HPanel HAlign="Right" Width="${ClientWidth - 180}">
+      <HPanel ShowBorder="true">
+        <Label Label="截止月：" TextColor="red" Text="${month}"/>
+        <Label Label="回款总额：" TextColor="red" Text="${total}"/>
+        <Label Label="已回总额：" TextColor="red" Text="${paytotal}"/>
+        <Label Label="未回总额：" TextColor="red" Text="${nopaytotal}"/>
+      </HPanel>
+    </HPanel>
+    <PopupMenu ID="pmMain" >
+      <MenuItem ID="menuqz" Text="自己配送" OnClick="doSelfSend" />
+      <MenuItem ID="menubm" Text="货运发货" OnClick="doOtherSend" />
+      <MenuItem ID="menutzbm" Text="客户自提" OnClick="doCustomSend" />
+    </PopupMenu>
+    <PopupMenu ID="sendedMain" >
+      <MenuItem Text="已签收" OnClick="doSended" />
+    </PopupMenu>
+    <PopupMenu ID="sureMain" >
+      <MenuItem Text="已确认签收" OnClick="doSureSended" />
+    </PopupMenu>
+
+    <PopupMenu ID="sendAfterMain" >
+      <MenuItem Text="破损补发" OnClick="doAfter0" />
+      <MenuItem Text="发货取消" OnClick="doAfter1" />
+      <MenuItem Text="破损退款" OnClick="doAfter2" />
+      <MenuItem Text="信息补充" OnClick="doAfter5" />
+    </PopupMenu>
+
+    <PopupMenu ID="getAfterMain" >
+      <MenuItem Text="缺货补发" OnClick="doAfter3" />
+      <MenuItem Text="破损退款" OnClick="doAfter2" />
+      <MenuItem Text="信息补充" OnClick="doAfter5" />
+    </PopupMenu>
+
+    <PopupMenu ID="useAfterMain" >
+      <MenuItem Text="缺货补发" OnClick="doAfter3" />
+      <MenuItem Text="赔偿" OnClick="doAfter4" />
+      <MenuItem Text="信息补充" OnClick="doAfter5" />
+    </PopupMenu>
+    <Grid ID="grid" Pager="Bottom" DataSource="${grid}" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="false" ShowFooter="true" Width="${ClientWidth - 10}" OnRowDblClick="doGridDbClick" Height="${ClientHeight - 400}" OnSelectionChanged="doGridSelectedChanged" OnRowDeleting="doGridDeleting" OnRowRendering="doRowRending">
+      <ExpandColumn Caption="异常列表" HeaderAlign="Center" AllowMultiExpand="false" OnChange="raiseExpandChange"/>
+      <DynamicButtonColumn Caption="货运处理" HeaderAlign="Center" DataField="after" ReadOnly="true" OnButtonClick="doAfterClick"/>
+      <TextColumn Caption="订单日期" DataField="date" ReadOnly="true"/>
+      <TextColumn Caption="姓名" Width="160" DataField="cname" ReadOnly="true"/>
+      <TextColumn Caption="淘宝账号" Width="160" DataField="taobaocode" ReadOnly="true"/>
+      <DynamicButtonColumn Caption="发货信息" Width="150" HeaderAlign="Center" TextAlign="Center" DataField="sender" ReadOnly="true" OnButtonClick="doSendMsgClick"/>
+      <NumberColumn Caption="订单提成" DataField="btotal" ReadOnly="true"/>
+      <NumberColumn Caption="订单回款" DataField="ltotal" ReadOnly="true"/>
+      <NumberColumn Caption="订单优惠" DataField="preferential" ReadOnly="true"/>
+      <DynamicButtonColumn Caption="订单操作" DataField="process" HeaderAlign="Center" OnButtonClick="doSendClick"/>
+      <RowDeleteColumn Caption="删除" Width="60" Visible="false" AllowConfig="false"/>
+    </Grid>
+    <HSplitter ForDown="gridDetail" ForUp="grid"/>
+    <Grid ID="gridDetail" Pager="Bottom" Width="${ClientWidth - 10}" AllowResize="true" AllowConfig="true" Height="120">
+      <TextColumn Caption="订单号" DataField="code" Width="150"/>
+      <TextColumn Caption="尺寸" DataField="size"/>
+      <TextColumn Caption="花色" DataField="color"/>
+      <NumberColumn Caption="数量" DataField="amount" Width="60"/>
+      <TextColumn Caption="联系地址" DataField="address" Width="500"/>
+      <TextColumn Caption="派送方式" DataField="sendway"/>
+      <TextColumn Caption="备注" DataField="remark"/>
+      <TextColumn Caption="原价" DataField="stotal" Width="60" Visible="false"/>
+      <NumberColumn Caption="优惠" DataField="preferential"  Width="60"/>
+      <NumberColumn Caption="实收款" DataField="total"  Width="60"/>
+      <NumberColumn Caption="提成" DataField="btotal" Width="60"/>
+      <NumberColumn Caption="回款" DataField="ltotal" Width="60"/>
+    </Grid>
+  </VPanel>
+</Page>

@@ -1,0 +1,36 @@
+
+2017-10-19 13:40:52,419 [15] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771311270310119, sessionID = tffgnaytbzeptzhiecw0rpjr, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“_format”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“_format”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“_format”属性或方法
+   at getDisplayText (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:13088:9)
+   at _doGetCellText (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12352:13)
+   at _getCellHTML (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12372:13)
+   at _initCellHTML (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12366:9)
+   at _addRowFast (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2705:13)
+   at _initRealDataRows (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2623:13)
+   at _initDataRows (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2591:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:1136:9)
+   at doInitControls (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/carpa.js:8108:5)
+   at Sys$UI$CustomForm$doInit (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/carpa.js:8086:3)
+ }
+
+2017-10-19 13:41:40,215 [11] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771311275091934, sessionID = tffgnaytbzeptzhiecw0rpjr, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“_format”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“_format”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“_format”属性或方法
+   at getDisplayText (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:13088:9)
+   at _doGetCellText (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12352:13)
+   at _getCellHTML (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12372:13)
+   at _initCellHTML (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:12366:9)
+   at _addRowFast (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2705:13)
+   at _initRealDataRows (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2623:13)
+   at _initDataRows (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:2591:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/grid.js:1136:9)
+   at doInitControls (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/carpa.js:8108:5)
+   at Sys$UI$CustomForm$doInit (http://localhost:2033/R.axd?v=297788280&r=Carpa.Web/js/carpa.js:8086:3)
+ }

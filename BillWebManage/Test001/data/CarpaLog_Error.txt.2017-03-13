@@ -1,0 +1,8 @@
+
+2017-03-13 10:23:38,996 [3] ERROR - / 出错：无法向会话状态服务器发出会话状态请求。请确保 ASP.NET State Service (ASP.NET 状态服务)已启动，并且客户端端口与服务器端口相同。如果服务器位于远程计算机上，请检查 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\aspnet_state\Parameters\AllowRemoteConnection 的值，确保服务器接受远程请求。如果服务器位于本地计算机上，并且上面提到的注册表值不存在或者设置为 0，则状态服务器连接字符串必须使用“localhost”或“127.0.0.1”作为服务器名称。
+System.Web.HttpException (0x80072749): 无法向会话状态服务器发出会话状态请求。请确保 ASP.NET State Service (ASP.NET 状态服务)已启动，并且客户端端口与服务器端口相同。如果服务器位于远程计算机上，请检查 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\aspnet_state\Parameters\AllowRemoteConnection 的值，确保服务器接受远程请求。如果服务器位于本地计算机上，并且上面提到的注册表值不存在或者设置为 0，则状态服务器连接字符串必须使用“localhost”或“127.0.0.1”作为服务器名称。
+   在 System.Web.SessionState.OutOfProcSessionStateStore.MakeRequest(StateProtocolVerb verb, String id, StateProtocolExclusive exclusiveAccess, Int32 extraFlags, Int32 timeout, Int32 lockCookie, Byte[] buf, Int32 cb, Int32 networkTimeout, SessionNDMakeRequestResults& results)
+   在 System.Web.SessionState.OutOfProcSessionStateStore.ResetItemTimeout(HttpContext context, String id)
+   在 System.Web.SessionState.SessionStateModule.BeginAcquireState(Object source, EventArgs e, AsyncCallback cb, Object extraData)
+   在 System.Web.HttpApplication.AsyncEventExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

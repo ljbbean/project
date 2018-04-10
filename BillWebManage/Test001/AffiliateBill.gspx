@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="发货处理" ActionType="Test001.AffiliateBillAction, AffiliateBill.js">
+  <VPanel>
+    <HPanel>
+      <HiddenField DataField="status"/>
+      <HiddenField DataField="bid"/>
+    <TextEdit Label="编号" DataField="code"/>
+    <NumberEdit Label="金额" DataField="total" MinValue="0"/>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <MemoEdit Label="备注" DataField="remark" Width="290" Height="50" Required="true"/>
+    </HPanel>
+    <HPanel HAlign="Right" ColSpan="2">
+      <HPanel HAlign="Right">
+        <Button Text="保存" OnClick="doSave"/>
+        <CancelButton/>
+      </HPanel>
+    </HPanel>
+  </VPanel>
+</Page>

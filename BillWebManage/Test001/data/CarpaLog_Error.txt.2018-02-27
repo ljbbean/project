@@ -1,0 +1,127 @@
+
+2018-02-27 11:02:24,480 [11] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475637604338, sessionID = sgwiyfv2q4xwwvw1xvgcrlld, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 指定的值含有无效的 HTTP 标头字符。
+参数名: name
+   在 System.Net.WebHeaderCollection.CheckBadChars(String name, Boolean isHeaderValue)
+   在 System.Net.WebHeaderCollection.Add(String header)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 34
+
+2018-02-27 11:04:17,682 [19] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475658968566, sessionID = bt4qgi5t5zkrw3za34fizglo, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 指定的值含有无效的 HTTP 标头字符。
+参数名: name
+   在 System.Net.WebHeaderCollection.CheckBadChars(String name, Boolean isHeaderValue)
+   在 System.Net.WebHeaderCollection.Add(String header)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 25
+
+2018-02-27 11:10:06,135 [19] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475694464648, sessionID = xdaj4pq0cuyjfisq30jw00yh, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 必须使用适当的属性或方法修改“Connection”标头。
+参数名: name
+   在 System.Net.WebHeaderCollection.ThrowOnRestrictedHeader(String headerName)
+   在 System.Net.WebHeaderCollection.Add(String name, String value)
+   在 System.Net.WebHeaderCollection.Add(HttpRequestHeader header, String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 33
+
+2018-02-27 11:10:18,635 [15] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475694883721, sessionID = ls5egaci3cmuxjr5dahxm53s, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 必须使用适当的属性或方法修改“Connection”标头。
+参数名: name
+   在 System.Net.WebHeaderCollection.ThrowOnRestrictedHeader(String headerName)
+   在 System.Net.WebHeaderCollection.Add(String name, String value)
+   在 System.Net.WebHeaderCollection.Add(HttpRequestHeader header, String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 33
+
+2018-02-27 11:11:06,217 [31] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475696033052, sessionID = y4t2bxj4ggdohfufarqmssam, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 必须使用适当的属性或方法修改“Accept”标头。
+参数名: name
+   在 System.Net.WebHeaderCollection.ThrowOnRestrictedHeader(String headerName)
+   在 System.Net.WebHeaderCollection.Add(String name, String value)
+   在 System.Net.WebHeaderCollection.Add(HttpRequestHeader header, String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 34
+
+2018-02-27 11:23:41,732 [35] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475776004187, sessionID = 0gwmowysyog2vtaidd11vtsy, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Keep-Alive 和 Close 不能使用此属性设置。
+参数名: value
+   在 System.Net.HttpWebRequest.set_Connection(String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 33
+
+2018-02-27 11:23:56,170 [75] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475776396778, sessionID = jfjdbfvu1fgdzyzi32cfz14c, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Keep-Alive 和 Close 不能使用此属性设置。
+参数名: value
+   在 System.Net.HttpWebRequest.set_Connection(String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 33
+
+2018-02-27 11:24:44,615 [75] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475779316863, sessionID = t4mvtpp4tg5fzgbp0dz0kxx2, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.Net.CookieException: Cookie 的“Name”=“ thw”部分无效。
+   在 System.Net.Cookie.set_Name(String value)
+   在 System.Net.Cookie..ctor(String name, String value)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 43
+
+2018-02-27 11:25:28,493 [88] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475784174298, sessionID = 2cj1f1l3zqkxvj4mi1sixvr3, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 参数“{0}”不能是空字符串。
+参数名: cookie.Domain
+   在 System.Net.CookieContainer.Add(Cookie cookie)
+   在 System.Net.CookieContainer.Add(CookieCollection cookies)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 45
+
+2018-02-27 11:25:48,846 [88] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475788570549, sessionID = 0ym2z2z0exlron5fiugeicqp, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 参数“{0}”不能是空字符串。
+参数名: cookie.Domain
+   在 System.Net.CookieContainer.Add(Cookie cookie)
+   在 System.Net.CookieContainer.Add(CookieCollection cookies)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 45
+
+2018-02-27 11:28:55,669 [104] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475804989101, sessionID = tv0he0soq1tn5lwntce1yaxk, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 66
+
+2018-02-27 11:29:55,073 [93] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475811447305, sessionID = ylknf1iqvtbixybenx3ahog1, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 67
+
+2018-02-27 11:31:00,976 [35] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475818373976, sessionID = 1pw54taohkymzcunm5nq5g4e, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 67
+
+2018-02-27 11:31:54,113 [104] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324475825379216, sessionID = xguyejse4nttvyrp0feblq2o, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 67
+
+2018-02-27 12:50:32,779 [125] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324476277949825, sessionID = 5lgzzwrv1bichjsorsh2dwzf, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.Net.WebException: 基础连接已经关闭: 连接被意外关闭。
+   在 System.Net.HttpWebRequest.GetResponse()
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 50
+
+2018-02-27 18:43:11,097 [142] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324478413060504, sessionID = njv4edz5qblfzf3jriomtwtn, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.HashObjectExt.GetListHashValue(Key key, Object data) 位置 D:\Test001\Test001\Login.cs:行号 73
+   在 Test001.HashObjectExt.GetItemKeyValue(HashObject hash, Key key) 位置 D:\Test001\Test001\Login.cs:行号 59
+   在 Test001.HashObjectExt.GetChildrenKeyValue(Key key, Object data) 位置 D:\Test001\Test001\Login.cs:行号 88
+   在 Test001.HashObjectExt.GetHashValue(HashObject hash, String[] keys) 位置 D:\Test001\Test001\Login.cs:行号 42
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 185
+
+2018-02-27 18:44:00,443 [173] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324478414815184, sessionID = njv4edz5qblfzf3jriomtwtn, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.HashObjectExt.GetListHashValue(Key key, Object data) 位置 D:\Test001\Test001\Login.cs:行号 73
+   在 Test001.HashObjectExt.GetItemKeyValue(HashObject hash, Key key) 位置 D:\Test001\Test001\Login.cs:行号 59
+   在 Test001.HashObjectExt.GetChildrenKeyValue(Key key, Object data) 位置 D:\Test001\Test001\Login.cs:行号 88
+   在 Test001.HashObjectExt.GetHashValue(HashObject hash, String[] keys) 位置 D:\Test001\Test001\Login.cs:行号 42
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 185

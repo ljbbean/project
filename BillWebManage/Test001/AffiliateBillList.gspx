@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="标题" ActionType="Test001.AffiliateBillListAction, AffiliateBillList.js">
+  <VPanel>
+    <Grid ID="grid" Pager="Bottom" DataSource="${grid}" ShowFooter="true" Width="${ClientWidth}" DefaultRowCount="1" Height="230" >
+      <DateTimeColumn Caption="处理日期" DataField="date" Width="160" />
+      <TextColumn Caption="处理方式" DataField="status" />
+      <TextColumn Caption="编号" DataField="code" Width="160" />
+      <NumberColumn Caption="金额" DataField="total" />
+      <TextColumn Caption="备注" Width="330" DataField="remark" />
+    </Grid>
+  </VPanel>
+</Page>

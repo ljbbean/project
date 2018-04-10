@@ -1,0 +1,10 @@
+
+2018-03-01 10:49:47,559 [9] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324492852680541, sessionID = bdbunrknzvh2lcwthmgyfq1r, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\Test001\Login.cs:行号 246
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 173

@@ -1,0 +1,76 @@
+
+2018-01-05 13:53:18,284 [22] ERROR - 执行SQL出错: Table 'bill.excelsure' doesn't exist
+select * from ExcelSure where userid=@userid
+
+  userid=1
+
+select * from ExcelSure where userid=1
+
+
+2018-01-05 13:53:18,309 [22] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 2019894372595493016, sessionID = , pageUrl = http://localhost:52715/ExcelSure.gspx, referPageUrl = http://localhost:52715/BillList.gspx, message = 页面初始化失败 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'bill.excelsure' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteReader(String sql)
+   在 Carpa.Web.Script.DbHelper.Select(String sql)
+   在 Test001.ExcelSure.Initialize() 位置 D:\Test001\Test001\ExcelSure.cs:行号 19
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2018-01-05 14:47:27,371 [63] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 2019894372920402852, sessionID = kofvm4caclk1ntoew00p5ifv, message = http://localhost:52715/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doRowClick 不能为空，类名 Test001.ExcelSureAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doRowClick 不能为空，类名 Test001.ExcelSureAction
+    at Function.Error$create [as create] (Carpa.Web/js/carpa.js:41:10)
+    at Function.Error$invalidOperation [as invalidOperation] (Carpa.Web/js/carpa.js:228:16)
+    at Function$createDelegate (Carpa.Web/js/carpa.js:387:16)
+    at $4d065cae$__init (<anonymous>:1:1051)
+    at Sys$_Application$add_init [as add_init] (Carpa.Web/js/carpa.js:9610:4)
+    at <anonymous>:1:17
+    at Sys$_ScriptLoader$_addScriptElement [as _addScriptElement] (Carpa.Web/js/carpa.js:8917:44)
+    at Sys$_ScriptLoader.addScriptElement (Carpa.Web/js/carpa.js:8986:28)
+    at Sys$_ScriptLoader$_loadScriptsInternal [as _loadScriptsInternal] (Carpa.Web/js/carpa.js:8971:10)
+    at Sys$_ScriptLoader$_scriptLoadedHandler [as _scriptLoadedHandler] (Carpa.Web/js/carpa.js:9029:9)
+ }
+
+2018-01-05 15:18:00,973 [81] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 2019894373103764477, sessionID = kofvm4caclk1ntoew00p5ifv, message = http://localhost:52715/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 过滤暂时只支持有分页器的 Grid
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 过滤暂时只支持有分页器的 Grid
+    at Function.Error$create [as create] (Carpa.Web/js/carpa.js:41:10)
+    at Function.Error$invalidOperation [as invalidOperation] (Carpa.Web/js/carpa.js:228:16)
+    at Sys.UI.Controls.Grid.filter (Carpa.Web/js/grid.js:8791:25)
+    at Test001.ExcelSureAction.doStateChange (Test001/ExcelSure.js:147:14)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.DropDownEdit.doChange (Carpa.Web/js/controls.js:5774:13)
+    at Sys.UI.Controls.DropDownEdit._changeSelectedIndex (Carpa.Web/js/controls.js:10678:18)
+    at Function.Type$callBaseMethod [as callBaseMethod] (Carpa.Web/js/carpa.js:976:21)
+    at Sys.UI.Controls.DropDownEdit._changeSelectedIndex (Carpa.Web/js/controls.js:10748:38)
+ }
+
+2018-01-05 15:26:30,896 [88] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 2019894373154755283, sessionID = kofvm4caclk1ntoew00p5ifv, pageUrl = http://localhost:52715/ExcelSure.gspx, referPageUrl = http://localhost:52715/BillList.gspx, message = 页面请求出错 }
+Carpa.Web.Script.ScriptException: “AllowSort”是重复的特性名称。 第 23 行，位置 11。在“D:\Test001\Test001\ExcelSure.gspx” ---> System.Xml.XmlException: “AllowSort”是重复的特性名称。 第 23 行，位置 11。
+   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.AttributeDuplCheck()
+   在 System.Xml.XmlTextReaderImpl.ParseAttributes()
+   在 System.Xml.XmlTextReaderImpl.ParseElement()
+   在 System.Xml.XmlTextReaderImpl.ParseElementContent()
+   在 System.Xml.XmlTextReaderImpl.Read()
+   在 System.Xml.XmlTextReader.Read()
+   在 Carpa.Web.Script.Internal.Parser.InternalParse(XmlTextReader reader)
+   在 Carpa.Web.Script.Internal.Parser.DoParse(XmlTextReader reader)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.Parser.DoParse(XmlTextReader reader)
+   在 Carpa.Web.Script.Internal.Parser.Parse(Stream stream)
+   在 Carpa.Web.Script.Internal.Parser.Parse(String filename)
+   在 Carpa.Web.Script.ScriptHandler.ParseScript(ScriptContext scriptContext, IScript script, String assemblyName, String pageName, Parser parser)
+   在 Carpa.Web.Script.ScriptHandler.CompileScript(ScriptContext scriptContext)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)

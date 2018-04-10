@@ -1,0 +1,429 @@
+
+2016-08-10 08:49:27,627 [1168] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bid in (select bid from billdetail where code like '%@code%')  order by date des' at line 7
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  bid in (select bid from billdetail where code like '%@code%')  order by date desc
+
+  @code='1'
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  bid in (select bid from billdetail where code like '%'1'%')  order by date desc
+
+
+2016-08-10 08:49:27,659 [1168] ERROR - CARPA IE_7 127.0.0.1 tjg54z22n1aovfte1eerk3rm  WebService调用出错 http://localhost:2032/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bid in (select bid from billdetail where code like '%@code%')  order by date des' at line 7
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 114
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(Int32 first, Int32 count, Boolean hasColumnExpand, Boolean needQuery)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(IHashObject queryParams, DataOrder[] orders, DataFilter filter, Int32 first, Int32 count, IHashObject items)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2016-08-10 08:51:04,321 [1168] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%@code%')  order by date desc' at line 7
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  id in (select bid from billdetail where code like '%@code%')  order by date desc
+
+  @code='2'
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  id in (select bid from billdetail where code like '%'2'%')  order by date desc
+
+
+2016-08-10 08:51:04,332 [1168] ERROR - CARPA IE_7 127.0.0.1 tjg54z22n1aovfte1eerk3rm  WebService调用出错 http://localhost:2032/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%@code%')  order by date desc' at line 7
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 114
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(Int32 first, Int32 count, Boolean hasColumnExpand, Boolean needQuery)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(IHashObject queryParams, DataOrder[] orders, DataFilter filter, Int32 first, Int32 count, IHashObject items)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2016-08-10 08:51:58,804 [1164] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%@code%')  order by date desc' at line 7
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and status = 0 id in (select bid from billdetail where code like '%@code%')  order by date desc
+
+  @code='2'
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and status = 0 id in (select bid from billdetail where code like '%'2'%')  order by date desc
+
+
+2016-08-10 08:51:58,815 [1164] ERROR - CARPA IE_7 127.0.0.1 tjg54z22n1aovfte1eerk3rm  WebService调用出错 http://localhost:2032/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%@code%')  order by date desc' at line 7
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 114
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(Int32 first, Int32 count, Boolean hasColumnExpand, Boolean needQuery)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(IHashObject queryParams, DataOrder[] orders, DataFilter filter, Int32 first, Int32 count, IHashObject items)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2016-08-10 08:52:47,336 [1169] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%2%')  order by date desc' at line 7
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and status = 0 id in (select bid from billdetail where code like '%2%')  order by date desc
+
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and status = 0 id in (select bid from billdetail where code like '%2%')  order by date desc
+
+
+2016-08-10 08:52:47,347 [1169] ERROR - CARPA IE_7 127.0.0.1 tjg54z22n1aovfte1eerk3rm  WebService调用出错 http://localhost:2032/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'id in (select bid from billdetail where code like '%2%')  order by date desc' at line 7
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 113
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(Int32 first, Int32 count, Boolean hasColumnExpand, Boolean needQuery)
+   在 Carpa.Web.Script.PagerInfo.GetPagerData(IHashObject queryParams, DataOrder[] orders, DataFilter filter, Int32 first, Int32 count, IHashObject items)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2016-08-10 09:09:07,459 [1168] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process, case status when 1 when 2 when 3 then '售后' else '' end as after,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and date >= '2016-08-01 00:00:00' order by date desc
+
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process, case status when 1 when 2 when 3 then '售后' else '' end as after,
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and date >= '2016-08-01 00:00:00' order by date desc
+
+
+2016-08-10 09:09:07,463 [1168] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptTagException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 116
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-10 09:09:07,473 [1168] ERROR - /BillList.gspx 出错：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel>
+Carpa.Web.Script.ScriptTagException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'when 2 when 3 then '售后' else '' end as after,
+                             ' at line 6
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 116
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-10 19:10:19,319 [5] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptException: “MenuItem.Tag”属性不存在。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 36，位置 8，标签<MenuItem>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-10 19:10:19,333 [5] ERROR - /BillList.gspx 出错：“MenuItem.Tag”属性不存在。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 36，位置 8，标签<MenuItem>
+Carpa.Web.Script.ScriptException: “MenuItem.Tag”属性不存在。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 36，位置 8，标签<MenuItem>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-10 19:16:02,854 [14] ERROR - BROWSER IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“set_text”
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 7626
+TypeError: 无法获取未定义或 null 引用的属性“set_text”
+   at Anonymous function (http://localhost:2032/R.axd?v=260305748&r=Test001/BillList.js:221:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.CustomForm.prototype.doLoaded (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7763:13)
+   at Sys$UI$CustomForm$_scriptsLoadComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7620:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8545:17)
+   at Sys$_ScriptLoader$_loadScriptsInternal_continue (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8563:13)
+
+
+2016-08-10 19:43:38,489 [34] ERROR - BROWSER IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “eventArgs”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=260307812&r=Test001/BillList.js
+[b]LineNumber[/b]: 249
+ReferenceError: “eventArgs”未定义
+   at Test001.BillListAction.prototype.raiseExpandChange (http://localhost:2032/R.axd?v=260307812&r=Test001/BillList.js:250:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.ExpandColumn.prototype.doChangeHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:13826:13)
+   at Sys.UI.Controls.ExpandColumn.prototype.doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:13797:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-08-10 19:46:05,323 [35] ERROR - BROWSER IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“_format”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 2462
+TypeError: 对象不支持“_format”属性或方法
+   at Date.dateTimeToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:2463:5)
+   at Sys.UI.Controls.DateTimeColumn.prototype.getDisplayText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:12579:9)
+   at Sys.UI.Controls.Column.prototype._doGetCellText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11946:13)
+   at Sys.UI.Controls.Column.prototype._getCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11966:13)
+   at Sys.UI.Controls.Column.prototype._initCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11960:9)
+   at Sys.UI.Controls.Grid.prototype._addRowFast (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2617:13)
+   at Sys.UI.Controls.Grid.prototype._initRealDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2533:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2501:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:1137:9)
+   at Sys.UI.CustomForm.prototype.doInitControls (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7692:17)
+
+
+2016-08-10 19:46:10,988 [8] ERROR - BROWSER IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“_format”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 2462
+TypeError: 对象不支持“_format”属性或方法
+   at Date.dateTimeToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:2463:5)
+   at Sys.UI.Controls.DateTimeColumn.prototype.getDisplayText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:12579:9)
+   at Sys.UI.Controls.Column.prototype._doGetCellText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11946:13)
+   at Sys.UI.Controls.Column.prototype._getCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11966:13)
+   at Sys.UI.Controls.Column.prototype._initCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11960:9)
+   at Sys.UI.Controls.Grid.prototype._addRowFast (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2617:13)
+   at Sys.UI.Controls.Grid.prototype._initRealDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2533:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2501:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:1137:9)
+   at Sys.UI.CustomForm.prototype.doInitControls (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7692:17)
+
+
+2016-08-10 20:12:39,457 [43] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptTagException: 未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> System.IO.FileNotFoundException: 未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。
+   在 Carpa.Web.Script.DbHelper.CreateMysqlConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Carpa.Web.Script.CustomDbPagerDataSource.CreateDbHelper()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-10 20:12:39,473 [43] ERROR - /BillList.gspx 出错：未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel>
+Carpa.Web.Script.ScriptTagException: 未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> System.IO.FileNotFoundException: 未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。
+   在 Carpa.Web.Script.DbHelper.CreateMysqlConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Carpa.Web.Script.CustomDbPagerDataSource.CreateDbHelper()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-10 20:34:04,208 [9] ERROR - CARPA IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  WebService调用出错 http://localhost:2032/Test001/Test001.Login.ajax/UserLogin  http://localhost:2032/Login.gspx
+System.InvalidOperationException: Invalid web service call, missing value for parameter: 'name'.
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethod(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethodFromRawParams(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2016-08-10 20:34:51,358 [8] ERROR - CARPA IE_7 127.0.0.1 4vvfsby40ksmiaddfacdrtgt  WebService调用出错 http://localhost:2032/Test001/Test001.Login.ajax/UserLogin  http://localhost:2032/Login.gspx
+System.InvalidOperationException: 执行SQL“select password,passwordsalt from user where name=@name”时期待返回一行，现在返回了 0 行
+   在 Carpa.Web.Script.DbHelper.SelectSingleRow(String sql)
+   在 Test001.Login.UserLogin(Int32 width, Int32 height, String name, String pwd) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\Login.cs:行号 24

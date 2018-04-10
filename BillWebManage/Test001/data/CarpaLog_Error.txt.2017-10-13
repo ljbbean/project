@@ -1,0 +1,413 @@
+
+2017-10-13 14:08:14,056 [6] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259594475788, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“set_addFlag”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“set_addFlag”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“set_addFlag”属性或方法
+   at doBeginEdit (eval code:37:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseBeginEditNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7928:22)
+   at showEditor (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7942:9)
+   at _internalTreeNodeClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:6638:9)
+   at _onTextClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:8521:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:6037:4)
+ }
+
+2017-10-13 14:23:40,851 [71] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259687154087, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_parentNode”
+   at doNodeAdd (eval code:50:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:26:53,422 [71] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259706410794, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_parentNode”
+   at doNodeAdd (eval code:50:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:30:36,044 [77] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259728672570, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_parentNode”
+   at doNodeAdd (eval code:50:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:33:11,899 [71] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259744258062, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_parentNode”
+   at doNodeAdd (eval code:50:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:35:26,493 [71] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259757717220, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_parentNode”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_parentNode”
+   at doNodeAdd (eval code:50:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:35:41,791 [78] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259759246946, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“length”
+   at doNodeAdd (eval code:51:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:35:44,870 [77] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259759554839, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“length”
+   at doNodeAdd (eval code:51:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:36:48,292 [77] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259765896909, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“length”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“length”
+   at doNodeAdd (eval code:51:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$raiseEnterPress (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4014:13)
+   at Sys$UI$Controls$Container$doEnterPress (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3997:9)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+ }
+
+2017-10-13 14:37:26,222 [63] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259769689886, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_text”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_text”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_text”属性或方法
+   at doNodeAdd (eval code:52:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:39:07,085 [57] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259779775896, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_text”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_text”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_text”属性或方法
+   at doNodeAdd (eval code:52:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:51:27,819 [13] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259853848314, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_children”
+   at doNodeAdd (eval code:61:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:52:03,195 [78] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259857385871, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_children”
+   at doNodeAdd (eval code:61:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:53:10,112 [74] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259864077338, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_children”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_children”
+   at doNodeAdd (eval code:61:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 14:56:08,126 [13] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771259881878560, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“appandRowData”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“appandRowData”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“appandRowData”属性或方法
+   at doNodeAdd (eval code:63:17)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseAddNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7107:9)
+   at _doOkAddClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7072:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:4746:9)
+ }
+
+2017-10-13 16:38:55,315 [41] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260498587870, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“tracuDump”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“tracuDump”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“tracuDump”属性或方法
+   at doNodeDelete (eval code:83:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseDelNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7133:9)
+   at _doDelChild (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7120:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3933:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3895:13)
+ }
+
+2017-10-13 16:50:27,697 [41] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260567825003, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_parentNode”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_parentNode”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_parentNode”属性或方法
+   at doNodeDelete (eval code:84:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseDelNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7133:9)
+   at _doDelChild (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7120:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3933:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3895:13)
+ }
+
+2017-10-13 16:50:55,302 [74] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260570585427, sessionID = 1hvwiveze3f2vjq2c5furvg0, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_parentNode”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_parentNode”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_parentNode”属性或方法
+   at doNodeDelete (eval code:84:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at _raiseDelNodeEvent (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7133:9)
+   at _doDelChild (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controlsEx.js:7120:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3952:17)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3933:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:3895:13)
+ }
+
+2017-10-13 17:06:10,158 [10] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260662085196, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+System.InvalidOperationException: Type 'Carpa.Web.Script.IHashObjectList' is not supported for deserialization of an array.
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertListToObject(IList list, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+
+2017-10-13 17:15:58,155 [31] ERROR - 执行SQL出错: Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+insert into btypeconfig (size,color,price) values(@size,@color,@price)
+
+  size='40*160'
+  color='素白'
+  price=0
+
+insert into btypeconfig (size,color,price) values('40*160','素白',0)
+
+
+2017-10-13 17:15:58,167 [31] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260720884310, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 102
+
+2017-10-13 17:16:42,434 [10] ERROR - 执行SQL出错: Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+insert into btypeconfig (size,color,price) values(@size,@color,@price)
+
+  size='40*160'
+  color='素白'
+  price=1
+
+insert into btypeconfig (size,color,price) values('40*160','素白',1)
+
+
+2017-10-13 17:16:42,436 [10] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260725313423, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 102
+
+2017-10-13 17:16:56,769 [13] ERROR - 执行SQL出错: Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+insert into btypeconfig (size,color,price) values(@size,@color,@price)
+
+  size='40*160'
+  color='素白'
+  price=1
+
+insert into btypeconfig (size,color,price) values('40*160','素白',1)
+
+
+2017-10-13 17:16:56,772 [13] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260726746946, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE7\xB4\xA0\xE7\x99\xBD' for column 'color' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 102
+
+2017-10-13 17:17:24,277 [32] ERROR - 执行SQL出错: Incorrect string value: '\xE6\xB5\x8B\xE8\xAF\x95' for column 'size' at row 1
+insert into btypeconfig (size,color,price) values(@size,@color,@price)
+
+  size='测试'
+  color='ewwe'
+  price=0
+
+insert into btypeconfig (size,color,price) values('测试','ewwe',0)
+
+
+2017-10-13 17:17:24,287 [32] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260729496203, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\xB5\x8B\xE8\xAF\x95' for column 'size' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 102
+
+2017-10-13 17:18:15,054 [56] ERROR - 执行SQL出错: Incorrect string value: '\xE6\xB5\x8B\xE8\xAF\x95' for column 'size' at row 1
+insert into btypeconfig (size,color,price) values(@size,@color,@price)
+
+  size='测试'
+  color='ewwe'
+  price=0
+
+insert into btypeconfig (size,color,price) values('测试','ewwe',0)
+
+
+2017-10-13 17:18:15,057 [56] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260734575618, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\xB5\x8B\xE8\xAF\x95' for column 'size' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 102
+
+2017-10-13 17:20:11,245 [91] ERROR - 执行SQL出错: Incorrect string value: '\xE6\x80\xA5\xE6\x80\xA5...' for column 'size' at row 1
+insert into btypeconfig values(@size, @color, @price)
+
+  size='急急急'
+  color='ewwe'
+  price=0
+
+insert into btypeconfig values('急急急', 'ewwe', 0)
+
+
+2017-10-13 17:20:11,255 [91] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771260746192998, sessionID = 1hvwiveze3f2vjq2c5furvg0, pageUrl = http://localhost:2033/Test001/Test001.BTypeConfig.ajax/DoSave, referPageUrl = http://localhost:2033/BillList.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x80\xA5\xE6\x80\xA5...' for column 'size' at row 1
+   在 Test001.BTypeConfig.DoSave(Object[] data) 位置 D:\Test001\Test001\BTypeConfig.cs:行号 105

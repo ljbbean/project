@@ -1,0 +1,275 @@
+
+2016-09-01 09:21:10,922 [6] ERROR - 执行SQL出错: Unknown column 'goodsstatus' in 'field list'
+update billdetail set goodsstatus = 2 where bid in (select id from bill where id=@id)
+
+  id=1954492812
+
+update billdetail set goodsstatus = 2 where bid in (select id from bill where id=1954492812)
+
+
+2016-09-01 09:21:10,946 [6] ERROR - CARPA IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  WebService调用出错 http://localhost:2032/Test001/Test001.SendGoods.ajax/SendGood  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown column 'goodsstatus' in 'field list'
+   在 Test001.SendGoods.SendGood(Int32 id, String name, String code) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\SendGoods.cs:行号 33
+
+2016-09-01 09:30:49,292 [33] ERROR - BROWSER IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “SYs”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=262171828&r=Test001/BillList.js
+[b]LineNumber[/b]: 198
+ReferenceError: “SYs”未定义
+   at Test001.BillListAction.prototype.doSendMsgClick (http://localhost:2032/R.axd?v=262171828&r=Test001/BillList.js:199:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.DynamicButtonColumn.prototype._buttonClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15025:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-09-01 09:31:05,343 [37] ERROR - BROWSER IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持此操作
+[b]FileName[/b]: http://localhost:2032/R.axd?v=262171828&r=Test001/BillList.js
+[b]LineNumber[/b]: 198
+TypeError: 对象不支持此操作
+   at Test001.BillListAction.prototype.doSendMsgClick (http://localhost:2032/R.axd?v=262171828&r=Test001/BillList.js:199:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.DynamicButtonColumn.prototype._buttonClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15025:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-09-01 09:31:46,162 [8] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/LogisticsInformation.gspx?code=536303252244&r=0.5755097712440335  http://localhost:2032/BillList.gspx
+System.Reflection.TargetInvocationException: '' : No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'. ---> System.MissingMethodException: No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'.
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize[T](String input)
+   在 Test001.LogisticsInformation.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.cs:行号 26
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-09-01 09:32:08,256 [35] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/LogisticsInformation.gspx?code=536303252244&r=0.6030320513125114  http://localhost:2032/BillList.gspx
+System.Reflection.TargetInvocationException: '' : No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'. ---> System.MissingMethodException: No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'.
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize[T](String input)
+   在 Test001.LogisticsInformation.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.cs:行号 26
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-09-01 09:33:30,646 [8] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/LogisticsInformation.gspx?code=536303152502&r=0.7092629112571922  http://localhost:2032/BillList.gspx
+System.Reflection.TargetInvocationException: '' : No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'. ---> System.MissingMethodException: No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'.
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize[T](String input)
+   在 Test001.LogisticsInformation.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.cs:行号 26
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-09-01 09:35:49,642 [12] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/LogisticsInformation.gspx?code=536303152502&r=0.12876608528726918  http://localhost:2032/BillList.gspx
+System.Reflection.TargetInvocationException: '' : No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'. ---> System.MissingMethodException: No parameterless constructor defined for type of 'Carpa.Web.Script.IHashObjectList'.
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize[T](String input)
+   在 Test001.LogisticsInformation.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.cs:行号 26
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-09-01 09:36:18,955 [13] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/LogisticsInformation.gspx?code=536303152502&r=0.014756880613132961  http://localhost:2032/BillList.gspx
+Carpa.Web.Script.ScriptTagException: <Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-09-01 09:36:18,962 [13] ERROR - /LogisticsInformation.gspx?code=536303152502&r=0.014756880613132961 出错：<Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+Carpa.Web.Script.ScriptTagException: <Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-09-01 09:36:26,410 [11] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/LogisticsInformation.gspx?code=536303152506&r=0.08419184578649519  http://localhost:2032/BillList.gspx
+Carpa.Web.Script.ScriptTagException: <Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-09-01 09:36:26,410 [11] ERROR - /LogisticsInformation.gspx?code=536303152506&r=0.08419184578649519 出错：<Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+Carpa.Web.Script.ScriptTagException: <Pager> 的 DataSource (Object[]) 没有实现 IPagerDataSource 接口 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\LogisticsInformation.gspx”，行 4，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-09-01 09:36:44,842 [6] ERROR - BROWSER IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doGridSelectedChanged 不能为空，类名 Test001.LogisticsInformationAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doGridSelectedChanged 不能为空，类名 Test001.LogisticsInformationAction
+   at Function$createDelegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $e471e71a$__init (Unknown script code:1:201)
+   at Sys$_Application$add_init (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at Sys._ScriptLoader.prototype.addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8537:17)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8595:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Anonymous function (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8964:13)
+
+
+2016-09-01 09:37:00,193 [6] ERROR - BROWSER IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doGridDbClick 不能为空，类名 Test001.LogisticsInformationAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doGridDbClick 不能为空，类名 Test001.LogisticsInformationAction
+   at Function$createDelegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $6494c239$__init (Unknown script code:1:201)
+   at Sys$_Application$add_init (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at Sys._ScriptLoader.prototype.addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8537:17)
+   at Sys$_ScriptLoader$loadScripts (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8394:9)
+   at Sys$UI$CustomForm$_doLoadScript (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7598:9)
+   at Sys$UI$CustomForm$_loadScript (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7559:13)
+
+
+2016-09-01 09:53:28,828 [126] ERROR - 执行SQL出错: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,scode,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process, 
+                                            case status when 1 then '运险保证' when 2  then '签售保证' when 3 then '售后保证' else '' end as after,status
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and date >= '2016-09-01 00:00:00' and uid = 1 order by date desc
+
+
+select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,scode,status,
+                                            case status when 0 then '待发货' 
+	                                        when 1 then '已发货' 
+	                                        when 2 then '已签收'
+	                                        when 3 then '已确认'	
+	                                        when 4 then '已核销' end as process, 
+                                            case status when 1 then '运险保证' when 2  then '签售保证' when 3 then '售后保证' else '' end as after,status
+                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill  where 1 = 1  and date >= '2016-09-01 00:00:00' and uid = 1 order by date desc
+
+
+2016-09-01 09:53:28,833 [126] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptTagException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 145
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-09-01 09:53:28,859 [126] ERROR - /BillList.gspx 出错：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel>
+Carpa.Web.Script.ScriptTagException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as se' at line 8
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 145
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-09-01 09:57:48,934 [107] ERROR - BROWSER IE_7 127.0.0.1 jn1pfnu3hrrvwrvrhzkovh45  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “tform”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+ReferenceError: “tform”未定义
+   at Anonymous function (eval code:21:13)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+

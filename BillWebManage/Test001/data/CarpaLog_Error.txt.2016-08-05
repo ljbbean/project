@@ -1,0 +1,45 @@
+
+2016-08-05 08:26:58,412 [8] ERROR - / 出错：文件不存在。
+
+2016-08-05 08:43:59,741 [8] ERROR - / 出错：文件不存在。
+
+2016-08-05 08:46:04,290 [13] ERROR - /BillList.gspx 出错：调用的目标发生了异常。
+System.Reflection.TargetInvocationException: 调用的目标发生了异常。 ---> System.TypeInitializationException: “Carpa.Web.Script.ScriptHandler”的类型初始值设定项引发异常。 ---> System.TypeInitializationException: “Carpa.Web.Script.Platform”的类型初始值设定项引发异常。 ---> System.TypeInitializationException: “Carpa.Web.Handlers.ResourceHandler”的类型初始值设定项引发异常。 ---> System.TypeInitializationException: “Carpa.Web.Handlers.ResourceManager”的类型初始值设定项引发异常。 ---> System.TypeInitializationException: “ApplicationSettings”的类型初始值设定项引发异常。 ---> System.Configuration.ConfigurationErrorsException: 元素 <pages> 只能在此节中出现一次。 (H:\Users\Administrator\Documents\visual studio 2010\Projects\Test001\Test001\web.config line 13)
+   在 System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   在 System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   在 System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   在 System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   在 System.Web.HttpContext.GetSection(String sectionName)
+   在 System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   在 System.Web.Configuration.WebConfigurationManager.GetSection(String sectionName)
+   在 Carpa.Web.Configuration.CarpaWebSection.ApplicationSettings.get_Section()
+   在 Carpa.Web.Configuration.CarpaWebSection.ApplicationSettings..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Configuration.CarpaWebSection.ApplicationSettings.get_DefaultEncodingName()
+   在 Carpa.Web.Handlers.ResourceManager..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Handlers.ResourceManager..ctor()
+   在 Carpa.Web.Handlers.ResourceHandler..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Handlers.ResourceHandler.PreloadAssembly(String assemblyName)
+   在 Carpa.Web.Script.Platform..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Platform.Init()
+   在 Carpa.Web.Script.ScriptHandler..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.ScriptHandler..ctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   在 System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   在 System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   在 System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   在 System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, StackCrawlMark& stackMark)
+   在 System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   在 System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+   在 System.Web.HttpRuntime.CreateNonPublicInstance(Type type, Object[] args)
+   在 System.Web.Configuration.HttpHandlerAction.Create()
+   在 System.Web.Configuration.HandlerFactoryCache..ctor(HttpHandlerAction mapping)
+   在 System.Web.HttpApplication.GetFactory(HttpHandlerAction mapping)
+   在 System.Web.HttpApplication.MapHttpHandler(HttpContext context, String requestType, VirtualPath path, String pathTranslated, Boolean useAppConfig)
+   在 System.Web.HttpApplication.MapHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)

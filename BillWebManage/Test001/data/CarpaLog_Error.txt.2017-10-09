@@ -1,0 +1,27 @@
+
+2017-10-09 18:02:01,290 [8] ERROR - BROWSER IE_11 127.0.0.1 ku4wvcrgaaa1yldb2df0a3dk  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 对象不支持“splite”属性或方法
+[b]FileName[/b]: http://localhost:2033/BillList.gspx
+[b]LineNumber[/b]: 58
+[b]CallStack[/b]: 
+  _1_ function (sender) {
+        var form = sender.get_form();
+        var value = form.caddress.get_value();
+        var ctel = form.ctel.get_value();
+        var cname = form.cname.get_value();
+        if (!value) {
+            return;
+        }
+        var varray = value.splite(',');
+        if (varray.length < 3) {
+            return;
+        }
+        if (!ctel || ctel.length == 0) {
+            form.ctel.set_value(varray[1]);
+        }
+        if (!cname || cname.length == 0) {
+            form.ctel.set_value(varray[0]);
+        }
+    }()
+
+

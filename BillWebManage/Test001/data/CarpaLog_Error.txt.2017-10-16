@@ -1,0 +1,100 @@
+
+2017-10-16 20:31:54,735 [32] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287816537550, sessionID = wlee4qcrxnp4fwo1rj2uazxm, pageUrl = http://localhost:2033/BillSimpleManange.gspx, referPageUrl = http://localhost:2033/BillList.gspx, message = 页面请求出错 }
+Carpa.Web.Script.ScriptTagException: 变量 “sizecolor” 不存在 在“D:\Test001\Test001\BillSimpleManange.gspx”，行 6，位置 8，标签<HiddenField> ---> Carpa.Expressions.ExpressionException: 变量 “sizecolor” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “sizecolor” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+
+2017-10-16 20:32:26,164 [34] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287819686786, sessionID = wlee4qcrxnp4fwo1rj2uazxm, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_data”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_data”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_data”属性或方法
+   at SizeChange (eval code:79:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at doChange (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:5774:13)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10678:13)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10748:9)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10668:9)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:974:3)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10773:9)
+ }
+
+2017-10-16 20:33:54,233 [34] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287828493687, sessionID = wlee4qcrxnp4fwo1rj2uazxm, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_data”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_data”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_data”属性或方法
+   at SizeChange (eval code:79:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at doChange (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:5774:13)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10678:13)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10748:9)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10668:9)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:974:3)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10773:9)
+ }
+
+2017-10-16 20:38:41,414 [49] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287857211103, sessionID = wlee4qcrxnp4fwo1rj2uazxm, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 对象不支持“get_data”属性或方法
+  [b]number[/b]: -2146827850
+  [b]ErrorMessage[/b]: 对象不支持“get_data”属性或方法
+  [b]ErrorStack[/b]: TypeError: 对象不支持“get_data”属性或方法
+   at SizeChange (eval code:79:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at doChange (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:5774:13)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10678:13)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10748:9)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10668:9)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:974:3)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10773:9)
+ }
+
+2017-10-16 20:43:33,884 [33] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287886456590, sessionID = wlee4qcrxnp4fwo1rj2uazxm, pageUrl = http://localhost:2033/BillSimpleManange.gspx, referPageUrl = http://localhost:2033/BillList.gspx, message = 页面请求出错 }
+Carpa.Web.Script.ScriptTagException: <Pager> 的 DataSource (HashObjectList) 没有实现 IPagerDataSource 接口 在“D:\Test001\Test001\BillSimpleManange.gspx”，行 6，位置 8，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+
+2017-10-16 20:47:03,647 [33] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771287907434984, sessionID = wlee4qcrxnp4fwo1rj2uazxm, message = http://localhost:2033/BillList.gspx
+   {Object}
+  [b]description[/b]: 无法获取未定义或 null 引用的属性“get_value”
+  [b]number[/b]: -2146823281
+  [b]ErrorMessage[/b]: 无法获取未定义或 null 引用的属性“get_value”
+  [b]ErrorStack[/b]: TypeError: 无法获取未定义或 null 引用的属性“get_value”
+   at SizeChange (eval code:81:9)
+   at Function$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:394:4)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:4949:5)
+   at doChange (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:5774:13)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10678:13)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:976:3)
+   at _changeSelectedIndex (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10748:9)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10668:9)
+   at Type$callBaseMethod (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/carpa.js:974:3)
+   at _doSelectMoveItem (http://localhost:2033/R.axd?v=297353190&r=Carpa.Web/js/controls.js:10773:9)
+ }

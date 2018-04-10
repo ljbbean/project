@@ -1,0 +1,69 @@
+
+2016-09-02 18:23:57,745 [11] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/SendSimpleTemplateBill.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptException: 只有翻页的ListView才支持 IPagerDataSource，请检查listView1数据源 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\SendSimpleTemplateBill.gspx”，行 4，位置 6，标签<ListView>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-09-02 18:23:57,767 [11] ERROR - /SendSimpleTemplateBill.gspx 出错：只有翻页的ListView才支持 IPagerDataSource，请检查listView1数据源 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\SendSimpleTemplateBill.gspx”，行 4，位置 6，标签<ListView>
+Carpa.Web.Script.ScriptException: 只有翻页的ListView才支持 IPagerDataSource，请检查listView1数据源 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\SendSimpleTemplateBill.gspx”，行 4，位置 6，标签<ListView>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-09-02 19:15:23,778 [35] ERROR - BROWSER IE_7 127.0.0.1 1eagd3kifoxr0d4vqr55tdoc  http://localhost:2032/SendSimpleTemplateBill.gspx
+  [b]Error[/b]: 对象不支持“trim”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js
+[b]LineNumber[/b]: 3866
+TypeError: 对象不支持“trim”属性或方法
+   at Sys.UI.Controls.Image.prototype.set_src (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3867:13)
+   at Sys.UI.Controls.DataImage.prototype._initData (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:18332:9)
+   at Sys.UI.Controls.ListView.prototype._createHTMLByData (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:17934:13)
+   at Sys.UI.Controls.ListView.prototype.refresh (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:17890:13)
+   at Sys.UI.Controls.ListView.prototype.doFormInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:17830:9)
+   at Sys.UI.CustomForm.prototype.doInitControls (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7692:17)
+   at Sys$UI$CustomForm$doInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7675:9)
+   at $b9e24085$__init (http://localhost:2032/SendSimpleTemplateBill.gspx:1:8129)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$_Application$_doInitialize (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9388:13)
+
+
+2016-09-02 19:22:47,105 [68] ERROR - BROWSER IE_7 127.0.0.1 1eagd3kifoxr0d4vqr55tdoc  http://localhost:2032/SendSimpleTemplateBill.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 发货简版 没有WebMethod服务
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 发货简版 没有WebMethod服务
+   at Sys.UI.CustomForm.prototype.get_service (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7657:13)
+   at Test001.SendSimpleTemplateBillAction.prototype.doSure (http://localhost:2032/R.axd?v=262292942&r=Test001/SendSimpleTemplateBill.js:22:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.ListView.prototype.doControlEvents (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:17861:9)
+   at Sys.UI.Controls.DataImage.prototype.doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:18338:9)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3612:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3574:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-09-02 19:24:11,599 [41] ERROR - BROWSER IE_7 127.0.0.1 1eagd3kifoxr0d4vqr55tdoc  http://localhost:2032/SendSimpleTemplateBill.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 发货简版 没有WebMethod服务
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 发货简版 没有WebMethod服务
+   at Sys.UI.CustomForm.prototype.get_service (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7657:13)
+   at Test001.SendSimpleTemplateBillAction.prototype.doSure (http://localhost:2032/R.axd?v=262292942&r=Test001/SendSimpleTemplateBill.js:22:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.ListView.prototype.doControlEvents (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:17861:9)
+   at Sys.UI.Controls.DataImage.prototype.doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:18338:9)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3612:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3574:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+

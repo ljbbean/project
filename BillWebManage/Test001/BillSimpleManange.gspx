@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="逐条录入" ActionType="Test001.BillSimpleManangeAction, BillSimpleManange.js" DataSource="${bill}">
+  <VPanel>
+    <HPanel>
+      <HiddenField DataField="dobtotal"/>
+      <HiddenField DataField="sizecolor"/>
+      <DateEdit Label="订单日期" DataField="date" />
+      <TextEdit Label="订单编号" DataField="code"/>
+      <TextEdit Label="客户淘宝号" DataField="taobaocode" />
+      <TextEdit Label="客户姓名" DataField="cname"/>
+    </HPanel>
+    <HPanel>
+      <TextEdit Label="联系电话" DataField="ctel"/>
+      <TextEdit Label="地区" DataField="carea"/>
+      <HPanel Label="备注" ColSpan="2">
+        <TextEdit  DataField="cremark" Width="310"/>
+      </HPanel>
+    </HPanel>
+    <HPanel>
+      <DropDownEdit Label="订单尺寸" DropDownStyle="DropDownEdit" DataField="size"  DataSource="${size}" OnChange="SizeChange"/>
+      <DropDownEdit Label="花色" DataField="color" DropDownStyle="DropDownEdit"    DataSource="${color}" OnChange="ColorChange"/>
+      <NumberEdit MinValue="1" Label="数量" DataField="amount" />
+    </HPanel>
+    <HPanel>
+      <NumberEdit Label="原价" DataField="total" ShowCalculator="true" Value="0" OnChange="doTotalPriceChange"/>
+      <NumberEdit Label="优惠"  DataField="preferential" ShowCalculator="true" Value="0" OnChange="doTotalPriceChange"/>
+      <NumberEdit Label="提成"  DataField="btotal"  ShowCalculator="true" Value="0" OnChange="doTotalChange"/>
+      <NumberEdit Label="回款"  DataField="ltotal"  ShowCalculator="true" Value="0" OnChange="doTotalChange" Enabled="false"/>
+    </HPanel>
+    <HPanel>
+      <DropDownEdit Label="派送方式" DataField="csendway" DropDownStyle="DropDownEdit"  SelectedIndex="0">
+        <ListItem Text="送货到小区" Value="送货到小区"/>
+        <ListItem Text="快递" Value="快递" />
+        <ListItem Text="送货+安装" Value="送货+安装" />
+        <ListItem Text="送货上楼" Value="送货上楼" />
+      </DropDownEdit>
+      <HPanel Label="联系地址" ColSpan="3">
+        <TextEdit  DataField="caddress" Width="515"  OnBlur="doAddressBlur"/>
+      </HPanel>
+    </HPanel>
+    <HPanel HAlign="Right">
+      <HPanel ColSpan="4" HAlign="Right">
+        <Label Label="总价：" Visible="false" Text="0" TextColor="red"/>
+        <Button Text="保存" OnClick="doSave" Visible="${enable}"/>
+        <CancelButton/>
+      </HPanel>
+    </HPanel>
+  </VPanel>
+</Page>

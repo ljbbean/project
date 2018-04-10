@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="回款管理" ActionType="Test001.FundsManager.BackSectionManagerAction, FundsManager/BackSectionManager.js">
+  <VPanel>
+    <MonthEdit Label="月份" DataField="month" />
+    <NumberEdit Label="金额" DataField="total" />
+    <MemoEdit Label="备注" DataField="remark" />
+    <HPanel>
+      <Button Text="确认" OnClick="doSure" />
+      <CancelButton />
+    </HPanel>
+  </VPanel>
+</Page>

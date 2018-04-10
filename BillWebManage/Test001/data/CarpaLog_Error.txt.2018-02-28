@@ -1,0 +1,91 @@
+
+2018-02-28 08:17:02,917 [13] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483296210854, sessionID = svaryk2vxqo2cptxnoqe4t3w, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 180
+
+2018-02-28 08:17:22,357 [13] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483298213847, sessionID = mo5dup0fkxxl0hu1y0pvnl3d, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 180
+
+2018-02-28 09:00:08,082 [123] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483554807137, sessionID = o0del1hbeplgrpltmrnklqn3, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot read property 'dataBind' of undefined
+  [b]ErrorStack[/b]: TypeError: Cannot read property 'dataBind' of undefined
+    at Test001/Login.js:32:22
+    at Test001.Login.onComplete (Carpa.Web/js/carpa.js:11496:7)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys$Net$WebRequest$_doCompleted [as _doCompleted] (Carpa.Web/js/carpa.js:10012:4)
+    at Sys$Net$WebRequest$completed [as completed] (Carpa.Web/js/carpa.js:9993:10)
+    at XMLHttpRequest.this$_onReadyStateChange (Carpa.Web/js/carpa.js:10519:22)
+ }
+
+2018-02-28 09:00:18,427 [55] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483555842035, sessionID = uwoeijcv3chub0wslqqaqjf5, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot use 'in' operator to search for 'null' in [
+  [b]ErrorStack[/b]: TypeError: Cannot use 'in' operator to search for 'null' in [
+    at Sys.UI.Controls.NumberColumn.get_preFlagData (Carpa.Web/js/grid.js:12818:20)
+    at Sys.UI.Controls.NumberColumn._getFlag (Carpa.Web/js/grid.js:12985:26)
+    at Sys.UI.Controls.NumberColumn.getDisplayText (Carpa.Web/js/grid.js:12965:26)
+    at Sys.UI.Controls.NumberColumn._doGetCellText (Carpa.Web/js/grid.js:12352:25)
+    at Sys.UI.Controls.NumberColumn._getCellHTML (Carpa.Web/js/grid.js:12372:29)
+    at Sys.UI.Controls.NumberColumn._initCellHTML (Carpa.Web/js/grid.js:12366:31)
+    at Sys.UI.Controls.Grid._addRowFast (Carpa.Web/js/grid.js:2705:30)
+    at Sys.UI.Controls.Grid._initRealDataRows (Carpa.Web/js/grid.js:2623:18)
+    at Sys.UI.Controls.Grid._initDataRows (Carpa.Web/js/grid.js:2591:14)
+    at Sys.UI.Controls.Grid.dataChanged (Carpa.Web/js/grid.js:6698:14)
+ }
+
+2018-02-28 09:10:53,013 [86] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483619298797, sessionID = afi2tdy0ablrvbbz0zftgr1o, pageUrl = http://localhost:52715/Login.gspx, referPageUrl = , message = 页面请求出错 }
+Carpa.Web.Script.ScriptException: 写属性 style="width:966px;height:492px;" 时标签已完成 在“D:\Test001\Test001\Login.gspx”，行 11，位置 6，标签<Grid> ---> System.InvalidOperationException: 写属性 style="width:966px;height:492px;" 时标签已完成
+   在 Carpa.Web.Script.HtmlTextWriter.WriteAttribute(String name, String value)
+   在 Carpa.Web.Script.HtmlTextWriter.WriteStyleAttribute(String value)
+   在 Carpa.Web.Script.UI.WebControl.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+
+2018-02-28 09:23:37,620 [59] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483695759312, sessionID = 3woc1skhbvsocnegbwkg5hcv, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: rowData.add is not a function
+  [b]ErrorStack[/b]: TypeError: rowData.add is not a function
+    at Test001.LoginAction.doGridRowSelected (Test001/Login.js:49:21)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.Grid.doSelectionChanged (Carpa.Web/js/grid.js:3829:13)
+    at Sys.UI.Controls.Grid._doSelectedRow (Carpa.Web/js/grid.js:3914:14)
+    at Sys.UI.Controls.Grid.Sys$UI$Controls$Grid$_setSelectedRow [as _setSelectedRow] (Carpa.Web/js/grid.js:3893:14)
+    at Sys.UI.Controls.Grid._showFirstRowEditor (Carpa.Web/js/grid.js:3867:14)
+    at Sys.UI.Controls.Grid._afterInitDataRows (Carpa.Web/js/grid.js:2661:18)
+    at Sys.UI.Controls.Grid._initDataRows (Carpa.Web/js/grid.js:2597:14)
+    at Sys.UI.Controls.Grid.dataChanged (Carpa.Web/js/grid.js:6698:14)
+ }
+
+2018-02-28 09:54:09,873 [18] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324483878936848, sessionID = ed4ddswjma3h0vijyvrbp3nv, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidCastException: 无法将类型为“System.Collections.Generic.List`1[System.Object]”的对象强制转换为类型“Carpa.Web.Script.IHashObjectList”。
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 172
+
+2018-02-28 12:33:38,201 [40] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324484835810922, sessionID = tetpppbwkc2rmbbmytaqgy13, pageUrl = http://localhost:52715/Login.gspx, referPageUrl = , message = 页面请求出错 }
+Carpa.Web.Script.ScriptException: “Grid.ShowFilter”属性不存在。 在“D:\Test001\Test001\Login.gspx”，行 11，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)

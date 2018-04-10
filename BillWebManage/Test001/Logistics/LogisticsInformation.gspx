@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="物流信息" ActionType="Test001.Logistics.LogisticsInformationAction, Logistics/LogisticsInformation.js">
+  <VPanel>
+    <Grid ID="grid" DataSource="${grid}" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" ShowFooter="true" AutoHeight="true" AutoWidth="true">
+      <TextColumn Caption="登记时间" DataField="time" Width="200" />
+      <TextColumn Caption="登记内容" Width="600" DataField="context" />
+    </Grid>
+    <TextEdit Text="${tt}" />
+    <HPanel HAlign="Right">
+      <Button Text="确认已签收" ID="sure" Visible="false" OnClick="doSure" />
+      <CancelButton />
+    </HPanel>
+  </VPanel>
+</Page>

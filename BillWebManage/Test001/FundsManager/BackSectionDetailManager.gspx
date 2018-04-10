@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="回款管理" ActionType="Test001.FundsManager.BackSectionDetailManagerAction, FundsManager/BackSectionDetailManager.js">
+  <VPanel>
+    <MonthEdit Label="月份" DataField="month" OnChange="doMonthChange"/>
+    <HPanel Label="总额:">
+      <HPanel >
+        <Label ID="all" TextColor="red" Text="0"/>
+        <Label ID="pay" Label="已支付:" TextColor="red" Text="0"/>
+      </HPanel>
+    </HPanel>
+    <NumberEdit Label="金额" DataField="total" />
+    <MemoEdit Label="备注" DataField="remark" />
+    <HPanel>
+      <Button Text="确认" OnClick="doSure" />
+      <CancelButton />
+    </HPanel>
+  </VPanel>
+</Page>

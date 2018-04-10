@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="货单管理（未配送）" ActionType="Test001.StockBillAction, StockBill.js">
+  <VPanel>
+    <HPanel>
+      <DropDownEdit Label="货单类型" DataField="kind" OnChange="doSelected" SelectedIndex="0">
+        <ListItem Text="全部" Value="-1"/>
+        <ListItem Text="待备货" Value="0"/>
+        <ListItem Text="已备货" Value="1"/>
+        <ListItem Text="待送货" Value="2"/>
+      </DropDownEdit>
+    </HPanel>
+    <Grid ID="grid" DataSource="${list}" DataField="grid" AllowSort="true" ReadOnly="false" AutoDefaultRowCount="true" ModifyOnly="true" Width="1000" Height="350" Pager="Bottom" OnAfterDataBind="doGridLoaded">
+      <TextColumn Caption="尺寸" DataField="size" Width="120" ReadOnly="true"/>
+      <NumberColumn Caption="数量" DataField="amount" Width="60" ReadOnly="true"/>
+      <TextColumn Caption="颜色" DataField="color" Width="100" ReadOnly="true"/>
+      <TextColumn Caption="联系电话" DataField="ctel" Visible="false" ReadOnly="true"/>
+      <TextColumn Caption="配送方式" DataField="sendway" Width="100" ReadOnly="true"/>
+      <TextColumn Caption="地址" DataField="address" Width="180" ReadOnly="true"/>
+      <TextColumn Caption="备注" DataField="remark" Width="180" ReadOnly="true"/>
+      <DropDownColumn Caption="货物状态" DataField="goodsstatus" ReadOnly="true">
+        <ListItem Text="待备货" Value="0"/>
+        <ListItem Text="已备货" Value="1"/>
+      </DropDownColumn>
+      <DynamicButtonColumn Caption="备货" DataField="process" HeaderAlign="Center" OnButtonClick="doSendClick" Visible="false" ReadOnly="true"/>
+      <RowDeleteColumn />
+    </Grid>
+    <HPanel HAlign="Right">
+      <PrintButton ID="btnPrintOk" Text="直接打印">
+        <ReportAction ReportName="货单管理" Grid="grid" CreateReport="true">
+        </ReportAction>
+      </PrintButton>
+      <CancelButton/>
+    </HPanel>
+  </VPanel>
+</Page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="回款列表" ActionType="Test001.FundsManager.BackSectionDetailListAction, FundsManager/BackSectionDetailList.js">
+  <VPanel>
+    <Grid ID="grid" Pager="Bottom" DataSource="${grid}" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" AutoWidth="true" AutoHeight="true" ShowFooter="true">
+      <TextColumn Caption="回款月份" DataField="month" />
+      <NumberColumn Caption="回款金额" DataField="total" />
+      <DateTimeColumn Caption="回款录入时间" DataField="datetime" Width="130" />
+      <TextColumn Caption="备注" DataField="remark" />
+    </Grid>
+    <HPanel HAlign="Right" Visible="${show}">
+      <Button Text="添加回款" OnClick="doBackSection" />
+      <CancelButton />
+    </HPanel>
+  </VPanel>
+</Page>

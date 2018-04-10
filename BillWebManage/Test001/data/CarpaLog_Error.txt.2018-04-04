@@ -1,0 +1,2500 @@
+
+2018-04-04 09:01:48,325 [9] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197125440426, sessionID = 0hlh3qxhqmaic3dmj5ksdkl0, pageUrl = http://localhost:52715/DataCatch.gspx, referPageUrl = http://localhost:52715/Login.gspx, message = 页面请求出错 }
+Carpa.Web.Script.MissingAttributeException: 这个标签必须有“DataField 或 Caption 或 Name”属性 在“D:\Test001\Test001\DataCatch.gspx”，行 7，位置 6，标签<Grid>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+
+2018-04-04 09:02:10,470 [9] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197127657253, sessionID = 3vp4cyrdkuzyp5pfr2vcaiyy, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot read property 'get_value' of undefined
+  [b]ErrorStack[/b]: TypeError: Cannot read property 'get_value' of undefined
+    at Test001.DataCatchAction.doSave (Test001/DataCatch.js:20:48)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$doClick (Carpa.Web/js/controls.js:3955:21)
+    at Function.Type$callBaseMethod [as callBaseMethod] (Carpa.Web/js/carpa.js:976:21)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$CustomButton$doClick [as doClick] (Carpa.Web/js/controls.js:4746:38)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_checkDoClick [as _checkDoClick] (Carpa.Web/js/controls.js:3933:14)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_onClick [as _onClick] (Carpa.Web/js/controls.js:3895:18)
+    at HTMLButtonElement.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at HTMLButtonElement.Sys$UI$DomEvent$browserHandler (Carpa.Web/js/carpa.js:6115:19)
+ }
+
+2018-04-04 09:02:38,716 [10] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197130483801, sessionID = dw44bvqtxjpdaqnyqenpgldz, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot read property 'get_text' of undefined
+  [b]ErrorStack[/b]: TypeError: Cannot read property 'get_text' of undefined
+    at Test001.DataCatchAction.doSave (Test001/DataCatch.js:20:48)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$doClick (Carpa.Web/js/controls.js:3955:21)
+    at Function.Type$callBaseMethod [as callBaseMethod] (Carpa.Web/js/carpa.js:976:21)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$CustomButton$doClick [as doClick] (Carpa.Web/js/controls.js:4746:38)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_checkDoClick [as _checkDoClick] (Carpa.Web/js/controls.js:3933:14)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_onClick [as _onClick] (Carpa.Web/js/controls.js:3895:18)
+    at HTMLButtonElement.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at HTMLButtonElement.Sys$UI$DomEvent$browserHandler (Carpa.Web/js/carpa.js:6115:19)
+ }
+
+2018-04-04 09:02:52,728 [10] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197131883544, sessionID = xlsmuhm5muhvi21kn3y3czz5, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.IO.FileNotFoundException: 未能找到文件“C:\Program Files (x86)\IIS Express\ListData.txt”。
+文件名:“C:\Program Files (x86)\IIS Express\ListData.txt”
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.StreamReader..ctor(String path, Encoding encoding)
+   在 Test001.DataCatch.GetData(String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 29
+
+2018-04-04 10:24:07,772 [73] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197619385918, sessionID = 20dqarx03c4vqpt3qasnouqu, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: Invalid web service call,'GetData' missing value for parameter: 'cookie'.
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethod(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethodFromRawParams(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-04-04 10:24:27,317 [97] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197621343879, sessionID = k1ysndurqp5i1lvah2trphaz, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidOperationException: Invalid web service call,'GetData' missing value for parameter: 'cookie'.
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethod(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethodFromRawParams(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2018-04-04 10:41:20,454 [59] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197722616339, sessionID = ukruhfr1agy1kabdepsnxkx0, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'tbid' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:47:04,048 [67] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197757011863, sessionID = rwss45divdsiabgs2rhmdxgq, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:47:56,194 [24] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197762228573, sessionID = szccx5cr1k2f225sa2dw1z44, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:48:36,531 [24] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197764638443, sessionID = 3rcsjyjkioih3s4vmirwa11h, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:50:43,463 [70] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197778941634, sessionID = ntcevcbltynndrxbjitstoy0, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:50:50,921 [70] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197779699692, sessionID = hvgkmow4f5x4qd5kpqtu1e21, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:51:47,910 [24] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197781723565, sessionID = xkzmlspsxd5cbjkhisk531bp, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:52:08,428 [64] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197787438830, sessionID = uyqxmgum0sdxmgovzbc4v54d, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 64
+
+2018-04-04 10:53:08,395 [24] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197793429346, sessionID = vxglyvnznvwre20bqlei4cbx, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 65
+
+2018-04-04 10:53:44,195 [24] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197797029595, sessionID = hxaxpol0cuuoep3unfbrvre4, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE6\x9F\xA5\xE8\xAF\xA2...' for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 65
+
+2018-04-04 10:54:55,249 [59] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197804132521, sessionID = ju3o0ltdiid12duem1njh0ng, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): Data too long for column 'content' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 65
+
+2018-04-04 11:15:54,041 [30] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188197927744017, sessionID = 23qzwz0qztjajfjeuysbazo1, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: 指定的值含有无效的控制字符。
+参数名: value
+   在 System.Net.WebHeaderCollection.CheckBadChars(String name, Boolean isHeaderValue)
+   在 System.Net.WebHeaderCollection.Add(String name, String value)
+   在 TaoBaoRequest.BillManage.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 90
+   在 TaoBaoRequest.BillManage.GetBillList[T](DateTime startDate, String cookieStr) 位置 D:\Test001\TaoBaoRequest\BillManage.cs:行号 64
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 24
+
+2018-04-04 13:57:28,879 [205] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188198899328742, sessionID = gd55vrae35obdsqjgjspjqvz, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'update tbill set status='浜ゆ槗鎴愬姛' where tbid=3442188197937857374 ,update tb' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.ChangeData() 位置 D:\Test001\Test001\DataCatch.cs:行号 38
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 45
+
+2018-04-04 14:02:22,882 [205] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188198928822755, sessionID = i2t00pvo3jxznxxfdzm3wknc, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on duplicate key update dr=values(status)' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.ChangeData() 位置 D:\Test001\Test001\DataCatch.cs:行号 41
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 48
+
+2018-04-04 14:03:27,225 [204] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188198932005937, sessionID = 2ai01rw0ivrst03yu320zvru, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+MySql.Data.MySqlClient.MySqlException (0x80004005): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'on duplicate key update dr=values(status)' at line 1
+   在 MySql.Data.MySqlClient.MySqlStream.OpenPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.ReadResult(UInt64& affectedRows, Int64& lastInsertId)
+   在 MySql.Data.MySqlClient.MySqlDataReader.GetResultSet()
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 MySql.Data.MySqlClient.MySqlScript.Execute()
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql, SqlStatementExecutedEventHandler onStatementExecuted)
+   在 Carpa.Web.Script.DbHelper.BatchExecute(String sql)
+   在 Test001.DataCatch.ChangeData() 位置 D:\Test001\Test001\DataCatch.cs:行号 41
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 48
+
+2018-04-04 14:05:50,333 [208] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188198949621891, sessionID = r400o2zvksc455ylrleh2own, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.DataCatch.ChangeData() 位置 D:\Test001\Test001\DataCatch.cs:行号 30
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 48
+
+2018-04-04 14:06:55,037 [203] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188198952432719, sessionID = chi34c4yyg4cqoiqiek4m5dn, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.DataCatch.ChangeData() 位置 D:\Test001\Test001\DataCatch.cs:行号 30
+   在 Test001.DataCatch.GetData(DateTime date, String cookie) 位置 D:\Test001\Test001\DataCatch.cs:行号 48
+
+2018-04-04 14:44:17,206 [193] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188199180291023, sessionID = ci4gzwg2siwu0ojx03wssc4u, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetDetailsData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidCastException: 无法将类型为“System.Collections.ArrayList”的对象强制转换为类型“System.Object[]”。
+   在 Test001.DataCatch.GetDetailsData(String cookies) 位置 D:\Test001\Test001\DataCatch.cs:行号 79
+
+2018-04-04 14:46:46,025 [156] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 3442188199182224747, sessionID = 51ox3bteywufzh1v4kvlmyxs, pageUrl = http://localhost:52715/Test001/Test001.DataCatch.ajax/GetDetailsData, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidCastException: 无法将类型为“System.Collections.ArrayList”的对象强制转换为类型“System.Object[]”。
+   在 Test001.DataCatch.GetDetailsData(String cookies) 位置 D:\Test001\Test001\DataCatch.cs:行号 79
+
+2018-04-04 14:49:33,095 [163] ERROR - 执行SQL出错: Data too long for column 'content' at row 1
+insert into tbilldetail (tbdid,tbid,content) values(@tbdid,@tbid,@content)
+
+  tbdid=3442188199211769001
+  tbid=3442188197937857314
+  content='
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135014067.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCtvdcRaVAesHwAAAABpH6qASvICIA==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u5546\u5BB6\u5DF2\u53D1\u8D27\uFF0C\u7B49\u5F85\u4E70\u5BB6\u786E\u8BA4\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"108.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"131267164114217032\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040321001001840583526172\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-03 20:45:08\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-04 12:27:45\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-03 20:45:18\"}}]}],\"type\":\"group\"},\"id\":\"131267164114217032\",\"subOrders\":[{\"priceInfo\":\"108.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":131267164114217032,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D(50*150\u4E24\u7528)\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=131267164114217032\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB26XJNopXXXXbqXXXXXXXXXXXX_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=131267164114217032\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"108.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"\u897F\u4F50\",\"mail\":\"m***\",\"city\":\"\u56DB\u5DDD \u6210\u90FD\",\"name\":\"\u9EC4\u6B23\u777F\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=131267164114217032\",\"phoneNum\":\"13882****53\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=%CE%F7%D7%F4\",\"id\":213270,\"notifyBuyerConfirmUrl\":\"\/\/trade.taobao.com\/trade\/sendAlertMail.htm?type=doNotifyBuyerConfirm&biz_order_id=131267164114217032&is_seller=false\",\"guestUser\":false,\"alipayAccount\":\"c***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":4},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824559286\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824559286\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6(\u897F\u4F50)\u8FD8\u6709\"},{\"type\":\"countdown\",\"value\":{\"hour\":21,\"countDown\":855505,\"day\":9,\"minute\":38,\"second\":25}},{\"type\":\"text\",\"value\":\"\u6765\u5B8C\u6210\u672C\u6B21\u4EA4\u6613\u7684\\\"\u786E\u8BA4\u5230\u8D27\\\"\u3002\u5982\u679C\u671F\u95F4\u4E70\u5BB6\uFF08\u897F\u4F50\uFF09\u6CA1\u6709\\\"\u786E\u8BA4\u5230\u8D27\\\"\uFF0C\u4E5F\u6CA1\u6709\\\"\u7533\u8BF7\u9000\u6B3E\\\"\uFF0C\u672C\u4EA4\u6613\u5C06\u81EA\u52A8\u7ED3\u675F\uFF0C\u652F\u4ED8\u5B9D\u5C06\u628A\u8D27\u6B3E\u652F\u4ED8\u7ED9\u60A8\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u4E70\u5BB6\u8868\u793A\u672A\u6536\u5230\u8D27\u6216\u8005\u6536\u5230\u7684\u8D27\u7269\u6709\u95EE\u9898\uFF0C\u8BF7\u53CA\u65F6\u8054\u7CFB\u4E70\u5BB6\u79EF\u6781\u5904\u7406\uFF0C\u53CB\u597D\u534F\u5546\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"dataUrl\":\"\/\/trade.taobao.com\/trade\/delayTimeOutDate.htm?bizOrderId=131267164114217032&bizType=200&hasRefund=200\",\"data\":{\"width\":600,\"crossOrigin\":false,\"height\":220},\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u5EF6\u957F\u6536\u8D27\u65F6\u95F4\",\"type\":\"operation\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=131267164114217032&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D131267164114217032\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=131267164114217032\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9EC4\u6B23\u777F\uFF0C86-13882059553\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u82B3\u8349\u8857\u9053 \u9AD8\u65B0\u533A\u7D2B\u8346\u5317\u8DEF16\u53F7 \u6210\u90FD\u5E02\u5EFA\u8BBE\u5DE5\u7A0B\u8D28\u91CF\u76D1\u7763\u7AD9\u8F68\u9053\u5206\u7AD9 \uFF0C610000\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=131267164114217032&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+'
+
+insert into tbilldetail (tbdid,tbid,content) values(3442188199211769001,3442188197937857314,'
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135014067.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCtvdcRaVAesHwAAAABpH6qASvICIA==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u5546\u5BB6\u5DF2\u53D1\u8D27\uFF0C\u7B49\u5F85\u4E70\u5BB6\u786E\u8BA4\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"108.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"131267164114217032\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040321001001840583526172\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-03 20:45:08\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-04 12:27:45\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-03 20:45:18\"}}]}],\"type\":\"group\"},\"id\":\"131267164114217032\",\"subOrders\":[{\"priceInfo\":\"108.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":131267164114217032,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D(50*150\u4E24\u7528)\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=131267164114217032\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB26XJNopXXXXbqXXXXXXXXXXXX_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=131267164114217032\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"108.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"\u897F\u4F50\",\"mail\":\"m***\",\"city\":\"\u56DB\u5DDD \u6210\u90FD\",\"name\":\"\u9EC4\u6B23\u777F\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=131267164114217032\",\"phoneNum\":\"13882****53\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=%CE%F7%D7%F4\",\"id\":213270,\"notifyBuyerConfirmUrl\":\"\/\/trade.taobao.com\/trade\/sendAlertMail.htm?type=doNotifyBuyerConfirm&biz_order_id=131267164114217032&is_seller=false\",\"guestUser\":false,\"alipayAccount\":\"c***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":4},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824559286\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824559286\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6(\u897F\u4F50)\u8FD8\u6709\"},{\"type\":\"countdown\",\"value\":{\"hour\":21,\"countDown\":855505,\"day\":9,\"minute\":38,\"second\":25}},{\"type\":\"text\",\"value\":\"\u6765\u5B8C\u6210\u672C\u6B21\u4EA4\u6613\u7684\\\"\u786E\u8BA4\u5230\u8D27\\\"\u3002\u5982\u679C\u671F\u95F4\u4E70\u5BB6\uFF08\u897F\u4F50\uFF09\u6CA1\u6709\\\"\u786E\u8BA4\u5230\u8D27\\\"\uFF0C\u4E5F\u6CA1\u6709\\\"\u7533\u8BF7\u9000\u6B3E\\\"\uFF0C\u672C\u4EA4\u6613\u5C06\u81EA\u52A8\u7ED3\u675F\uFF0C\u652F\u4ED8\u5B9D\u5C06\u628A\u8D27\u6B3E\u652F\u4ED8\u7ED9\u60A8\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u4E70\u5BB6\u8868\u793A\u672A\u6536\u5230\u8D27\u6216\u8005\u6536\u5230\u7684\u8D27\u7269\u6709\u95EE\u9898\uFF0C\u8BF7\u53CA\u65F6\u8054\u7CFB\u4E70\u5BB6\u79EF\u6781\u5904\u7406\uFF0C\u53CB\u597D\u534F\u5546\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"dataUrl\":\"\/\/trade.taobao.com\/trade\/delayTimeOutDate.htm?bizOrderId=131267164114217032&bizType=200&hasRefund=200\",\"data\":{\"width\":600,\"crossOrigin\":false,\"height\":220},\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u5EF6\u957F\u6536\u8D27\u65F6\u95F4\",\"type\":\"operation\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=131267164114217032&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D131267164114217032\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=131267164114217032\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9EC4\u6B23\u777F\uFF0C86-13882059553\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u82B3\u8349\u8857\u9053 \u9AD8\u65B0\u533A\u7D2B\u8346\u5317\u8DEF16\u53F7 \u6210\u90FD\u5E02\u5EFA\u8BBE\u5DE5\u7A0B\u8D28\u91CF\u76D1\u7763\u7AD9\u8F68\u9053\u5206\u7AD9 \uFF0C610000\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=131267164114217032&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+')
+
+
+2018-04-04 14:50:05,925 [163] ERROR - 执行SQL出错: Data too long for column 'content' at row 1
+insert into tbilldetail (tbdid,tbid,content) values(@tbdid,@tbid,@content)
+
+  tbdid=3442188199215202055
+  tbid=3442188197937857374
+  content='
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011179071225.center.eu13''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuAdcRahpC+OwAAAADA7MltMe9pWw==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4EA4\u6613\u6210\u529F\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"70.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"144095935493016766\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040321001001830579642847\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-03 08:44:44\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-03 15:26:10\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-03 08:44:50\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u6210\u4EA4\u65F6\u95F4:\",\"value\":\"2018-04-04 02:16:29\"}}]}],\"type\":\"group\"},\"id\":\"144095935493016766\",\"subOrders\":[{\"priceInfo\":\"70.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5DF2\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":144095935493016766,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D\uFF0840*160\uFF09\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=144095935493016766\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB2sTpkeUvMR1JjSZPcXXc1tFXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=144095935493016766\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"70.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"hydeletter\",\"mail\":\"h***\",\"city\":\" \",\"name\":\"\u6768\u5A9B\u5A9B\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=144095935493016766\",\"phoneNum\":\"15283****57\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=hydeletter\",\"id\":456016667,\"guestUser\":false,\"alipayAccount\":\"h***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":5},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824576725\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824576725\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u6210\u529F\uFF0C\u8BF7\u7ED9\u4E70\u5BB6\u8BC4\u4EF7\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u5DF2\u6210\u529F\uFF0C\u5982\u679C\u4E70\u5BB6\u63D0\u51FA\u552E\u540E\u8981\u6C42\uFF0C\u8BF7\u79EF\u6781\u4E0E\u4E70\u5BB6\u534F\u5546\uFF0C\u505A\u597D\u552E\u540E\u670D\u52A1\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u8BC4\u4EF7\",\"type\":\"operation\",\"url\":\"\/\/rate.taobao.com\/remarkBuyer.jhtml?tradeID=144095935493016766&returnURL=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2Ftrade_item_detail.htm%3FbizOrderId%3D144095935493016766\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=144095935493016766&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D144095935493016766\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=144095935493016766\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u6768\u5A9B\u5A9B\uFF0C15756331371\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u82B3\u8349\u8857\u9053 \u7D2B\u745E\u5927\u9053166\u53F7\u9644\u4E00\u53F7  \u683C\u6851\u82B1\u5F00 \uFF0C610041\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=144095935493016766&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+'
+
+insert into tbilldetail (tbdid,tbid,content) values(3442188199215202055,3442188197937857374,'
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011179071225.center.eu13''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuAdcRahpC+OwAAAADA7MltMe9pWw==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4EA4\u6613\u6210\u529F\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"70.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"144095935493016766\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040321001001830579642847\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-03 08:44:44\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-03 15:26:10\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-03 08:44:50\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u6210\u4EA4\u65F6\u95F4:\",\"value\":\"2018-04-04 02:16:29\"}}]}],\"type\":\"group\"},\"id\":\"144095935493016766\",\"subOrders\":[{\"priceInfo\":\"70.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5DF2\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":144095935493016766,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D\uFF0840*160\uFF09\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=144095935493016766\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB2sTpkeUvMR1JjSZPcXXc1tFXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=144095935493016766\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"70.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"hydeletter\",\"mail\":\"h***\",\"city\":\" \",\"name\":\"\u6768\u5A9B\u5A9B\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=144095935493016766\",\"phoneNum\":\"15283****57\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=hydeletter\",\"id\":456016667,\"guestUser\":false,\"alipayAccount\":\"h***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":5},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824576725\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824576725\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u6210\u529F\uFF0C\u8BF7\u7ED9\u4E70\u5BB6\u8BC4\u4EF7\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u5DF2\u6210\u529F\uFF0C\u5982\u679C\u4E70\u5BB6\u63D0\u51FA\u552E\u540E\u8981\u6C42\uFF0C\u8BF7\u79EF\u6781\u4E0E\u4E70\u5BB6\u534F\u5546\uFF0C\u505A\u597D\u552E\u540E\u670D\u52A1\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u8BC4\u4EF7\",\"type\":\"operation\",\"url\":\"\/\/rate.taobao.com\/remarkBuyer.jhtml?tradeID=144095935493016766&returnURL=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2Ftrade_item_detail.htm%3FbizOrderId%3D144095935493016766\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=144095935493016766&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D144095935493016766\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=144095935493016766\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u6768\u5A9B\u5A9B\uFF0C15756331371\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u82B3\u8349\u8857\u9053 \u7D2B\u745E\u5927\u9053166\u53F7\u9644\u4E00\u53F7  \u683C\u6851\u82B1\u5F00 \uFF0C610041\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=144095935493016766&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+')
+
+
+2018-04-04 14:50:08,367 [163] ERROR - 执行SQL出错: Data too long for column 'content' at row 1
+insert into tbilldetail (tbdid,tbid,content) values(@tbdid,@tbid,@content)
+
+  tbdid=3442188199215447878
+  tbid=3442188197937857385
+  content='
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135044055.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuWdcRaxHGMAgAAAACEWdGCQTb4Ew==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4E70\u5BB6\u5DF2\u4ED8\u6B3E\uFF0C\u7B49\u5F85\u5546\u5BB6\u53D1\u8D27\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"156.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:4.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"144065804197088275\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040221001001870575790981\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-02 22:38:30\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-02 22:39:53\"}}]}],\"type\":\"group\"},\"id\":\"144065804197088275\",\"subOrders\":[{\"priceInfo\":\"130.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u53D1\u8D27\"}]}],\"id\":144065804197088275,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u7D20\u767D(50*160)\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"data\":{\"width\":820,\"crossOrigin\":false,\"height\":370},\"action\":\"a8\",\"style\":\"t16\",\"text\":\"\u4FEE\u6539\u8BA2\u5355\u5C5E\u6027\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/modify_sku.htm?bizOrderId=144065804197088275\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=144065804197088275\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i3\/TB18VrgJFXXXXcqXFXXYXGcGpXX_M2.SS2_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=144065804197088275\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5356\u5BB6\u4F18\u60E0 -26.00 \u5143\"}]}]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"160.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"\u90D1\u6885\u68855200\",\"mail\":\"***\",\"city\":\" \",\"name\":\"\u90D1\u6885\u6885\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=144065804197088275\",\"phoneNum\":\"15249****93\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=%D6%A3%C3%B7%C3%B75200\",\"id\":751087582,\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"buyMessage\":\"\u9ED1\u8272\",\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":3},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824598349\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824598349\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u8BF7\u60A8\u5C3D\u5FEB\u53D1\u8D27\uFF0C\u5982\u679C\u7F3A\u8D27\uFF0C\u53EF\u8054\u7CFB\u4E70\u5BB6\u534F\u5546\u9000\u6B3E\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u5DF2\u4ED8\u6B3E\uFF0C\u8BF7\u5C3D\u5FEB\u53D1\u8D27\uFF0C\u5426\u5219\u4E70\u5BB6\u6709\u6743\u7533\u8BF7\u9000\u6B3E\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u65E0\u6CD5\u53D1\u8D27\uFF0C\u8BF7\u53CA\u65F6\u4E0E\u4E70\u5BB6\u8054\u7CFB\u5E76\u8BF4\u660E\u60C5\u51B5\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u7533\u8BF7\u9000\u6B3E\u540E\uFF0C\u987B\u5F81\u5F97\u4E70\u5BB6\u540C\u610F\u540E\u518D\u64CD\u4F5C\u53D1\u8D27\uFF0C\u5426\u5219\u4E70\u5BB6\u6709\u6743\u62D2\u6536\u8D27\u7269\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u4ED8\u6B3E\u540E\u8D85\u8FC7365\u5929\u4ECD\u672A\u53D1\u8D27\uFF0C\u7CFB\u7EDF\u5C06\u81EA\u52A8\u5173\u95ED\u8BA2\u5355\u5E76\u9000\u6B3E\u7ED9\u4E70\u5BB6\"},{\"type\":\"operation\",\"value\":{\"style\":\"t0\",\"text\":\"[?]\",\"type\":\"operation\",\"url\":\"\/\/service.taobao.com\/support\/seller\/knowledge-5836796.htm?spm=a215a.7392575.1998073017.20.Wpy2GG&_pvf=sellerSearch\"}},{\"type\":\"text\",\"value\":\"\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u53D1\u8D27\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=1&bizOrderId=144065804197088275&bizType=200\"}},{\"type\":\"operation\",\"value\":{\"authUrl\":\"\/trade\/security\/auth_user_info.htm\",\"authParam\":\"{\\\"modifyAddress\\\": 1}\",\"data\":{\"width\":900,\"crossOrigin\":false,\"height\":300},\"durexParam\":\"{\\\"redirecturl\\\": \\\"\/\/trade.taobao.com\/tradeitemlist\/mid\/durex.htm\\\"}\",\"durexUrl\":\"\/\/aq.taobao.com\/durex\/validate\",\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u4FEE\u6539\u6536\u8D27\u5730\u5740\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/modifyDeliverAddress.htm?bizOrderId=144065804197088275\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=144065804197088275&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D144065804197088275\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=144065804197088275\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"address\":\"\u90D1\u6885\u6885\uFF0C15249933793\uFF0C\u5B89\u5FBD\u7701 \u5BA3\u57CE\u5E02 \u5BA3\u5DDE\u533A \u9CCC\u5CF0\u8857\u9053 \u9526\u57CE\u82B1\u56EDB\u533A\u4E09\u680B23\u53F7 \uFF0C000000\",\"shipType\":\"\u5FEB\u9012\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+'
+
+insert into tbilldetail (tbdid,tbid,content) values(3442188199215447878,3442188197937857385,'
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135044055.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuWdcRaxHGMAgAAAACEWdGCQTb4Ew==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4E70\u5BB6\u5DF2\u4ED8\u6B3E\uFF0C\u7B49\u5F85\u5546\u5BB6\u53D1\u8D27\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"156.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:4.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"144065804197088275\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040221001001870575790981\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-02 22:38:30\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-02 22:39:53\"}}]}],\"type\":\"group\"},\"id\":\"144065804197088275\",\"subOrders\":[{\"priceInfo\":\"130.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u53D1\u8D27\"}]}],\"id\":144065804197088275,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u7D20\u767D(50*160)\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"data\":{\"width\":820,\"crossOrigin\":false,\"height\":370},\"action\":\"a8\",\"style\":\"t16\",\"text\":\"\u4FEE\u6539\u8BA2\u5355\u5C5E\u6027\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/modify_sku.htm?bizOrderId=144065804197088275\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=144065804197088275\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i3\/TB18VrgJFXXXXcqXFXXYXGcGpXX_M2.SS2_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=144065804197088275\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5356\u5BB6\u4F18\u60E0 -26.00 \u5143\"}]}]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"160.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"\u90D1\u6885\u68855200\",\"mail\":\"***\",\"city\":\" \",\"name\":\"\u90D1\u6885\u6885\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=144065804197088275\",\"phoneNum\":\"15249****93\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=%D6%A3%C3%B7%C3%B75200\",\"id\":751087582,\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"buyMessage\":\"\u9ED1\u8272\",\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":3},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824598349\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824598349\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u8BF7\u60A8\u5C3D\u5FEB\u53D1\u8D27\uFF0C\u5982\u679C\u7F3A\u8D27\uFF0C\u53EF\u8054\u7CFB\u4E70\u5BB6\u534F\u5546\u9000\u6B3E\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u5DF2\u4ED8\u6B3E\uFF0C\u8BF7\u5C3D\u5FEB\u53D1\u8D27\uFF0C\u5426\u5219\u4E70\u5BB6\u6709\u6743\u7533\u8BF7\u9000\u6B3E\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u65E0\u6CD5\u53D1\u8D27\uFF0C\u8BF7\u53CA\u65F6\u4E0E\u4E70\u5BB6\u8054\u7CFB\u5E76\u8BF4\u660E\u60C5\u51B5\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u7533\u8BF7\u9000\u6B3E\u540E\uFF0C\u987B\u5F81\u5F97\u4E70\u5BB6\u540C\u610F\u540E\u518D\u64CD\u4F5C\u53D1\u8D27\uFF0C\u5426\u5219\u4E70\u5BB6\u6709\u6743\u62D2\u6536\u8D27\u7269\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6\u4ED8\u6B3E\u540E\u8D85\u8FC7365\u5929\u4ECD\u672A\u53D1\u8D27\uFF0C\u7CFB\u7EDF\u5C06\u81EA\u52A8\u5173\u95ED\u8BA2\u5355\u5E76\u9000\u6B3E\u7ED9\u4E70\u5BB6\"},{\"type\":\"operation\",\"value\":{\"style\":\"t0\",\"text\":\"[?]\",\"type\":\"operation\",\"url\":\"\/\/service.taobao.com\/support\/seller\/knowledge-5836796.htm?spm=a215a.7392575.1998073017.20.Wpy2GG&_pvf=sellerSearch\"}},{\"type\":\"text\",\"value\":\"\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u53D1\u8D27\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=1&bizOrderId=144065804197088275&bizType=200\"}},{\"type\":\"operation\",\"value\":{\"authUrl\":\"\/trade\/security\/auth_user_info.htm\",\"authParam\":\"{\\\"modifyAddress\\\": 1}\",\"data\":{\"width\":900,\"crossOrigin\":false,\"height\":300},\"durexParam\":\"{\\\"redirecturl\\\": \\\"\/\/trade.taobao.com\/tradeitemlist\/mid\/durex.htm\\\"}\",\"durexUrl\":\"\/\/aq.taobao.com\/durex\/validate\",\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u4FEE\u6539\u6536\u8D27\u5730\u5740\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/modifyDeliverAddress.htm?bizOrderId=144065804197088275\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=144065804197088275&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D144065804197088275\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=144065804197088275\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"address\":\"\u90D1\u6885\u6885\uFF0C15249933793\uFF0C\u5B89\u5FBD\u7701 \u5BA3\u57CE\u5E02 \u5BA3\u5DDE\u533A \u9CCC\u5CF0\u8857\u9053 \u9526\u57CE\u82B1\u56EDB\u533A\u4E09\u680B23\u53F7 \uFF0C000000\",\"shipType\":\"\u5FEB\u9012\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+')
+
+
+2018-04-04 14:50:10,798 [163] ERROR - 执行SQL出错: Data too long for column 'content' at row 1
+insert into tbilldetail (tbdid,tbid,content) values(@tbdid,@tbid,@content)
+
+  tbdid=3442188199215691644
+  tbid=3442188197937857395
+  content='
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135017024.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuYdcRa1+7dEwAAAACXnkhfFgRuCA==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u5546\u5BB6\u5DF2\u53D1\u8D27\uFF0C\u7B49\u5F85\u4E70\u5BB6\u786E\u8BA4\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"70.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"143341041069769524\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040121001001720500177884\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-01 16:54:26\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-02 18:29:40\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-01 16:54:33\"}}]}],\"type\":\"group\"},\"id\":\"143341041069769524\",\"subOrders\":[{\"priceInfo\":\"70.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":143341041069769524,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D\uFF0840*160\uFF09\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=143341041069769524\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB2sTpkeUvMR1JjSZPcXXc1tFXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=143341041069769524\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"70.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"cici\u8431\u8431\u8431\",\"mail\":\"***\",\"city\":\" \",\"name\":\"\u9648\u66E6\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=143341041069769524\",\"phoneNum\":\"15198****00\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=cici%DD%E6%DD%E6%DD%E6\",\"id\":827762495,\"notifyBuyerConfirmUrl\":\"\/\/trade.taobao.com\/trade\/sendAlertMail.htm?type=doNotifyBuyerConfirm&biz_order_id=143341041069769524&is_seller=false\",\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":4},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824600783\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824600783\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6(cici\u8431\u8431\u8431)\u8FD8\u6709\"},{\"type\":\"countdown\",\"value\":{\"hour\":3,\"countDown\":704379,\"day\":8,\"minute\":39,\"second\":39}},{\"type\":\"text\",\"value\":\"\u6765\u5B8C\u6210\u672C\u6B21\u4EA4\u6613\u7684\\\"\u786E\u8BA4\u5230\u8D27\\\"\u3002\u5982\u679C\u671F\u95F4\u4E70\u5BB6\uFF08cici\u8431\u8431\u8431\uFF09\u6CA1\u6709\\\"\u786E\u8BA4\u5230\u8D27\\\"\uFF0C\u4E5F\u6CA1\u6709\\\"\u7533\u8BF7\u9000\u6B3E\\\"\uFF0C\u672C\u4EA4\u6613\u5C06\u81EA\u52A8\u7ED3\u675F\uFF0C\u652F\u4ED8\u5B9D\u5C06\u628A\u8D27\u6B3E\u652F\u4ED8\u7ED9\u60A8\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u4E70\u5BB6\u8868\u793A\u672A\u6536\u5230\u8D27\u6216\u8005\u6536\u5230\u7684\u8D27\u7269\u6709\u95EE\u9898\uFF0C\u8BF7\u53CA\u65F6\u8054\u7CFB\u4E70\u5BB6\u79EF\u6781\u5904\u7406\uFF0C\u53CB\u597D\u534F\u5546\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"dataUrl\":\"\/\/trade.taobao.com\/trade\/delayTimeOutDate.htm?bizOrderId=143341041069769524&bizType=200&hasRefund=200\",\"data\":{\"width\":600,\"crossOrigin\":false,\"height\":220},\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u5EF6\u957F\u6536\u8D27\u65F6\u95F4\",\"type\":\"operation\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=143341041069769524&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D143341041069769524\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=143341041069769524\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9648\u66E6\uFF0C15198201200\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u9F99\u6CC9\u9A7F\u533A \u5927\u9762\u8857\u9053 \u4E1C\u6D2A\u8DEF399\u53F7\u5C1A\u57CE\u4E1C\u95261\u680B1\u5355\u51431802 \uFF0C610100\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=143341041069769524&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+'
+
+insert into tbilldetail (tbdid,tbid,content) values(3442188199215691644,3442188197937857395,'
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011135017024.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCuYdcRa1+7dEwAAAACXnkhfFgRuCA==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u5546\u5BB6\u5DF2\u53D1\u8D27\uFF0C\u7B49\u5F85\u4E70\u5BB6\u786E\u8BA4\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"70.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"143341041069769524\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040121001001720500177884\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-01 16:54:26\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-02 18:29:40\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-01 16:54:33\"}}]}],\"type\":\"group\"},\"id\":\"143341041069769524\",\"subOrders\":[{\"priceInfo\":\"70.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":false},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u672A\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":143341041069769524,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"\u4EAE\u767D\uFF0840*160\uFF09\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=143341041069769524\",\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i1\/725385819\/TB2sTpkeUvMR1JjSZPcXXc1tFXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u670D\u88C5\u5E97\u5BB6\u5EAD\u9AD8\u6E05\u6B27\u5F0F\u591A\u6B3E\u5B9E\u6728\u843D\u5730\u58C1\u6302\u5168\u8EAB\u8BD5\u8863\u955C\u591A\u7701\u5305\u90AE\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=143341041069769524\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[]}],\"payInfo\":{\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"70.00\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"cici\u8431\u8431\u8431\",\"mail\":\"***\",\"city\":\" \",\"name\":\"\u9648\u66E6\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=143341041069769524\",\"phoneNum\":\"15198****00\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=cici%DD%E6%DD%E6%DD%E6\",\"id\":827762495,\"notifyBuyerConfirmUrl\":\"\/\/trade.taobao.com\/trade\/sendAlertMail.htm?type=doNotifyBuyerConfirm&biz_order_id=143341041069769524&is_seller=false\",\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":4},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824600783\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824600783\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4E70\u5BB6(cici\u8431\u8431\u8431)\u8FD8\u6709\"},{\"type\":\"countdown\",\"value\":{\"hour\":3,\"countDown\":704379,\"day\":8,\"minute\":39,\"second\":39}},{\"type\":\"text\",\"value\":\"\u6765\u5B8C\u6210\u672C\u6B21\u4EA4\u6613\u7684\\\"\u786E\u8BA4\u5230\u8D27\\\"\u3002\u5982\u679C\u671F\u95F4\u4E70\u5BB6\uFF08cici\u8431\u8431\u8431\uFF09\u6CA1\u6709\\\"\u786E\u8BA4\u5230\u8D27\\\"\uFF0C\u4E5F\u6CA1\u6709\\\"\u7533\u8BF7\u9000\u6B3E\\\"\uFF0C\u672C\u4EA4\u6613\u5C06\u81EA\u52A8\u7ED3\u675F\uFF0C\u652F\u4ED8\u5B9D\u5C06\u628A\u8D27\u6B3E\u652F\u4ED8\u7ED9\u60A8\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5982\u679C\u4E70\u5BB6\u8868\u793A\u672A\u6536\u5230\u8D27\u6216\u8005\u6536\u5230\u7684\u8D27\u7269\u6709\u95EE\u9898\uFF0C\u8BF7\u53CA\u65F6\u8054\u7CFB\u4E70\u5BB6\u79EF\u6781\u5904\u7406\uFF0C\u53CB\u597D\u534F\u5546\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"dataUrl\":\"\/\/trade.taobao.com\/trade\/delayTimeOutDate.htm?bizOrderId=143341041069769524&bizType=200&hasRefund=200\",\"data\":{\"width\":600,\"crossOrigin\":false,\"height\":220},\"action\":\"a8\",\"style\":\"t4\",\"text\":\"\u5EF6\u957F\u6536\u8D27\u65F6\u95F4\",\"type\":\"operation\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=143341041069769524&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D143341041069769524\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=143341041069769524\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9648\u66E6\uFF0C15198201200\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u9F99\u6CC9\u9A7F\u533A \u5927\u9762\u8857\u9053 \u4E1C\u6D2A\u8DEF399\u53F7\u5C1A\u57CE\u4E1C\u95261\u680B1\u5355\u51431802 \uFF0C610100\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=143341041069769524&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+')
+
+
+2018-04-04 14:50:13,175 [163] ERROR - 执行SQL出错: Data too long for column 'content' at row 1
+insert into tbilldetail (tbdid,tbid,content) values(@tbdid,@tbid,@content)
+
+  tbdid=3442188199215929207
+  tbid=3442188197937857406
+  content='
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011139219053.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCubdcRatChycAAAAAB/WZB1ocuXRg==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4EA4\u6613\u6210\u529F\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"130.62\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u4F7F\u7528266\u6DD8\u91D1\u5E01\uFF0C\u62B5\u62632.66\u5143)\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"143301040471086570\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040121001001380508374938\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-01 12:44:51\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-01 15:43:04\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-01 12:44:56\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u6210\u4EA4\u65F6\u95F4:\",\"value\":\"2018-04-02 19:40:34\"}}]}],\"type\":\"group\"},\"id\":\"143301040471086570\",\"subOrders\":[{\"priceInfo\":\"136.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":true},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5DF2\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":143301040471086570,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"500*1600\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=143301040471086570\",\"extra\":[{\"name\":\"\u6B64\u5546\u54C1\u6027\u8D28\u4E0D\u652F\u63017\u5929\u9000\u8D27\",\"value\":\"\u8BE6\u60C5\",\"url\":\"\/\/service.taobao.com\/support\/knowledge-5701303.htm?spm=a1z09.5.0.0.8LDL5E\"}],\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i2\/725385819\/TB2w7inblLN8KJjSZFPXXXoLXXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u8D85\u5927\u663E\u7626\u670D\u88C5\u8BD5\u8863\u955C\u6210\u90FD\u52A0\u5927\u52A0\u5BBD\u5B9A\u505A\u7F6E\u5730\u58C1\u6302\u6B27\u5F0F\u5168\u8EAB\u5305\u90AE\u8BD5\u8863\u955C\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=143301040471086570\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4F18\u60E0\u4FC3\u9500:\u7701 2.72 \u5143\"}]}]}],\"payInfo\":{\"promotions\":[{\"prefix\":\"(\",\"suffix\":\")\",\"value\":\"\u4F7F\u7528266\u6DD8\u91D1\u5E01\uFF0C\u62B5\u62632.66\u5143\"}],\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"130.62\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"tb0460312_2012\",\"mail\":\" ***\",\"city\":\"\u56DB\u5DDD \u6210\u90FD\",\"name\":\"\u9648\u6021\u7487\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=143301040471086570\",\"phoneNum\":\"18584****19\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=tb0460312_2012\",\"id\":1059087065,\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":5},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824603161\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824603161\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u6210\u529F\uFF0C\u8BF7\u7ED9\u4E70\u5BB6\u8BC4\u4EF7\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u5DF2\u6210\u529F\uFF0C\u5982\u679C\u4E70\u5BB6\u63D0\u51FA\u552E\u540E\u8981\u6C42\uFF0C\u8BF7\u79EF\u6781\u4E0E\u4E70\u5BB6\u534F\u5546\uFF0C\u505A\u597D\u552E\u540E\u670D\u52A1\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u8BC4\u4EF7\",\"type\":\"operation\",\"url\":\"\/\/rate.taobao.com\/remarkBuyer.jhtml?tradeID=143301040471086570&returnURL=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2Ftrade_item_detail.htm%3FbizOrderId%3D143301040471086570\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=143301040471086570&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D143301040471086570\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=143301040471086570\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9648\u6021\u7487\uFF0C18584066219\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u664B\u9633\u8857\u9053 \u6B66\u664B\u8DEF1488\u53F7\u9F99\u6E56\u91D1\u6960\u5929\u8857\u67AB\u9999\u5EAD \uFF0C610041\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=143301040471086570&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+'
+
+insert into tbilldetail (tbdid,tbid,content) values(3442188199215929207,3442188197937857406,'
+<!doctype html>
+<html>
+ <head>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="gbk">
+<meta name="data-spm" content="a1z09">
+<title>交易详情</title>
+<meta name="keywords" content="淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖，购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺">
+<meta name="description" content="中国最大、最安全的网上交易社区,尽享淘宝乐趣！">
+<link rel="shortcut icon" href="//img.alicdn.com/favicon.ico" type="image/x-icon">
+ <script src="//g.alicdn.com/tbc/old-sys/0.0.2/tbra-aio.js"></script>
+   <script>
+ window.g_config={
+  appId: 15,   startTime: new Date().valueOf()
+ };
+</script>
+  <link rel="stylesheet" href="//g.alicdn.com/tb/global/3.5.30/global-min.css">
+ <script src="//g.alicdn.com/??kissy/k/1.4.8/seed-min.js,tb/global/3.5.30/global-min.js"></script>
+
+<link rel="stylesheet" href="//g.alicdn.com/??tp/trademanager/4.11.12/pages/default/page/index-min.css">
+<script>
+ 
+ window.globalInfo = {
+ assetsTimestamp:''20161010'',
+ serverName: ''trademanager011139219053.center.et15''
+ };
+ KISSY.config({
+ combine: ! KISSY.Config.debug,
+ modules: {
+ ''sizzle'':{
+ alias: [''node'']
+ },
+ ''calendar'':{
+ alias: [''gallery/calendar-deprecated/1.0/'']
+ },
+ ''switchable'':{
+ alias: [''gallery/switchable/1.3.1/'']
+ },
+ ''datalazyload'':{
+ alias: [''gallery/datalazyload/1.0/'']
+ },
+ ''imagezoom'':{
+ alias: [''gallery/imagezoom/1.0/'']
+ },
+ ''waterfall'':{
+ alias: [''gallery/waterfall/1.0/'']
+ },
+ ''flash'':{
+ alias: [''gallery/flash/1.0/'']
+ }
+ },
+ packages: [
+ {
+ name: "tm",
+ path: "//g.alicdn.com/tp/trademanager/4.11.12/pages/",
+ charset: "utf-8",
+ ignorePackageNameInUri: true
+ },{
+ name: "tb",
+ path: "//g.alicdn.com",
+ charset: "utf-8"
+ }
+ ]
+ });
+</script>
+
+<script>
+ KISSY.use("tm/default/page/index");
+</script>
+ 
+   <link rel="stylesheet" href="//g.alicdn.com/tp/detail/0.0.18/style.css"/>
+  </head>
+ <body id="trade-order-detail"
+ class="tm-seller"
+ data-spm="3"
+ ><script>
+with(document)with(body)with(insertBefore(createElement("script"),firstChild))setAttribute("exparams","category=&userid=725385819&aplus&yunid=&f80187b0be364&asid=AVuCPCubdcRatChycAAAAAB/WZB1ocuXRg==",id="tb-beacon-aplus",src=(location>"https"?"//g":"//g")+".alicdn.com/alilog/mlog/aplus_v2.js")
+</script>
+
+   <!-- TMS:global_blacklist -->
+  <script>
+          TB.Global.blacklist = [''fn-cart''];
+  </script>
+ <!-- S GLOBAL HTML -->
+<div id="J_SiteNav" class="site-nav">
+ <div id="J_SiteNavBd" class="site-nav-bd">
+ <ul id="J_SiteNavBdL" class="site-nav-bd-l"></ul>
+ <ul id="J_SiteNavBdR" class="site-nav-bd-r"></ul>
+ </div>
+</div>
+<!-- -->
+<!-- 全网顶通 -->
+<!-- E GLOBAL HTML -->
+<script>TB.Global.init()</script>
+ <div id="page">
+ <link href="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.css" rel="stylesheet">
+
+<div id="J_Header" class="tm-header tm-headerTaobao">
+ <h1 class="tm-logo">
+ <a href="//www.taobao.com" title="淘宝网 Taobao.com - 阿里巴巴旗下网站" target="_top">
+ 淘宝网
+ </a>
+ </h1>
+ <div class="search" id="J_Search" role="search">
+ <div class="search-triggers">
+ <ul class="ks-switchable-nav" id="J_SearchTab">
+ <li data-searchtype="item" data-action="//s.taobao.com/search" class="J_SearchTab selected">
+ <a href="" data-spm-anchor-id="1.1000386.0.34">宝贝</a>
+ </li>
+ <li data-searchtype="mall" data-action="//list.tmall.com/search_product.htm" class="J_SearchTab ">
+ <a href="" data-spm-anchor-id="1.1000386.0.35">天猫</a>
+ </li>
+ <li data-searchtype="shop" data-action="//s.taobao.com/search?app=shopsearch" class="J_SearchTab ">
+ <a href="">店铺</a>
+ </li>
+ </ul>
+ <s><s></s></s>
+ </div>
+ <div class="search-panel search-hp-panel ks-switchable-content">
+ <form target="_top" action="//s.taobao.com/search" name="search" id="J_TSearchForm" class="search-panel-focused">
+ <div class="search-button">
+ <button class="btn-search" type="submit">搜 索</button>
+ </div>
+ <div class="search-panel-fields search-hp-fields search-common-panel">
+ 
+ <input id="q" name="q" aria-label="请输入搜索文字" accesskey="s" autofocus="true" autocomplete="off">
+ <i id="J_SearchIcon"></i>
+ </div>
+ <input type="hidden" name="commend" value="all">
+ <input type="hidden" name="ssid" value="s5-e" autocomplete="off">
+ <input type="hidden" name="search_type" value="mall" autocomplete="off">
+ <input type="hidden" name="sourceId" value="tb.index">
+ <input type="hidden" name="spm" value="1.1000386.5803581.d4908513">
+ <!--[if lt IE 9]>
+ <s class="search-fix search-fix-panellt"></s><s class="search-fix search-fix-panellb"></s>
+ <![endif]-->
+ </form>
+ </div>
+ </div>
+</div>
+<script src="//g.alicdn.com/tp/trademanager/4.11.12/common/search-min.js"></script>
+ <div id="content">
+ <a name="main"></a>
+ 
+    <div id="detail-panel" class="grid-c"></div>
+
+   
+ <div style="padding:10px">
+ <img width="18" height="18" style="vertical-align: middle;" alt="反馈" src="//gtd.alicdn.com/tps/i1/T1TPhsXoRlXXXXXXXX-18-18.png">
+ 我对购买流程有意见或建议，
+ <a target="_blank" href="//ur.taobao.com/survey/view.htm?id=110">跟淘宝说两句</a>
+</div>
+ </div>
+ </div>
+
+ <script>
+ var data = JSON.parse(''{\"mainOrder\":{\"operations\":[],\"statusInfo\":{\"text\":\"\u5F53\u524D\u8BA2\u5355\u72B6\u6001\uFF1A\u4EA4\u6613\u6210\u529F\",\"type\":\"t0\"},\"totalPrice\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"130.62\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u4F7F\u7528266\u6DD8\u91D1\u5E01\uFF0C\u62B5\u62632.66\u5143)\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"(\u5FEB\u9012:0.00\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\")\"}]}],\"columns\":[\"\u5B9D\u8D1D\",\"\u5B9D\u8D1D\u5C5E\u6027\",\"\u72B6\u6001\",\"\u670D\u52A1\",\"\u5355\u4EF7\",\"\u6570\u91CF\",\"\u4F18\u60E0\",\"\u5546\u54C1\u603B\u4EF7\"],\"extra\":{\"inHold\":false,\"isShowSellerService\":false},\"orderInfo\":{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u8BA2\u5355\u7F16\u53F7:\",\"value\":[{\"type\":\"text\",\"value\":\"143301040471086570\"}]}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u652F\u4ED8\u5B9D\u4EA4\u6613\u53F7:\",\"value\":\"2018040121001001380508374938\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u521B\u5EFA\u65F6\u95F4:\",\"value\":\"2018-04-01 12:44:51\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u53D1\u8D27\u65F6\u95F4:\",\"value\":\"2018-04-01 15:43:04\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u4ED8\u6B3E\u65F6\u95F4:\",\"value\":\"2018-04-01 12:44:56\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u6210\u4EA4\u65F6\u95F4:\",\"value\":\"2018-04-02 19:40:34\"}}]}],\"type\":\"group\"},\"id\":\"143301040471086570\",\"subOrders\":[{\"priceInfo\":\"136.00\",\"quantity\":\"1\",\"service\":[],\"extra\":{\"overSold\":false,\"alicommunOrderDirect\":false,\"needShowQuantity\":0,\"xt\":false,\"needDisplay\":false,\"payStatus\":0,\"opWeiQuan\":false,\"notSupportReturn\":true},\"tradeStatus\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u5DF2\u786E\u8BA4\u6536\u8D27\"}]}],\"id\":143301040471086570,\"itemInfo\":{\"skuText\":[{\"type\":\"line\",\"content\":[{\"type\":\"namevalue\",\"value\":{\"name\":\"\u989C\u8272\u5206\u7C7B\uFF1A\",\"value\":\"500*1600\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u5C3A\u5BF8\uFF1A\",\"value\":\"\u5176\u4ED6\"}},{\"type\":\"namevalue\",\"value\":{\"name\":\"\u662F\u5426\u5E26\u50A8\u7269\u7A7A\u95F4\uFF1A\",\"value\":\"\u5426\"}}]}],\"auctionUrl\":\"\/\/trade.taobao.com\/trade\/detail\/tradeSnap.htm?trade_id=143301040471086570\",\"extra\":[{\"name\":\"\u6B64\u5546\u54C1\u6027\u8D28\u4E0D\u652F\u63017\u5929\u9000\u8D27\",\"value\":\"\u8BE6\u60C5\",\"url\":\"\/\/service.taobao.com\/support\/knowledge-5701303.htm?spm=a1z09.5.0.0.8LDL5E\"}],\"pic\":\"\/\/img.alicdn.com\/bao\/uploaded\/i2\/725385819\/TB2w7inblLN8KJjSZFPXXXoLXXa_!!725385819.jpg_sum.jpg\",\"title\":\"\u8D85\u5927\u663E\u7626\u670D\u88C5\u8BD5\u8863\u955C\u6210\u90FD\u52A0\u5927\u52A0\u5BBD\u5B9A\u505A\u7F6E\u5730\u58C1\u6302\u6B27\u5F0F\u5168\u8EAB\u5305\u90AE\u8BD5\u8863\u955C\",\"serviceIcons\":[{\"linkTitle\":\"\u4FDD\u969C\u5361\",\"linkUrl\":\"http:\/\/trade.taobao.com\/trade\/security\/security_card.htm?bizOrderId=143301040471086570\",\"type\":3,\"url\":\"\/\/img.alicdn.com\/tps\/i2\/T1S4ysXh8pXXXXXXXX-52-16.png\"}],\"skuId\":0},\"promotionInfo\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4F18\u60E0\u4FC3\u9500:\u7701 2.72 \u5143\"}]}]}],\"payInfo\":{\"promotions\":[{\"prefix\":\"(\",\"suffix\":\")\",\"value\":\"\u4F7F\u7528266\u6DD8\u91D1\u5E01\uFF0C\u62B5\u62632.66\u5143\"}],\"tmallYfx_bizOrderId\":0,\"sellerYfx_bizOrderId\":0,\"showPayDetail\":false,\"cod\":false,\"sendPromotions\":[],\"xiaobao315Yfx_bizOrderId\":0,\"actualFee\":{\"name\":\"\u5B9E\u6536\u6B3E\",\"value\":\"130.62\"},\"fullPromotion\":{\"valid\":false}},\"buyer\":{\"nick\":\"tb0460312_2012\",\"mail\":\" ***\",\"city\":\"\u56DB\u5DDD \u6210\u90FD\",\"name\":\"\u9648\u6021\u7487\",\"payToBuyerUrl\":\"\/\/trade.taobao.com\/trade\/payToUser.htm?user_type=buyer&biz_order_id=143301040471086570\",\"phoneNum\":\"18584****19\",\"privateMsgUrl\":\"\/\/member1.taobao.com\/message\/addPrivateMsg.htm?recipient_nickname=tb0460312_2012\",\"id\":1059087065,\"guestUser\":false,\"alipayAccount\":\"1***\"}},\"orderBar\":{\"nodes\":[{\"index\":1,\"text\":\"1. \u4E70\u5BB6\u4E0B\u5355\"},{\"index\":2,\"text\":\"2. \u4E70\u5BB6\u4ED8\u6B3E\"},{\"index\":3,\"text\":\"3. \u53D1\u8D27\"},{\"index\":4,\"text\":\"4. \u4E70\u5BB6\u786E\u8BA4\u6536\u8D27\"},{\"index\":5,\"text\":\"5. \u8BC4\u4EF7\"}],\"currentStepIndex\":0,\"currentIndex\":5},\"crumbs\":[{\"text\":\"\u9996\u9875\",\"url\":\"\/\/www.taobao.com\"},{\"text\":\"\u6211\u7684\u6DD8\u5B9D\",\"url\":\"\/\/i.taobao.com\/myTaobao.htm?nekot=1522824603161\"},{\"text\":\"\u5DF2\u5356\u51FA\u7684\u5B9D\u8D1D\",\"url\":\"\/\/trade.taobao.com\/trade\/itemlist\/listSoldItems.htm?nekot=1522824603161\"}],\"operationsGuide\":[{\"layout\":\"li\",\"lines\":[{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u6210\u529F\uFF0C\u8BF7\u7ED9\u4E70\u5BB6\u8BC4\u4EF7\u3002\"}]},{\"type\":\"line\",\"content\":[{\"type\":\"text\",\"value\":\"\u4EA4\u6613\u5DF2\u6210\u529F\uFF0C\u5982\u679C\u4E70\u5BB6\u63D0\u51FA\u552E\u540E\u8981\u6C42\uFF0C\u8BF7\u79EF\u6781\u4E0E\u4E70\u5BB6\u534F\u5546\uFF0C\u505A\u597D\u552E\u540E\u670D\u52A1\u3002\"}]}],\"type\":\"group\"},{\"lines\":[{\"type\":\"line\",\"content\":[]},{\"type\":\"line\",\"content\":[{\"type\":\"operation\",\"value\":{\"style\":\"t3\",\"text\":\"\u8BC4\u4EF7\",\"type\":\"operation\",\"url\":\"\/\/rate.taobao.com\/remarkBuyer.jhtml?tradeID=143301040471086570&returnURL=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2Ftrade_item_detail.htm%3FbizOrderId%3D143301040471086570\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u6807\u8BB0\",\"type\":\"operation\",\"url\":\"\/\/trade.taobao.com\/trade\/memo\/updateSellMemo.htm?bizOrderId=143301040471086570&sellerId=725385819&returnUrl=%2F%2Ftrade.taobao.com%2Ftrade%2Fdetail%2FtradeItemDetail.htm%3Fbiz_order_id%3D143301040471086570\"}},{\"type\":\"operation\",\"value\":{\"style\":\"t4\",\"text\":\"\u8BA2\u5355\u4F18\u60E0\u8BE6\u60C5\",\"type\":\"operation\",\"url\":\"http:\/\/smf.taobao.com\/index.htm?menu=yhjk&module=yhjk&orderNo=143301040471086570\"}}]}],\"type\":\"group\"}],\"tabs\":[{\"id\":\"logistics\",\"title\":\"\u6536\u8D27\u548C\u7269\u6D41\u4FE1\u606F\",\"content\":{\"logisticsName\":\"-\",\"address\":\"\u9648\u6021\u7487\uFF0C18584066219\uFF0C\u56DB\u5DDD\u7701 \u6210\u90FD\u5E02 \u6B66\u4FAF\u533A \u664B\u9633\u8857\u9053 \u6B66\u664B\u8DEF1488\u53F7\u9F99\u6E56\u91D1\u6960\u5929\u8857\u67AB\u9999\u5EAD \uFF0C610041\",\"logisticsUrl\":\"\/\/trade.taobao.com\/trade\/logistics_status.htm?logisType=0&bizOrderId=143301040471086570&bizType=200\",\"shipType\":\"\u5FEB\u9012\",\"logisticsNum\":\"\u2014\"}}],\"detailExtra\":{\"op\":false,\"b2c\":false,\"ccc\":false,\"tradeEnd\":false,\"outShopOrder\":false,\"wakeupOrder\":false,\"refundByTb\":false,\"success\":false,\"inRefund\":false,\"viewed_flag\":false}}'');
+ </script>
+
+   
+<script>
+window.__WPO = {
+config: {
+spmId: ''a1z09.3'',
+dynamic: true
+}
+};
+</script>
+<script charset="utf-8" src="//g.alicdn.com/retcode/log/log.js" crossorigin></script>
+
+
+
+<!--[if (IE 8)]><!-->
+<script src="//g.alicdn.com/tp/detail/0.0.18/ie8-polyfill.js" charset="utf-8" crossorigin></script>
+<!--<![endif]-->
+
+
+<script src="//g.alicdn.com/tp/detail/0.0.18/index.js" charset="utf-8" crossorigin></script>
+<script charset="utf-8" src="//g.alicdn.com/aliww/web.ww/scripts/webww.js" crossorigin ></script>
+<script charset="utf-8" src="//g.alicdn.com/sj/aliphone/2.0.5/sdk/aling.min.js" crossorigin ></script>
+
+   
+
+     <link rel="stylesheet" href="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.css" crossorigin charset="utf-8">
+<script src="//g.alicdn.com/crm/anywhere/3.8.0/lib/entry.js" crossorigin charset="utf-8"></script>
+ <script>
+ try{
+ AW.init({
+ sourceId: ''457'',
+ bizCode: ''PCAnyWhereWindow''
+ });
+ } catch(e){}
+ </script>
+ 
+   
+       <div id="J_TbFooter"></div>
+<script>
+  if (window.KISSY && parseFloat(KISSY.version) >= 1.4) {
+      if (!window.define) {
+        window.define = function(path,deps,callback){
+          return KISSY.add(path,deps,function(S ,require, exports, module){
+            callback(require, exports, module);
+          });
+        };
+      }
+      KISSY.use(''kg/tb-footer/1.1.5/index'', function(S, Footer) {
+        new Footer({
+          root: document.getElementById(''J_TbFooter''),
+          delay: true
+        }).render();
+      });  
+  }
+</script>
+  </body>
+</html>
+')
+

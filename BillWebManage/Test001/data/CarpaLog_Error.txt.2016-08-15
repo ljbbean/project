@@ -1,0 +1,196 @@
+
+2016-08-15 19:14:28,720 [19] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/StockBill.gspx  http://localhost:2032/BillList.gspx
+Carpa.Web.Script.ScriptTagException: 未将对象引用设置到对象的实例。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.gspx”，行 3，位置 4，标签<VPanel> ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 31
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-15 19:14:28,740 [19] ERROR - /StockBill.gspx 出错：未将对象引用设置到对象的实例。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.gspx”，行 3，位置 4，标签<VPanel>
+Carpa.Web.Script.ScriptTagException: 未将对象引用设置到对象的实例。 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.gspx”，行 3，位置 4，标签<VPanel> ---> System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 31
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-15 20:26:19,672 [63] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 货单管理 没有WebMethod服务
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 货单管理 没有WebMethod服务
+   at Sys.UI.CustomForm.prototype.get_service (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7657:13)
+   at Test001.StockBillAction.prototype.doGridLoaded (eval code:28:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.Grid.prototype.doAfterDataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2722:13)
+   at Sys.UI.Controls.Grid.prototype._afterInitDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2570:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2507:9)
+   at Sys.UI.Controls.Grid.prototype.dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6456:9)
+   at Sys.UI.Controls.Grid.prototype.refresh (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6505:9)
+   at Sys.UI.Controls.Pager.prototype._dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15468:9)
+
+
+2016-08-15 20:26:51,815 [52] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:27:31,489 [53] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:27:42,702 [67] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:28:38,279 [53] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:28:51,306 [41] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:29:33,070 [38] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:30:04,013 [9] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“get_pager”
+[b]LineNumber[/b]: 19
+TypeError: 无法获取未定义或 null 引用的属性“get_pager”
+   at Test001.StockBillAction.prototype.doSelected (eval code:20:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.CustomEdit.prototype.doChange (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:5374:13)
+   at Sys.UI.Controls.DropDownEditBase.prototype._changeSelectedIndex (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:9963:13)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:958:9)
+   at Sys.UI.Controls.DropDownEdit.prototype._changeSelectedIndex (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:10033:9)
+   at Sys.UI.Controls.DropDownEditBase.prototype._doSelectMoveItem (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:9953:9)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:956:9)
+   at Sys.UI.Controls.DropDownEdit.prototype._doSelectMoveItem (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:10058:9)
+
+
+2016-08-15 20:30:36,170 [11] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“get_pager”
+[b]LineNumber[/b]: 22
+TypeError: 无法获取未定义或 null 引用的属性“get_pager”
+   at Test001.StockBillAction.prototype.doSelected (eval code:23:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.CustomEdit.prototype.doChange (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:5374:13)
+   at Sys.UI.Controls.DropDownEditBase.prototype._changeSelectedIndex (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:9963:13)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:958:9)
+   at Sys.UI.Controls.DropDownEdit.prototype._changeSelectedIndex (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:10033:9)
+   at Sys.UI.Controls.DropDownEditBase.prototype._doSelectMoveItem (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:9953:9)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:956:9)
+   at Sys.UI.Controls.DropDownEdit.prototype._doSelectMoveItem (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:10058:9)
+
+
+2016-08-15 20:30:53,261 [38] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:31:05,962 [38] ERROR - CARPA IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  WebService调用出错 http://localhost:2032/Test001/Test001.StockBill.ajax/GetTemp  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.StockBill.GetTemp(Object[] list) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\StockBill.cs:行号 21
+
+2016-08-15 20:31:34,262 [17] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 缺少函数
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 缺少函数
+   at Test001.StockBillAction.prototype.doGridLoaded (eval code:32:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.Grid.prototype.doAfterDataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2722:13)
+   at Sys.UI.Controls.Grid.prototype._afterInitDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2570:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2507:9)
+   at Sys.UI.Controls.Grid.prototype.dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6456:9)
+   at Sys.UI.Controls.Grid.prototype.refresh (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6505:9)
+   at Sys.UI.Controls.Pager.prototype._dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15468:9)
+   at Sys$UI$Controls$Pager$_dataLoaded (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:16680:13)
+
+
+2016-08-15 20:31:53,916 [21] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 缺少函数
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 缺少函数
+   at Test001.StockBillAction.prototype.doGridLoaded (eval code:32:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.Grid.prototype.doAfterDataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2722:13)
+   at Sys.UI.Controls.Grid.prototype._afterInitDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2570:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2507:9)
+   at Sys.UI.Controls.Grid.prototype.dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6456:9)
+   at Sys.UI.Controls.Grid.prototype.refresh (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6505:9)
+   at Sys.UI.Controls.Pager.prototype._dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15468:9)
+   at Sys$UI$Controls$Pager$_dataLoaded (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:16680:13)
+
+
+2016-08-15 20:32:09,369 [21] ERROR - BROWSER IE_7 127.0.0.1 3p5lcrc1fzxwlbpfi5zk0d3m  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 缺少函数
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 缺少函数
+   at Test001.StockBillAction.prototype.doGridLoaded (eval code:32:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.Grid.prototype.doAfterDataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2722:13)
+   at Sys.UI.Controls.Grid.prototype._afterInitDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2570:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2507:9)
+   at Sys.UI.Controls.Grid.prototype.dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6456:9)
+   at Sys.UI.Controls.Grid.prototype.refresh (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:6505:9)
+   at Sys.UI.Controls.Pager.prototype._dataChanged (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15468:9)
+   at Sys$UI$Controls$Pager$_dataLoaded (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:16680:13)
+

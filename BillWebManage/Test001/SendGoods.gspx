@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="快递发货" ActionType="Test001.SendGoodsAction, SendGoods.js">
+  <VPanel>
+    <DropDownEdit Label="快递公司" DropDownStyle="DropDownEdit" DataField="name" SelectedIndex="0">
+      <ListItem Text="快捷快递" Value="快捷快递"/>
+      <ListItem Text="韵达快递" Value="韵达快递"/>
+      <ListItem Text="远成物流" Value="远成物流"/>
+    </DropDownEdit>
+    <TextEdit Label="快递单号" DataField="code"/>
+    <HPanel>
+      <Button Text="发货" OnClick="doSend"/>
+      <CancelButton/>
+    </HPanel>
+  </VPanel>
+</Page>

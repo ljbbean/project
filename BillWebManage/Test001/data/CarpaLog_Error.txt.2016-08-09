@@ -1,0 +1,137 @@
+
+2016-08-09 09:33:21,946 [21] ERROR - BROWSER IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doInitPopup 不能为空，类名 Test001.BillListAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doInitPopup 不能为空，类名 Test001.BillListAction
+   at Function$createDelegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $b2055929$__init (http://localhost:2032/BillList.gspx:1:11904)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$_Application$_doInitialize (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9388:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+
+
+2016-08-09 09:33:44,088 [21] ERROR - BROWSER IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “eventArgs”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=260184784&r=Test001/BillList.js
+[b]LineNumber[/b]: 85
+ReferenceError: “eventArgs”未定义
+   at Test001.BillListAction.prototype.doSendClick (http://localhost:2032/R.axd?v=260184784&r=Test001/BillList.js:86:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys.UI.Controls.DynamicButtonColumn.prototype._buttonClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:15025:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-08-09 09:34:09,353 [34] ERROR - BROWSER IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “form”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=260184784&r=Test001/BillList.js
+[b]LineNumber[/b]: 104
+ReferenceError: “form”未定义
+   at Test001.BillListAction.prototype.doOtherSend (http://localhost:2032/R.axd?v=260184784&r=Test001/BillList.js:105:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3631:17)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:958:9)
+   at Sys.UI.Controls.MenuItemBase.prototype.doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controlsEx.js:1678:9)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:958:9)
+   at Sys.UI.Controls.MenuItem.prototype.doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controlsEx.js:2481:9)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3612:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3574:13)
+
+
+2016-08-09 09:41:40,775 [40] ERROR - BROWSER IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 快递发货 没有WebMethod服务
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 快递发货 没有WebMethod服务
+   at Sys.UI.CustomForm.prototype.get_service (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7657:13)
+   at Test001.SendGoodsAction.prototype.doSend (eval code:21:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$UI$Controls$Container$doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3631:17)
+   at Type$callBaseMethod (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:958:9)
+   at Sys$UI$Controls$CustomButton$doClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:4389:9)
+   at Sys$UI$Controls$Container$_checkDoClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3612:9)
+   at Sys$UI$Controls$Container$_onClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:3574:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+
+
+2016-08-09 09:44:08,384 [39] ERROR - CARPA IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  WebService调用出错 http://localhost:2032/Test001/Test001.SendGoods.ajax/SendGood  http://localhost:2032/BillList.gspx
+System.InvalidOperationException: Invalid web service call, missing value for parameter: 'name'.
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethod(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.WebServiceMethodData.CallMethodFromRawParams(Object target, IDictionary`2 parameters, Int64& elapsedMilliseconds)
+   在 Carpa.Web.Ajax.AjaxHandler.InvokeMethod(HttpContext context, WebServiceMethodData methodData, IDictionary`2 rawParams)
+   在 Carpa.Web.Ajax.AjaxHandler.ExecuteWebServiceCall(HttpContext context, WebServiceMethodData methodData)
+
+2016-08-09 09:45:15,637 [33] ERROR - 执行SQL出错: Incorrect string value: '\xE5\xBF\xAB\xE6\x8D\xB7...' for column 'sname' at row 1
+update bill set status = 1,sname=@name,scode=@code where id=@id
+
+  id=-2074193112
+  name='快捷快递'
+  code='213'
+
+update bill set status = 1,sname='快捷快递',scode='213' where id=-2074193112
+
+
+2016-08-09 09:45:15,658 [33] ERROR - CARPA IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  WebService调用出错 http://localhost:2032/Test001/Test001.SendGoods.ajax/SendGood  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect string value: '\xE5\xBF\xAB\xE6\x8D\xB7...' for column 'sname' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteScalar()
+   在 Carpa.Web.Script.DbHelper.ExecuteScalerSQL(String sql)
+   在 Carpa.Web.Script.DbHelper.ExecuteIntSQL(String sql)
+   在 Test001.SendGoods.SendGood(Int32 id, String name, String code) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\SendGoods.cs:行号 22
+
+2016-08-09 09:45:47,828 [30] ERROR - BROWSER IE_7 127.0.0.1 xk5img551xowrvmlnsc3biuo  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“doOK”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 对象不支持“doOK”属性或方法
+   at Anonymous function (eval code:23:13)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2016-08-09 16:50:30,247 [16] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptException: ID“menuqz”已经被“MenuItemScript”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 29，位置 6，标签<PopupMenu>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-09 16:50:30,269 [16] ERROR - /BillList.gspx 出错：ID“menuqz”已经被“MenuItemScript”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 29，位置 6，标签<PopupMenu>
+Carpa.Web.Script.ScriptException: ID“menuqz”已经被“MenuItemScript”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 29，位置 6，标签<PopupMenu>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-09 17:01:44,339 [16] ERROR - BROWSER IE_7 127.0.0.1 ykdjeirk3sfgypynldf45sid  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: “rt”未定义
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+ReferenceError: “rt”未定义
+   at Test001.BillListAction.prototype._doChangeStatus (http://localhost:2032/R.axd?v=260211376&r=Test001/BillList.js:156:9)
+   at Anonymous function (http://localhost:2032/R.axd?v=260211376&r=Test001/BillList.js:151:13)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+

@@ -1,0 +1,139 @@
+
+2018-03-02 08:46:25,628 [26] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500749278761, sessionID = kb4tltkuqwajezpl1c3y2150, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 221
+
+2018-03-02 08:47:45,120 [25] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500754829873, sessionID = kbkaxih045ppwqe1a5hgmzfw, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentOutOfRangeException: 长度不能小于 0。
+参数名: length
+   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 219
+
+2018-03-02 08:50:55,894 [35] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500772174742, sessionID = mhyzs1ivfpli2sxufo0hsuoy, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 222
+
+2018-03-02 08:54:58,704 [44] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500793463321, sessionID = f04q4eonbnfdorl4w5bxeb1j, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 223
+
+2018-03-02 08:59:14,422 [53] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500804211298, sessionID = rbv3asfz2surqc1mr2pu1bkd, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 223
+
+2018-03-02 09:00:39,896 [60] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500837953539, sessionID = xgpyzsmlwuh4ahdrxmgfhwy5, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 224
+
+2018-03-02 09:01:29,183 [59] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500839169961, sessionID = kljxppduszkemaxmndh0cfwe, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 224
+
+2018-03-02 09:05:23,286 [61] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500843136302, sessionID = lguipvn3yd1paqkho1rysfwh, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid object passed in, member name expected. (1) 需要显示详细信息，请设置Carpa.ShowJsonDebug为true
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 224
+
+2018-03-02 09:06:48,541 [61] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500872083122, sessionID = h1cttcpaqyxi20rme1jybmuh, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeDictionary(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillDetail() 位置 D:\Test001\Test001\Login.cs:行号 225
+
+2018-03-02 09:26:14,886 [127] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500991485459, sessionID = qdxvllzo4kwi1c2hp4bkwoay, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot read property 'id' of null
+  [b]ErrorStack[/b]: TypeError: Cannot read property 'id' of null
+    at Test001.LoginAction.doGetBillDetail (Test001/Login.js:32:46)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$doClick (Carpa.Web/js/controls.js:3955:21)
+    at Function.Type$callBaseMethod [as callBaseMethod] (Carpa.Web/js/carpa.js:976:21)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$CustomButton$doClick [as doClick] (Carpa.Web/js/controls.js:4746:38)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_checkDoClick [as _checkDoClick] (Carpa.Web/js/controls.js:3933:14)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_onClick [as _onClick] (Carpa.Web/js/controls.js:3895:18)
+    at HTMLButtonElement.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at HTMLButtonElement.Sys$UI$DomEvent$browserHandler (Carpa.Web/js/carpa.js:6115:19)
+ }
+
+2018-03-02 09:26:37,632 [126] ERROR - { logType = 客户端JavaScript异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500993762518, sessionID = kqsfziudkgk4gfvoi5egugz0, message = http://localhost:52715/Login.gspx
+   {Error}
+  [b]ErrorMessage[/b]: Cannot read property 'id' of null
+  [b]ErrorStack[/b]: TypeError: Cannot read property 'id' of null
+    at Test001.LoginAction.doGetBillDetail (Test001/Login.js:32:46)
+    at Array.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at Sys$EventHandlerList$delegate (Carpa.Web/js/carpa.js:4949:11)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$doClick (Carpa.Web/js/controls.js:3955:21)
+    at Function.Type$callBaseMethod [as callBaseMethod] (Carpa.Web/js/carpa.js:976:21)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$CustomButton$doClick [as doClick] (Carpa.Web/js/controls.js:4746:38)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_checkDoClick [as _checkDoClick] (Carpa.Web/js/controls.js:3933:14)
+    at Sys.UI.Controls.Button.Sys$UI$Controls$Container$_onClick [as _onClick] (Carpa.Web/js/controls.js:3895:18)
+    at HTMLButtonElement.Function$delegate (Carpa.Web/js/carpa.js:394:18)
+    at HTMLButtonElement.Sys$UI$DomEvent$browserHandler (Carpa.Web/js/carpa.js:6115:19)
+ }
+
+2018-03-02 09:26:49,583 [126] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500994926090, sessionID = 35hbih1rtwmypdbiyn4qrcew, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.InvalidCastException: 无法将类型为“System.String”的对象强制转换为类型“Carpa.Web.Script.HashObject”。
+   在 Test001.Login.GetBillDetail(String bid) 位置 D:\Test001\Test001\Login.cs:行号 222
+
+2018-03-02 09:30:11,267 [108] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324500997199262, sessionID = dva3jcofmirno2dten4a502i, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/GetBillDetail, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.Reflection.TargetInvocationException: '' : Cannot convert object of type 'System.String' to type 'Carpa.Web.Script.HashObject' ---> System.InvalidOperationException: Cannot convert object of type 'System.String' to type 'Carpa.Web.Script.HashObject'
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Ajax.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer, String memberName)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize[T](String input)
+
+2018-03-02 12:42:31,015 [21] ERROR - { logType = 服务端异常日志, browserNameVersion = Chrome55, userIP = 127.0.0.1, requestID = 8109324502169039939, sessionID = xuiaeo40brsw12yj4ohnpouy, pageUrl = http://localhost:52715/Test001/Test001.Login.ajax/Test, referPageUrl = http://localhost:52715/Login.gspx, message = WebService调用出错 }
+System.ArgumentException: Invalid JSON primitive: .
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializePrimitiveObject()
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.DeserializeInternal(Int32 depth)
+   在 Carpa.Web.Ajax.Serialization.JavaScriptObjectDeserializer.BasicDeserialize(String input, Int32 depthLimit, JavaScriptSerializer serializer)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
+   在 Carpa.Web.Ajax.JavaScriptSerializer.DeserializeObject(String input)
+   在 Test001.Login.GetBillList(String cookieStr, String data, Int32 startIndex, Int32 pageSize) 位置 D:\Test001\Test001\Login.cs:行号 258
+   在 Test001.Login.Test() 位置 D:\Test001\Test001\Login.cs:行号 179

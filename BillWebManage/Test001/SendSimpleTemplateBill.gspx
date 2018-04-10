@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="发货简版" ActionType="Test001.SendSimpleTemplateBillAction, SendSimpleTemplateBill.js">
+  <VPanel>
+    <ListView ID="test" DataSource="${list}"
+             Pager ="TopAndBottom" Width="300" ItemWidth="300" ItemMargin="5" ItemHeight="260">
+      <ListTemplate>
+        <VPanel Width="280" ShowBorder="true" Caption="送货单" Height="253">
+          <HPanel>
+            <DataText DataField="size" Label="货物:" />
+            <DataText DataField="amount" Label="数量:"/>
+          </HPanel>
+          <HPanel>
+            <DataText DataField="color" Label="颜色:"/>
+          </HPanel>
+          <HPanel ColSpan="2">
+            <DataText DataField="address" Label="地址:"/>
+          </HPanel>
+          <HPanel ColSpan="2">
+            <DataText DataField="remark" Label="备注:"/>
+          </HPanel>
+          <DataText DataField="bid" Visible="false"/>
+          <HPanel HAlign="Right" ColSpan="2">
+            <DataImage Url="img/qs.png" Width="40" Height="40" OnClick="doSure"/>
+          </HPanel>
+        </VPanel>
+      </ListTemplate>
+    </ListView>
+  </VPanel>
+</Page>

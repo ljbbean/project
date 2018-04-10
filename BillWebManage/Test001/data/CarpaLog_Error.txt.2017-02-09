@@ -1,0 +1,317 @@
+
+2017-02-09 09:26:43,346 [9] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2033/FundsManager/BackSectionDetailList.gspx  http://localhost:2033/BillList.gspx
+Carpa.Web.Script.ScriptTagException: 变量 “grid” 不存在 在“D:\Test001\Test001\FundsManager\BackSectionDetailList.gspx”，行 4，位置 6，标签<Grid> ---> Carpa.Expressions.ExpressionException: 变量 “grid” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “grid” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2017-02-09 09:26:43,358 [9] ERROR - /FundsManager/BackSectionDetailList.gspx 出错：变量 “grid” 不存在 在“D:\Test001\Test001\FundsManager\BackSectionDetailList.gspx”，行 4，位置 6，标签<Grid>
+Carpa.Web.Script.ScriptTagException: 变量 “grid” 不存在 在“D:\Test001\Test001\FundsManager\BackSectionDetailList.gspx”，行 4，位置 6，标签<Grid> ---> Carpa.Expressions.ExpressionException: 变量 “grid” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “grid” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2017-02-09 09:28:16,009 [16] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:34:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:28:35,875 [9] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:34:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:30:16,537 [22] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:30:50,555 [9] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:31:00,243 [12] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:31:30,726 [11] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:31:30,822 [11] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:31:31,324 [10] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:32:03,341 [11] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:32:03,845 [16] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:32:04,360 [16] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“total”
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 无法获取未定义或 null 引用的属性“total”
+   at Anonymous function (eval code:40:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:33:22,693 [22] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 对象不支持“set_value”属性或方法
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 对象不支持“set_value”属性或方法
+   at Anonymous function (eval code:42:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:33:22,784 [22] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 对象不支持“set_value”属性或方法
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 对象不支持“set_value”属性或方法
+   at Anonymous function (eval code:42:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:33:23,352 [22] ERROR - BROWSER IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  http://localhost:2033/BillList.gspx
+  [b]Error[/b]: 对象不支持“set_value”属性或方法
+[b]FileName[/b]: http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 11035
+TypeError: 对象不支持“set_value”属性或方法
+   at Anonymous function (eval code:42:13)
+   at onComplete (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:11032:25)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+   at Sys$Net$WebRequest$completed (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9539:13)
+   at this$_onReadyStateChange (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:10068:13)
+
+
+2017-02-09 09:36:22,144 [44] ERROR - 执行SQL出错: Incorrect date value: '2017-01' for column 'month' at row 1
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values(@month,@total,@remark,@datetime,@id,@uid)
+
+  month='2017-01'
+  total=1
+  remark='323'
+  datetime='2017-02-09 09:36:21'
+  id=6576126967869244745
+  uid=1
+
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values('2017-01',1,'323','2017-02-09 09:36:21',6576126967869244745,1)
+
+
+2017-02-09 09:37:05,050 [44] ERROR - 执行SQL出错: Incorrect date value: '2017-01' for column 'month' at row 1
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values(@month,@total,@remark,@datetime,@id,@uid)
+
+  month='2017-01'
+  total=12
+  remark='32323'
+  datetime='2017-02-09 09:37:04'
+  id=6576126967873552355
+  uid=1
+
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values('2017-01',12,'32323','2017-02-09 09:37:04',6576126967873552355,1)
+
+
+2017-02-09 09:37:46,104 [44] ERROR - 执行SQL出错: Incorrect date value: '2017-01' for column 'month' at row 1
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values(@month,@total,@remark,@datetime,@id,@uid)
+
+  month='2017-01'
+  total=1
+  remark='23'
+  datetime='2017-02-09 09:37:37'
+  id=6576126967877224277
+  uid=1
+
+insert into backsectionDetail (month,total,remark,datetime,id,uid) values('2017-01',1,'23','2017-02-09 09:37:37',6576126967877224277,1)
+
+
+2017-02-09 10:25:13,132 [25] ERROR - CARPA IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  WebService调用出错 http://localhost:2033/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2033/BillList.gspx
+System.InvalidOperationException: 会话超时，查询失败。请刷新该页，或重新登录
+   在 Carpa.Web.Script.Controller.GetPagerInfo(HttpSessionState session, String pagerId)
+   在 Carpa.Web.Script.DataService.GetPagerInfo(String pagerId)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2017-02-09 11:24:01,107 [11] ERROR - CARPA IE_7 127.0.0.1 rfoszhptaljod1hcokkkb0e0  WebService调用出错 http://localhost:2033/Test001/Test001.Login.ajax/UserLogin  http://localhost:2033/Login.gspx
+System.IO.FileNotFoundException: 未能加载文件或程序集“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”或它的某一个依赖项。系统找不到指定的文件。
+文件名:“MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d”
+   在 Carpa.Web.Script.DbHelper.CreateMysqlConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 d:\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.Login.UserLogin(Int32 width, Int32 height, String name, String pwd) 位置 d:\Test001\Test001\Login.cs:行号 19
+
+=== 预绑定状态信息 ===
+日志: DisplayName = MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+ (Fully-specified)
+日志: Appbase = file:///D:/Test001/Test001/
+日志: 初始 PrivatePath = D:\Test001\Test001\bin
+调用程序集: Carpa.Web, Version=1.0.6053.26525, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: D:\Test001\Test001\web.config
+日志: 使用主机配置文件: H:\Users\Administrator\Documents\IISExpress\config\aspnet.config
+日志: 使用 H:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 策略后引用: MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+日志: 尝试下载新的 URL file:///H:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/vs/aa3ba553/b40ef03/MySql.Data.DLL。
+日志: 尝试下载新的 URL file:///H:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/vs/aa3ba553/b40ef03/MySql.Data/MySql.Data.DLL。
+日志: 尝试下载新的 URL file:///D:/Test001/Test001/bin/MySql.Data.DLL。
+日志: 尝试下载新的 URL file:///D:/Test001/Test001/bin/MySql.Data/MySql.Data.DLL。
+日志: 尝试下载新的 URL file:///H:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/vs/aa3ba553/b40ef03/MySql.Data.EXE。
+日志: 尝试下载新的 URL file:///H:/Windows/Microsoft.NET/Framework/v4.0.30319/Temporary ASP.NET Files/vs/aa3ba553/b40ef03/MySql.Data/MySql.Data.EXE。
+日志: 尝试下载新的 URL file:///D:/Test001/Test001/bin/MySql.Data.EXE。
+日志: 尝试下载新的 URL file:///D:/Test001/Test001/bin/MySql.Data/MySql.Data.EXE。
+

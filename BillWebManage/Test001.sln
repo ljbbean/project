@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test001", "Test001\Test001.csproj", "{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaoBaoRequest", "TaoBaoRequest\TaoBaoRequest.csproj", "{323E521E-1558-459B-8854-F0979B44C8F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTest", "DataTest\DataTest.csproj", "{822EA6CD-1E49-44D4-952E-5198EDFCBC08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822EA6CD-1E49-44D4-952E-5198EDFCBC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822EA6CD-1E49-44D4-952E-5198EDFCBC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822EA6CD-1E49-44D4-952E-5198EDFCBC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822EA6CD-1E49-44D4-952E-5198EDFCBC08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

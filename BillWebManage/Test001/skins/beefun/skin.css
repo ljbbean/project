@@ -1,0 +1,401 @@
+body{background-color:#fff;}
+body,input,select,textarea,button{font:12px tahoma,arial,Î¢ÈíÑÅºÚ,ËÎÌå;}
+td{font-size:12px;line-height:16px;}
+a:link{color:#000;text-decoration:none}
+a:visited{color:#000;text-decoration:none}
+a:hover{color:#f24f00;text-decoration:underline}
+a.LabelLink:link{color:#000;text-decoration:none}
+a.LabelLink:visited{color:#000;text-decoration:none}
+a.LabelLink:hover{color:#f24f00;text-decoration:none}
+ol,ul{margin:0}
+h1{font-size:20pt;line-height:24pt}
+h2{font-size:16pt;line-height:20pt}
+
+.disabled{color:#a0a0a0}
+.Title{font-family:"Î¢ÈíÑÅºÚ","ËÎÌå";font-size:14px;line-height:1.0;font-weight:300}
+
+.Loading{border:1px solid #b7b7b7;background-color:#f2fdff;line-height:30px;opacity:0.9;padding:0 20px;border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;box-shadow:0 0 3px #ccc;-webkit-box-shadow:0 0 3px #ccc;-moz-box-shadow:0 0 3px #ccc;}
+.Panel{border-color:#b7b7b7;box-shadow:1px 2px 2px #fff}
+.SDIPanel{border-top:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;padding:5px}
+.ToolTip{border:1px solid #eee;box-shadow:1px 2px 2px #fff;background-color:rgba(242,253,255,0.8);padding:5px}
+.Border{border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;background-color:rgba(255,255,255,0.9);}
+
+.Edit{width:116px;height:22px;line-height:22px;border:1px solid #c9c9c9;background-color:#fff; text-indent:2px;}
+.Edit:hover,.TextArea:hover{border-color:#ffa004;}
+.Edit:disabled{border:1px solid #ddd;background:#eee;}
+
+.Grid .ButtonEdit{border-radius:0;-webkit-border-radius:0;-moz-border-radius:0;}
+
+.ButtonEdit{width:116px;height:22px;line-height:22px;border:1px solid #c9c9c9;background-color:#fff;text-indent:3px}
+.ButtonEdit:hover{border-color:#ffa004}
+.ButtonEdit:disabled{border:1px solid #ddd;background:#eee}
+.ButtonEditTable:hover .EditButtonBorder, .ButtonEditTable:hover .ButtonEdit{border-color:#ffa004}
+
+
+.FileEdit{width:120px;height:21px}
+.EditButtonBorder{border:1px solid #c9c9c9;border-left:none;background-color:#fff}
+
+.FlatButton{border:1px solid #b7b7b7}
+.Button{color:#3a4044;border:1px solid #c9c9c9;background-color:#f6f6f6;height:26px;padding:0 5px;white-space:nowrap}
+.Button:hover,.Button:focus{border:1px solid #ffa004;background-color:#ffa004;color:#fff}
+.Button.disabled{color:#999;background-color:#eaeaea;border:1px solid #ccc;font-weight:normal}
+.Button.disabled:hover{color:#999;background-color:#eaeaea;border:1px solid #ccc;font-weight:normal; text-decoration:none}
+.Button IMG{margin-right:4px}
+
+.SpeedButton{padding:2px 3px 1px 3px;height:18px;text-align:center;cursor:default}
+.SpeedButton IMG{margin-right:4px}
+.SpeedButtonBorder{border:1px solid #ffac46;background:url("common/btnActiveBg.gif") repeat-x left center}
+.PrintButton{display:inline-block}
+.PrintButton:hover .Button{border-color:#ffa004;background-color:#ffa004;color:#fff;background-image:none}
+.PrintButton .Button{margin:0;}
+.PrintButton button.Button:hover{background-color:#ea9203}
+.PrintButton span.Button{min-width:24px;width:24px;line-height:24px;background-image:url("common/buttonLine.png"); background-repeat: no-repeat; background-position:left center;border-left:none;}
+.PrintButton span.Button:hover{background-color:#ea9203}
+.PrintButton span.Button img{margin:5px 0 0 1px}
+
+.TextArea{border:1px solid #ccc;box-shadow:1px 2px 2px #fff;padding:1px;background-color:#fff; text-indent:3px;}
+.IFrame{border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff}
+.Calendar{width:185px;height:160px;border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff}
+.DropDownList{width:118px;height:19px;border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;background-color:#f6f6f6}
+.ListBox{border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;padding:1px;background-color:#fff;width:116px}
+.ListBox td{line-height:23px;}
+
+.CheckBoxListHorzItem{padding-bottom:3px;padding-right:8px;}
+.RadioButtonListHorzItem{padding-bottom:3px;padding-right:8px}
+.RadioButtonListHorzItem label, .CheckBoxListHorzItem label, .CheckBoxListVertItem label, .RadioButtonListVertItem label{margin-left:3px;}
+
+.Label{margin-top:3px;word-wrap:break-word;word-break:break-all}
+.TextLabel{width:118px;height:19px;border-width:0;padding:1px;background-color:#f6f6f6}
+.CheckBox{margin-bottom:-2px}
+.RadioButton{margin-bottom:-2px}
+.HSpacer{padding-left:3px;font-size:1px;line-height:1px}
+.VSpacer{height:8px}
+.DetailMain .DetailCommpany .LayoutGroupCaption{}
+
+.LayoutGroupCaption{line-height:28px;padding-left:5px;padding-top:3px;padding-bottom:1px;color:#333;background-color:#eff3f6}
+.LayoutGroupBorder{border:1px solid #c9c9c9;margin-bottom:5px;text-align:left;
+                   border-radius:1px; -moz-border-radius:1px; -webkit-border-radius:1px;overflow:hidden}
+.LayoutGroupBorder .LayoutGroupBorder{border-top-style:solid;}
+.LayoutGroupVSpacer{height:4px}
+.LayoutItemLabelVSpace{padding-top:3px}
+.LayoutItemControlVSpace{padding-top:3px}
+.LayoutItemLabel{white-space:nowrap;padding-left:8px;padding-top:3px;padding-right:8px;line-height:28px;}
+.LayoutItemControl{padding-right:6px}
+.LayoutItemControl .Label{line-height:28px;}
+.LayoutItemNoLabel{padding-top:6px;padding-right:0}
+.LayoutFirstItemNoLabel{padding-left:0;padding-top:3px;padding-right:0}
+.LeftPanel{padding-right:8px}
+.RightPanel{overflow:auto}
+
+.FormBorder{border:1px solid #476f9a;}
+.FormCaptionText{font-size:14px; text-indent:5px; text-shadow:1px 1px 1px #555;letter-spacing:1px;}
+.FormCaption{color:#fff;background:#476f9a;}
+.FormCaptionLabel{padding-left:4px;padding-top:3px;height:30px;}
+.FormCaptionButton{padding-right:2px}
+.FormSmallCaptionLabel{padding:1px 0 2px 4px;font-size:11px;font-weight:normal}
+.FormContent{padding:5px;overflow:auto}
+.FormContentAutoSize{padding:5px}
+.MessageBoxIconTd{width:32px;padding:10px;background-color:transparent}
+.MessageBoxTextTd{padding:10px 10px 10px 0px;background-color:transparent}
+
+.GridConfigPage .Button{font-size:12px}
+.Grid{border:1px solid #bbb;border-top:none;padding-bottom:1px;overflow:hidden;background:#fafafa}
+.Grid input[type='checkbox']{width:16px;height:16px}
+.GridHeader{cursor:default;height:30px;padding-bottom:0;background-color:#bbb;margin-left:-1px}
+.GridHeaderCaption{font-size:12px;background-color:#f2f2f2;}
+.GridHeaderCaptionText{color:#3e3e3e; padding:2px 5px 1px 5px;white-space:nowrap}
+.ActiveColumn:hover .GridHeaderCaptionText{color:#fff}
+.GridHeaderSortShape{padding-right:5px;padding-top:5px}
+.GridFooter{background-color:#fefbe5;table-layout:fixed;cursor:default;margin-left:-1px}
+.GridFooterCell{height:100%;overflow-x:hidden}
+.GridFooterCellText{height:15px;white-space:nowrap;background-color:#fefbe5;margin:1px;border:1px solid #d6e9f9;padding:0 3px 0 3px}
+.GridBody{background-color:#fefefe;}
+.GridBodyRows{background-color:#e9e9e9;margin-left:-1px}
+.GridBodyRow{height:28px}
+.GridBodyCellText{padding:3px 5px 2px 3px;min-height:15px;word-wrap:break-word;word-break:break-all}
+.GridBodyCellLinkText{text-decoration:underline;cursor:pointer}
+.GridBodyRowNoCell{background-color:#f6fcff}
+.GridBodyRowNoCellText{text-align:left;padding:3px 5px 2px 8px;min-height:15px}
+.GridInplaceCell{padding:0;box-shadow:-1px 0 0 #ffa004,1px 0 0 #ffa004,0 1px 0 #ffa004,0 -1px 0 #ffa004}
+.GridFilterBar{border-left:none;border-bottom:1px solid #dfdfdf;background-color:#f9f9f9}
+.GridFilterBar, .GridFilterBlock, .GridFilterXBar{border-color:#c9c9c9}
+
+.Pager{border:1px solid #bbb;background-color:#fff;height:31px;overflow:hidden;}
+.PagerBottom{border-width:0 1px 1px 1px;}
+.PagerTop{border-width:1px 1px 0 1px}
+.PagerContent{padding:6px;float:right}
+.PagerSummaryText{color:#656566;padding-top:0px;padding-right:8px}
+.PagerPageNumber{padding-top:1px;}
+.PagerPageNumberSelected{padding:0px 6px;border:1px solid #1c689f;background-color:#2576b0;color:white;}
+.PagerPageNumberButton{padding:0px 6px;border:1px solid #bcbcbc;background-color:#f6f6f6;}
+.PagerPageNumberHover{padding:0px 6px;border:1px solid #aedaf0;background-color:#b7e6fd;}
+.Pager .Edit{height:18px;}
+.Pager .Button{height:22px;}
+.Pager .Pager_homePage div{background:url("pager/homePage.png") no-repeat 0 0;width:20px;height:12px;margin-left:16px;}
+.Pager .Pager_lastPage div{background:url("pager/lastPage.png") no-repeat 0 0;width:20px;height:12px;}
+.Pager .Pager_homePage div:hover{background-position:0 -12px;}
+.Pager .Pager_lastPage div:hover{background-position:0 -12px;}
+.Pager .Pager_homePage div[disabled="true"]{background-position:0 -36px;}
+.Pager .Pager_lastPage div[disabled="true"]{background-position:0 -36px;}
+
+.MenuBar{background:#476f9a;height:36px;}
+.MenuBar .MenuBarHandle{height:36px;padding:0 2px 0 8px;width:6px;cursor:default}
+.MenuRoot{white-space:nowrap;cursor:default; vertical-align:middle;border-top:2px solid #476f9a;background:url("menu/arrow.png") no-repeat right center}
+.MenuRoot .MenuRootCaption{padding:0 30px 0 20px;font-size:15px;height:34px;line-height:34px;color:#fff;}
+.MenuRoot .MenuRootCaption img{margin-bottom:6px}
+.MenuRootActive{border-color:#ffa004;background:#5581b2 url("menu/firstMenuItemBg.png") no-repeat center 31px;}
+.MenuRootActive .MenuRootCaption{color:#fff;}
+
+.Menu{position:absolute;top:0;visibility:hidden;margin-top:1px;border-left:1px solid #44648a;border-top:2px solid #44648a;background-color:#5581b2;white-space:nowrap;cursor:default}
+.Menu THEAD,.Menu TFOOT{height:1px;background-color:#5581b2}
+.Menu TBODY .MenuItem{white-space:nowrap;line-height:30px;height:30px;}
+.Menu TBODY .MenuItem:hover{background-color:#476f9a;}
+.Menu TBODY .MenuItem .MenuSpacerLeft{width:0}
+.Menu TBODY .MenuItem .MenuImage IMG{margin:3px 4px 3px 3px}
+.Menu TBODY .MenuItem .MenuCaption{padding:2px 18px 0 0px;white-space:nowrap;color:#fff;}
+.Menu TBODY .MenuItem .MenuMore,.Menu TBODY .MenuItem .MenuNoMore{padding-right:6px;text-align:right;color:#fafafa;}
+.Menu TBODY .MenuItem .MenuShortcut{padding-right:6px;text-align:right;color:#fafafa;}
+.Menu TBODY .MenuItem .MenuSpacerRight{width:0;background-color:#5581b2;overflow:hidden;font-size:0;padding:0}
+.Menu TBODY .MenuSeperator{background-color:#3f6b9d;height:1px;}
+.Menu TBODY .MenuSeperator .MenuCaption IMG{width:8px;height:1px;}
+
+.NormalMenu.Menu{border:1px solid #b9baba;background-color:#fbfbfb;}
+.NormalMenu.Menu THEAD,.NormalMenu.Menu TFOOT{background-color:#fbfbfb}
+.NormalMenu.Menu TBODY .MenuItem:hover .MenuCaption,
+.NormalMenu.Menu TBODY .MenuItem:hover .MenuMore,
+.NormalMenu.Menu TBODY .MenuItem:hover .MenuNoMore,
+.NormalMenu.Menu TBODY .MenuItem:hover .MenuShortcut{background-color:#ffa004;color:#fff}
+.NormalMenu.Menu TBODY .MenuItem.disabled:hover .MenuCaption,
+.NormalMenu.Menu TBODY .MenuItem.disabled:hover .MenuMore,
+.NormalMenu.Menu TBODY .MenuItem.disabled:hover .MenuNoMore,
+.NormalMenu.Menu TBODY .MenuItem.disabled:hover .MenuShortcut{background-color:#fbfbfb;color:#a0a0a0}
+.NormalMenu.Menu TBODY .MenuItem .MenuImage{background-image:url("menu/menuItem.gif");background-position:center center;background-repeat:repeat-y}
+.NormalMenu.Menu TBODY .MenuItem .MenuCaption{padding:2px 18px 0 8px;background-color:#fbfbfb;white-space:nowrap;color:#333}
+.NormalMenu.Menu TBODY .MenuItem.disabled .MenuCaption{color:#a0a0a0}
+.NormalMenu.Menu TBODY .MenuItem .MenuMore,.NormalMenu.Menu TBODY .MenuItem .MenuNoMore{padding-right:6px;background-color:#fbfbfb;text-align:right;color:#555}
+.NormalMenu.Menu TBODY .MenuItem .MenuShortcut{padding-right:6px;text-align:right;color:#555}
+.NormalMenu.Menu TBODY .MenuItem .MenuSpacerRight{width:0;background-color:#fff}
+.NormalMenu.Menu TBODY .MenuSeperator .MenuImage{background-image:url("menu/menuItem.gif");background-position:center center;background-repeat:repeat-y}
+.NormalMenu.Menu TBODY .MenuSeperator .MenuCaption{border:1px solid #fff;background-color:#d5dbde}
+.NormalMenu.Menu TBODY .MenuSeperator .MenuCaption IMG{width:8px;height:1px;background-color:#fff}
+
+
+
+.ArrowRight{border:none;font-size:0;padding:0;background:url("menu/arrowR.png") no-repeat right center;width:8px;height:12px;float:right}
+
+.TabTopCaptions{cursor:default;height:0}
+.TabTopRightSpace{border-bottom:1px solid #cbcbcb;line-height:0;font-size:0;height:1px}
+.TabBottomCaptions{cursor:default;height:0}
+.TabTopCaption{padding:3px 6px 0 0;white-space:nowrap;height:30px;}
+.TabTopCaptionClose{padding:3px 19px 0 6px;white-space:nowrap}
+.TabTopCaptionInitialize{padding:3px 0 0 0;white-space:nowrap}
+
+.TabBottomCaptionClose{padding:2px 19px 1px 6px;white-space:nowrap}
+.TabBottomCaptionInitialize{padding:2px 0 1px 0;white-space:nowrap}
+.TabCloseButton{padding-top:1px}
+.TabBody{padding:8px;border:1px solid #cbcbcb;border-top-style:none;background-color:#FBFBFB;}
+.TabBodyNoHeader{overflow:hidden}
+
+.MDIPanel{width:auto;}
+.MDIBar{width:100%;height:30px;background-color:#efeeee;overflow:hidden;}
+.MDIBarHandle{width:0;height:0;padding:0;margin:0;cursor:default}
+.MDITabBar{position:relative;overflow:hidden}
+.MDITabCaptions{cursor:default;height:30px;}
+.MDIBarLine{border-top:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;border-bottom:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;width:100%;height:0}
+.MDIChilds{clear:both;overflow:auto;padding:5px}
+.MDITabItemState0{background-color:#efeeee;border-right:1px solid #ccc;}
+.MDITabItemState1{background-color:#fab94e;border-right:1px solid #ccc;}
+.MDITabItemState2{background-color:#ffa004;border-right:1px solid #ccc;}
+.TabTopCaptionText{color:#555;font-size:14px;padding:0 3px}
+.MDITabItemState1 .TabTopCaptionText,.MDITabItemState2 .TabTopCaptionText{color:#fff}
+.MDIBar .Button{margin:0;height:30px;padding:0 14px}
+
+.TabHeader .TabTopCaptionText{font-size:13px;color:#eb9508;padding:0 6px}
+.TabHeader .MDITabItemState0{background-color:transparent;border:none}
+.TabHeader .MDITabItemState0 .TabTopCaptionInitialize{background-color:#fff;border:1px solid #cbcbcb}
+.TabHeader .MDITabItemState0 .TabTopCaptionText{color:#666}
+
+.TabHeader .TabTopButtonLeftSpacer,.TabHeader .TabTopButtonRightSpacer{border-bottom:1px solid #cbcbcb}
+.TabHeader .MDITabItemState2,.TabHeader .MDITabItemState1{background-color:transparent;border:none}
+.TabHeader .MDITabItemState2 .TabTopCaptionInitialize,
+.TabHeader .MDITabItemState1 .TabTopCaptionInitialize{background-color:#fbfbfb;border:1px solid #cbcbcb;border-bottom-color:#fbfbfb}
+
+
+.TreeView{padding:0;border:1px solid #cfcfcf;box-shadow:1px 2px 2px #fff;overflow:auto;background-color:#fff}
+.TreeNodeText{padding:2px 3px 1px 3px}
+
+.VSplitter{width:7px;background-color:transparent;-webkit-border-radius:0 0 0 0;}
+.LeftTriangle,.RightTriangle{display:inline-block;width:100%;height:100%;line-height:0;font-size:0;vertical-align:middle;margin:0;}
+.LeftTriangle{border:none;background:url("splitter/vsplitter.png") no-repeat 0 center;}
+.RightTriangle{border:none;background:url("splitter/vsplitter.png") no-repeat -14px center;}
+.LeftTriangle:hover{border:none;background:url("splitter/vsplitter.png") no-repeat -7px center;}
+.RightTriangle:hover{border:none;background:url("splitter/vsplitter.png") no-repeat -21px center;}
+.HSplitter{border-radius:0px;height:10px; background-color:transparent;background:url("splitter/hsplitter.png") no-repeat center 0;}
+.VSplitter:hover{background-color:transparent;}
+.HSplitter:hover,.HSplitter.hover{background-color:transparent;background:url("splitter/hsplitter.png") no-repeat center -10px;cursor:s-resize}
+.HSplitter span{height:9px;margin-top:1px;width:52px}
+.HSplitter span:hover{background-color:#ffa004;opacity:0.6}
+.HSplitter .UpTriangle{background:url("splitter/htriangle.png") no-repeat 0 -18px;}
+.HSplitter .UpTriangle:hover{background-position:0 -27px;}
+.HSplitter .DownTriangle{background:url("splitter/htriangle.png") no-repeat 0 0;}
+.HSplitter .DownTriangle:hover{background-position:0 -9px;}
+
+
+.NavBar{border:1px solid #c7c7c7;border-top-width:0;box-shadow:1px 2px 2px #fff;padding:0;background-color:#f6fcff}
+.NBGroupHeader{cursor:pointer;color:#333;padding:3px 5px 3px 13px;background-image:url("navBar/headerBg.gif");background-position:0 0;background-repeat:repeat-x;border-bottom:#dff2fd 1px solid}
+.NBGroupHeader TD{white-space:nowrap}
+.NBGroupHeaderHover{background-position:0 -32px}
+.NBGroupHeaderImg{width:16px;height:16px;background-image:url("navBar/collapseExpand.png");background-repeat:no-repeat}
+.NBGroupHeaderImgCollapse{background-position:0 0}
+.NBGroupHeaderImgExpand{background-position:0 -16px}
+.NBGroupBody{padding:2px 1px 2px 1px;min-height:8px;height:auto!important;height:8px}
+
+.SmallNavItem{cursor:pointer;color:#494949;padding:4px 5px 4px 9px}
+.SmallNavItemIcon{width:16px;height:16px;border-width:0;margin-right:8px}
+.LargeNavItem{cursor:pointer;color:#494949;padding:6px 12px 6px 12px}
+.LargeNavItemIcon{width:32px;height:32px;margin-bottom:3px}
+.ToolBar{height:22px;border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;padding:1px;background-image:url("toolBar/toolBarBg.gif");background-position:0 0;background-repeat:repeat-x}
+.ToolBarNoBottomLine{border-bottom-style:none}
+.ToolBarNoTopLine{border-top-style:none}
+.ToolBarHandle{width:11px;height:20px;background-image:url("toolBar/toolBarHandle.gif");background-repeat:no-repeat;background-position:center right}
+.ToolButton{width:22px;height:20px}
+.ToolSpeedButton IMG{margin-right:4px}
+.ToolSpeedButton .ToolSpeedButtonContent{height:15px;white-space:nowrap;cursor:default;margin:0 1px 0 1px;padding:2px 7px 0 7px}
+.ToolSeperator{width:8px;height:18px;background-image:url("toolBar/seperator.gif");background-repeat:repeat-y;background-position:center center}
+.LargeToolBar{border-bottom:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;padding:2px 1px 2px 1px;height:44px;background-image:url("toolBar/largeToolBarBg.gif")}
+.LargeToolBarHandle{width:11px;height:36px;margin-top:0;background-image:url("toolBar/largeToolBarHandle.gif");background-repeat:no-repeat;background-position:center right}
+.LargeToolButton{width:52px;padding:2px 1px 1px 1px;cursor:default}
+.LargeToolButtonText{padding:1px 0 0 0;white-space:nowrap}
+.LargeToolSeperator{width:8px;height:36px;margin-top:0;background-image:url("toolBar/seperator.gif");background-repeat:repeat-y;background-position:center center}
+.StatusBar{border-top:1px solid #eee;background:url("toolBar/statusBarBg.gif") repeat-x left center;height:21px}
+.StatusBarHandle{background-image:url("toolBar/statusBarHandle.gif");background-repeat:no-repeat;background-position:center right;padding:0 2px 0 8px;margin-right:3px;width:0;height:21px;cursor:default}
+.HtmlEditorBody{border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff}
+.HtmlEditorHtml{border:1px solid #b7b7b7;box-shadow:1px 2px 2px #fff;padding:5px}
+
+.SchedulerSelectedPanel{background-color:#FDFCF4;}
+.SchedulerTodayPanel{background-color:#DEEEDE;}
+.SchedulerPanel{background-color:White;}
+.SchedulerDayPanel{background-color:#BFDDBF;}
+.SchedulerOtherDayPanel{background-color:#EFEFEF;}
+.SchedulerWeekPanel{background-color:#D6EAD6;color:#999;}
+.SchedulerTabel{background-color:#9ECA9E;}
+.SchedulerTitle{color:#333;font-size:15px;padding-top:5px;}
+.SchedulerItemPanel{white-space:nowrap;overflow:hidden;}
+.GridDynamicButtonBody{padding:4px 2px;word-wrap:break-word;}
+.GridDynamicButtonBody a{color:#3366cc;}
+.GridDynamicButtonBody a:visited{color:#3366cc;}
+.GridDynamicButtonVert{display:block;line-height:16px;text-align:center;}
+.GridDynamicButtonHorz{display:block;float:left;margin-right:5px;line-height:16px;}
+.LayoutGroupContainer{}
+.LayoutGroupContainer a{color:#333;}
+.LayoutGroupContainer button{-moz-box-shadow:0px 0px 0px #ddd;-webkit-box-shadow:0px 0px 0px #ddd;box-shadow:0px 0px 0px #ddd;}
+.ContentPager{text-align:right;}
+.ContentPagerItemCount{}
+.ContentPagerButton{margin-left:3px;margin-right:3px;}
+.ContentPagerLinkCurr{color:red;}
+.ContentPagerLinkDisabled{color:#bbb;}
+
+.Popup{border:1px solid #ddd;padding:5px; -moz-box-shadow:0 0 5px #ccc;-webkit-box-shadow:0 0 5px #ccc; box-shadow:0 0 5px #ccc;}
+.mui-mbar-arr{border-bottom-color:#eee;}
+       
+.ToolDropDownBox{}
+.ToolDropDownBox_Button{padding:0px 5px;height:20px;line-height:20px;}
+.ToolDropDownBox .ToolDropDownBox_Focus{}
+.ToolDropDownBox_Focus .ToolDropDownBox_Button{}
+.ToolDropDownBox_Focus .ToolDropDownBox_Arrow{}
+.DropDownPopup{border:1px solid #ddd;padding:8px;
+            -moz-box-shadow:2px 2px 5px #eee,-2px 2px 5px #eee,-2px -2px 5px #eee,2px -2px 5px #eee;
+            -webkit-box-shadow:2px 5px 3px #eee,-2px 2px 5px #eee,-2px -2px 5px #eee,2px -2px 5px #eee;
+            box-shadow:2px 2px 5px #eee,-2px 2px 5px #eee,-2px -2px 5px #eee,2px -2px 5px #eee;}
+            
+.BackTopShape{position:fixed;display:none;bottom:40px;right:25px;}
+.ListPager{text-align:left;margin:3px auto;}
+.ListPagerButton{margin-left:2px;margin-right:2px;border:1px solid #ccc;line-height:20px;height:20px;padding:0px 8px;text-align:center;display:inline-block;}
+.ListPagerItemCount,.ListPagerEllipsis{border:none;}
+a.ListPagerButton{}
+a.ListPagerButton:hover{background-color:#eee;}
+a.ListPagerLinkCurr{color:#ff6702;border:1px solid #ff6702;background-color:#ffece1;}
+a.ListPagerLinkCurr:hover{text-decoration:none;background-color:transparent;cursor:default;}
+a.ListPagerLinkDisabled{color:#bbb;}
+a.ListPagerLinkDisabled:hover{background-color:transparent;text-decoration:none;cursor:default;}
+a.ListPagerPrevButton,a.ListPagerNextButton{}
+
+.UI_ListView{border:1px solid #eee;overflow:auto;}
+.UI_ListItem{width:200px;float:left;overflow:hidden;margin:5px;}
+.UI_ListLayout{border:1px solid #eee;padding:5px;background-color:#fff;height:100%;}
+.UI_ListLayout:hover{border:1px solid #aaa;}
+.DataText{word-wrap:break-word;word-break:break-all;}
+.UI_ListView .LayoutItemLabel{padding-top:0px;}
+
+.ScrollBar::-webkit-scrollbar-thumb{background-color:#dedede;}
+.ScrollBar::-webkit-scrollbar-thumb:hover{background-color:#ccc;}
+.ScrollBar::-webkit-scrollbar{width:10px;height:10px;}
+.ScrollBar::-webkit-scrollbar-track-piece{background-color:#f2f2f2;}
+.ScrollBar::-webkit-scrollbar-button{background-color:#fff;}
+.ScrollBar::-webkit-scrollbar-button:vertical:decrement{border-left:8px dashed transparent;border-right:8px dashed transparent;border-bottom:8px solid #bbb;}
+.ScrollBar::-webkit-scrollbar-button:vertical:increment{border-left:8px dashed transparent;border-right:8px dashed transparent;border-top:8px solid #bbb;}
+.ScrollBar::-webkit-scrollbar-button:horizontal:decrement{border-top:8px dashed transparent;border-bottom:8px dashed transparent;border-right:8px solid #bbb;}
+.ScrollBar::-webkit-scrollbar-button:horizontal:increment{border-top:8px dashed transparent;border-bottom:8px dashed transparent;border-left:8px solid #bbb;}
+.ScrollBar::-webkit-scrollbar-corner{background-color:#f2f2f2;}
+
+.LayoutItemControlVSpace .TRVertCheckBoxList{}
+.LayoutItemControlVSpace .TRHorzCheckBoxList{}
+.TRVertCheckBoxList .TRCheckBoxListItem{display:block;line-height:25px;}
+.TRHorzCheckBoxList .TRCheckBoxListItem{float:left;margin-right:5px;line-height:25px;}
+.TRCheckBoxListItem label:hover{color:#e9b63a}
+.TRCheckBoxListItem input{}
+.TRCheckBoxListItem label{width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-break:keep-all;}
+
+.TRVertRadioButtonList{overflow:hidden;}
+.TRVertRadioButtonList .TRRadioButtonListItem{display:block;line-height:25px;}
+.TRHorzRadioButtonList .TRRadioButtonListItem{float:left;margin-right:5px;line-height:25px;}
+.TRRadioButtonListItem label:hover{color:#e9b63a}
+.TRRadioButtonListItem input{}
+.TRRadioButtonListItem label{width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;word-break:keep-all;}
+
+.HintBox td{font-size:12px;line-height:22px;}
+.HintBox img{margin-top:5px;}
+
+.clear{clear:both;}
+.SelectorBottom{margin-top:10px;}
+.SelectorBottom .Button{margin-right:10px;}
+.SelectorBottom td .Button{margin-right:0;}
+.FloatLeft{float:left;}
+.FloatRight{float:right;}
+
+#GlobalToolTip{border:1px solid #000; background:#333;z-index:9999999;line-height:30px;text-align:center;padding:0px 15px;color:#fff;
+               border-radius:7px;-webkit-border-radius:7px;-moz-border-radius:7px;
+               box-shadow:-3px 0px 7px #ccc,3px 0px 7px #ccc,0px 3px 7px #ccc,0px -3px 7px #ccc; 
+               -moz-box-shadow:-3px 0px 7px #ccc,3px 0px 7px #ccc,0px 3px 7px #ccc,0px -3px 7px #ccc; 
+               -webkit-box-shadow:-3px 0px 7px #ccc,3px 0px 7px #ccc,0px 3px 7px #ccc,0px -3px 7px #ccc; 
+               position:absolute; left:43%;top:43%;display:none;opacity:0.9;}
+
+.MessageBox .Button{height:24px;}
+.MessageBox .FormCaption{color:#fff;font-weight:bold;}
+.MessageBox .MessageBoxText{ vertical-align:middle;word-wrap:break-word; word-break:break-all; -ms-word-break: break-all;color:#3f3f3f;}
+
+.SoftKeyboardButton{width:40px;height:22px;text-align:center;font-size:14px; font-family:"Arial";}
+.SoftKeyboard_Number{border:1px solid #ccc; background:#fafafa;}
+.SoftKeyboard_Letter{border:1px solid #bbb; background:#e1e1e1;}
+.SoftKeyboard_Symbol{border:1px solid #aaa; background:#ccc;}
+.SoftKeyboard_FN{font-size:12px;background:#CCE4EE;border:1px solid #81b7e4;}
+.SoftKeyboard_OK{font-size:12px;background:#CCE4EE;border:1px solid #81b7e4;}
+.SoftKeyboard_Line{height:3px;line-height:0;font-size:0;overflow:hidden;}
+.SoftKeyboardButton:hover{background:#D7F0FA;color:#ff0000;}
+.SoftKeyboard_Line:hover{background:none;}
+
+.HintBox td{font-size:12px;line-height:22px;}
+.HintBox img{margin-top:5px;}
+
+.TreeDragBlock{border:1px dashed #aaa;background:#fafafa;padding:8px; position:absolute; display:none;}
+.TreeDragLine{height:1px;border:1px dashed #aaa;border-left:5px solid red; position:absolute; display:none;}
+
+.HtmlEditorFacePopup map{position:absolute; display:block; width:275px;height:114px;left:0;top:0;}
+.HtmlEditorFacePopup area{display:block;width:27px;height:26px;float:left; cursor:pointer;}
+
+.FormBorder .LayoutItemLabel{line-height:25px;}
+.FlatButton:hover span{color:#000;}
+
+.iconWarning{background-image:url("common/warning.png")}
+.iconQuestion{background-image:url("common/question.png")}
+.FormOverlay{background-color:#999;}

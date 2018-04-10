@@ -1,0 +1,824 @@
+
+2016-08-08 09:50:36,478 [909] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.ArgumentException: 不支持关键字: “charset”。
+   在 System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   在 System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   在 System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   在 System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   在 System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 18
+
+2016-08-08 09:52:20,323 [904] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.ArgumentException: 不支持关键字: “charset”。
+   在 System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   在 System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   在 System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   在 System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   在 System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 18
+
+2016-08-08 09:55:00,708 [909] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.ArgumentException: 不支持关键字: “charset”。
+   在 System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   在 System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   在 System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   在 System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   在 System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 18
+
+2016-08-08 09:56:00,263 [906] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.ArgumentException: 不支持关键字: “charset”。
+   在 System.Data.Common.DbConnectionOptions.ParseInternal(Hashtable parsetable, String connectionString, Boolean buildChain, Hashtable synonyms, Boolean firstKey)
+   在 System.Data.Common.DbConnectionOptions..ctor(String connectionString, Hashtable synonyms, Boolean useOdbcRules)
+   在 System.Data.SqlClient.SqlConnectionString..ctor(String connectionString)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnectionOptions(String connectionString, DbConnectionOptions previous)
+   在 System.Data.ProviderBase.DbConnectionFactory.GetConnectionPoolGroup(DbConnectionPoolKey key, DbConnectionPoolGroupOptions poolOptions, DbConnectionOptions& userConnectionOptions)
+   在 System.Data.SqlClient.SqlConnection.ConnectionString_Set(DbConnectionPoolKey key)
+   在 System.Data.SqlClient.SqlConnection.set_ConnectionString(String value)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString, SqlCredential credential)
+   在 System.Data.SqlClient.SqlConnection..ctor(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 18
+
+2016-08-08 09:58:10,174 [906] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 23
+
+2016-08-08 09:58:26,985 [179] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 23
+
+2016-08-08 09:59:10,018 [908] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523237536707
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523237536707)
+
+
+2016-08-08 09:59:10,030 [908] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   在 Carpa.Web.Script.DbHelper.ExecuteNonQuerySQL(String sql)
+   在 Carpa.Web.Script.DbHelper.Insert(String tableName, String[] fieldNames, IDictionary`2 data)
+   在 Carpa.Web.Script.DbHelper.Insert(String tableName, IDictionary`2 data)
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 31
+
+2016-08-08 09:59:21,321 [917] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.InvalidOperationException: 启动事务失败，上次执行的非事务SQL： ---> System.InvalidOperationException: Nested transactions are not supported.
+   在 MySql.Data.MySqlClient.ExceptionInterceptor.Throw(Exception exception)
+   在 MySql.Data.MySqlClient.MySqlConnection.Throw(Exception ex)
+   在 MySql.Data.MySqlClient.MySqlConnection.BeginTransaction(IsolationLevel iso)
+   在 MySql.Data.MySqlClient.MySqlConnection.BeginDbTransaction(IsolationLevel isolationLevel)
+   在 System.Data.Common.DbConnection.BeginTransaction()
+   在 Carpa.Web.Script.DbHelper.BeginTransaction()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.DbHelper.BeginTransaction()
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 21
+
+2016-08-08 10:00:10,590 [911] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523243595174
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523243595174)
+
+
+2016-08-08 10:00:48,646 [906] ERROR - 执行SQL出错: Out of range value for column 'bid' at row 1
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,bid) values(@code,@size,@amount,@color,@address,@area,@stotal,@total,@sendway,@bid)
+
+  code='23'
+  size='40*150'
+  amount=123
+  color='烫金白'
+  address='123'
+  area='4'
+  stotal=0
+  total=32
+  sendway='2323'
+  bid=3812885523247410216
+
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,bid) values('23','40*150',123,'烫金白','123','4',0,32,'2323',3812885523247410216)
+
+
+2016-08-08 10:01:07,034 [906] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523249239250
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523249239250)
+
+
+2016-08-08 10:01:07,047 [906] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 42
+
+2016-08-08 10:01:47,749 [906] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523253320891
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523253320891)
+
+
+2016-08-08 10:01:47,750 [906] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 42
+
+2016-08-08 10:01:52,950 [906] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523253840936
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523253840936)
+
+
+2016-08-08 10:01:52,952 [906] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 42
+
+2016-08-08 10:02:04,627 [911] ERROR - 执行SQL出错: Out of range value for column 'bid' at row 1
+insert into billdetail (stotal,bid) values(@stotal,@bid)
+
+  stotal=0
+  bid=3812885523254746544
+
+insert into billdetail (stotal,bid) values(0,3812885523254746544)
+
+
+2016-08-08 10:02:11,618 [911] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'bid' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 42
+
+2016-08-08 10:02:33,239 [912] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523257859987
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523257859987)
+
+
+2016-08-08 10:02:33,250 [912] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:03:56,707 [910] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523266216446
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523266216446)
+
+
+2016-08-08 10:03:56,708 [910] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:04:27,792 [179] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523269325201
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523269325201)
+
+
+2016-08-08 10:04:27,793 [179] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:04:32,584 [912] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523269804324
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523269804324)
+
+
+2016-08-08 10:04:32,586 [912] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:05:46,709 [912] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523277216789
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523277216789)
+
+
+2016-08-08 10:05:46,711 [912] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:05:52,649 [910] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523277810683
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523277810683)
+
+
+2016-08-08 10:05:52,651 [910] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:07:39,376 [911] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(@date,@taobaocode,@cname,@ctel,@carea,@caddress,@csendway,@cremark,@id)
+
+  date=NULL
+  taobaocode=''
+  cname=''
+  ctel=''
+  carea=''
+  caddress=''
+  csendway=''
+  cremark=''
+  id=3812885523288483386
+
+insert into bill (date,taobaocode,cname,ctel,carea,caddress,csendway,cremark,id) values(NULL,'','','','','','','',3812885523288483386)
+
+
+2016-08-08 10:07:39,378 [911] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 43
+
+2016-08-08 10:10:58,389 [911] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptTagException: 变量 “list” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 15，位置 6，标签<Grid> ---> Carpa.Expressions.ExpressionException: 变量 “list” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “list” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-08 10:10:58,397 [911] ERROR - /BillList.gspx 出错：变量 “list” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 15，位置 6，标签<Grid>
+Carpa.Web.Script.ScriptTagException: 变量 “list” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 15，位置 6，标签<Grid> ---> Carpa.Expressions.ExpressionException: 变量 “list” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “list” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-08 10:11:04,435 [186] ERROR - BROWSER IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“_format”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 2430
+TypeError: 对象不支持“_format”属性或方法
+   at Date.dateToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:2431:5)
+   at Sys.UI.Controls.DateColumn.prototype.getDisplayText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:12551:9)
+   at Sys.UI.Controls.Column.prototype._doGetCellText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11946:13)
+   at Sys.UI.Controls.Column.prototype._getCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11966:13)
+   at Sys.UI.Controls.Column.prototype._initCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11960:9)
+   at Sys.UI.Controls.Grid.prototype._addRowFast (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2617:13)
+   at Sys.UI.Controls.Grid.prototype._initRealDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2533:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2501:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:1137:9)
+   at Sys.UI.CustomForm.prototype.doInitControls (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7692:17)
+
+
+2016-08-08 10:12:18,314 [179] ERROR - BROWSER IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“_format”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 2430
+TypeError: 对象不支持“_format”属性或方法
+   at Date.dateToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:2431:5)
+   at Sys.UI.Controls.DateColumn.prototype.getDisplayText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:12551:9)
+   at Sys.UI.Controls.Column.prototype._doGetCellText (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11946:13)
+   at Sys.UI.Controls.Column.prototype._getCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11966:13)
+   at Sys.UI.Controls.Column.prototype._initCellHTML (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:11960:9)
+   at Sys.UI.Controls.Grid.prototype._addRowFast (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2617:13)
+   at Sys.UI.Controls.Grid.prototype._initRealDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2533:13)
+   at Sys.UI.Controls.Grid.prototype._initDataRows (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:2501:9)
+   at Sys$UI$Controls$Grid$doFormInit (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:1137:9)
+   at Sys.UI.CustomForm.prototype.doInitControls (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7692:17)
+
+
+2016-08-08 10:16:22,074 [168] ERROR - 执行SQL出错: Unknown column 'care' in 'field list'
+select id,DATE_FORMAT(date, '%Y-%m-%h') as date,taobaocode,cname,ctel,caddress,care,csendway,cremark,btotal,ltotal,preferential from bill order by date desc
+
+
+select id,DATE_FORMAT(date, '%Y-%m-%h') as date,taobaocode,cname,ctel,caddress,care,csendway,cremark,btotal,ltotal,preferential from bill order by date desc
+
+
+2016-08-08 10:16:22,078 [168] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillList.gspx  http://localhost:2032/Login.gspx
+Carpa.Web.Script.ScriptTagException: Unknown column 'care' in 'field list' 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: Unknown column 'care' in 'field list'
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 36
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-08 10:16:22,093 [168] ERROR - /BillList.gspx 出错：Unknown column 'care' in 'field list' 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel>
+Carpa.Web.Script.ScriptTagException: Unknown column 'care' in 'field list' 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.gspx”，行 3，位置 4，标签<VPanel> ---> MySql.Data.MySqlClient.MySqlException: Unknown column 'care' in 'field list'
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteSQL(String sql)
+   在 Test001.BillList.list.DoQuery(DbHelper db) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillList.cs:行号 36
+   在 Carpa.Web.Script.DbPagerDataSourceBase.InternalDoQuery(DbHelper dbHelper)
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSource.GetQueryData()
+   在 Carpa.Web.Script.DbPagerDataSourceBase.GetItemList(Int32 first, Int32 count)
+   在 Carpa.Web.Script.UI.Pager.GetDataSourceFirstPageItemList(DataOrder defaultDataOrder)
+   在 Carpa.Web.Script.UI.Grid.AddDataSourceScript()
+   在 Carpa.Web.Script.UI.Grid.InitScript()
+   在 Carpa.Web.Script.UI.ScriptControl.RegisterInitScript(String id, String elementId)
+   在 Carpa.Web.Script.UI.WebControl.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Grid.RegisterInitScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRenderGroup(LayoutGroup group, HtmlTextWriter writer, Int32 maxColumn, Boolean hasVSpace)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoRender(LayoutGroup group, HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.EndRender(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTagWithoutScript(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.RenderTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.Control.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.WebControl.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.UI.LayoutGroup.DoTag(HtmlTextWriter writer)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-08 10:17:47,776 [169] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values(@code,@size,@amount,@color,@address,@area,@stotal,@total,@sendway,@remark,@btotal,@ltotal,@preferential,@id,@bid)
+
+  code='4'
+  size='40*150'
+  amount=123
+  color='烫金白'
+  address='3'
+  area='4'
+  stotal=23
+  total=2
+  sendway='3'
+  remark='4'
+  btotal=2
+  ltotal=3
+  preferential=23
+  id=-86247099
+  bid=-1958588752
+
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values('4','40*150',123,'烫金白','3','4',23,2,'3','4',2,3,23,-86247099,-1958588752)
+
+
+2016-08-08 10:17:47,785 [169] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 46
+
+2016-08-08 10:18:45,957 [169] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into billdetail (amount,address,id,bid) values(@amount,@address,@id,@bid)
+
+  amount=1
+  address=''
+  id=-344918414
+  bid=1701777807
+
+insert into billdetail (amount,address,id,bid) values(1,'',-344918414,1701777807)
+
+
+2016-08-08 10:18:45,959 [169] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 46
+
+2016-08-08 10:19:09,712 [910] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values(@code,@size,@amount,@color,@address,@area,@stotal,@total,@sendway,@remark,@btotal,@ltotal,@preferential,@id,@bid)
+
+  code='4'
+  size='40*150'
+  amount=123
+  color='烫金白'
+  address='3'
+  area='4'
+  stotal=23
+  total=2
+  sendway='3'
+  remark='4'
+  btotal=2
+  ltotal=3
+  preferential=23
+  id=-2084540873
+  bid=-826515470
+
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values('4','40*150',123,'烫金白','3','4',23,2,'3','4',2,3,23,-2084540873,-826515470)
+
+
+2016-08-08 10:19:16,014 [910] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 46
+
+2016-08-08 10:19:33,044 [169] ERROR - 执行SQL出错: Out of range value for column 'id' at row 1
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values(@code,@size,@amount,@color,@address,@area,@stotal,@total,@sendway,@remark,@btotal,@ltotal,@preferential,@id,@bid)
+
+  code='4'
+  size='40*150'
+  amount=123
+  color='烫金白'
+  address='3'
+  area='4'
+  stotal=23
+  total=2
+  sendway='3'
+  remark='4'
+  btotal=2
+  ltotal=3
+  preferential=23
+  id=-1414626560
+  bid=-1209998945
+
+insert into billdetail (code,size,amount,color,address,area,stotal,total,sendway,remark,btotal,ltotal,preferential,id,bid) values('4','40*150',123,'烫金白','3','4',23,2,'3','4',2,3,23,-1414626560,-1209998945)
+
+
+2016-08-08 10:19:33,798 [169] ERROR - CARPA IE_7 127.0.0.1 roexiucgnmfdpxw0ozvvpnir  WebService调用出错 http://localhost:2032/Test001/Test001.BillManage.ajax/DoSave  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Out of range value for column 'id' at row 1
+   在 Test001.BillManage.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillManage.cs:行号 46
+
+2016-08-08 12:41:45,729 [845] ERROR - BROWSER IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doSave 不能为空，类名 Test001.BillSimpleManangeAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doSave 不能为空，类名 Test001.BillSimpleManangeAction
+   at Function$createDelegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $7f94c79$__init (Unknown script code:1:2212)
+   at Sys$_Application$add_init (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at Sys._ScriptLoader.prototype.addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8537:17)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8595:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Anonymous function (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8964:13)
+
+
+2016-08-08 12:42:46,819 [846] ERROR - BROWSER IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doSave 不能为空，类名 Test001.BillSimpleManangeAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doSave 不能为空，类名 Test001.BillSimpleManangeAction
+   at Function$createDelegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $7f94c79$__init (Unknown script code:1:2212)
+   at Sys$_Application$add_init (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at Sys._ScriptLoader.prototype.addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8537:17)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8595:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Anonymous function (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8964:13)
+
+
+2016-08-08 12:48:42,842 [844] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillSimpleManange.gspx  http://localhost:2032/BillList.gspx
+Carpa.Web.Script.ScriptTagException: 变量 “bill” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 2，位置 2，标签<Page> ---> Carpa.Expressions.ExpressionException: 变量 “bill” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “bill” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(Exception e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-08 12:48:42,854 [844] ERROR - /BillSimpleManange.gspx 出错：变量 “bill” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 2，位置 2，标签<Page>
+Carpa.Web.Script.ScriptTagException: 变量 “bill” 不存在 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 2，位置 2，标签<Page> ---> Carpa.Expressions.ExpressionException: 变量 “bill” 不存在 ---> Carpa.Expressions.Internal.EvalException: 变量 “bill” 不存在
+   在 Carpa.Expressions.Internal.Variable.Eval(Evaluator evaluater, Result[] argArray)
+   在 Carpa.Expressions.Internal.OperandExecutor.Execute(IExecutorContext context)
+   在 Carpa.Expressions.Internal.ExecutorContext.Execute(ExprNode node)
+   在 Carpa.Expressions.Internal.Evaluator.Eval(Tree tree)
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Expressions.ExpressionBase.Evaluate(IVariableHolder variableHolder)
+   在 Carpa.Web.Script.Internal.CarpaExpression.Evaluate(ScriptContext context)
+   在 Carpa.Web.Script.Internal.Expression.EvaluateRecurse(ScriptContext context)
+   在 Carpa.Web.Script.Internal.TagScript.SetAttributes(ScriptContext context, ITag tag, Boolean isRootTag, String pageId)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(Exception e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-08 13:09:55,481 [13] ERROR - CARPA IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  WebService调用出错 http://localhost:2032/Test001/Test001.BillSimpleManange.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.Collections.Generic.KeyNotFoundException: 关键字“address”不在HashObject中。
+   在 Test001.BillSimpleManange.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 64
+
+2016-08-08 13:10:10,926 [7] ERROR - CARPA IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  WebService调用出错 http://localhost:2032/Test001/Test001.BillSimpleManange.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.Collections.Generic.KeyNotFoundException: 关键字“stotal”不在HashObject中。
+   在 Test001.BillSimpleManange.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 64
+
+2016-08-08 13:10:31,527 [10] ERROR - CARPA IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  WebService调用出错 http://localhost:2032/Test001/Test001.BillSimpleManange.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.Collections.Generic.KeyNotFoundException: 关键字“remark”不在HashObject中。
+   在 Test001.BillSimpleManange.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 64
+
+2016-08-08 13:10:50,300 [7] ERROR - CARPA IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  WebService调用出错 http://localhost:2032/Test001/Test001.BillSimpleManange.ajax/DoSave  http://localhost:2032/BillList.gspx
+System.Collections.Generic.KeyNotFoundException: 关键字“remark”不在HashObject中。
+   在 Test001.BillSimpleManange.DoSave(IHashObject data) 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 64
+
+2016-08-08 13:12:53,124 [9] ERROR - CARPA IE_7 127.0.0.1  页面请求出错 http://localhost:2032/BillSimpleManange.gspx  http://localhost:2032/BillList.gspx
+Carpa.Web.Script.ScriptException: ID“code”已经被“行 6，位置 8，标签<TextEdit>”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 18，位置 8，标签<TextEdit>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-08-08 13:12:53,136 [9] ERROR - /BillSimpleManange.gspx 出错：ID“code”已经被“行 6，位置 8，标签<TextEdit>”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 18，位置 8，标签<TextEdit>
+Carpa.Web.Script.ScriptException: ID“code”已经被“行 6，位置 8，标签<TextEdit>”使用 在“H:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.gspx”，行 18，位置 8，标签<TextEdit>
+   在 Carpa.Web.Script.Internal.TagScript.HandleException(ScriptException e)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer, IScriptInterceptor interceptor)
+   在 Carpa.Web.Script.Internal.TagScript.Run(ScriptContext context, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.RunScript(ScriptContext scriptContext, HtmlTextWriter writer)
+   在 Carpa.Web.Script.ScriptHandler.DoProcessRequest(HttpContext context)
+   在 Carpa.Web.Script.ScriptHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+
+2016-08-08 13:46:50,974 [55] ERROR - CARPA IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  WebService调用出错 http://localhost:2032/Carpa.Web/Carpa.Web.Script.DataService.ajax/GetPagerData  http://localhost:2032/BillList.gspx
+System.InvalidOperationException: 会话超时，查询失败。请刷新该页，或重新登录
+   在 Carpa.Web.Script.Controller.GetPagerInfo(HttpSessionState session, String pagerId)
+   在 Carpa.Web.Script.DataService.GetPagerInfo(String pagerId)
+   在 Carpa.Web.Script.DataService.GetPagerData(String pagerId, HashObject queryParams, _ScriptDataOrder[] orders, _ScriptDataFilter filter, Int32 first, Int32 count)
+
+2016-08-08 14:33:26,982 [55] ERROR - BROWSER IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 无法获取未定义或 null 引用的属性“grid”
+[b]FileName[/b]: http://localhost:2032/R.axd?v=260116392&r=Test001/BillList.js
+[b]LineNumber[/b]: 70
+TypeError: 无法获取未定义或 null 引用的属性“grid”
+   at Test001.BillListAction.prototype.doGridDbClick (http://localhost:2032/R.axd?v=260116392&r=Test001/BillList.js:71:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys.UI.Controls.Grid.prototype.doRowDblClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:3571:13)
+   at Sys.UI.Controls.Grid.prototype._rowsDblClick (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/grid.js:3516:17)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$UI$DomEvent$browserHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:5749:13)
+
+
+2016-08-08 14:33:55,043 [20] ERROR - 执行SQL出错: Fatal error encountered during command execution.
+select * from billdetial where bid=@id
+
+
+select * from billdetial where bid=@id
+
+
+2016-08-08 14:33:55,045 [20] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/BillSimpleManange.gspx?id=1020599180  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Fatal error encountered during command execution. ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Parameter '@id' must be defined.
+   在 MySql.Data.MySqlClient.Statement.SerializeParameter(MySqlParameterCollection parameters, MySqlPacket packet, String parmName, Int32 parameterIndex)
+   在 MySql.Data.MySqlClient.Statement.InternalBindParameters(String sql, MySqlParameterCollection parameters, MySqlPacket packet)
+   在 MySql.Data.MySqlClient.Statement.BindParameters()
+   在 MySql.Data.MySqlClient.PreparableStatement.Execute()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteReader(String sql)
+   在 Carpa.Web.Script.DbHelper.Select(String sql)
+   在 Carpa.Web.Script.DbHelper.SelectSingleRow(String sql)
+   在 Test001.BillSimpleManange.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 24
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-08-08 14:34:11,539 [16] ERROR - 执行SQL出错: Table 'bill.billdetial' doesn't exist
+select * from billdetial where bid=@id
+
+  id='1020599180'
+
+select * from billdetial where bid='1020599180'
+
+
+2016-08-08 14:34:11,541 [16] ERROR - CARPA IE_7 127.0.0.1  页面初始化失败 http://localhost:2032/BillSimpleManange.gspx?id=1020599180  http://localhost:2032/BillList.gspx
+MySql.Data.MySqlClient.MySqlException (0x80004005): Table 'bill.billdetial' doesn't exist
+   在 MySql.Data.MySqlClient.MySqlStream.ReadPacket()
+   在 MySql.Data.MySqlClient.NativeDriver.GetResult(Int32& affectedRow, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.GetResult(Int32 statementId, Int32& affectedRows, Int64& insertedId)
+   在 MySql.Data.MySqlClient.Driver.NextResult(Int32 statementId, Boolean force)
+   在 MySql.Data.MySqlClient.MySqlDataReader.NextResult()
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   在 MySql.Data.MySqlClient.MySqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader()
+   在 Carpa.Web.Script.DbHelper.ExecuteReader(String sql)
+   在 Carpa.Web.Script.DbHelper.Select(String sql)
+   在 Carpa.Web.Script.DbHelper.SelectSingleRow(String sql)
+   在 Test001.BillSimpleManange.Initialize() 位置 h:\Users\Administrator\Documents\Visual Studio 2010\Projects\Test001\Test001\BillSimpleManange.cs:行号 25
+   在 Carpa.Web.Script.ScriptHandler.InvokeController(ScriptContext scriptContext, String& responseRedirect, String& responseError)
+
+2016-08-08 14:34:25,373 [56] ERROR - BROWSER IE_7 127.0.0.1 pzeqr3uubka5u1ivvnnuplf3  http://localhost:2032/BillList.gspx
+  [b]Error[/b]: 对象不支持“_format”属性或方法
+[b]FileName[/b]: http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js
+[b]LineNumber[/b]: 2430
+TypeError: 对象不支持“_format”属性或方法
+   at Date.dateToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:2431:5)
+   at Sys.UI.Controls.DateEdit.prototype.valueToStr (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:11404:9)
+   at Sys.UI.Controls.DateEdit.prototype.set_value (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:11433:9)
+   at Sys.UI.Controls.CustomEdit.prototype.dataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/controls.js:5126:13)
+   at Sys.UI.CustomForm.prototype.dataBind (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:6916:17)
+   at $f536f345$__init (Unknown script code:1:3554)
+   at Sys$_Application$add_init (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at Sys._ScriptLoader.prototype.addScriptElement (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+

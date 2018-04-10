@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="物流管理" ActionType="Test001.Logistics.LogisticsManagerAction, Logistics/LogisticsManager.js">
+  <VPanel>
+    <DropDownEdit Label="物流公司" DropDownStyle="DropDownEdit">
+      <ListItem Text="快捷快递" Selected="true"/>
+    </DropDownEdit>
+    <TextEdit Label="物流单号"/>
+    <NumberEdit Label="货物重量"/>
+  </VPanel>
+</Page>

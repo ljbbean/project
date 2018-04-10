@@ -1,0 +1,33 @@
+
+2017-10-12 08:41:06,028 [29] ERROR - BROWSER IE_11 127.0.0.1 wyephaeln3bkb5l3l2o3mwez  http://localhost:2033/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 事件代码 doBeginEdit 不能为空，类名 Test001.BTypeConfigAction
+  [b]name[/b]: Sys.InvalidOperationException
+  [b]ErrorStack[/b]: Sys.InvalidOperationException: 事件代码 doBeginEdit 不能为空，类名 Test001.BTypeConfigAction
+   at Function$createDelegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:366:13)
+   at $673439b5$__init (Unknown script code:1:192)
+   at Sys$_Application$add_init (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9177:13)
+   at Global code (Unknown script code:1:1)
+   at Sys$_ScriptLoader$_addScriptElement (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8484:9)
+   at addScriptElement (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8552:9)
+   at Sys$_ScriptLoader$_loadScriptsInternal (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8537:17)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8595:13)
+   at Function$delegate (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Anonymous function (http://localhost:2033/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8964:13)
+
+
+2017-10-12 09:32:49,741 [49] ERROR - { logType = 服务端异常日志, browserNameVersion = IE11, userIP = 127.0.0.1, requestID = 1866771249302039249, sessionID = wyephaeln3bkb5l3l2o3mwez, pageUrl = http://localhost:2033/Test001/Test001.Login.ajax/UserLogin, referPageUrl = http://localhost:2033/Login.gspx?Redir=%2fBillList.gspx, message = WebService调用出错 }
+System.IO.FileNotFoundException: 未能加载文件或程序集“MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。系统找不到指定的文件。
+文件名:“MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=null”
+   在 Carpa.Web.Script.DbHelper.CreateMysqlConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper.CreateConnection(String connectionString)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower, Boolean isTrackingUsage)
+   在 Carpa.Web.Script.DbHelper..ctor(String connectionString, Boolean fieldNameToLower)
+   在 Test001.AppUtils.CreateDbHelper() 位置 D:\Test001\Test001\AppUtils.cs:行号 75
+   在 Test001.Login.UserLogin(Int32 width, Int32 height, String name, String pwd) 位置 D:\Test001\Test001\Login.cs:行号 19
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+

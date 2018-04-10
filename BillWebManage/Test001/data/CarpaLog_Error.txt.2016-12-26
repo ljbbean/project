@@ -1,0 +1,135 @@
+
+2016-12-26 14:12:30,556 [14] ERROR - CARPA IE_7 127.0.0.1  资源请求出错 http://localhost:2032/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108  http://localhost:2032/BillList.gspx
+System.Web.HttpException (0x80004005): 资源“Test001/LogisticsInformation.js”没找到
+   在 Carpa.Web.Handlers.ResourceHandler.Throw404(String message, Object[] args)
+   在 Carpa.Web.Handlers.ResourceHandler.ThrowUnknownResource(String resourceName)
+   在 Carpa.Web.Handlers.ResourceHandler.LoadResourceStream(Assembly assembly, String assemblyName, String fullFilename, String& resourcePath)
+   在 Carpa.Web.Handlers.ResourceManager.DoGetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceManager.GetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceHandler.ProcessRequest(HttpContext context, String path, Boolean neverExpires)
+   在 Carpa.Web.Handlers.ResourceHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-12-26 14:12:30,611 [14] ERROR - /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108 出错：资源“Test001/LogisticsInformation.js”没找到
+
+2016-12-26 14:12:30,740 [15] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+  2016-12-26 14:12:30 [Begin] /Test001/Test001.Logistics.LogisticsInformation.ajax/js?v=271889954&v=108
+2016-12-26 14:12:30 [1] /Test001/Test001.Logistics.LogisticsInformation.ajax/js?v=271889954
+2016-12-26 14:12:30 [End]
+2016-12-26 14:12:30 [Begin] /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108
+2016-12-26 14:12:30 [End]
+2016-12-26 14:12:30 [Error] “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+
+
+2016-12-26 14:12:30,742 [14] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+  [b]name[/b]: Sys.ScriptLoadFailedException
+  [b]scriptUrl[/b]: /R.axd?v=271889954&r=Test001/LogisticsInformation.js
+  [b]ErrorStack[/b]: Sys.ScriptLoadFailedException: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+   at Sys$UI$CustomForm$_scriptsLoadFailed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7633:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoader$_raiseError (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8575:13)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8598:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoaderTask$_scriptErrorHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8945:9)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8854:21)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+
+
+2016-12-26 14:13:14,916 [12] ERROR - CARPA IE_7 127.0.0.1  资源请求出错 http://localhost:2032/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108  http://localhost:2032/BillList.gspx
+System.Web.HttpException (0x80004005): 资源“Test001/LogisticsInformation.js”没找到
+   在 Carpa.Web.Handlers.ResourceHandler.Throw404(String message, Object[] args)
+   在 Carpa.Web.Handlers.ResourceHandler.ThrowUnknownResource(String resourceName)
+   在 Carpa.Web.Handlers.ResourceHandler.LoadResourceStream(Assembly assembly, String assemblyName, String fullFilename, String& resourcePath)
+   在 Carpa.Web.Handlers.ResourceManager.DoGetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceManager.GetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceHandler.ProcessRequest(HttpContext context, String path, Boolean neverExpires)
+   在 Carpa.Web.Handlers.ResourceHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-12-26 14:13:14,933 [12] ERROR - /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108 出错：资源“Test001/LogisticsInformation.js”没找到
+
+2016-12-26 14:13:14,985 [16] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+  2016-12-26 14:13:14 [Begin] /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108
+2016-12-26 14:13:14 [End]
+2016-12-26 14:13:14 [Error] “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+
+
+2016-12-26 14:13:15,004 [12] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+  [b]name[/b]: Sys.ScriptLoadFailedException
+  [b]scriptUrl[/b]: /R.axd?v=271889954&r=Test001/LogisticsInformation.js
+  [b]ErrorStack[/b]: Sys.ScriptLoadFailedException: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+   at Sys$UI$CustomForm$_scriptsLoadFailed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7633:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoader$_raiseError (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8575:13)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8598:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoaderTask$_scriptErrorHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8945:9)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8854:21)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+
+
+2016-12-26 14:13:47,168 [5] ERROR - CARPA IE_7 127.0.0.1  资源请求出错 http://localhost:2032/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108 
+System.Web.HttpException (0x80004005): 资源“Test001/LogisticsInformation.js”没找到
+   在 Carpa.Web.Handlers.ResourceHandler.Throw404(String message, Object[] args)
+   在 Carpa.Web.Handlers.ResourceHandler.ThrowUnknownResource(String resourceName)
+   在 Carpa.Web.Handlers.ResourceHandler.LoadResourceStream(Assembly assembly, String assemblyName, String fullFilename, String& resourcePath)
+   在 Carpa.Web.Handlers.ResourceManager.DoGetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceManager.GetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceHandler.ProcessRequest(HttpContext context, String path, Boolean neverExpires)
+   在 Carpa.Web.Handlers.ResourceHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-12-26 14:13:47,182 [5] ERROR - /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108 出错：资源“Test001/LogisticsInformation.js”没找到
+
+2016-12-26 14:13:50,242 [15] ERROR - CARPA IE_7 127.0.0.1  资源请求出错 http://localhost:2032/R.axd?v=271889954&r=Test001/LogisticsInformation.js 
+System.Web.HttpException (0x80004005): 资源“Test001/LogisticsInformation.js”没找到
+   在 Carpa.Web.Handlers.ResourceHandler.Throw404(String message, Object[] args)
+   在 Carpa.Web.Handlers.ResourceHandler.ThrowUnknownResource(String resourceName)
+   在 Carpa.Web.Handlers.ResourceHandler.LoadResourceStream(Assembly assembly, String assemblyName, String fullFilename, String& resourcePath)
+   在 Carpa.Web.Handlers.ResourceManager.DoGetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceManager.GetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceHandler.ProcessRequest(HttpContext context, String path, Boolean neverExpires)
+   在 Carpa.Web.Handlers.ResourceHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-12-26 14:13:50,256 [15] ERROR - /R.axd?v=271889954&r=Test001/LogisticsInformation.js 出错：资源“Test001/LogisticsInformation.js”没找到
+
+2016-12-26 14:14:17,278 [5] ERROR - CARPA IE_7 127.0.0.1  资源请求出错 http://localhost:2032/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108  http://localhost:2032/BillList.gspx
+System.Web.HttpException (0x80004005): 资源“Test001/LogisticsInformation.js”没找到
+   在 Carpa.Web.Handlers.ResourceHandler.Throw404(String message, Object[] args)
+   在 Carpa.Web.Handlers.ResourceHandler.ThrowUnknownResource(String resourceName)
+   在 Carpa.Web.Handlers.ResourceHandler.LoadResourceStream(Assembly assembly, String assemblyName, String fullFilename, String& resourcePath)
+   在 Carpa.Web.Handlers.ResourceManager.DoGetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceManager.GetItem(HttpContext context, String path)
+   在 Carpa.Web.Handlers.ResourceHandler.ProcessRequest(HttpContext context, String path, Boolean neverExpires)
+   在 Carpa.Web.Handlers.ResourceHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)
+
+2016-12-26 14:14:17,288 [5] ERROR - /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108 出错：资源“Test001/LogisticsInformation.js”没找到
+
+2016-12-26 14:14:17,330 [14] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+  2016-12-26 14:14:17 [Begin] /R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108
+2016-12-26 14:14:17 [End]
+2016-12-26 14:14:17 [Error] “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+
+
+2016-12-26 14:14:17,344 [5] ERROR - BROWSER IE_7 127.0.0.1 11xqtq4zfkz4bvszutsjyqmx  http://localhost:2032/BillList.gspx
+   {Error}
+  [b]ErrorMessage[/b]: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+  [b]name[/b]: Sys.ScriptLoadFailedException
+  [b]scriptUrl[/b]: /R.axd?v=271889954&r=Test001/LogisticsInformation.js
+  [b]ErrorStack[/b]: Sys.ScriptLoadFailedException: 脚本加载失败: “/R.axd?v=271889954&r=Test001/LogisticsInformation.js&v=108”不存在
+   at Sys$UI$CustomForm$_scriptsLoadFailed (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:7633:9)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoader$_raiseError (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8575:13)
+   at Sys$_ScriptLoader$_scriptLoadedHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8598:13)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$_ScriptLoaderTask$_scriptErrorHandler (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8945:9)
+   at onComplete (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:8854:21)
+   at Function$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:373:13)
+   at Sys$EventHandlerList$delegate (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:4670:17)
+   at Sys$Net$WebRequest$_doCompleted (http://localhost:2032/R.axd?v=259166650&r=Carpa.Web/js/carpa.js:9561:13)
+

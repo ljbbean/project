@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="登录" ActionType="Test001.LoginAction, Login.js" FullWindow="true">
+  <VPanel HAlign="Center" VAlign="Middle">
+    <TextEdit Label="登录名称" DataField="name"/>
+    <PasswordEdit Label="登录密码" DataField="pwd"/>
+    <HPanel HAlign="Center">
+      <CheckBox DataField="isChecked" Text="简版显示"/>
+      <Button Text="登录" OnClick="doLogin"/>
+    </HPanel>
+  </VPanel>
+</Page>

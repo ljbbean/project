@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="商品配置" ActionType="Test001.BTypeConfigAction, BTypeConfig.js" >
+  <VPanel>
+    <HPanel>
+      <TreeView ID="editTree"
+                  Width="200"
+                  Height="400"
+                  ShowRootNode="false"                  
+                  OnNodeBeginEdit="doBeginEdit"
+                  ReadOnly="false"       
+                OnNodeAdd="doNodeAdd"
+               OnNodeDeleted="doNodeDelete"
+                  DataSource="${dataTableTree}"/>
+      <Grid DataField="grid" DataSource="${grid}" Width="400" Height="${ClientHeight - 450}" ReadOnly="false">
+        <TextColumn Caption="尺码" DataField="size" ReadOnly="false"/>
+        <TextColumn Caption="颜色" DataField="color" ReadOnly="false"/>
+        <NumberColumn Caption="默认售价" DataField="price"/>
+      </Grid>
+    </HPanel>
+    <HPanel>
+      <HPanel HAlign="Right">
+        <Button Text="保存" OnClick="doSave"/>
+        <CancelButton/>
+      </HPanel>
+    </HPanel>
+  </VPanel>
+</Page>

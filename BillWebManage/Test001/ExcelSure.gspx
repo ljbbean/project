@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Page xmlns="Carpa.UI" Title="快递核单" ActionType="Test001.ExcelSureAction, ExcelSure.js" >
+  <VPanel>
+    <HPanel>
+      <FileUpload WebMethod="SaveData">
+        <HPanel ShowBorder="true">
+          <FileEdit DataField="File1" Label="excel" Width="200" ReportVisible="false" Required="true" />
+          <Button Text="上传" ID="btnUpload" OnClick="doFileUpload" />
+        
+        </HPanel>
+      </FileUpload>
+      <DropDownEdit ID="state" Label="状态" OnChange="doStateChange"  SelectedIndex="0">
+        <ListItem Text="全部" Value="0" />
+        <ListItem Text="重复" Value="重复"/>
+        <ListItem Text="已匹配" Value="已匹配"/>
+        <ListItem Text="待匹配" Value="待匹配"/>
+      </DropDownEdit>
+    </HPanel>
+    <Grid ID="grid"
+          Width="700"
+          Height="500"
+          AllowSort="true"
+          AutoDefaultRowCount="true"
+          WordWrap="false"
+          AllowFilter="true"
+          ShowFooter="true"
+          AllowResize="true"
+          
+          ReadOnly="true">
+      
+    </Grid>
+  </VPanel>
+</Page>
