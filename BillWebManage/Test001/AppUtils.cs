@@ -53,7 +53,15 @@ namespace Test001
             get
             {
                 //string connectionString = ConfigurationManager.ConnectionStrings["dbconnstr"].ToString();
-                string connectionString = ConfigurationManager.ConnectionStrings["CarpaDbConn"].ToString();
+                string connectionString = string.Empty;
+                try
+                {
+                    connectionString = ConfigurationManager.ConnectionStrings["CarpaDbConn"].ToString();
+                }
+                catch (Exception e)
+                {
+                    connectionString = "server=localhost;database=bill;User ID=root;Password=1234;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+                }
                 if (string.IsNullOrEmpty(connectionString))
                 {
                     throw new Exception("没有登录，连接账套失败！");

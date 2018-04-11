@@ -15,3 +15,10 @@ D:\Test001\Test001\bin\TaoBaoRequest.pdb
 D:\Test001\Test001\bin\Test001.dll.config
 D:\Test001\Test001\bin\MySql.Data.dll
 D:\Test001\Test001\bin\ICSharpCode.SharpZipLib.dll
+F:\work\work\project\BillWebManage\Test001\bin\Test001.dll
+F:\work\work\project\BillWebManage\Test001\bin\Test001.pdb
+F:\work\work\project\BillWebManage\Test001\bin\TaoBaoRequest.dll
+F:\work\work\project\BillWebManage\Test001\bin\TaoBaoRequest.pdb
+F:\work\work\project\BillWebManage\Test001\obj\Debug\Test001.csprojResolveAssemblyReference.cache
+F:\work\work\project\BillWebManage\Test001\obj\Debug\Test001.dll
+F:\work\work\project\BillWebManage\Test001\obj\Debug\Test001.pdb

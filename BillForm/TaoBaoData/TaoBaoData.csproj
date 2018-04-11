@@ -57,9 +57,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Test001">
-      <HintPath>..\..\Test001\bin\Test001.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -95,9 +92,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TaoBaoRequest\TaoBaoRequest.csproj">
+    <ProjectReference Include="..\..\BillWebManage\TaoBaoRequest\TaoBaoRequest.csproj">
       <Project>{323E521E-1558-459B-8854-F0979B44C8F9}</Project>
       <Name>TaoBaoRequest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BillWebManage\Test001\Test001.csproj">
+      <Project>{B63BE8DB-B38F-4BFE-B6EC-89E12A2AF753}</Project>
+      <Name>Test001</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

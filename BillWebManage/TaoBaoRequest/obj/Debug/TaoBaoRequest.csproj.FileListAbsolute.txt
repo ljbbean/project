@@ -10,3 +10,15 @@ D:\Test001\TaoBaoRequest\bin\Debug\NPOI.OpenXml4Net.dll
 D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.dll
 D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.pdb
 D:\Test001\TaoBaoRequest\obj\Debug\TaoBaoRequest.csprojResolveAssemblyReference.cache
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\TaoBaoRequest.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\TaoBaoRequest.pdb
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\Carpa.Web.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\MySql.Data.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\NPOI.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\NPOI.OOXML.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\NPOI.OpenXmlFormats.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\bin\Debug\NPOI.OpenXml4Net.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\obj\Debug\TaoBaoRequest.csprojResolveAssemblyReference.cache
+F:\work\work\project\BillWebManage\TaoBaoRequest\obj\Debug\TaoBaoRequest.dll
+F:\work\work\project\BillWebManage\TaoBaoRequest\obj\Debug\TaoBaoRequest.pdb

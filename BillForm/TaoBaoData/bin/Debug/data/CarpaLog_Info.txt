@@ -166,3 +166,83 @@
 2018-04-10 20:34:06,175 [10] INFO  - CUID初始化SiteId：ljb-PC_E.work0410.work.Bill.TaoBaoData.bin.Debug_172.16.0.223_192.168.191.2_192.168.253.1_1885401301
 
 2018-04-10 20:34:06,265 [10] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018-04-10 20:34:06 LastLo=30762924618520 SiteId=ljb-PC_E.work0410.work.Bill.TaoBaoData.bin.Debug_172.16.0.223_192.168.191.2_192.168.253.1_1885401301 hc=28342 hi=28342
+
+2018-04-11 20:19:32,019 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 20:19:32,058 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 20:19:32 LastLo=30771477205115 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 20:19:37,936 [2] INFO  - Cuid.DoProcessExit
+
+2018-04-11 20:19:37,942 [2] INFO  - CUID停止：保存时间=2018/4/11 20:19:32 LastLo=30771477206998
+
+2018-04-11 20:20:37,173 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 20:20:37,188 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 20:20:37 LastLo=30771483718129 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 20:47:28,426 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 20:47:28,441 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 20:47:28 LastLo=30771644843407 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 20:48:57,111 [2] INFO  - Cuid.DoProcessExit
+
+2018-04-11 20:48:57,116 [2] INFO  - CUID停止：保存时间=2018/4/11 20:47:41 LastLo=30771646183124
+
+2018-04-11 20:52:41,330 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 20:52:41,346 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 20:52:41 LastLo=30771676133842 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 20:57:57,607 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 20:57:57,623 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 20:57:57 LastLo=30771707761521 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:09:23,049 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:09:23,064 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:09:23 LastLo=30771776305638 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:12:45,811 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:12:45,833 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:12:45 LastLo=30771796582205 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:21:20,221 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:21:20,237 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:21:20 LastLo=30771848022946 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:35:04,987 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:35:05,010 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:35:04 LastLo=30771930499820 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:36:11,271 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:36:11,288 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:36:11 LastLo=30771937128030 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:37:36,980 [10] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:37:36,995 [10] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:37:36 LastLo=30771945698799 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:38:11,833 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:38:11,850 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:38:11 LastLo=30771949184186 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:38:43,802 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:38:43,822 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:38:43 LastLo=30771952381194 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:39:21,061 [9] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:39:21,076 [9] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:39:21 LastLo=30771956106895 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:44:13,827 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:44:13,842 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:44:13 LastLo=30771985383502 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:44:24,015 [2] INFO  - Cuid.DoProcessExit
+
+2018-04-11 21:44:24,022 [2] INFO  - CUID停止：保存时间=2018/4/11 21:44:19 LastLo=30771985917359
+
+2018-04-11 21:45:45,417 [8] INFO  - CUID初始化SiteId：john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951
+
+2018-04-11 21:45:45,432 [8] INFO  - CUID初始化Hi：HiMode=CuidHiMode.Carpa 当前时间=2018/4/11 21:45:45 LastLo=30771994542433 SiteId=john-PC_F.work.work.project.BillForm.TaoBaoData.bin.Debug_192.168.0.8_1779103951 hc=12828 hi=12828
+
+2018-04-11 21:46:45,339 [2] INFO  - Cuid.DoProcessExit
+
+2018-04-11 21:46:45,345 [2] INFO  - CUID停止：保存时间=2018/4/11 21:46:07 LastLo=30771996762694

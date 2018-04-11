@@ -57,7 +57,10 @@ namespace TaoBaoRequest
 
         public List<T> GetBillList<T>(DateTime startDate, string cookieStr)
         {
-            string data = "auctionType=0&close=0&pageNum={0}&pageSize={1}&queryMore=true&rxAuditFlag=0&rxHasSendFlag=0&rxOldFlag=0&rxSendFlag=0&rxSuccessflag=0&tradeTag=0&useCheckcode=false&useOrderInfo=false&errorCheckcode=false&action=itemlist%2FSoldQueryAction&dateBegin=1517414400089&prePageNo={2}&buyerNick=&dateEnd=0&logisticsService=&orderStatus=&queryOrder=desc&rateStatus=&refund=&sellerNick=&tabCode=latest3Months";
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            string dateTimeStr = serializer.Serialize(startDate).Substring(9).TrimEnd(')');
+            string data = "auctionType=0&close=0&pageNum={0}&pageSize={1}&queryMore=true&rxAuditFlag=0&rxHasSendFlag=0&rxOldFlag=0&rxSendFlag=0&rxSuccessflag=0&tradeTag=0&useCheckcode=false&useOrderInfo=false&errorCheckcode=false&action=itemlist%2FSoldQueryAction&dateBegin=";
+            data += dateTimeStr + "&prePageNo={2}&buyerNick=&dateEnd=0&logisticsService=&orderStatus=&queryOrder=desc&rateStatus=&refund=&sellerNick=&tabCode=latest3Months";
             //string data = "auctionType=0&close=0&pageNum={0}&pageSize={1}&queryMore=false&rxAuditFlag=0&rxHasSendFlag=0&rxOldFlag=0&rxSendFlag=0&rxSuccessflag=0&tradeTag=0&useCheckcode=false&useOrderInfo=false&errorCheckcode=false&action=itemlist%2FSoldQueryAction&prePageNo={2}&buyerNick=&dateBegin=0&dateEnd=0&logisticsService=&orderStatus=&queryOrder=desc&rateStatus=&refund=&sellerNick=&tabCode=latest3Months";
             int startIndex = 1;
             int pageSize = 15;

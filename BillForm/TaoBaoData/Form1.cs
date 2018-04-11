@@ -16,7 +16,8 @@ namespace TaoBaoData
 {
     public partial class Form1 : Form
     {
-        private string connect = "server=localhost;database=bill;User ID=root;Password=dev;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+        private string connect = "server=localhost;database=bill;User ID=root;Password=1234;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+        private string[] users = { "ljbbean", "annychenzy", "风灵415743757" };
         public Form1()
         {
             InitializeComponent();
@@ -29,13 +30,20 @@ namespace TaoBaoData
 
         private DataTable GetDetailData()
         {
+            string[] dusers = users;
+
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            IHashObjectList list = new HashObjectList();
-            using (DbHelper db = new DbHelper(connect, true))
+            DataTable table = MessageTable();
+
+            foreach (string duser in dusers)
             {
-                list = db.Select("select content from tbilldetail");
-            }
-            string[] keys = {
+                IHashObjectList list = new HashObjectList();
+                using (DbHelper db = new DbHelper(connect, true))
+                {
+                    db.AddParameter("user", duser);
+                    list = db.Select("select content from tbilldetail where `user`=@user");
+                }
+                string[] keys = {
                                     "mainOrder/payInfo/actualFee/value",
                                     "mainOrder/buyer/nick",
                                     "mainOrder/id",
@@ -44,6 +52,63 @@ namespace TaoBaoData
                                     "buyMessage",//买家备注
                                     "operationsGuide"//卖家备注
                             };
+                
+                foreach (HashObject hash in list)
+                {
+                    var hashObject = new HashObject();
+                    string content = hash.GetValue<string>("content");
+                    try
+                    {
+                        hashObject = serializer.Deserialize<HashObject>(content);
+                    }
+                    catch (Exception t)
+                    {
+                        continue;
+                    }
+
+                    DataRow row = table.NewRow();
+                    HashObject addressAndLogistics = GeAddressAndLogisticsInfo(hashObject);
+                    foreach (string key in addressAndLogistics.Keys)
+                    {
+                        row[key] = addressAndLogistics[key];
+                    }
+                    var newHash = hashObject.GetHashValue(keys);
+                    row["订单ID"] = newHash[2]["id"];
+                    row["旺旺名称"] = newHash[1]["nick"];
+                    row["支付金额"] = newHash[0]["value"];
+                    row["买家留言"] = newHash.Count >= 6 && newHash[5].ContainsKey("buyMessage") ? newHash[5]["buyMessage"] : "";
+
+                    row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
+                    ArrayList linesList = (ArrayList)newHash[3]["lines"];
+                    IHashObjectList orderInfoList = GetOrderInfoList(serializer, linesList);
+                    if (orderInfoList.Count > 1 || orderInfoList.Count == 0)
+                    {
+                        throw new Exception("订单信息存在多个时间，请重新核实");
+                    }
+                    IHashObject tempOrderInfoList = orderInfoList[0];
+                    row["支付宝交易号"] = tempOrderInfoList.GetValue<string>("支付宝交易号:", "");
+                    row["创建时间"] = tempOrderInfoList.GetValue<string>("创建时间:", null);
+                    row["付款时间"] = tempOrderInfoList.GetValue<string>("付款时间:", null);
+                    row["发货时间"] = tempOrderInfoList.GetValue<string>("发货时间:", null);
+                    var successDate = tempOrderInfoList.GetValue<string>("成交时间:", null);
+                    if (successDate != null)
+                    {
+                        row["发货状态"] = "已收货";
+                        row["发货状态status"] = "2";
+                    }
+                    row["成交时间"] = successDate;
+                    ArrayList subOrders = (ArrayList)newHash[4]["subOrders"];
+                    List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
+                    row["货物信息"] = serializer.Serialize(gList);
+                    row["所属用户"] = duser;
+                    table.Rows.Add(row);
+                }
+            }
+            return table;
+        }
+
+        private static DataTable MessageTable()
+        {
             DataTable table = new DataTable();
             table.Columns.Add("订单ID");
             table.Columns.Add("旺旺名称");
@@ -54,6 +119,8 @@ namespace TaoBaoData
             table.Columns.Add("区域");
             table.Columns.Add("快递公司");
             table.Columns.Add("物流单号");
+            table.Columns.Add("发货状态");
+            table.Columns.Add("发货状态status");
             table.Columns.Add("支付宝交易号");
             table.Columns.Add("创建时间");
             table.Columns.Add("付款时间");
@@ -62,50 +129,7 @@ namespace TaoBaoData
             table.Columns.Add("买家留言");
             table.Columns.Add("卖家留言");
             table.Columns.Add("货物信息");
-
-            foreach (HashObject hash in list)
-            {
-                var hashObject = new HashObject();
-                string content = hash.GetValue<string>("content");
-                try
-                {
-                    hashObject = serializer.Deserialize<HashObject>(content);
-                }
-                catch (Exception t)
-                {
-                    continue;
-                }
-
-                DataRow row = table.NewRow();
-                HashObject addressAndLogistics = GeAddressAndLogisticsInfo(hashObject);
-                foreach (string key in addressAndLogistics.Keys)
-                {
-                    row[key] = addressAndLogistics[key];
-                }
-                var newHash = hashObject.GetHashValue(keys);
-                row["订单ID"] = newHash[2]["id"];
-                row["旺旺名称"] = newHash[1]["nick"];
-                row["支付金额"] = newHash[0]["value"];
-                row["买家留言"] = newHash.Count >= 6 && newHash[5].ContainsKey("buyMessage") ? newHash[5]["buyMessage"] : "";
-                
-                row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
-                ArrayList linesList = (ArrayList)newHash[3]["lines"];
-                IHashObjectList orderInfoList = GetOrderInfoList(serializer, linesList);
-                if (orderInfoList.Count > 1 || orderInfoList.Count == 0)
-                {
-                    throw new Exception("订单信息存在多个时间，请重新核实");
-                }
-                IHashObject tempOrderInfoList = orderInfoList[0];
-                row["支付宝交易号"] = tempOrderInfoList.GetValue<string>("支付宝交易号:", "");
-                row["创建时间"] = tempOrderInfoList.GetValue<string>("创建时间:", null);
-                row["付款时间"] = tempOrderInfoList.GetValue<string>("付款时间:", null);
-                row["发货时间"] = tempOrderInfoList.GetValue<string>("发货时间:", null);
-                row["成交时间"] = tempOrderInfoList.GetValue<string>("成交时间:", null);
-                ArrayList subOrders = (ArrayList)newHash[4]["subOrders"];
-                List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
-                row["货物信息"] = serializer.Serialize(gList);
-                table.Rows.Add(row);
-            }
+            table.Columns.Add("所属用户");
             return table;
         }
 
@@ -277,8 +301,11 @@ namespace TaoBaoData
                 rt.Add("具体地址", naddress);
                 var area = naddress.Split(' ');
                 rt.Add("区域", string.Format("{0} {1} {2}", area[0], area[1], area[2]));
-                rt.Add("快递公司", content.GetValue<string>("logisticsName"));//快递公司
-                rt.Add("物流单号", content.GetValue<string>("logisticsNum"));//物流单号
+                rt.Add("快递公司", GetLogisticsInfo( content.GetValue<string>("logisticsName")));//快递公司
+                var logisticsInfo = GetLogisticsInfo(content.GetValue<string>("logisticsNum"));
+                rt.Add("物流单号", logisticsInfo);//物流单号
+                rt.Add("发货状态", string.IsNullOrEmpty(logisticsInfo) ? "未发货" : "已发货");
+                rt.Add("发货状态status", string.IsNullOrEmpty(logisticsInfo) ? "0" : "1");
                 return rt;
             }
             return null;
@@ -297,7 +324,7 @@ namespace TaoBaoData
                 StringBuilder insertBillBuilder = new StringBuilder(@"insert into bill(id, date, taobaocode,cname,ctel,caddress,carea,cremark,
                     ltotal,status, scode, sname, uid, goodsstatus, billfrom, createdate, zfbpaycode,tbcode, senddate, successdate) values");
                 StringBuilder insertBillDetailBuilder = new StringBuilder(@"insert into billdetail(id, bid, code, size, amount, color, address,area,total, remark, 
-                    ltotal,sourceTitle) values");
+                    ltotal,sourceTitle,goodsstatus) values");
                 foreach (DataRow row in table.Rows)
                 {
                     var ddid = row["订单ID"].ToString();
@@ -318,7 +345,7 @@ namespace TaoBaoData
 
                     string remark = string.Format("【买家留言：{0}】【卖家留言：{1}】", row["买家留言"], row["卖家留言"]);
                     insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
-                        , remark, row["支付金额"], 0, GetLogisticsInfo(row["物流单号"]), GetLogisticsInfo(row["快递公司"]), 2, 1, "抓取"
+                        , remark, row["支付金额"], row["发货状态status"], GetLogisticsInfo(row["物流单号"]), GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                         , row["创建时间"], row["支付宝交易号"], ddid, GetDate(sendDate), GetDate(successDate));
 
                     if (dicDetail.Contains(ddid))
@@ -329,8 +356,8 @@ namespace TaoBaoData
 
                     foreach (GoodsInfo ginfo in ginfos)
                     {
-                        string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}'),";
-                        insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], row["支付金额"], remark, row["支付金额"], ginfo.Title);
+                        string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}),";
+                        insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], row["支付金额"], remark, row["支付金额"], ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1);
                     }
 
                 }
@@ -354,6 +381,25 @@ namespace TaoBaoData
             }
         }
 
+        private int GetUser(object user)
+        {
+            string tempUser = user.ToString();
+            if (tempUser == "ljbbean")
+            {
+                return 2;
+            }
+            if (tempUser == "annychenzy")
+            {
+                return 1;
+            }
+
+            if (tempUser == "风灵415743757")
+            {
+                return 3;
+            }
+            throw new Exception("不存在的用户");
+        }
+
         /// <summary>
         /// 格式化物流信息
         /// </summary>
@@ -365,7 +411,7 @@ namespace TaoBaoData
             }
 
             string value = obj.ToString();
-            if (value.StartsWith("-"))
+            if (value.StartsWith("-") || value.StartsWith("—"))
             {
                 return "";
             }
@@ -427,6 +473,22 @@ namespace TaoBaoData
         private bool IsNullDate(object date)
         {
             return date == null || date.ToString().Length == 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataCatch dataCatch = new DataCatch();
+            DateTime time = dateTimePicker1.Value;
+            DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
+            string list =string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
+            SendDetailState detailState = new SendDetailState(ShowMessage);
+            dataCatch.GetDetailsData(textBox1.Text, detailState);
+        }
+
+        private void ShowMessage(string message)
+        {
+            Action<String> AsyncUIDelegate = delegate(string n) { label2.Text = n; };
+            label2.Invoke(AsyncUIDelegate, new object[] { message });
         }
     }
 }

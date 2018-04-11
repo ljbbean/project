@@ -10,6 +10,8 @@ using System.Collections;
 
 namespace Test001
 {
+    public delegate void SendDetailState(string message);
+
     public class DataCatch : Page
     {
         public override void Initialize()
@@ -51,11 +53,13 @@ namespace Test001
         struct Details
         {
             public string Cookies;
+            public string User;
             public Dictionary<ulong, string> Dictionary;
+            public SendDetailState DetailState;
         }
 
         [WebMethod]
-        public void GetDetailsData(string cookies)
+        public void GetDetailsData(string cookies, SendDetailState detailSetate = null)
         {
             if (string.IsNullOrEmpty(cookies))
             {
@@ -94,7 +98,13 @@ namespace Test001
             }
             Details details = new Details();
             details.Cookies = cookies;
+            details.User = user;
             details.Dictionary = dictionary;
+            details.DetailState = detailSetate;
+            if (detailSetate != null)
+            {
+                detailSetate(string.Format("总共有{0}条明细需要下载", dictionary.Count));
+            }
             Thread thread = new Thread(GetBillDetail);
             thread.Start(details);
         }
@@ -104,11 +114,13 @@ namespace Test001
             TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
             Details details = (Details)param;
             Dictionary<ulong, string> dictionary = details.Dictionary;
-            
+
+            int index = 0;
             foreach (ulong key in dictionary.Keys)
             {
                 try
                 {
+                    index++;
                     using (DbHelper db = AppUtils.CreateDbHelper())
                     {
                         string data = bill.GetBillDetailByUrl(dictionary[key], details.Cookies);
@@ -116,7 +128,13 @@ namespace Test001
                         hash.Add("tbdid", Cuid.NewCuid());
                         hash.Add("tbid", key);
                         hash.Add("content", data);
+                        hash.Add("user", details.User);
                         db.Insert("tbilldetail", hash);
+                        if (details.DetailState != null)
+                        {
+                            string message = dictionary.Count == index ? string.Format("{0}条明细下载完毕", dictionary.Count) : string.Format("总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", dictionary.Count, index, dictionary.Count - index);
+                            details.DetailState(message);
+                        }
                     }
                 }
                 catch(Exception e)
@@ -133,8 +151,9 @@ namespace Test001
             int index = cookie.IndexOf(flag);
             if (index >= 0)
             {
-                string temp = cookie.Substring(index);
-                return temp.Substring(0, temp.IndexOf(';')).Substring(flag.Length);
+                string subCookies = cookie.Substring(index + flag.Length);
+                index = subCookies.IndexOf(";");
+                return subCookies.Substring(0, index);
             }
 
             throw new Exception("未找到用户");
