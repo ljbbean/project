@@ -1,0 +1,13 @@
+/*修改bill表列*/
+ALTER TABLE bill
+ADD COLUMN `createdate` DATETIME, ADD COLUMN `senddate` DATETIME, ADD COLUMN `successdate` DATETIME, ADD COLUMN `zfbpaycode` VARCHAR(50), ADD COLUMN `billfrom` VARCHAR(10),ADD COLUMN `tbcode` VARCHAR(50)
+
+
+/*把单据编号提到bill表*/
+UPDATE bill b
+SET tbcode = (SELECT bd.`code` FROM billdetail bd WHERE b.id = bd.bid)
+
+
+/*把原始标题提到billdetail表*/
+ALTER TABLE billdetail
+ADD COLUMN sourceTitle VARCHAR(300)
