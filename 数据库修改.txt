@@ -11,3 +11,15 @@ SET tbcode = (SELECT bd.`code` FROM billdetail bd WHERE b.id = bd.bid)
 /*把原始标题提到billdetail表*/
 ALTER TABLE billdetail
 ADD COLUMN sourceTitle VARCHAR(300)
+
+/*
+提出比例
+**/
+CREATE TABLE commissionrate(
+	crid BIGINT UNSIGNED,
+	color VARCHAR(100),
+	size VARCHAR(50),
+	sourcetitle VARCHAR(100),
+	rate DECIMAL,
+	uname VARCHAR(100)
+)

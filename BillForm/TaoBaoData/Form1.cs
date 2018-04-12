@@ -16,7 +16,7 @@ namespace TaoBaoData
 {
     public partial class Form1 : Form
     {
-        private string connect = "server=localhost;database=bill;User ID=root;Password=1234;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+        private string connect = "server=localhost;database=bill;User ID=root;Password=dev;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
         private string[] users = { "ljbbean", "annychenzy", "风灵415743757" };
         public Form1()
         {
@@ -324,7 +324,7 @@ namespace TaoBaoData
                 StringBuilder insertBillBuilder = new StringBuilder(@"insert into bill(id, date, taobaocode,cname,ctel,caddress,carea,cremark,
                     ltotal,status, scode, sname, uid, goodsstatus, billfrom, createdate, zfbpaycode,tbcode, senddate, successdate) values");
                 StringBuilder insertBillDetailBuilder = new StringBuilder(@"insert into billdetail(id, bid, code, size, amount, color, address,area,total, remark, 
-                    ltotal,sourceTitle,goodsstatus) values");
+                    ltotal,sourceTitle,goodsstatus,sendway) values");
                 foreach (DataRow row in table.Rows)
                 {
                     var ddid = row["订单ID"].ToString();
@@ -343,7 +343,7 @@ namespace TaoBaoData
                     sformate.Append(IsNullDate(successDate) ? ",{19}" : ",'{19}'");
                     sformate.Append("), ");
 
-                    string remark = string.Format("【买家留言：{0}】【卖家留言：{1}】", row["买家留言"], row["卖家留言"]);
+                    string remark = GetRemark(row);
                     insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
                         , remark, row["支付金额"], row["发货状态status"], GetLogisticsInfo(row["物流单号"]), GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                         , row["创建时间"], row["支付宝交易号"], ddid, GetDate(sendDate), GetDate(successDate));
@@ -354,12 +354,12 @@ namespace TaoBaoData
                     }
                     GoodsInfo[] ginfos = serializer.Deserialize <GoodsInfo[]>(row["货物信息"].ToString());
 
+                    var sendWay = GetLogisticsInfo(row["快递公司"]).IsEmptyObject() ? null : "快递";
                     foreach (GoodsInfo ginfo in ginfos)
                     {
-                        string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}),";
-                        insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], row["支付金额"], remark, row["支付金额"], ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1);
+                        string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}'),";
+                        insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], row["支付金额"], remark, row["支付金额"], ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay);
                     }
-
                 }
                 string insertBill = insertBillBuilder.ToString();
                 insertBill = insertBill.Substring(0, insertBill.Length - 2);
@@ -379,6 +379,25 @@ namespace TaoBaoData
                     MessageBox.Show(string.Format(e1.Message));
                 }
             }
+        }
+
+        private static string GetRemark(DataRow row)
+        {
+            StringBuilder sbuilder = new StringBuilder();
+            var mjly = row["买家留言"];
+            int index = 0;
+            if (!mjly.IsEmptyObject())
+            {
+                sbuilder.Append(string.Format("【买家留言：{0}】", mjly));
+                index++;
+            }
+
+            mjly = row["卖家留言"];
+            if (!mjly.IsEmptyObject())
+            {
+                sbuilder.Append(string.Format("【卖家留言：{0}】", mjly));
+            }
+            return sbuilder.ToString();
         }
 
         private int GetUser(object user)
@@ -489,6 +508,46 @@ namespace TaoBaoData
         {
             Action<String> AsyncUIDelegate = delegate(string n) { label2.Text = n; };
             label2.Invoke(AsyncUIDelegate, new object[] { message });
+        }
+
+        private struct CommissionRateStruct
+        {
+            public string Color { get; set; }
+            public string Size { get; set; }
+            public string SourceTitle { get; set; }
+            public string User { get; set; }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataTable table = GetDetailData();
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            
+            using (DbHelper db = new DbHelper(connect, true))
+            {
+                //IHashObjectList obj = db.Select("select * from commissionrate");
+                List<CommissionRateStruct> list = new List<CommissionRateStruct>();
+                Dictionary<string, Dictionary<string, List<string>>> dictionary = new Dictionary<string, Dictionary<string, List<string>>>();
+                foreach (DataRow row in table.Rows)
+                {
+                    GoodsInfo[] ginfos = serializer.Deserialize<GoodsInfo[]>(row["货物信息"].ToString());
+                    
+                    foreach (GoodsInfo ginfo in ginfos)
+                    {
+                        CommissionRateStruct crstruct = new CommissionRateStruct();
+                        crstruct.Color = ginfo.Color;
+                        crstruct.Size = ginfo.Size;
+                        crstruct.SourceTitle = ginfo.Title;
+                        crstruct.User = row["所属用户"].ToString();
+                        if (list.Contains(crstruct))
+                        {
+                            continue;
+                        }
+                        list.Add(crstruct);
+                    }
+                }
+                dataGridView1.DataSource = list;
+            }
         }
     }
 }
