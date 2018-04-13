@@ -549,5 +549,11 @@ namespace TaoBaoData
                 dataGridView1.DataSource = list;
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Search search = new Search();
+            dataGridView1.DataSource = search.GetMainData("https://s.taobao.com/search?q=test&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180413&ie=utf8");
+        }
     }
 }
