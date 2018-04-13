@@ -16,7 +16,7 @@ namespace TaoBaoData
 {
     public partial class Form1 : Form
     {
-        private string connect = "server=localhost;database=bill;User ID=root;Password=dev;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+        private string connect = "server=localhost;database=bill;User ID=root;Password=1234;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
         private string[] users = { "ljbbean", "annychenzy", "风灵415743757" };
         public Form1()
         {
@@ -552,8 +552,23 @@ namespace TaoBaoData
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Search search = new Search();
-            dataGridView1.DataSource = search.GetMainData("https://s.taobao.com/search?q=test&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180413&ie=utf8");
+            string condition = "显瘦镜";
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                condition = textBox1.Text;
+            }
+            try
+            {
+                Search search = new Search();
+                search.GetGoodMsg();
+                return;
+                string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
+                dataGridView1.DataSource = search.GetMainData(string.Format("https://s.taobao.com/search?q={0}&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180413&ie=utf8", tempSearchString1));
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
         }
     }
 }
