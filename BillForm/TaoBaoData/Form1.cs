@@ -16,7 +16,7 @@ namespace TaoBaoData
 {
     public partial class Form1 : Form
     {
-        private string connect = "server=localhost;database=bill;User ID=root;Password=1234;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
+        private string connect = "server=localhost;database=bill;User ID=root;Password=dev;Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8";
         private string[] users = { "ljbbean", "annychenzy", "风灵415743757" };
         public Form1()
         {
@@ -560,10 +560,10 @@ namespace TaoBaoData
             try
             {
                 Search search = new Search();
-                search.GetGoodMsg();
+                dataGridView1.DataSource = search.GetGoodMsg();
                 return;
                 string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
-                dataGridView1.DataSource = search.GetMainData(string.Format("https://s.taobao.com/search?q={0}&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180413&ie=utf8", tempSearchString1));
+                dataGridView1.DataSource = search.GetMainData(string.Format("https://s.taobao.com/search?q={0}&imgfile=&js=1&stats_click=search_radio_all%3A1&ie=utf8", tempSearchString1));
             }
             catch (Exception e1)
             {

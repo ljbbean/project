@@ -25,6 +25,19 @@ namespace TaoBaoRequest
 
         }
 
+        public static T GetDataEx<T>(this List<KeyValue> list, string key)
+        {
+            foreach (KeyValue keyValue in list)
+            {
+                if (keyValue.ContainsKey(key))
+                {
+                    object obj = keyValue[key];
+                    return (T)obj;
+                }
+            }
+            return default(T);
+        }
+
         public static List<KeyValue> GetHashValue(this HashObject hash, string[] keys)
         {
             if (keys == null || keys.Length == 0)

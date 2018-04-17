@@ -11,21 +11,50 @@ using System.Collections;
 
 namespace TaoBaoData
 {
+    public class Goods
+    {
+        public string SendCity { get; set; }
+        public List<SkuMap> Skus { get; set; }
+        /// <summary>
+        /// 支付方式
+        /// </summary>
+        public string Pays { get; set; }
+        /// <summary>
+        /// 服务
+        /// </summary>
+        public string Service { get; set; }
+        /// <summary>
+        /// 优惠券
+        /// </summary>
+        public string Coupon { get; set; }
+    }
+
+    public class SkuMap
+    {
+        public string Key { get; set; }
+        public string SkuId { get; set; }
+        public decimal OriginalPrice { get; set; }
+        public decimal PromotionPrice { get; set; }
+        public decimal Stock { get; set; }
+        public string Title { get; set; }
+    }
+
     public class Search
     {
         public object GetGoodMsg()
         {
-            string url = "https://item.taobao.com/item.htm?spm=a230r.1.14.36.1cc068d5rg7Oae&id=549192261604&ns=1&abbucket=17#detail";
+            string url = "https://item.taobao.com/item.htm?id=560291052345&ns=1&abbucket=1#detail";
             HttpWebRequest request = BillManage.CreateWebRequest(url);
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, sdch, br");
             request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
             request.Method = "GET";
             WebResponse response = request.GetResponse();
             string rdata = string.Empty;
-            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("utf-8")))
+            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
             {
                 rdata = reader.ReadToEnd();
             }
+            List<SkuMap> list = GetSkumapDetail(rdata);
             string sukJson = rdata.GetSectionString("skuMap     :", ",propertyMemoMap:");
             if (url.IndexOf("detail.tmall.com") > 0)
             {
@@ -35,18 +64,158 @@ namespace TaoBaoData
             else
             {
                 string sibUrl = string.Format("https:{0}&callback=onSibRequestSuccess", rdata.GetSectionString("wholeSibUrl      :", "',").TrimStart('\''));
-                GetTaobaoRealPrice(sibUrl, url);
+                return GetTaobaoRealPrice(sibUrl, url, list);
             } 
             return url;
+        }
+
+        private List<SkuMap> GetSkumapDetail(string html)
+        {
+            string subMap = GetSubString(html, "skuMap", ",propertyMemoMap").Trim().TrimStart(':');
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            HashObject hash = serializer.Deserialize<HashObject>(subMap);
+            List<SkuMap> listSkuMap = new List<SkuMap>();
+            Dictionary<string, string> dictionary = new Dictionary<string,string>();
+            foreach (string key in hash.Keys)
+            {
+                SkuMap map = new SkuMap();
+                map.Key = key;
+                HashObject temp = (HashObject)hash[key];
+                map.PromotionPrice = map.OriginalPrice = temp.GetValue<decimal>("price");
+                map.SkuId = temp.GetValue<string>("skuId");
+                string[] keyItems = key.Trim(';').Split(';');
+                StringBuilder sbuilder = new StringBuilder();
+                for (var i = 0; i < keyItems.Length; i++)
+                {
+                    string item = keyItems[i];
+                    
+                    string itemName;
+                    if (!dictionary.TryGetValue(item, out itemName))
+                    {
+                        itemName = GetItemName(item, html);
+                        dictionary.Add(item, itemName);
+                    }
+                    sbuilder.AppendFormat("{0},", itemName);
+                }
+                map.Title = sbuilder.ToString().Substring(0, sbuilder.Length - 1);
+                listSkuMap.Add(map);
+            }
+            return listSkuMap;
+        }
+
+        private string GetItemName(string id, string html)
+        {
+            string key = string.Format("data-value=\"{0}\"", id);
+            return html.GetSectionString(key, "</a>").GetSectionString("<span>", "</span>");
         }
         
         public object GetTianMaoRealPrice(string url, string refer)
         {
             return GetHtml(url, refer);
         }
-        public object GetTaobaoRealPrice(string url, string refer)
+        public object GetTaobaoRealPrice(string url, string refer, List<SkuMap> skuMaps)
         {
-            return GetHtml(url, refer);
+            string html = GetHtml(url, refer).ToString().Trim();
+            string flag= "onSibRequestSuccess(";
+            string data = html.Substring(flag.Length).TrimEnd(';').TrimEnd(')');
+            if (!data.Contains("promoData"))
+            {
+                return skuMaps;
+            }
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            HashObject hash = serializer.Deserialize<HashObject>(data);
+            string[] keys = {
+                                "data/deliveryFee/data/sendCity",
+                                "data/tradeContract/pay",
+                                "data/tradeContract/service",
+                                "data/couponActivity/coupon/couponList",
+                                "data/promotion/promoData",
+                                "data/dynStock/sku"
+                            };
+            var temp = hash.GetHashValue(keys);
+
+            Goods goods = new Goods();
+            goods.SendCity = temp.GetDataEx<string>("sendCity");
+            goods.Pays = GetGoodsPayWay(temp.GetDataEx<ArrayList>("pay"));
+            goods.Service = GetGoodsService(temp.GetDataEx<ArrayList>("service"));
+            goods.Skus = skuMaps;
+            goods.Coupon = GetGoodsCoupon(temp.GetDataEx<ArrayList>("couponList"));
+
+            HashObject promoDatas = temp.GetDataEx<HashObject>("promoData");
+
+            if (promoDatas != null)
+            {
+                foreach (SkuMap map in skuMaps)
+                {
+                    object keySku;
+                    if (promoDatas.TryGetValue(map.Key, out keySku))
+                    {
+                        ArrayList list = (ArrayList)keySku;
+                        decimal minPrice = map.PromotionPrice;
+                        foreach (HashObject tempList in list)
+                        {
+                           minPrice = Math.Min(minPrice, tempList.GetValue<decimal>("price"));
+                        }
+                        map.PromotionPrice = minPrice;
+                    }
+                }
+            }
+
+            HashObject sku = temp.GetDataEx<HashObject>("sku");
+            if (sku != null)
+            {
+                foreach (SkuMap map in skuMaps)
+                {
+                    object keySku;
+                    if (sku.TryGetValue(map.Key, out keySku))
+                    {
+                        map.Stock = ((HashObject)keySku).GetValue<decimal>("sellableQuantity");
+                    }
+                }
+            }
+            return skuMaps;
+        }
+
+        private string GetGoodsPayWay(ArrayList list)
+        {
+            if (list == null)
+            {
+                return "";
+            }
+            StringBuilder sbuiler = new StringBuilder();
+            foreach (HashObject item in list)
+            {
+                sbuiler.AppendFormat("【{0}】", item["title"]);
+            }
+            return sbuiler.ToString();
+        }
+
+        private string GetGoodsService(ArrayList list)
+        {
+            if (list == null)
+            {
+                return "";
+            }
+            StringBuilder sbuiler = new StringBuilder();
+            foreach (HashObject item in list)
+            {
+                sbuiler.AppendFormat("【{0}】", item["title"]);
+            }
+            return sbuiler.ToString();
+        }
+
+        private string GetGoodsCoupon(ArrayList list)
+        {
+            if (list == null)
+            {
+                return "";
+            }
+            StringBuilder sbuiler = new StringBuilder();
+            foreach (HashObject item in list)
+            {
+                sbuiler.AppendFormat("【{0}】", item["title"]);
+            }
+            return sbuiler.ToString();
         }
 
         private static object GetHtml(string url, string refer)
@@ -90,9 +259,14 @@ namespace TaoBaoData
         {
             const string startFlag = "g_page_config = ";
             const string endFlag = "g_srp_loadCss();";
+            return GetSubString(html, startFlag, endFlag);
+        }
+
+        private static string GetSubString(string html, string startFlag, string endFlag)
+        {
             int sindex = html.IndexOf(startFlag);
             int eindex = html.IndexOf(endFlag);
-            if (sindex < 0 || eindex <0 || sindex >= eindex)
+            if (sindex < 0 || eindex < 0 || sindex >= eindex)
             {
                 throw new Exception("页面配置数据不正确");
             }
