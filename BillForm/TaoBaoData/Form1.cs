@@ -549,5 +549,11 @@ namespace TaoBaoData
                 dataGridView1.DataSource = list;
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CollectionForm form = new CollectionForm();
+            form.ShowDialog();
+        }
     }
 }

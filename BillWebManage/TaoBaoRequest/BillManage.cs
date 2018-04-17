@@ -107,7 +107,7 @@ namespace TaoBaoRequest
             }
         }
 
-        private static HttpWebRequest CreateWebRequest(string url)
+        public static HttpWebRequest CreateWebRequest(string url)
         {
             ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
             Uri uri = new Uri(url);
