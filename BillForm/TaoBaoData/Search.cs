@@ -41,9 +41,8 @@ namespace TaoBaoData
 
     public class Search
     {
-        public object GetGoodMsg()
+        public object GetGoodMsg(string url)
         {
-            string url = "https://item.taobao.com/item.htm?id=560291052345&ns=1&abbucket=1#detail";
             HttpWebRequest request = BillManage.CreateWebRequest(url);
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, sdch, br");
             request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
@@ -54,19 +53,49 @@ namespace TaoBaoData
             {
                 rdata = reader.ReadToEnd();
             }
-            List<SkuMap> list = GetSkumapDetail(rdata);
-            string sukJson = rdata.GetSectionString("skuMap     :", ",propertyMemoMap:");
-            if (url.IndexOf("detail.tmall.com") > 0)
+            if (url.IndexOf("detail.tmall.com") > 0 || url.IndexOf("click.simba.taobao.com") > 0)
             {
-                string tianmaoUrl = string.Format("https://mdskip.taobao.com{0}", rdata.GetSectionString("//mdskip.taobao.com", "',"));
-                GetTianMaoRealPrice(tianmaoUrl, url);
+                string json = rdata.GetSectionString("TShop.Setup(", "})();").Trim().TrimEnd(';').TrimEnd(')').Trim();
+
+                JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+                var jsonData = serializer.Deserialize<HashObject>(json);
+
+                List<SkuMap> list = GetSkumapTmallDetail(jsonData);
+
+                string tianmaoUrl = string.Format("https:{0}", jsonData["initApi"]);
+                return GetTianMaoRealPrice(tianmaoUrl, url, list);
             }
             else
             {
+                List<SkuMap> list = GetSkumapDetail(rdata);
                 string sibUrl = string.Format("https:{0}&callback=onSibRequestSuccess", rdata.GetSectionString("wholeSibUrl      :", "',").TrimStart('\''));
                 return GetTaobaoRealPrice(sibUrl, url, list);
             } 
-            return url;
+        }
+
+        private List<SkuMap> GetSkumapTmallDetail(HashObject data)
+        {
+            List<SkuMap> list = new List<SkuMap>();
+            string[] keys = {
+                                "valItemInfo/skuList",
+                                "valItemInfo/skuMap"
+                            };
+            var skuList = data.GetHashValue(keys);
+            var details = skuList.GetDataEx<ArrayList>("skuList");
+            var skuMaps = skuList.GetDataEx<HashObject>("skuMap");
+            foreach (HashObject hash in details)
+            {
+                SkuMap skuMap = new SkuMap();
+                skuMap.Title = hash.GetValue<string>("names");
+                skuMap.SkuId = hash.GetValue<string>("skuId");
+                skuMap.Key = string.Format(";{0};", hash.GetValue<string>("pvs"));
+                var map = (HashObject)skuMaps[skuMap.Key];
+                skuMap.Stock = map.GetValue<decimal>("stock");
+                skuMap.OriginalPrice = map.GetValue<decimal>("price");
+                list.Add(skuMap);
+            }
+
+            return list;
         }
 
         private List<SkuMap> GetSkumapDetail(string html)
@@ -108,10 +137,41 @@ namespace TaoBaoData
             string key = string.Format("data-value=\"{0}\"", id);
             return html.GetSectionString(key, "</a>").GetSectionString("<span>", "</span>");
         }
-        
-        public object GetTianMaoRealPrice(string url, string refer)
+
+        public object GetTianMaoRealPrice(string url, string refer, List<SkuMap> skuMaps)
         {
-            return GetHtml(url, refer);
+            string html = GetHtml(url, refer).ToString().Trim();
+            string[] keys = {
+                                "defaultModel/deliveryDO/deliveryAddress",
+                                "defaultModel/itemPriceResultDO/priceInfo",
+                                "defaultModel/servicePromise/servicePromiseList",
+                                "defaultModel/detailPageTipsDO/coupon"
+                            };
+            JavaScriptSerializer seralizer = JavaScriptSerializer.CreateInstance();
+            var hash = seralizer.Deserialize<HashObject>(html);
+            var temp = hash.GetHashValue(keys);
+            HashObject priceInfo = temp.GetDataEx<HashObject>("priceInfo");
+            foreach (SkuMap map in skuMaps)
+            {
+                var items= priceInfo.GetValue<HashObject>(map.SkuId);
+                var promotionList = items.ContainsKey("promotionList") ? items.GetValue<ArrayList>("promotionList") : items.GetValue<ArrayList>("suggestivePromotionList");
+                decimal min = map.OriginalPrice;
+                foreach (HashObject item in promotionList)
+                {
+                    min = Math.Min(min, item.GetValue<decimal>("price"));
+                }
+                map.PromotionPrice = min;
+            }
+
+            Goods goods = new Goods();
+            goods.SendCity = temp.GetDataEx<string>("deliveryAddress");
+            goods.Skus = skuMaps;
+            goods.Service = GetGoodsServiceToTmall(temp.GetDataEx<ArrayList>("servicePromiseList"));
+            
+            //goods.Pays = GetGoodsPayWay(temp.GetDataEx<ArrayList>("pay"));
+            //goods.Coupon = GetGoodsCoupon(temp.GetDataEx<ArrayList>("couponList"));
+
+            return skuMaps;
         }
         public object GetTaobaoRealPrice(string url, string refer, List<SkuMap> skuMaps)
         {
@@ -190,6 +250,20 @@ namespace TaoBaoData
             return sbuiler.ToString();
         }
 
+        private string GetGoodsServiceToTmall(ArrayList list)
+        {
+            if (list == null)
+            {
+                return "";
+            }
+            StringBuilder sbuiler = new StringBuilder();
+            foreach (HashObject item in list)
+            {
+                sbuiler.AppendFormat("【{0}】", item["displayText"]);
+            }
+            return sbuiler.ToString();
+        }
+
         private string GetGoodsService(ArrayList list)
         {
             if (list == null)
@@ -255,6 +329,26 @@ namespace TaoBaoData
             }
         }
 
+        public object GetMainDataMore(string condition)
+        {
+            string format = "https://s.taobao.com/search?data-key=s&data-value={0}&ajax=true&q={1}&imgfile=&js=1&stats_click=search_radio_all%3A1&ie=utf8&bcoffset=4&p4ppushleft=2%2C48";
+            string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
+            HttpWebRequest request = BillManage.CreateWebRequest(string.Format(format, 0, tempSearchString1));
+            request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
+            request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
+            request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
+            //request.Headers.Add("Cookie", "miid=1728548116093794437; __guid=154677242.2846140567203673000.1501561967580.6582; thw=cn; UM_distinctid=1618940f5d4107-09d02200b9f76d-6b1b1279-13c680-1618940f5d57c; hng=CN%7Czh-CN%7CCNY%7C156; l=AuPj2a11VnuhTPJs4rH1zzUk8y2Nanca; enc=%2F9Y7DzXDWuTfSjPQfji0y5jFSM%2B%2FtbTGiPJfLEF%2Bq1RCwFjIfNXY11SnWr2O2Rcld%2FyFKofeQnxnPH9g1%2BQFYg%3D%3D; _m_h5_tk=bc3b6143cded39d50b3adc5d8b721216_1523585146428; _m_h5_tk_enc=b1332109470ab447f6374140ee0f2ad4; ali_ab=221.237.156.243.1501549367233.5; cna=m/kFEhmaM1cCAd3tnPPc7v81; uc3=nk2=D8nuvqgSyg%3D%3D&id2=VAMWosWKTl%2Fw&vt3=F8dBz4D5GsR5MqMiEgY%3D&lg2=UtASsssmOIJ0bQ%3D%3D; existShop=MTUyMzU4Nzc3NA%3D%3D; lgc=ljbbean; tracknick=ljbbean; v=0; dnk=ljbbean; cookie2=14e6c9f0042e42fe3c2b418ba01f6f39; csg=b1b10b18; mt=np=&ci=13_1; skt=6408697bbf7ebabd; t=49abd0913341db1817811b1dc1654e34; _cc_=Vq8l%2BKCLiw%3D%3D; _tb_token_=ea3b3bee453b3; tg=0; uc1=cookie14=UoTePTPB73hIaQ%3D%3D&lng=zh_CN&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&existShop=true&cookie21=Vq8l%2BKCLiv0MyZ1zjQnMQw%3D%3D&tag=8&cookie15=WqG3DMC9VAQiUQ%3D%3D&pas=0; alitrackid=www.taobao.com; lastalitrackid=www.taobao.com; monitor_count=2; JSESSIONID=A3AD2F9136C385BFEA399E9B386E00FD; isg=BEJCOhzNrM1-J7M-cjRzOVnyk0gIA0byIYXdkIxbvrVj3-NZdKFIPdVdi9mjj77F");
+            request.Method = "GET";
+
+            WebResponse response = request.GetResponse();
+            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("utf-8")))
+            {
+                string rdata = reader.ReadToEnd();
+
+                return GetList(GetPageConfig(rdata));
+            }
+        }
+
         private string GetPageConfig(string html)
         {
             const string startFlag = "g_page_config = ";
@@ -288,10 +382,10 @@ namespace TaoBaoData
                 throw new Exception("没搜索到东西");
             }
             Object[] array = (Object[])newHash[0]["auctions"];
-            List<Test> list = new List<Test>();
+            List<GoodsAddress> list = new List<GoodsAddress>();
             foreach (HashObject item in array)
             {
-                Test test = new Test();
+                GoodsAddress test = new GoodsAddress();
                 test.view_price = item.GetValue<string>("view_price", "");
                 test.title = item.GetValue<string>("title", "");
                 test.nick = item.GetValue<string>("nick", "");
@@ -303,7 +397,7 @@ namespace TaoBaoData
             return list;
         }
 
-        public class Test
+        public class GoodsAddress
         {
             public string view_price { get; set; }
             public string title { get; set; }

@@ -552,23 +552,8 @@ namespace TaoBaoData
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string condition = "显瘦镜";
-            if (!string.IsNullOrEmpty(textBox1.Text))
-            {
-                condition = textBox1.Text;
-            }
-            try
-            {
-                Search search = new Search();
-                dataGridView1.DataSource = search.GetGoodMsg();
-                return;
-                string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
-                dataGridView1.DataSource = search.GetMainData(string.Format("https://s.taobao.com/search?q={0}&imgfile=&js=1&stats_click=search_radio_all%3A1&ie=utf8", tempSearchString1));
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
+            CollectionForm form = new CollectionForm();
+            form.ShowDialog();
         }
     }
 }
