@@ -11,8 +11,6 @@ namespace TaoBaoData
 {
     public partial class CollectionForm : Form
     {
-        List<TaoBaoData.Search.GoodsAddress> list = new List<TaoBaoData.Search.GoodsAddress>();
-
         public CollectionForm()
         {
             InitializeComponent();
@@ -25,7 +23,7 @@ namespace TaoBaoData
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string condition = "显瘦镜";
+            string condition = "镜子";
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 condition = textBox1.Text;
@@ -33,11 +31,7 @@ namespace TaoBaoData
             try
             {
                 Search search = new Search();
-                var data = search.GetMainDataMore("test");
-                return;
-                string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
-                list = (List<TaoBaoData.Search.GoodsAddress>) search.GetMainData(string.Format("https://s.taobao.com/search?q={0}&imgfile=&js=1&stats_click=search_radio_all%3A1&ie=utf8", tempSearchString1));
-                dataGridView1.DataSource = list;
+                dataGridView1.DataSource = search.GetMainDataMore(condition);
             }
             catch (Exception e1)
             {
@@ -54,12 +48,20 @@ namespace TaoBaoData
                     return;
                 }
                 Search search = new Search();
-                string url = list[dataGridView1.SelectedRows[0].Index].detail_url;
+
+                string url = dataGridView1.SelectedRows[0].Cells["detail_url"].Value.ToString();
                 if (!url.ToLower().Trim().StartsWith("http"))
                 {
                     url = string.Format("https:{0}", url);
                 }
-                dataGridView2.DataSource = search.GetGoodMsg(url);
+                Goods goods = (Goods)search.GetGoodMsg(url);
+                dataGridView2.DataSource = goods.Skus;
+                textBox1.Text = goods.SendCity;
+                textBox2.Text = goods.ConfirmGoodsCount.ToString();
+                textBox3.Text = goods.SoldTotalCount.ToString();
+                textBox4.Text = goods.Pays;
+                textBox5.Text = goods.Service;
+                textBox6.Text = goods.Coupon;
             }
             catch (Exception e1)
             {

@@ -8,6 +8,7 @@ using System.IO;
 using Carpa.Web.Ajax;
 using Carpa.Web.Script;
 using System.Collections;
+using System.Data;
 
 namespace TaoBaoData
 {
@@ -15,6 +16,14 @@ namespace TaoBaoData
     {
         public string SendCity { get; set; }
         public List<SkuMap> Skus { get; set; }
+        /// <summary>
+        /// 确认销售数量
+        /// </summary>
+        public decimal ConfirmGoodsCount { get; set; }
+        /// <summary>
+        /// 销售总数
+        /// </summary>
+        public decimal SoldTotalCount { get; set; }
         /// <summary>
         /// 支付方式
         /// </summary>
@@ -145,7 +154,8 @@ namespace TaoBaoData
                                 "defaultModel/deliveryDO/deliveryAddress",
                                 "defaultModel/itemPriceResultDO/priceInfo",
                                 "defaultModel/servicePromise/servicePromiseList",
-                                "defaultModel/detailPageTipsDO/coupon"
+                                "defaultModel/detailPageTipsDO/coupon",
+                                "defaultModel/sellCountDO/sellCount"
                             };
             JavaScriptSerializer seralizer = JavaScriptSerializer.CreateInstance();
             var hash = seralizer.Deserialize<HashObject>(html);
@@ -167,11 +177,11 @@ namespace TaoBaoData
             goods.SendCity = temp.GetDataEx<string>("deliveryAddress");
             goods.Skus = skuMaps;
             goods.Service = GetGoodsServiceToTmall(temp.GetDataEx<ArrayList>("servicePromiseList"));
-            
+            goods.ConfirmGoodsCount = goods.SoldTotalCount = decimal.Parse( temp.GetDataEx<int>("sellCount").ToString());
             //goods.Pays = GetGoodsPayWay(temp.GetDataEx<ArrayList>("pay"));
             //goods.Coupon = GetGoodsCoupon(temp.GetDataEx<ArrayList>("couponList"));
 
-            return skuMaps;
+            return goods;
         }
         public object GetTaobaoRealPrice(string url, string refer, List<SkuMap> skuMaps)
         {
@@ -190,7 +200,9 @@ namespace TaoBaoData
                                 "data/tradeContract/service",
                                 "data/couponActivity/coupon/couponList",
                                 "data/promotion/promoData",
-                                "data/dynStock/sku"
+                                "data/dynStock/sku",
+                                "data/promotion/soldQuantity/soldTotalCount",
+                                "data/promotion/soldQuantity/confirmGoodsCount"
                             };
             var temp = hash.GetHashValue(keys);
 
@@ -200,6 +212,8 @@ namespace TaoBaoData
             goods.Service = GetGoodsService(temp.GetDataEx<ArrayList>("service"));
             goods.Skus = skuMaps;
             goods.Coupon = GetGoodsCoupon(temp.GetDataEx<ArrayList>("couponList"));
+            goods.SoldTotalCount = temp.GetDataEx<decimal>("soldTotalCount");
+            goods.ConfirmGoodsCount = temp.GetDataEx<decimal>("confirmGoodsCount");
 
             HashObject promoDatas = temp.GetDataEx<HashObject>("promoData");
 
@@ -233,7 +247,7 @@ namespace TaoBaoData
                     }
                 }
             }
-            return skuMaps;
+            return goods;
         }
 
         private string GetGoodsPayWay(ArrayList list)
@@ -324,20 +338,41 @@ namespace TaoBaoData
             using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("utf-8")))
             {
                 string rdata = reader.ReadToEnd();
-
-                return GetList(GetPageConfig(rdata));
+                string startFlag = "g_page_config = ";
+                string endFlag = "g_srp_loadCss();";
+                return GetList(GetSubString(rdata, startFlag, endFlag));
             }
         }
 
-        public object GetMainDataMore(string condition)
+        public object GetMainDataMore(string condition, int maxPage = 3)
+        {
+            List<DataTable> tableList = new List<DataTable>();
+            int startIndex = 0;
+            for (int i = 0; i < maxPage; i++)
+            {
+                DataTable table = GetOnePageData(condition, startIndex);
+                tableList.Add(table);
+                startIndex = table.Rows.Count - 1;
+            }
+            DataTable gtable = CreateGoodsTable();
+            foreach (DataTable tempTable in tableList)
+            {
+                foreach (DataRow row in tempTable.Rows)
+                {
+                    gtable.Rows.Add(row.ItemArray);
+                }
+            }
+            return gtable;
+        }
+
+        private DataTable GetOnePageData(string condition, int startIndex)
         {
             string format = "https://s.taobao.com/search?data-key=s&data-value={0}&ajax=true&q={1}&imgfile=&js=1&stats_click=search_radio_all%3A1&ie=utf8&bcoffset=4&p4ppushleft=2%2C48";
             string tempSearchString1 = System.Web.HttpUtility.UrlEncode(condition, Encoding.GetEncoding("utf-8"));
-            HttpWebRequest request = BillManage.CreateWebRequest(string.Format(format, 0, tempSearchString1));
+            HttpWebRequest request = BillManage.CreateWebRequest(string.Format(format, startIndex, tempSearchString1));
             request.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
             request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
             request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
-            //request.Headers.Add("Cookie", "miid=1728548116093794437; __guid=154677242.2846140567203673000.1501561967580.6582; thw=cn; UM_distinctid=1618940f5d4107-09d02200b9f76d-6b1b1279-13c680-1618940f5d57c; hng=CN%7Czh-CN%7CCNY%7C156; l=AuPj2a11VnuhTPJs4rH1zzUk8y2Nanca; enc=%2F9Y7DzXDWuTfSjPQfji0y5jFSM%2B%2FtbTGiPJfLEF%2Bq1RCwFjIfNXY11SnWr2O2Rcld%2FyFKofeQnxnPH9g1%2BQFYg%3D%3D; _m_h5_tk=bc3b6143cded39d50b3adc5d8b721216_1523585146428; _m_h5_tk_enc=b1332109470ab447f6374140ee0f2ad4; ali_ab=221.237.156.243.1501549367233.5; cna=m/kFEhmaM1cCAd3tnPPc7v81; uc3=nk2=D8nuvqgSyg%3D%3D&id2=VAMWosWKTl%2Fw&vt3=F8dBz4D5GsR5MqMiEgY%3D&lg2=UtASsssmOIJ0bQ%3D%3D; existShop=MTUyMzU4Nzc3NA%3D%3D; lgc=ljbbean; tracknick=ljbbean; v=0; dnk=ljbbean; cookie2=14e6c9f0042e42fe3c2b418ba01f6f39; csg=b1b10b18; mt=np=&ci=13_1; skt=6408697bbf7ebabd; t=49abd0913341db1817811b1dc1654e34; _cc_=Vq8l%2BKCLiw%3D%3D; _tb_token_=ea3b3bee453b3; tg=0; uc1=cookie14=UoTePTPB73hIaQ%3D%3D&lng=zh_CN&cookie16=W5iHLLyFPlMGbLDwA%2BdvAGZqLg%3D%3D&existShop=true&cookie21=Vq8l%2BKCLiv0MyZ1zjQnMQw%3D%3D&tag=8&cookie15=WqG3DMC9VAQiUQ%3D%3D&pas=0; alitrackid=www.taobao.com; lastalitrackid=www.taobao.com; monitor_count=2; JSESSIONID=A3AD2F9136C385BFEA399E9B386E00FD; isg=BEJCOhzNrM1-J7M-cjRzOVnyk0gIA0byIYXdkIxbvrVj3-NZdKFIPdVdi9mjj77F");
             request.Method = "GET";
 
             WebResponse response = request.GetResponse();
@@ -345,15 +380,52 @@ namespace TaoBaoData
             {
                 string rdata = reader.ReadToEnd();
 
-                return GetList(GetPageConfig(rdata));
+                return GetMainData(rdata);
             }
         }
 
-        private string GetPageConfig(string html)
+        private DataTable GetMainData(string content)
         {
-            const string startFlag = "g_page_config = ";
-            const string endFlag = "g_srp_loadCss();";
-            return GetSubString(html, startFlag, endFlag);
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            HashObject hash = serializer.Deserialize<HashObject>(content);
+            string[] keys = {
+                                "mods/itemlist/data/auctions"
+                            };
+            var list = hash.GetHashValue(keys);
+            var auctions = list[0].GetValue<ArrayList>("auctions");
+            DataTable table = CreateGoodsTable();
+
+            foreach (HashObject obj in auctions)
+            {
+                DataRow row = table.NewRow();
+                row["title"] = obj.GetValue<string>("title");
+                row["raw_title"] = obj.GetValue<string>("raw_title");
+                row["pic_url"] = obj.GetValue<string>("pic_url");
+                row["detail_url"] = obj.GetValue<string>("detail_url");
+                row["item_loc"] = obj.GetValue<string>("item_loc");
+                string sales = obj.GetValue<string>("view_sales");
+                row["view_sales"] = decimal.Parse(sales.Substring(0, sales.Length - 3));
+                row["nick"] = obj.GetValue<string>("nick");
+                row["view_price"] = obj.GetValue<string>("view_price");
+                row["view_fee"] = obj.GetValue<string>("view_fee");
+                table.Rows.Add(row);
+            }
+            return table;
+        }
+
+        private static DataTable CreateGoodsTable()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("title");
+            table.Columns.Add("raw_title");
+            table.Columns.Add("pic_url");
+            table.Columns.Add("detail_url");
+            table.Columns.Add("item_loc");
+            table.Columns.Add("view_sales", typeof(decimal));
+            table.Columns.Add("nick");
+            table.Columns.Add("view_price");
+            table.Columns.Add("view_fee");
+            return table;
         }
 
         private static string GetSubString(string html, string startFlag, string endFlag)
