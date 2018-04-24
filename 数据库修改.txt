@@ -23,3 +23,11 @@ CREATE TABLE commissionrate(
 	rate DECIMAL,
 	uname VARCHAR(100)
 )
+
+/*添加是否已经下载明细，默认为0表示没有下载*/
+ALTER TABLE tbill
+ADD COLUMN downeddetail INT
+
+/*基类更新时间*/
+ALTER TABLE tbill
+ADD COLUMN udate datetime

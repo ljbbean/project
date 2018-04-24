@@ -101,7 +101,14 @@ namespace TaoBaoData
                     row["支付宝交易号"] = tempOrderInfoList.GetValue<string>("支付宝交易号:", "");
                     row["创建时间"] = tempOrderInfoList.GetValue<string>("创建时间:", null);
                     row["付款时间"] = tempOrderInfoList.GetValue<string>("付款时间:", null);
-                    row["发货时间"] = tempOrderInfoList.GetValue<string>("发货时间:", null);
+                    var sendDate = tempOrderInfoList.GetValue<string>("发货时间:", null);
+                    row["发货时间"] = sendDate;
+                    if (sendDate != null)
+                    {
+                        row["发货状态"] = "已发货";
+                        row["发货状态status"] = "1";
+                    }
+
                     var successDate = tempOrderInfoList.GetValue<string>("成交时间:", null);
                     if (successDate != null)
                     {

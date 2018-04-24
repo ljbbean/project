@@ -20,6 +20,7 @@ namespace TaoBaoData
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.RowHeadersWidth = 50;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -287,6 +288,11 @@ namespace TaoBaoData
         {
             CollectionForm form = new CollectionForm();
             form.ShowDialog();
+        }
+
+        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            e.Row.HeaderCell.Value = string.Format("{0}", e.Row.Index + 1);  
         }
     }
 }

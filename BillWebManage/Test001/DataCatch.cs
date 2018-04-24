@@ -69,7 +69,7 @@ namespace Test001
             Dictionary<ulong, string> dictionary = new Dictionary<ulong, string>();
             using (DbHelper db = AppUtils.CreateDbHelper())
             {
-                string sql = "select * from tbill where `user`= @user";
+                string sql = "select * from tbill where `user`= @user and downeddetail = 0";
                 db.AddParameter("user", user);
                 IHashObjectList list = db.Select(sql);
                 JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
@@ -116,32 +116,44 @@ namespace Test001
             Dictionary<ulong, string> dictionary = details.Dictionary;
 
             int index = 0;
-            foreach (ulong key in dictionary.Keys)
+            using (DbHelper db = AppUtils.CreateDbHelper())
             {
-                try
+                db.BeginTransaction();
+                foreach (ulong key in dictionary.Keys)
                 {
-                    index++;
-                    using (DbHelper db = AppUtils.CreateDbHelper())
+                    try
                     {
+                        index++;
                         string data = bill.GetBillDetailByUrl(dictionary[key], details.Cookies);
+                        db.AddParameter("tbid", key);
+                        db.ExecuteIntSQL("delete from tbilldetail where tbid=@tbid");//先删除明细，再添加
                         HashObject hash = new HashObject();
                         hash.Add("tbdid", Cuid.NewCuid());
                         hash.Add("tbid", key);
                         hash.Add("content", data);
                         hash.Add("user", details.User);
                         db.Insert("tbilldetail", hash);
+                        db.AddParameter("tbid", key);
+                        db.ExecuteIntSQL("update tbill set downeddetail=1 where tbid=@tbid");
                         if (details.DetailState != null)
                         {
                             string message = dictionary.Count == index ? string.Format("{0}条明细下载完毕", dictionary.Count) : string.Format("总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", dictionary.Count, index, dictionary.Count - index);
                             details.DetailState(message);
                         }
                     }
+                    catch(Exception e)
+                    {
+                        if (db.HasBegunTransaction)
+                        {
+                            db.RollbackTransaction();
+                        }
+                        details.DetailState(string.Format("下载出错：{0}", e.Message));
+                        return;
+                    }
+                    Thread.Sleep(2000);
                 }
-                catch(Exception e)
-                {
 
-                }
-                Thread.Sleep(2000);
+                db.CommitTransaction();
             }
         }
         
@@ -174,25 +186,27 @@ namespace Test001
                     db.BeginTransaction();
                     StringBuilder sbuilder = new StringBuilder();
                     DateTime cdate = DateTime.Now;
-                    List<string> ids = new List<string>();
-                    
+
                     foreach (string data in list)
                     {
-                        ids.AddRange(InsertDataToMysql(serializer, data, db, cdate, user));
+                        InsertDataToMysql(serializer, data, db, cdate, user);
                     }
                     
                     db.CommitTransaction();
-                    return string.Format("数据插入成功,插入条数:{0}", ids.Count);
+                    return string.Format("数据插入成功");
                 }
                 catch (Exception e)
                 {
-                    db.RollbackTransaction();
+                    if (db.HasBegunTransaction)
+                    {
+                        db.RollbackTransaction();
+                    }
                     return e;
                 }
             }
         }
 
-        private List<string> InsertDataToMysql(JavaScriptSerializer serializer, string str, DbHelper db, DateTime date, string user)
+        private void InsertDataToMysql(JavaScriptSerializer serializer, string str, DbHelper db, DateTime date, string user)
         {
             string[] keys = { "mainOrders" };
             HashObject hash = (HashObject)serializer.DeserializeObject(str);
@@ -203,18 +217,60 @@ namespace Test001
 
             if (list.Count == 0)
             {
-                return new List<string>();
+                return ;
             }
-            List<string> ids = new List<string>();
-            StringBuilder sbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`) values");
+
+            //根据单号获取当前以及存储的数据
+            StringBuilder bidBuilder = new StringBuilder("select tbid, content, bid, cdate, status, downeddetail from tbill where bid in (");
             foreach (HashObject row in list)
             {
-                ids.Add(row["id"].ToString());
-                sbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}'),", Cuid.NewCuid(), row["id"], serializer.Serialize(row), date, ((HashObject)row["statusInfo"])["text"].ToString(), user);
+                bidBuilder.AppendFormat("{0},", row["id"]);
             }
-            string insertData = sbuilder.ToString();
+            IHashObjectList bidList = db.Select(string.Format("{0})", bidBuilder.ToString().Substring(0, bidBuilder.Length - 1)));
+            //根据单号获取对应的字典信息
+            Dictionary<string, HashObject> bidDictionary = new Dictionary<string, HashObject>();
+            foreach (HashObject item in bidList)
+            {
+                bidDictionary.Add(item.GetValue<string>("bid"), item);
+            }
+
+            //筛选数据，对于已插入的数据做数据对比，当数据没有变化时，不做数据修改,反之则修改数据。没有的数据直接插入
+            StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate) values");
+            string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail where tbid=@tbid";
+            bool hasInsert = false;
+            foreach (HashObject row in list)
+            {
+                var id = row["id"].ToString();
+                string content = serializer.Serialize(row);
+                string status = ((HashObject)row["statusInfo"])["text"].ToString();
+                HashObject item;
+                ulong tbid = Cuid.NewCuid();
+                if (bidDictionary.TryGetValue(id, out item))
+                {
+                    tbid = item.GetValue<ulong>("tbid");
+                    if (item.GetValue<string>("content").Equals(content) && item.GetValue<string>("status").Equals(status))
+                    {
+                        //数据相同直接返回
+                        continue;
+                    }
+                    db.AddParameter("content", content);
+                    db.AddParameter("udate", date);
+                    db.AddParameter("status", status);
+                    db.AddParameter("tbid", tbid);
+                    //存在不同的，全部更新明细
+                    db.AddParameter("downeddetail", 0);
+                    db.ExecuteIntSQL(updateSql);//更新已下载数据
+                    continue;
+                }
+                hasInsert = true;
+                insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}'),", tbid, id, content, date, status, user, date);
+            }
+            if (!hasInsert)
+            {
+                return;
+            }
+            string insertData = insertbuilder.ToString();
             db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
-            return ids;
         }
     }
 }

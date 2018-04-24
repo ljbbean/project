@@ -44,11 +44,11 @@
             // 获取数据
             // 
             this.获取数据.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.获取数据.Location = new System.Drawing.Point(749, 43);
+            this.获取数据.Location = new System.Drawing.Point(672, 42);
             this.获取数据.Name = "获取数据";
-            this.获取数据.Size = new System.Drawing.Size(75, 23);
+            this.获取数据.Size = new System.Drawing.Size(120, 23);
             this.获取数据.TabIndex = 0;
-            this.获取数据.Text = "数据提取";
+            this.获取数据.Text = "数据提取分析";
             this.获取数据.UseVisualStyleBackColor = true;
             this.获取数据.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -63,22 +63,23 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(934, 240);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dataGridView1_RowStateChanged);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(830, 43);
+            this.button1.Location = new System.Drawing.Point(808, 42);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(117, 23);
             this.button1.TabIndex = 2;
-            this.button1.Text = "数据存储";
+            this.button1.Text = "抓取数据转为单据";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(657, 43);
+            this.button2.Location = new System.Drawing.Point(570, 42);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 23);
             this.button2.TabIndex = 3;
@@ -92,7 +93,7 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(77, 43);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(409, 21);
+            this.textBox1.Size = new System.Drawing.Size(348, 21);
             this.textBox1.TabIndex = 4;
             // 
             // label1
@@ -107,9 +108,9 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(492, 43);
+            this.dateTimePicker1.Location = new System.Drawing.Point(431, 42);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(159, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(123, 21);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label2
@@ -126,21 +127,22 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(830, 13);
+            this.button3.Location = new System.Drawing.Point(808, 13);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(117, 23);
             this.button3.TabIndex = 8;
-            this.button3.Text = "商品列表";
+            this.button3.Text = "抓取商品列表";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(749, 13);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(717, 13);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
-            this.button4.Text = "卖家收集";
+            this.button4.Text = "对手收集";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
