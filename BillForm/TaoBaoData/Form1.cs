@@ -82,29 +82,36 @@ namespace TaoBaoData
 
                         var sendWay = TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]).IsEmptyObject() ? null : "快递";
                         string remark = GetRemark(row);
-                        decimal total = 0;
+                        decimal pall = Decimal.Parse(row["拍下总金额"].ToString());
+                        decimal total = Decimal.Parse(row["支付金额"].ToString());
                         decimal ltotal = 0;
                         decimal btotal = 0;
-                        foreach (GoodsInfo ginfo in ginfos)
+                        decimal allPrice = 0;
+                        for (int j = ginfos.Length - 1; j >= 0; j--)
                         {
-                            string goodKey = GetGoodsKey(ginfo.Color,ginfo.Size, ginfo.Title);
-                            if(goodsRate == null || !goodsRate.ContainsKey(goodKey))
+                            GoodsInfo ginfo = ginfos[j];
+                            string goodKey = GetGoodsKey(ginfo.Color, ginfo.Size, ginfo.Title);
+                            if (goodsRate == null || !goodsRate.ContainsKey(goodKey))
                             {
                                 throw new Exception(string.Format("color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title));
                             }
-                            decimal price = Decimal.Parse(row["支付金额"].ToString());
+                            decimal price = ginfo.PriceInfo / pall * total;
+                            if (j == 0)
+                            {
+                                price = total - allPrice;
+                            }
+                            allPrice += price;
                             decimal tbtotal = price * goodsRate[goodKey];
-                            decimal tltotal = price - tbtotal;
-                            total += price;
                             btotal += tbtotal;
-                            ltotal += tltotal;
+                            decimal tltotal = price - tbtotal;
                             string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}', {14}),";
                             insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], price, remark, tltotal, ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay, tbtotal);
                         }
+                        ltotal = total - btotal;
 
                         insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
-                            , remark, row["支付金额"], row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
-                            , row["创建时间"], row["支付宝交易号"], ddid, total, ltotal, GetDate(sendDate), GetDate(successDate));
+                            , remark, ltotal, row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
+                            , row["创建时间"], row["支付宝交易号"], ddid, total, btotal, GetDate(sendDate), GetDate(successDate));
 
                     }
                     string insertBill = insertBillBuilder.ToString();

@@ -155,14 +155,14 @@ namespace Test001
                     sbuilder.Append(" and uid = " + user.Id);
                 }
 
-                DataTable table = db.ExecuteSQL(string.Format(@"select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,scode,status,
+                DataTable table = db.ExecuteSQL(string.Format(@"select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential,scode,sname,status,
                                             case status when 0 then '待发货' 
 	                                        when 1 then '已发货' 
 	                                        when 2 then '已签收'
 	                                        when 3 then '已确认'	
 	                                        when 4 then '已核销' end as process, 
                                             case status when 1 then '运险保证' when 2  then '签售保证' when 3 then '售后保证' else '' end as after,status,cname,
-                                            case scode is null when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill {0} order by date desc", sbuilder.ToString()));
+                                            case scode is null or scode = '' when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill {0} order by date desc", sbuilder.ToString()));
                 return table;
             }
         }

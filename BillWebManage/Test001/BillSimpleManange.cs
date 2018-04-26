@@ -64,6 +64,7 @@ namespace Test001
                 db.AddParameter("id", id);
                 IHashObject bill = db.SelectSingleRow(@"select id,DATE_FORMAT(date, '%Y-%m-%d') as date,taobaocode,cname,ctel,caddress,carea,csendway,cremark,btotal,ltotal,preferential, status from bill where id=@id");
                 db.AddParameter("id", id);
+                //todo 一个单对多个商品时会报错
                 IHashObject billDetial = db.SelectSingleRow("select * from billdetail where bid=@id");
                 foreach(string key in billDetial.Keys)
                 {

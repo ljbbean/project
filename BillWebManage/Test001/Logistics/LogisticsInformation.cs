@@ -11,24 +11,67 @@ namespace Test001.Logistics
 {
     public class LogisticsInformation : Page
     {
+        string[] logistics = { "annengwuliu", "kuaijiesudi" };
         public override void Initialize()
         {
             base.Initialize();
-            //使用WebRequest.Create方法建立HttpWebRequest对象
-            string url = string.Format("http://www.kuaidi100.com/query?type=kuaijiesudi&postid={0}&id=1&valicode=&temp={1}", Request.QueryString["code"], Request.QueryString["r"]);
+            try
+            {
+                //使用WebRequest.Create方法建立HttpWebRequest对象
+                string logistic = Request.QueryString["n"];
+
+                int index = 0;
+                if (string.IsNullOrEmpty(logistic) || !int.TryParse(logistic, out index))
+                {
+                    do
+                    {
+                        index = 0;
+                        if (GetDetails(logistics[index]))
+                        {
+                            break;
+                        }
+                        index++;
+                    } while (logistics.Length > index);
+                }
+                else
+                {
+                    if(logistics.Length >= index && GetDetails(logistics[index]))
+                    {
+                        return;
+                    }
+                    for (int i = 0; i < logistics.Length; i++)
+                    {
+                        if (GetDetails(logistics[i]))
+                        {
+                            return;
+                        }
+                    }
+                     
+                }
+            }
+            catch(Exception e)
+            {
+                Context["grid"] = null;
+            }
+            
+        }
+
+        private bool GetDetails(string logistics)
+        {
+            string url = string.Format("http://www.kuaidi100.com/query?type={2}&postid={0}&id=1&valicode=&temp={1}", Request.QueryString["code"], Request.QueryString["r"], logistics);
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
             webRequest.Method = "get";
             webRequest.Accept = "text/html, application/xhtml+xml, */*";
             webRequest.UserAgent = "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/7.0)";
             WebResponse response = webRequest.GetResponse();
-            using(Stream stream = response.GetResponseStream())
+            using (Stream stream = response.GetResponseStream())
             {
                 string sHtml = new StreamReader(stream, System.Text.Encoding.UTF8).ReadToEnd();
                 JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
                 IHashObject list = serializer.Deserialize<IHashObject>(sHtml);
                 //对写入数据的RequestStream对象进行异步请求
                 Context["grid"] = list.GetValue<object[]>("data");
-                Context["tt"] = sHtml;
+                return sHtml.IndexOf("参数异常") < 0;
             }
         }
 

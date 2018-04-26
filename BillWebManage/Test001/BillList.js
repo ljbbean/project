@@ -218,7 +218,8 @@ Test001.BillListAction.prototype = {
             }
         });
         tform.tid = data.id;
-        tform.showModal("Logistics/LogisticsInformation.gspx?code=" + data.scode + "&r=" + Math.random());
+        var prefix = '°²ÄÜ';
+        tform.showModal("Logistics/LogisticsInformation.gspx?code=" + data.scode + "&r=" + Math.random() + "&n=" + (data.sname.slice(0, prefix.length) === prefix ? 0:1));
         //window.open("http://www.kuaidi100.com/query?type=kuaijiesudi&postid=" + data.scode + "&id=1&valicode=&temp=" + Math.random());
     },
 

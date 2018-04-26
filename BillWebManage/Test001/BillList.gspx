@@ -2,8 +2,8 @@
 <Page xmlns="Carpa.UI" Title="订单明细" ActionType="Test001.BillListAction, BillList.js">
   <VPanel ShowBorder="true" HAlign="Center">
     <HPanel>
-      <TextEdit Label="订单号" DataField="code"/>
-      <TextEdit Label="快递单号" DataField="scode"/>
+      <TextEdit Label="订单号" DataField="code" Width="200"/>
+      <TextEdit Label="快递单号" DataField="scode" Width="200"/>
       <HPanel Label="日期">
         <DateEdit DataField="startDate" Value="${startDate}"/>
         <Label Text="-"/>
@@ -24,18 +24,19 @@
       <Button Text="配送简版" OnClick="doSendSimple"/>
       <Button Text="回款明细管理" OnClick="doBackSectionDetail" Visible="${!backSection}"/>
       <Button Text="回款管理" OnClick="doBackSection" Visible="${backSection}"/>
-      <Button Text="快递对单" OnClick="excelSure" />
-      <Button Text="商品配置" OnClick="doBtypeConfig"/>
-      <Button Text="数据抓取" OnClick="doDataCatch"/>
     </HPanel>
 
-    <HPanel HAlign="Right" Width="${ClientWidth - 180}">
+    <HPanel HAlign="Right" Width="${ClientWidth - 20}">
       <HPanel ShowBorder="true">
         <Label Label="截止月：" TextColor="red" Text="${month}"/>
         <Label Label="回款总额：" TextColor="red" Text="${total}"/>
         <Label Label="已回总额：" TextColor="red" Text="${paytotal}"/>
         <Label Label="未回总额：" TextColor="red" Text="${nopaytotal}"/>
       </HPanel>
+      <HSpacer/>
+      <Button Text="快递对单" OnClick="excelSure" />
+      <Button Text="商品配置" OnClick="doBtypeConfig"/>
+      <Button Text="数据抓取" OnClick="doDataCatch"/>
     </HPanel>
     <PopupMenu ID="pmMain" >
       <MenuItem ID="menuqz" Text="自己配送" OnClick="doSelfSend" />
@@ -73,7 +74,7 @@
       <TextColumn Caption="订单日期" DataField="date" ReadOnly="true"/>
       <TextColumn Caption="姓名" Width="160" DataField="cname" ReadOnly="true"/>
       <TextColumn Caption="淘宝账号" Width="160" DataField="taobaocode" ReadOnly="true"/>
-      <DynamicButtonColumn Caption="发货信息" Width="150" HeaderAlign="Center" TextAlign="Center" DataField="sender" ReadOnly="true" OnButtonClick="doSendMsgClick"/>
+      <DynamicButtonColumn Caption="发货信息" Width="210" HeaderAlign="Center" TextAlign="Center" DataField="sender" ReadOnly="true" OnButtonClick="doSendMsgClick"/>
       <NumberColumn Caption="订单提成" DataField="btotal" ReadOnly="true"/>
       <NumberColumn Caption="订单回款" DataField="ltotal" ReadOnly="true"/>
       <NumberColumn Caption="订单优惠" DataField="preferential" ReadOnly="true"/>

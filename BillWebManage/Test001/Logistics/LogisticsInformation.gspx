@@ -5,7 +5,6 @@
       <TextColumn Caption="登记时间" DataField="time" Width="200" />
       <TextColumn Caption="登记内容" Width="600" DataField="context" />
     </Grid>
-    <TextEdit Text="${tt}" />
     <HPanel HAlign="Right">
       <Button Text="确认已签收" ID="sure" Visible="false" OnClick="doSure" />
       <CancelButton />

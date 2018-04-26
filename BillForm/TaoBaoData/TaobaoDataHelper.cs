@@ -37,6 +37,7 @@ namespace TaoBaoData
             table.Columns.Add("卖家留言");
             table.Columns.Add("货物信息");
             table.Columns.Add("所属用户");
+            table.Columns.Add("拍下总金额");
             return table;
         }
 
@@ -85,13 +86,13 @@ namespace TaoBaoData
                         row[key] = addressAndLogistics[key];
                     }
                     var newHash = hashObject.GetHashValue(keys);
-                    row["订单ID"] = newHash[2]["id"];
-                    row["旺旺名称"] = newHash[1]["nick"];
-                    row["支付金额"] = newHash[0]["value"];
-                    row["买家留言"] = newHash.Count >= 6 && newHash[5].ContainsKey("buyMessage") ? newHash[5]["buyMessage"] : "";
+                    row["订单ID"] = newHash.GetDataEx<string>("id");
+                    row["旺旺名称"] = newHash.GetDataEx<string>("nick");
+                    row["支付金额"] = newHash.GetDataEx<string>("value");//支付总金额
+                    row["买家留言"] = newHash.GetDataEx<string>("buyMessage");
 
                     row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
-                    ArrayList linesList = (ArrayList)newHash[3]["lines"];
+                    ArrayList linesList = newHash.GetDataEx<ArrayList>("lines");
                     IHashObjectList orderInfoList = GetOrderInfoList(serializer, linesList);
                     if (orderInfoList.Count > 1 || orderInfoList.Count == 0)
                     {
@@ -116,8 +117,14 @@ namespace TaoBaoData
                         row["发货状态status"] = "2";
                     }
                     row["成交时间"] = successDate;
-                    ArrayList subOrders = (ArrayList)newHash[4]["subOrders"];
+                    ArrayList subOrders = newHash.GetDataEx<ArrayList>("subOrders");
                     List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
+                    decimal all = 0;
+                    foreach (GoodsInfo info in gList)
+                    {
+                        all += info.PriceInfo;
+                    }
+                    row["拍下总金额"] = all;
                     row["货物信息"] = serializer.Serialize(gList);
                     row["所属用户"] = duser;
                     table.Rows.Add(row);
@@ -142,13 +149,13 @@ namespace TaoBaoData
         {
             List<GoodsInfo> gList = new List<GoodsInfo>();
 
-            string[] subOrderKeys = { "itemInfo/skuText", "itemInfo/title", "quantity" };
+            string[] subOrderKeys = { "itemInfo/skuText", "itemInfo/title", "quantity","priceInfo" };
             foreach (HashObject subOrder in subOrders)
             {
                 GoodsInfo info = new GoodsInfo();
                 IHashObjectList subOrderSkuList = new HashObjectList();
                 var subList = subOrder.GetHashValue(subOrderKeys);
-                ArrayList skuText = (ArrayList)subList[0]["skuText"];
+                ArrayList skuText = subList.GetDataEx<ArrayList>("skuText");
                 HashObject thash = new HashObject();
                 info.Amount = ((HashObject)subList[2]).GetValue<string>("quantity");
                 subOrderSkuList.Add(thash);
@@ -183,7 +190,8 @@ namespace TaoBaoData
                 {
                     continue;
                 }
-                info.Title = subList[1]["title"].ToString();
+                info.PriceInfo = decimal.Parse(subList.GetDataEx<string>("priceInfo"));
+                info.Title = subList.GetDataEx<string>("title");
                 gList.Add(info);
             }
             return gList;

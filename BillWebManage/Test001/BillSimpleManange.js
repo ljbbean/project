@@ -62,7 +62,10 @@ Test001.BillSimpleManangeAction.prototype = {
         }
         var varray = value.split(',');
         if (varray.length < 3) {
-            return;
+            varray = value.split('£¬');
+            if (varray.length < 3) {
+                return;
+            }
         }
         if (!ctel || ctel.length == 0) {
             form.ctel.set_value(varray[1].trim());

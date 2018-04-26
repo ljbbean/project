@@ -22,7 +22,7 @@ CREATE TABLE commissionrate(
 	sourcetitle VARCHAR(100),
 	rate DECIMAL,
 	uname VARCHAR(100)
-)
+) DEFAULT CHARSET=utf8
 
 /*添加是否已经下载明细，默认为0表示没有下载*/
 ALTER TABLE tbill

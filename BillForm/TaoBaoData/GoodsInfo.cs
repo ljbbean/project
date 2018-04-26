@@ -13,5 +13,6 @@ namespace TaoBaoData
         public string Size { get; set; }
         public string Amount { get; set; }
         public string Lockers { get; set; }
+        public decimal PriceInfo { get; set; }
     }
 }
