@@ -24,6 +24,29 @@ CREATE TABLE commissionrate(
 	uname VARCHAR(100)
 ) DEFAULT CHARSET=utf8
 
+
+CREATE TABLE `tbill` (
+  `tbid` bigint(21) unsigned NOT NULL DEFAULT '0',
+  `bid` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `content` varchar(8000) CHARACTER SET utf8 DEFAULT NULL,
+  `cdate` datetime DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `user` varchar(20) DEFAULT NULL,
+  `downeddetail` int(11) DEFAULT NULL,
+  `udate` datetime DEFAULT NULL,
+  PRIMARY KEY (`tbid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+
+
+CREATE TABLE `tbilldetail` (
+  `tbdid` bigint(21) unsigned NOT NULL DEFAULT '0',
+  `tbid` bigint(21) NOT NULL DEFAULT '0',
+  `content` varchar(8000) DEFAULT NULL,
+  `user` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`tbdid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*添加是否已经下载明细，默认为0表示没有下载*/
 ALTER TABLE tbill
 ADD COLUMN downeddetail INT
