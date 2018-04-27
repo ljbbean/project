@@ -101,7 +101,7 @@ namespace TaoBaoData
                                 price = total - allPrice;
                             }
                             allPrice += price;
-                            decimal tbtotal = price * goodsRate[goodKey];
+                            decimal tbtotal = (price * goodsRate[goodKey]) * (decimal)(0.01);
                             btotal += tbtotal;
                             decimal tltotal = price - tbtotal;
                             string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}', {14}),";
@@ -158,6 +158,7 @@ namespace TaoBaoData
                 {
                     throw new Exception(string.Format("商品【{0}】已经设置了比例为{1}", key, temp));
                 }
+                temp = item.GetValue<int>("rate");
                 dictionary.Add(key, temp);
             }
             userGoodsDictionary.Add(uname, dictionary);
@@ -271,12 +272,23 @@ namespace TaoBaoData
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataCatch dataCatch = new DataCatch();
-            DateTime time = dateTimePicker1.Value;
-            DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
-            string list =string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
-            SendDetailState detailState = new SendDetailState(ShowMessage);
-            dataCatch.GetDetailsData(textBox1.Text, detailState);
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("未指定请求的cookies");
+            }
+            try
+            {
+                DataCatch dataCatch = new DataCatch();
+                DateTime time = dateTimePicker1.Value;
+                DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
+                string list = string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
+                SendDetailState detailState = new SendDetailState(ShowMessage);
+                dataCatch.GetDetailsData(textBox1.Text, detailState);
+            }
+            catch (Exception t)
+            {
+                MessageBox.Show(t.Message);
+            }
         }
 
         private void ShowMessage(string message)
@@ -289,6 +301,7 @@ namespace TaoBaoData
         {
             GoodsMatch match = new GoodsMatch();
             match.ShowDialog();
+            userGoodsDictionary.Clear();
         }
 
         private void button4_Click(object sender, EventArgs e)

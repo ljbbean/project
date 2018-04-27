@@ -8,6 +8,7 @@ namespace TaoBaoData
 {
     public struct CommissionRateStruct
     {
+        public ulong crid { get; set; }
         /// <summary>
         /// 颜色
         /// </summary>

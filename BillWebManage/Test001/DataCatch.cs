@@ -75,7 +75,8 @@ namespace Test001
                 JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
                 foreach (HashObject item in list)
                 {
-                    if ("交易关闭".Equals(item.GetValue<string>("status")) || "等待买家付款".Equals(item.GetValue<string>("status")))
+                    string status = item.GetValue<string>("status");
+                    if ("等待买家付款".Equals(status))
                     {
                         continue;
                     }
@@ -168,7 +169,7 @@ namespace Test001
                 return subCookies.Substring(0, index);
             }
 
-            throw new Exception("未找到用户");
+            throw new Exception("cookies数据不正确");
         }
 
         [WebMethod]
