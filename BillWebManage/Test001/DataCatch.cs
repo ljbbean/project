@@ -249,16 +249,16 @@ namespace Test001
                 if (bidDictionary.TryGetValue(id, out item))
                 {
                     tbid = item.GetValue<ulong>("tbid");
-                    if (item.GetValue<string>("content").Equals(content) && item.GetValue<string>("status").Equals(status))
+                    if (SpliteContentUrl(item.GetValue<string>("content")).Equals(SpliteContentUrl(content)) && item.GetValue<string>("status").Equals(status))
                     {
                         //数据相同直接返回
                         continue;
                     }
                     db.AddParameter("content", content);
-                    db.AddParameter("udate", date);
+                    db.AddParameter("udate", date);//更新时间
                     db.AddParameter("status", status);
                     db.AddParameter("tbid", tbid);
-                    //存在不同的，全部更新明细
+                    //存在不同的，标记全部更新明细
                     db.AddParameter("downeddetail", 0);
                     db.ExecuteIntSQL(updateSql);//更新已下载数据
                     continue;
@@ -272,6 +272,22 @@ namespace Test001
             }
             string insertData = insertbuilder.ToString();
             db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
+        }
+
+        private static string SpliteContentUrl(string content)
+        {
+            if (content == null)
+            {
+                return "";
+            }
+            string flag = "\"/trade/memo/update_sell_memo.htm?";
+            int index = content.IndexOf(flag);
+            if (index < 0)
+            {
+                return content;
+            }
+            string tempString = content.Substring(flag.Length + index);
+            return content.Substring(0, index + 1) + tempString.Substring(tempString.IndexOf("\""));
         }
     }
 }
