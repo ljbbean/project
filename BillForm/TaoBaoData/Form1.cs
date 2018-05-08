@@ -54,6 +54,7 @@ namespace TaoBaoData
                     StringBuilder insertBillDetailBuilder = new StringBuilder(@"insert into billdetail(id, bid, code, size, amount, color, address,area,total, remark, 
                         ltotal,sourceTitle,goodsstatus,sendway, btotal) values");
                     int count = 0;
+                    int detailCount = 0;
                     foreach (DataRow row in table.Rows)
                     {
                         var ddid = row["订单ID"].ToString();
@@ -72,10 +73,6 @@ namespace TaoBaoData
                         sformate.Append(IsNullDate(successDate) ? ",{21}" : ",'{21}'");
                         sformate.Append("), ");
 
-                        if (dicDetail.Contains(ddid))
-                        {
-                            continue;
-                        }
                         count++;
                         Dictionary<string, decimal> goodsRate = GetGoodsRate(db, row["所属用户"].ToString());
                         GoodsInfo[] ginfos = serializer.Deserialize <GoodsInfo[]>(row["货物信息"].ToString());
@@ -87,28 +84,35 @@ namespace TaoBaoData
                         decimal ltotal = 0;
                         decimal btotal = 0;
                         decimal allPrice = 0;
-                        for (int j = ginfos.Length - 1; j >= 0; j--)
-                        {
-                            GoodsInfo ginfo = ginfos[j];
-                            string goodKey = GetGoodsKey(ginfo.Color, ginfo.Size, ginfo.Title);
-                            if (goodsRate == null || !goodsRate.ContainsKey(goodKey))
-                            {
-                                throw new Exception(string.Format("color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title));
-                            }
-                            decimal price = ginfo.PriceInfo / pall * total;
-                            if (j == 0)
-                            {
-                                price = total - allPrice;
-                            }
-                            allPrice += price;
-                            decimal tbtotal = (price * goodsRate[goodKey]) * (decimal)(0.01);
-                            btotal += tbtotal;
-                            decimal tltotal = price - tbtotal;
-                            string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}', {14}),";
-                            insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], price, remark, tltotal, ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay, tbtotal);
-                        }
-                        ltotal = total - btotal;
 
+                        if (!dicDetail.Contains(ddid))
+                        {
+                            detailCount++;
+                            for (int j = ginfos.Length - 1; j >= 0; j--)
+                            {
+                                GoodsInfo ginfo = ginfos[j];
+                                string goodKey = GetGoodsKey(ginfo.Color, ginfo.Size, ginfo.Title);
+                                if (goodsRate == null || !goodsRate.ContainsKey(goodKey))
+                                {
+                                    throw new Exception(string.Format("color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title));
+                                }
+                                decimal price = ginfo.PriceInfo / pall * total;
+                                if (j == 0)
+                                {
+                                    price = total - allPrice;
+                                }
+                                allPrice += price;
+                                decimal tbtotal = (price * goodsRate[goodKey]) * (decimal)(0.01);
+                                btotal += tbtotal;
+                                decimal tltotal = price - tbtotal;
+                                string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}', {14}),";
+                                //构建明细数据
+                                insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], price, remark, tltotal, ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay, tbtotal);
+                            }
+                            ltotal = total - btotal;
+                        }
+
+                        //构建主表数据，如果已经存在，直接更改数据
                         insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
                             , remark, ltotal, row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                             , row["创建时间"], row["支付宝交易号"], ddid, total, btotal, GetDate(sendDate), GetDate(successDate));
@@ -121,8 +125,11 @@ namespace TaoBaoData
                     if (count != 0)
                     {
                         db.BeginTransaction();
-                        db.BatchExecute(string.Format("{0} on duplicate key update `createdate`=values(`createdate`),`senddate`=values(`senddate`),`successdate`=values(`successdate`),`zfbpaycode`=values(`zfbpaycode`);", insertBill));
-                        db.BatchExecute(insertBillDetail);//直接新增，不修改
+                        db.BatchExecute(string.Format("{0} on duplicate key update `createdate`=values(`createdate`),`senddate`=values(`senddate`),`successdate`=values(`successdate`),`zfbpaycode`=values(`zfbpaycode`),`status`=values(`status`);", insertBill));
+                        if (detailCount != 0)
+                        {
+                            db.BatchExecute(insertBillDetail);//直接新增，不修改
+                        }
                         db.CommitTransaction();
                     }
                     MessageBox.Show(string.Format("处理了{0}条数据", count));
