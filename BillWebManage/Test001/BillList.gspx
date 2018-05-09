@@ -15,6 +15,7 @@
         <ListItem Text="已签收" Value="2"/>
         <ListItem Text="已确认收货" Value="3"/>
         <ListItem Text="已核算" Value="4"/>
+        <ListItem Text="已关闭" Value="9"/>
         <ListItem Text="全部" Value="5"/>
       </DropDownEdit>
       <Button Text="搜索" OnClick="doSearch"/>

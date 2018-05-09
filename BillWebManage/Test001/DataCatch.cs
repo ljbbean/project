@@ -225,7 +225,7 @@ namespace Test001
             StringBuilder bidBuilder = new StringBuilder("select tbid, content, bid, cdate, status, downeddetail from tbill where bid in (");
             foreach (HashObject row in list)
             {
-                bidBuilder.AppendFormat("{0},", row["id"]);
+                bidBuilder.AppendFormat("'{0}',", row["id"]);
             }
             IHashObjectList bidList = db.Select(string.Format("{0})", bidBuilder.ToString().Substring(0, bidBuilder.Length - 1)));
             //根据单号获取对应的字典信息

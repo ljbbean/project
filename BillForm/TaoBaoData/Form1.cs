@@ -55,6 +55,7 @@ namespace TaoBaoData
                         ltotal,sourceTitle,goodsstatus,sendway, btotal) values");
                     int count = 0;
                     int detailCount = 0;
+                    StringBuilder doedIds = new StringBuilder();//影响到的主数据
                     foreach (DataRow row in table.Rows)
                     {
                         var ddid = row["订单ID"].ToString();
@@ -64,7 +65,7 @@ namespace TaoBaoData
                         {
                             id = oldid;
                         }
-
+                        doedIds.AppendFormat("{0},", id);
                         object sendDate = row["发货时间"];
                         object successDate = row["成交时间"];
 
@@ -112,11 +113,14 @@ namespace TaoBaoData
                             ltotal = total - btotal;
                         }
 
+                        if (IsNullDate(row["付款时间"]))
+                        {
+                            continue;
+                        }
                         //构建主表数据，如果已经存在，直接更改数据
                         insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
                             , remark, ltotal, row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                             , row["创建时间"], row["支付宝交易号"], ddid, total, btotal, GetDate(sendDate), GetDate(successDate));
-
                     }
                     string insertBill = insertBillBuilder.ToString();
                     insertBill = insertBill.Substring(0, insertBill.Length - 2);
@@ -130,6 +134,8 @@ namespace TaoBaoData
                         {
                             db.BatchExecute(insertBillDetail);//直接新增，不修改
                         }
+                        //后期退款的单据，金额都为0
+                        db.ExecuteIntSQL(string.Format("update bill set ltotal = 0, total=0, btotal=0 where status=9 and id in ({0})", doedIds.ToString().Substring(0, doedIds.Length - 1)));
                         db.CommitTransaction();
                     }
                     MessageBox.Show(string.Format("处理了{0}条数据", count));

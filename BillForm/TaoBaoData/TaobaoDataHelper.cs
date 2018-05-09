@@ -54,7 +54,7 @@ namespace TaoBaoData
                 using (DbHelper db = new DbHelper(Utils.Connect, true))
                 {
                     db.AddParameter("user", duser);
-                    list = db.Select("select content from tbilldetail where `user`=@user");
+                    list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
                 }
                 string[] keys = {
                                     "mainOrder/payInfo/actualFee/value",
@@ -88,7 +88,6 @@ namespace TaoBaoData
                     var newHash = hashObject.GetHashValue(keys);
                     row["订单ID"] = newHash.GetDataEx<string>("id");
                     row["旺旺名称"] = newHash.GetDataEx<string>("nick");
-                    row["支付金额"] = newHash.GetDataEx<string>("value");//支付总金额
                     row["买家留言"] = newHash.GetDataEx<string>("buyMessage");
 
                     row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
@@ -117,6 +116,20 @@ namespace TaoBaoData
                         row["发货状态status"] = "2";
                     }
                     row["成交时间"] = successDate;
+
+                    //后期单据退款(各种原因的退款)
+                    if ("交易关闭".Equals(hash.GetValue<string>("tstatus")))
+                    {
+                        row["支付金额"] = 0;
+                        row["发货状态"] = "已关闭";
+                        row["发货状态status"] = "9";
+                    }
+                    else
+                    {
+                        row["支付金额"] = newHash.GetDataEx<string>("value");//支付总金额
+                        newHash.GetDataEx<string>("value");//支付总金额
+                    }
+
                     ArrayList subOrders = newHash.GetDataEx<ArrayList>("subOrders");
                     List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
                     decimal all = 0;
