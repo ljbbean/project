@@ -100,17 +100,16 @@ namespace Test001
         {
             do
             {
+                Thread.Sleep(10 * 1000);
+                //Thread.Sleep(60 * 1000 * 10);
                 DataCatch dataCatch = new DataCatch();
                 foreach (CacthConfig value in catchDic.Values)
                 {
                     NetDataCatch(dataCatch, value);
                 }
-                DataCatchSave.SaveData();
-                Thread.Sleep(60 * 1000 * 10);
-
             } while (true);
         }
-
+         
         internal static object NetDataCatch(DataCatch dataCatch, CacthConfig config)
         {
             if (config.IsCacthing != null && config.IsCacthing.Value)
@@ -141,7 +140,7 @@ namespace Test001
             {
                 int sindex = message.IndexOf("【");
                 int eindex = message.IndexOf("】");
-                string user = message.Substring(sindex + 1, eindex - sindex);
+                string user = message.Substring(sindex + 1, eindex - sindex - 1);
                 CacthConfig.CatchDic[user].ErrorMessage = message;
                 return;
             }
@@ -149,9 +148,21 @@ namespace Test001
             {
                 int sindex = message.IndexOf("【");
                 int eindex = message.IndexOf("】");
-                string user = message.Substring(sindex + 1, eindex - sindex);
-                CacthConfig.CatchDic[user].IsCacthing = false;
-                CacthConfig.CatchDic[user].Cookies = CacthConfig.CatchDic[user].NewCookies;
+                string user = message.Substring(sindex + 1, eindex - sindex - 1);
+                CacthConfig config = CacthConfig.CatchDic[user];
+                try
+                {
+                    DataCatchSave.SaveData();
+                }
+                catch (Exception e)
+                {
+                    config.ErrorMessage = e.Message;
+                }
+                finally
+                {
+                    config.IsCacthing = false;
+                    config.Cookies = CacthConfig.CatchDic[user].NewCookies;
+                }
             }
         }
     }

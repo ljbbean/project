@@ -201,12 +201,12 @@ namespace Test001
                     if (count != 0)
                     {
                         db.BeginTransaction();
+                        db.ExecuteIntSQL(string.Format("update tbill set hasupdate=0 where bid in {0}", ids));
                         db.BatchExecute(string.Format("{0} on duplicate key update `createdate`=values(`createdate`),`senddate`=values(`senddate`),`successdate`=values(`successdate`),`zfbpaycode`=values(`zfbpaycode`),`status`=values(`status`),`sname`=values(`sname`),`scode`=values(`scode`);", insertBill));
                         if (detailCount != 0)
                         {
                             db.BatchExecute(insertBillDetail);//直接新增，不修改
                         }
-                        db.ExecuteIntSQL(string.Format("update tbill set hasupdate=0 where bid in {0}", ids));
                         //后期退款的单据，金额都为0
                         db.ExecuteIntSQL(string.Format("update bill set ltotal = 0, total=0, btotal=0 where status=9 and id in ({0})", doedIds.ToString().Substring(0, doedIds.Length - 1)));
                         db.CommitTransaction();
