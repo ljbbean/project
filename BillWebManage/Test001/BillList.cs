@@ -17,6 +17,7 @@ namespace Test001
             DateTime time = DateTime.Now;
             Context["startDate"] = new DateTime(time.Year, time.Month, 1);
             Context["backSection"] = user.Power == 99;
+            Context["downStatus"] = JavaScriptSerializer.CreateInstance().Serialize(CacthConfig.CatchDic);
             using (DbHelper db = AppUtils.CreateDbHelper())
             {
                 IHashObject data = db.SelectFirstRow("select sum(total) as total, sum(paytotal) as paytotal, max(month) as month from backsection");
@@ -161,7 +162,7 @@ namespace Test001
 	                                        when 2 then '已签收'
 	                                        when 3 then '已确认'	
 	                                        when 4 then '已核销'	
-	                                        when 9 then '已关闭' end as process, 
+	                                        when 9 then '已退款' end as process, 
                                             case status when 1 then '运险保证' when 2  then '签售保证' when 3 then '售后保证' else '' end as after,status,cname,
                                             case scode is null or scode = '' when false then CONCAT(sname,'(',scode,')') else '' end as sender from bill {0} order by date desc", sbuilder.ToString()));
                 return table;

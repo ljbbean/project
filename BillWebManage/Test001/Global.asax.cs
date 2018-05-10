@@ -3,6 +3,7 @@ using System.Web;
 using Carpa.Web.Common;
 using Carpa.Web.Script;
 using Carpa.Web.Script.UI;
+using System.Threading;
 
 namespace Test001
 {
@@ -17,6 +18,8 @@ namespace Test001
             Settings.ClientWidthContextName = "ClientWidth";
             ThemeManager.RegisterTheme("beefun", typeof(Global).Assembly, "skins/beefun/");
             Page.RegisterLoginPage("Login.gspx", "user");
+            Thread thread = new Thread(CacthConfig.DataCatch);
+            thread.Start();
         }
 
         protected void Application_Error(object sender, EventArgs e)

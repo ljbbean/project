@@ -119,6 +119,7 @@ namespace Test001
             int index = 0;
             using (DbHelper db = AppUtils.CreateDbHelper())
             {
+                string user = GetUser(details.Cookies);
                 db.BeginTransaction();
                 foreach (ulong key in dictionary.Keys)
                 {
@@ -138,7 +139,7 @@ namespace Test001
                         db.ExecuteIntSQL("update tbill set downeddetail=1 where tbid=@tbid");
                         if (details.DetailState != null)
                         {
-                            string message = dictionary.Count == index ? string.Format("{0}条明细下载完毕", dictionary.Count) : string.Format("总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", dictionary.Count, index, dictionary.Count - index);
+                            string message = dictionary.Count == index ? string.Format("【{1}】:{0}条明细下载完毕(finish)", dictionary.Count, user) : string.Format("【{3}】:总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", dictionary.Count, index, dictionary.Count - index, user);
                             details.DetailState(message);
                         }
                     }
@@ -148,7 +149,7 @@ namespace Test001
                         {
                             db.RollbackTransaction();
                         }
-                        details.DetailState(string.Format("下载出错：{0}", e.Message));
+                        details.DetailState(string.Format("下载出错【{1}】：{0}", e.Message, user));
                         return;
                     }
                     Thread.Sleep(2000);
@@ -158,7 +159,7 @@ namespace Test001
             }
         }
         
-        private string GetUser(string cookie)
+        internal string GetUser(string cookie)
         {
             string flag = "tracknick=";
             int index = cookie.IndexOf(flag);

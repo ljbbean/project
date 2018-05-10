@@ -403,6 +403,7 @@
     <Compile Include="BillSimpleManange.cs">
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
+    <Compile Include="CacthConfig.cs" />
     <Compile Include="DataCatch.cs" />
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />
