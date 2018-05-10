@@ -11,7 +11,7 @@ namespace Test001.Logistics
 {
     public class LogisticsInformation : Page
     {
-        string[] logistics = { "annengwuliu", "kuaijiesudi" };
+        string[] logistics = { "annengwuliu", "kuaijiesudi", "guotongkuaidi" };
         public override void Initialize()
         {
             base.Initialize();

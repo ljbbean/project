@@ -237,8 +237,8 @@ namespace Test001
             }
 
             //筛选数据，对于已插入的数据做数据对比，当数据没有变化时，不做数据修改,反之则修改数据。没有的数据直接插入
-            StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate) values");
-            string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail where tbid=@tbid";
+            StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate, hasUpdate) values");
+            string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail, hasUpdate = @hasUpdate where tbid=@tbid";
             bool hasInsert = false;
             foreach (HashObject row in list)
             {
@@ -261,11 +261,12 @@ namespace Test001
                     db.AddParameter("tbid", tbid);
                     //存在不同的，标记全部更新明细
                     db.AddParameter("downeddetail", 0);
+                    db.AddParameter("hasUpdate", 1);
                     db.ExecuteIntSQL(updateSql);//更新已下载数据
                     continue;
                 }
                 hasInsert = true;
-                insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}'),", tbid, id, content, date, status, user, date);
+                insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}', 1),", tbid, id, content, date, status, user, date);
             }
             if (!hasInsert)
             {

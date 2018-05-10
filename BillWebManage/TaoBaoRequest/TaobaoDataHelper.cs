@@ -8,7 +8,7 @@ using Carpa.Web.Script;
 using System.Collections;
 using TaoBaoRequest;
 
-namespace TaoBaoData
+namespace TaoBaoRequest
 {
     public class TaobaoDataHelper
     {
@@ -41,7 +41,7 @@ namespace TaoBaoData
             return table;
         }
 
-        public static DataTable GetDetailData()
+        public static DataTable GetDetailData(string connectString, bool hasUpdate = false)
         {
             string[] dusers = users;
 
@@ -51,10 +51,19 @@ namespace TaoBaoData
             foreach (string duser in dusers)
             {
                 IHashObjectList list = new HashObjectList();
-                using (DbHelper db = new DbHelper(Utils.Connect, true))
+                using (DbHelper db = new DbHelper(connectString, true))
                 {
                     db.AddParameter("user", duser);
-                    list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
+                    if (hasUpdate)
+                    {
+                        //获取有更新的数据
+                        list = db.Select("SELECT tbd.content, (SELECT tb.status FROM tbill tb WHERE tb.tbid = tbd.tbid) AS tstatus FROM tbilldetail tbd JOIN tbill tbl ON tbl.tbid = tbd.tbid WHERE tbl.hasupdate=1 and tbd.`user`=@user");
+                    }
+                    else
+                    {
+                        //获取所有数据
+                        list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
+                    }
                 }
                 string[] keys = {
                                     "mainOrder/payInfo/actualFee/value",
@@ -253,7 +262,7 @@ namespace TaoBaoData
             return null;
         }
 
-        internal static string GetLogisticsInfo(object obj)
+        public static string GetLogisticsInfo(object obj)
         {
             if (obj == null)
             {

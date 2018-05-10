@@ -47,12 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillManage.cs" />
+    <Compile Include="GoodsInfo.cs" />
     <Compile Include="HashObjectExt.cs" />
     <Compile Include="NetDataHandler.cs" />
     <Compile Include="ObjectExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchOrderInfo.cs" />
     <Compile Include="StringExt.cs" />
+    <Compile Include="TaobaoDataHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

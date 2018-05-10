@@ -105,6 +105,7 @@ namespace Test001
                 {
                     NetDataCatch(dataCatch, value);
                 }
+                DataCatchSave.SaveData();
                 Thread.Sleep(60 * 1000 * 10);
 
             } while (true);

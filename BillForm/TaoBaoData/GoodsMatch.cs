@@ -23,7 +23,7 @@ namespace TaoBaoData
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable table = TaobaoDataHelper.GetDetailData();
+            DataTable table = TaobaoDataHelper.GetDetailData(Utils.Connect);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             isAdd = true;
             using (DbHelper db = new DbHelper(Utils.Connect, true))
@@ -130,7 +130,7 @@ namespace TaoBaoData
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataTable table = TaobaoDataHelper.GetDetailData();
+            DataTable table = TaobaoDataHelper.GetDetailData(Utils.Connect);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             isAdd = false;
             using (DbHelper db = new DbHelper(Utils.Connect, true))
