@@ -140,7 +140,16 @@ namespace Test001
                         if (details.DetailState != null)
                         {
                             string message = dictionary.Count == index ? string.Format("【{1}】:{0}条明细下载完毕(finish)", dictionary.Count, user) : string.Format("【{3}】:总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", dictionary.Count, index, dictionary.Count - index, user);
-                            details.DetailState(message);
+
+                            if (dictionary.Count == index)
+                            {
+                                db.CommitTransaction();
+                                details.DetailState(message);
+                            }
+                            else
+                            {
+                                details.DetailState(message);
+                            }
                         }
                     }
                     catch(Exception e)
@@ -154,8 +163,10 @@ namespace Test001
                     }
                     Thread.Sleep(2000);
                 }
-
-                db.CommitTransaction();
+                if (db.HasBegunTransaction)
+                {
+                    db.RollbackTransaction();
+                }
             }
         }
         

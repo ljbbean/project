@@ -100,8 +100,8 @@ namespace Test001
         {
             do
             {
-                Thread.Sleep(10 * 1000);
-                //Thread.Sleep(60 * 1000 * 10);
+                //Thread.Sleep(10 * 1000);
+                Thread.Sleep(60 * 1000 * 10);
                 DataCatch dataCatch = new DataCatch();
                 foreach (CacthConfig value in catchDic.Values)
                 {
