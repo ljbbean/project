@@ -25,7 +25,7 @@ namespace TaoBaoRequest
 
         public CacthConfig()
         {
-            DateTime temp = DateTime.Now.AddDays(-3);
+            DateTime temp = DateTime.Now.AddDays(-10);
             StartDate = new DateTime(temp.Year, temp.Month, temp.Day);
         }
 
@@ -105,20 +105,22 @@ namespace TaoBaoRequest
         /// <summary>
         /// 10分钟自动下载一次
         /// </summary>
-        public static void DataCatch(string connectString)
+        public static void DataCatch(object data)
         {
             do
             {
-                Thread.Sleep(60 * 1000 * 10);
-                DataCatchRequest dataCatch = new DataCatchRequest(connectString);
+                NotifyInvoke invoke = (NotifyInvoke)data;
+
+                Thread.Sleep( 1000 * 10);
+                DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
                 foreach (CacthConfig value in catchDic.Values)
                 {
-                    NetDataCatch(dataCatch, value);
+                    NetDataCatch(dataCatch, value, invoke.NotifyMsg);
                 }
             } while (true);
         }
          
-        public static object NetDataCatch(DataCatchRequest dataCatch, CacthConfig config, InvokeMessage notifyMsg = null)
+        public static object NetDataCatch(DataCatchRequest dataCatch, CacthConfig config, NotifyMessage notifyMsg = null)
         {
             notifyMsg = notifyMsg == null ? (tuser, msg) => { return msg; } : notifyMsg;
             if (config.IsCacthing != null && config.IsCacthing.Value)
@@ -131,9 +133,22 @@ namespace TaoBaoRequest
             try
             {
                 string list = string.Format("列表插入数据：{0}", dataCatch.GetData(config.StartDate, config.Cookies));
-                SendDetailState detailState = new SendDetailState(ShowMessage);
-                //dataCatch.GetDetailsData(config.Cookies, detailState);
-                config.StartDate = DateTime.Now.AddDays(-1);
+                SendDetailState detailState = new SendDetailState((msg) =>
+                {
+                    ShowMessage(msg);
+
+                    notifyMsg(config.user, msg);
+                    if (!string.IsNullOrEmpty(config.ErrorMessage))
+                    {
+                        notifyMsg(config.user, string.Format("错误消息：{0}", config.ErrorMessage));
+                    }
+                    if (!string.IsNullOrEmpty(config.CurrentMessage))
+                    {
+                        notifyMsg(config.user, string.Format("当前消息：{0}", config.CurrentMessage));
+                    }
+                });
+                dataCatch.GetDetailsData(config.Cookies, detailState);
+                config.StartDate = DateTime.Now.AddDays(-3);
                 config.CurrentMessage = list;
                 return notifyMsg(config.User, list);
             }
@@ -164,9 +179,8 @@ namespace TaoBaoRequest
                 CacthConfig config = CacthConfig.CatchDic[user];
                 try
                 {
+                    config.CurrentMessage = null;
                     //发起网络调用,通知服务器端处理请求
-                    //DataCatchSave.SaveData();
-                    
                     //string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
                     string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
                     HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -178,12 +192,14 @@ namespace TaoBaoRequest
                     request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
                     request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
                     request.Method = "POST";
+                    request.ContentLength = 0;
                     
                     WebResponse response = request.GetResponse();
                     using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
                     {
-                        string rv = reader.ReadToEnd();
+                        config.CurrentMessage = reader.ReadToEnd();
                     }
+                    config.ErrorMessage = null;
                 }
                 catch (Exception e)
                 {
@@ -199,5 +215,5 @@ namespace TaoBaoRequest
     }
 
     
-    public delegate object InvokeMessage(string user, string msg);
+    public delegate object NotifyMessage(string user, string msg);
 }

@@ -104,7 +104,6 @@
     <EmbeddedResource Include="ExcelSure.gspx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataCatch.gspx" />
     <None Include="docs\carpa-vsdoc.js" />
     <None Include="docs\Readme.txt" />
     <EmbeddedResource Include="Login.gspx">
@@ -157,7 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BTypeConfig.js" />
     <EmbeddedResource Include="ExcelSure.js" />
-    <Content Include="DataCatch.js" />
     <Content Include="Global.asax" />
     <EmbeddedResource Include="skins\beefun\common\btnActiveBg.gif" />
     <EmbeddedResource Include="skins\beefun\common\btnBg.gif" />
@@ -403,8 +401,6 @@
     <Compile Include="BillSimpleManange.cs">
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
-    <Compile Include="CacthConfig.cs" />
-    <Compile Include="DataCatch.cs" />
     <Compile Include="DataCatchSave.cs" />
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />

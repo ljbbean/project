@@ -24,12 +24,28 @@ namespace FCatch
         public DataCatch()
         {
             InitializeComponent();
+            Thread thread = new Thread(CacthConfig.DataCatch);
+            var _this = this;
+            NotifyInvoke notify = new NotifyInvoke()
+            {
+                ConnnectionString = AppUtils.ConnectionString,
+                NotifyMsg = (user, msg) =>
+                {
+                    _this.Invoke(new AsynUpdateUI((sn) =>
+                    {
+                        var log = logWindows[CacthConfig.CatchDic[user]];
+                        log.SetTitle(user);
+                        log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), sn));
+                    }), msg);
+                    return msg;
+                }
+            };
+            thread.Start(notify);
+            
         }
 
         private void buttonCatch_Click(object sender, EventArgs e)
         {
-            //GetBill(new HTTPRequestHeaders());
-            //return;
             if (isRuning)
             {
                 fdCatch.Quit();
@@ -55,11 +71,8 @@ namespace FCatch
                     Session session = sessions[sessions.Count - 1];
                     this.Invoke(new AsynUpdateUI((sn) =>
                     {
-                        //if (session.fullUrl.Equals("https://www.baidu.com/"))
                         if (session.fullUrl.Equals("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=utf8"))
                         {
-                            //Thread thread1 = new Thread(GetBill);
-                            //thread1.Start(session.RequestHeaders);
                             GetBill(session.RequestHeaders);
                         }
                         else
@@ -104,53 +117,17 @@ namespace FCatch
                     logWindows.Add(config, log);
                 }
                 log.Show();
-                //fdCatch.Quit();
-                fdCatch.EnableCatch = false;
                 DataCatchRequest request = new DataCatchRequest(AppUtils.ConnectionString);
                 CacthConfig.NetDataCatch(request, config, (tuser, msg) =>
                 {
                     this.Invoke(new AsynUpdateUI((sn) =>
                     {
-                        ((DataCatchLog)log).SetTitle(tuser);
-                        ((DataCatchLog)log).SendMessage(sn.ToString());
+                        log.SetTitle(tuser);
+                        log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), sn));
                     }), msg);
 
                     return msg;
                 });
-                fdCatch.EnableCatch = true;
-                //重复开启
-                //buttonCatch_Click(this.button1, null);
-
-                //HTTPRequestHeaders header = (HTTPRequestHeaders)obj;
-                ////string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
-                //string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
-                //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-                //request.ProtocolVersion = HttpVersion.Version10;
-                //request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
-                //request.Accept = "*/*";
-                //request.ContentType = "application/json; charset=UTF-8";
-                //request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
-                //request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
-                //request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
-                //request.Method = "POST";
-                //string nData = "{\"cookie\":\"" + header["Cookie"] + "\"}";
-                //byte[] bytes = Encoding.Default.GetBytes(nData);
-                //request.ContentLength = bytes.Length;
-
-                //using (Stream stream = request.GetRequestStream())
-                //{
-                //    stream.Write(bytes, 0, bytes.Length);
-                //    stream.Flush();
-                //}
-                //WebResponse response = request.GetResponse();
-                //using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
-                //{
-                //    string rv = reader.ReadToEnd();// string.Format("{0}\r\n{1}", header["Cookie"], reader.ReadToEnd());
-                //    this.Invoke(new AsynUpdateUI((sn) =>
-                //    {
-                //        this.textBox1.Text = sn.ToString();
-                //    }), rv);
-                //}
             }
             catch (Exception e)
             {

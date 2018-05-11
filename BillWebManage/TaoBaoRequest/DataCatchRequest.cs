@@ -209,7 +209,7 @@ namespace TaoBaoRequest
                     }
                     
                     db.CommitTransaction();
-                    return string.Format("数据插入成功");
+                    return string.Format("网络订单主表数据获取完毕，并更新完毕");
                 }
                 catch (Exception e)
                 {
