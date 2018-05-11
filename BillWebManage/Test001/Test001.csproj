@@ -47,11 +47,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Carpa, Version=1.0.6053.26205, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Carpa, Version=1.0.6688.18690, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Carpa.dll</HintPath>
     </Reference>
-    <Reference Include="Carpa.Web, Version=1.0.6053.26525, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Carpa.Web, Version=1.0.6688.18731, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Carpa.Web.dll</HintPath>
     </Reference>

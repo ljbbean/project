@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading;
+using Carpa.Logging;
 
 namespace Test001
 {
@@ -94,14 +95,19 @@ namespace Test001
         }
 
         /// <summary>
+        /// 当前消息
+        /// </summary>
+        public string CurrentMessage { get; set; }
+
+        /// <summary>
         /// 10分钟自动下载一次
         /// </summary>
         internal static void DataCatch()
         {
             do
             {
-                //Thread.Sleep(10 * 1000);
-                Thread.Sleep(60 * 1000 * 10);
+                Thread.Sleep(10 * 1000);
+                //Thread.Sleep(60 * 1000 * 10);
                 DataCatch dataCatch = new DataCatch();
                 foreach (CacthConfig value in catchDic.Values)
                 {
@@ -122,9 +128,11 @@ namespace Test001
             try
             {
                 string list = string.Format("列表插入数据：{0}", dataCatch.GetData(config.StartDate, config.Cookies));
+                Log.Info(string.Format("{3},开始下载,{0}, {1}, {2}", DateTime.Now, config.User, list, config.StartDate));
                 SendDetailState detailState = new SendDetailState(ShowMessage);
                 dataCatch.GetDetailsData(config.Cookies, detailState);
                 config.StartDate = DateTime.Now.AddMinutes(-1);
+                config.CurrentMessage = list;
                 return list;
             }
             catch (Exception t)
@@ -136,19 +144,22 @@ namespace Test001
 
         private static void ShowMessage(string message)
         {
+            Log.Info(string.Format("{1},{0}", DateTime.Now, message));
+            int sindex = message.IndexOf("【");
+            int eindex = message.IndexOf("】");
+            string user = string.Empty;
+            if(sindex >= 0 && eindex >= 0 && eindex - sindex - 1 >= 0)
+            {
+                user = message.Substring(sindex + 1, eindex - sindex - 1);
+                CacthConfig.CatchDic[user].CurrentMessage = message;
+            }
             if (message.StartsWith("下载出错"))
             {
-                int sindex = message.IndexOf("【");
-                int eindex = message.IndexOf("】");
-                string user = message.Substring(sindex + 1, eindex - sindex - 1);
                 CacthConfig.CatchDic[user].ErrorMessage = message;
                 return;
             }
             if (message.EndsWith("(finish)"))
             {
-                int sindex = message.IndexOf("【");
-                int eindex = message.IndexOf("】");
-                string user = message.Substring(sindex + 1, eindex - sindex - 1);
                 CacthConfig config = CacthConfig.CatchDic[user];
                 try
                 {
