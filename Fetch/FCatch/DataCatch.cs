@@ -55,6 +55,7 @@ namespace FCatch
                     Session session = sessions[sessions.Count - 1];
                     this.Invoke(new AsynUpdateUI((sn) =>
                     {
+                        //if (session.fullUrl.Equals("https://www.baidu.com/"))
                         if (session.fullUrl.Equals("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=utf8"))
                         {
                             //Thread thread1 = new Thread(GetBill);
@@ -104,6 +105,7 @@ namespace FCatch
                 }
                 log.Show();
                 //fdCatch.Quit();
+                fdCatch.EnableCatch = false;
                 DataCatchRequest request = new DataCatchRequest(AppUtils.ConnectionString);
                 CacthConfig.NetDataCatch(request, config, (tuser, msg) =>
                 {
@@ -115,6 +117,7 @@ namespace FCatch
 
                     return msg;
                 });
+                fdCatch.EnableCatch = true;
                 //重复开启
                 //buttonCatch_Click(this.button1, null);
 

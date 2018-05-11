@@ -62,6 +62,8 @@ namespace FCatch
             Console.ForegroundColor = oldColor;
         }
 
+        public bool EnableCatch = true;
+
         private void FBeforeRequest(Session oS)
         {
             oS.bBufferResponse = false;
@@ -73,7 +75,7 @@ namespace FCatch
             int urlIndex = oS.fullUrl.ToLower().IndexOf(url.ToString());
             int pIndex = oS.fullUrl.ToLower().IndexOf("?");
 
-            if (urlIndex < 0 || pIndex >= 0 && urlIndex > pIndex)
+            if (urlIndex < 0 || pIndex >= 0 && urlIndex > pIndex || !EnableCatch)
             {
                 return;
             }
