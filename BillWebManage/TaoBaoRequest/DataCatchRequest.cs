@@ -8,22 +8,20 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Collections;
 
-namespace Test001
+namespace TaoBaoRequest
 {
     public delegate void SendDetailState(string message);
 
-    public class DataCatch : Page
+    public class DataCatchRequest
     {
-        public override void Initialize()
+        private string connectString;
+        public DataCatchRequest(string connectString)
         {
-            base.Initialize();
-            DateTime time = DateTime.Now;
-            Context["startDate"] = new DateTime(time.Year, time.Month, 1);
+            this.connectString = connectString;
         }
-
         private void ChangeData()
         {
-            using (DbHelper db = AppUtils.CreateDbHelper())
+            using (DbHelper db = new DbHelper(connectString))
             {
                 IHashObjectList list = db.Select("select * from tbill");
                 JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
@@ -67,7 +65,7 @@ namespace Test001
             }
             string user = GetUser(cookies);
             Dictionary<ulong, string> dictionary = new Dictionary<ulong, string>();
-            using (DbHelper db = AppUtils.CreateDbHelper())
+            using (DbHelper db = new DbHelper(connectString))
             {
                 string sql = "select * from tbill where `user`= @user and downeddetail = 0";
                 db.AddParameter("user", user);
@@ -105,6 +103,11 @@ namespace Test001
             if (detailSetate != null)
             {
                 detailSetate(string.Format("总共有{0}条明细需要下载", dictionary.Count));
+                if (dictionary.Count == 0)
+                {
+                    detailSetate(string.Format("【{0}】:下载结束(finish)", user));
+                    return;
+                }
             }
             Thread thread = new Thread(GetBillDetail);
             thread.Start(details);
@@ -117,7 +120,7 @@ namespace Test001
             Dictionary<ulong, string> dictionary = details.Dictionary;
 
             int index = 0;
-            using (DbHelper db = AppUtils.CreateDbHelper())
+            using (DbHelper db = new DbHelper(connectString))
             {
                 string user = GetUser(details.Cookies);
                 db.BeginTransaction();
@@ -170,7 +173,7 @@ namespace Test001
             }
         }
         
-        internal string GetUser(string cookie)
+        public static string GetUser(string cookie)
         {
             string flag = "tracknick=";
             int index = cookie.IndexOf(flag);
@@ -192,7 +195,7 @@ namespace Test001
 
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             string user = GetUser(cookie);
-            using (DbHelper db = AppUtils.CreateDbHelper())
+            using (DbHelper db = new DbHelper(connectString))
             {
                 try
                 {

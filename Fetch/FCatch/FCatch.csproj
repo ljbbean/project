@@ -58,11 +58,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppUtils.cs" />
     <Compile Include="DataCatch.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataCatch.Designer.cs">
       <DependentUpon>DataCatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataCatchLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataCatchLog.Designer.cs">
+      <DependentUpon>DataCatchLog.cs</DependentUpon>
     </Compile>
     <Compile Include="FiddlerCatch.cs" />
     <Compile Include="HTTPClass.cs" />
@@ -77,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="DataCatch.resx">
       <DependentUpon>DataCatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataCatchLog.resx">
+      <DependentUpon>DataCatchLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,7 +113,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Test001\TaoBaoRequest\TaoBaoRequest.csproj">
+    <ProjectReference Include="..\..\BillWebManage\TaoBaoRequest\TaoBaoRequest.csproj">
       <Project>{323E521E-1558-459B-8854-F0979B44C8F9}</Project>
       <Name>TaoBaoRequest</Name>
     </ProjectReference>

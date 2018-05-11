@@ -18,22 +18,10 @@ namespace Test001
         }
 
         [WebMethod]
-        public object BillCatch(string cookie)
+        public object BillCatch()
         {
-            DataCatch dataCatch = new DataCatch();
-            string user = dataCatch.GetUser(cookie);
-
-            CacthConfig config = new CacthConfig();
-            if (!CacthConfig.CatchDic.TryGetValue(user, out config))
-            {
-                config = new CacthConfig() { Cookies = cookie };
-                CacthConfig.CatchDic.Add(user, config);
-            }
-            config.NewCookies = cookie;
-
-            return CacthConfig.NetDataCatch(dataCatch, config);
+            return DataCatchSave.SaveData();
         }
-
 
         [WebMethod]
         public string UserLogin(int width, int height, string name, string pwd)

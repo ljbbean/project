@@ -18,8 +18,8 @@ namespace Test001
             Settings.ClientWidthContextName = "ClientWidth";
             ThemeManager.RegisterTheme("beefun", typeof(Global).Assembly, "skins/beefun/");
             Page.RegisterLoginPage("Login.gspx", "user");
-            Thread thread = new Thread(CacthConfig.DataCatch);
-            thread.Start();
+            //Thread thread = new Thread(CacthConfig.DataCatch);
+            //thread.Start();
         }
 
         protected void Application_Error(object sender, EventArgs e)

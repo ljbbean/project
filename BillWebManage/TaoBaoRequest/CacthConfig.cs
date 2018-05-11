@@ -4,13 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Threading;
 using Carpa.Logging;
+using System.Net;
+using System.IO;
+using System.Text;
 
-namespace Test001
+namespace TaoBaoRequest
 {
     public class CacthConfig
     {
         private static Dictionary<string, CacthConfig> catchDic = new Dictionary<string, CacthConfig>();
-        internal static Dictionary<string, CacthConfig> CatchDic { get { return catchDic; } }
+        public static Dictionary<string, CacthConfig> CatchDic { get { return catchDic; } }
 
         private string cookies;
         /// <summary>
@@ -22,9 +25,10 @@ namespace Test001
 
         public CacthConfig()
         {
-            DateTime temp = DateTime.Now.AddDays(-2);
+            DateTime temp = DateTime.Now.AddDays(-3);
             StartDate = new DateTime(temp.Year, temp.Month, temp.Day);
         }
+
         /// <summary>
         /// 开始时间
         /// </summary>
@@ -42,8 +46,7 @@ namespace Test001
             set
             {
                 cookies = value;
-                DataCatch dataCatch = new DataCatch();
-                user = dataCatch.GetUser(value);
+                user = TaoBaoRequest.DataCatchRequest.GetUser(value);
             }
         }
 
@@ -102,13 +105,12 @@ namespace Test001
         /// <summary>
         /// 10分钟自动下载一次
         /// </summary>
-        internal static void DataCatch()
+        public static void DataCatch(string connectString)
         {
             do
             {
-                Thread.Sleep(10 * 1000);
-                //Thread.Sleep(60 * 1000 * 10);
-                DataCatch dataCatch = new DataCatch();
+                Thread.Sleep(60 * 1000 * 10);
+                DataCatchRequest dataCatch = new DataCatchRequest(connectString);
                 foreach (CacthConfig value in catchDic.Values)
                 {
                     NetDataCatch(dataCatch, value);
@@ -116,11 +118,12 @@ namespace Test001
             } while (true);
         }
          
-        internal static object NetDataCatch(DataCatch dataCatch, CacthConfig config)
+        public static object NetDataCatch(DataCatchRequest dataCatch, CacthConfig config, InvokeMessage notifyMsg = null)
         {
+            notifyMsg = notifyMsg == null ? (tuser, msg) => { return msg; } : notifyMsg;
             if (config.IsCacthing != null && config.IsCacthing.Value)
             {
-                return "之前的抓取正在进行";
+                return notifyMsg(config.User, "之前的抓取正在进行");
             }
 
             config.IsCacthing = true;
@@ -128,12 +131,11 @@ namespace Test001
             try
             {
                 string list = string.Format("列表插入数据：{0}", dataCatch.GetData(config.StartDate, config.Cookies));
-                Log.Info(string.Format("{3},开始下载,{0}, {1}, {2}", DateTime.Now, config.User, list, config.StartDate));
                 SendDetailState detailState = new SendDetailState(ShowMessage);
-                dataCatch.GetDetailsData(config.Cookies, detailState);
-                config.StartDate = DateTime.Now.AddMinutes(-1);
+                //dataCatch.GetDetailsData(config.Cookies, detailState);
+                config.StartDate = DateTime.Now.AddDays(-1);
                 config.CurrentMessage = list;
-                return list;
+                return notifyMsg(config.User, list);
             }
             catch (Exception t)
             {
@@ -144,7 +146,6 @@ namespace Test001
 
         private static void ShowMessage(string message)
         {
-            Log.Info(string.Format("{1},{0}", DateTime.Now, message));
             int sindex = message.IndexOf("【");
             int eindex = message.IndexOf("】");
             string user = string.Empty;
@@ -163,7 +164,26 @@ namespace Test001
                 CacthConfig config = CacthConfig.CatchDic[user];
                 try
                 {
-                    DataCatchSave.SaveData();
+                    //发起网络调用,通知服务器端处理请求
+                    //DataCatchSave.SaveData();
+                    
+                    //string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
+                    string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
+                    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                    request.ProtocolVersion = HttpVersion.Version10;
+                    request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
+                    request.Accept = "*/*";
+                    request.ContentType = "application/json; charset=UTF-8";
+                    request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
+                    request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
+                    request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
+                    request.Method = "POST";
+                    
+                    WebResponse response = request.GetResponse();
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
+                    {
+                        string rv = reader.ReadToEnd();
+                    }
                 }
                 catch (Exception e)
                 {
@@ -177,4 +197,7 @@ namespace Test001
             }
         }
     }
+
+    
+    public delegate object InvokeMessage(string user, string msg);
 }

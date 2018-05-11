@@ -82,7 +82,7 @@ namespace TaoBaoRequest
 
         private string GetBillList(string cookieStr, string data, int startIndex, int pageSize)
         {
-            HttpWebRequest request = CreateWebRequest("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=Utf8");
+            HttpWebRequest request = CreateWebRequest("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=Utf8&");
 
             request.Accept = "application/json, text/javascript, */*; q=0.01";
             request.Referer = "https://trade.taobao.com/trade/itemlist/list_sold_items.htm?spm=a1z38n.10677092.favorite.d28.42bc1debYUYYcK&mytmenu=ymbb";

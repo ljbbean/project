@@ -3,6 +3,7 @@ using Carpa.Web.Script;
 using Carpa.Web.Ajax;
 using System.Data;
 using System.Text;
+using TaoBaoRequest;
 
 namespace Test001
 {
