@@ -20,6 +20,7 @@ namespace Test001
         [WebMethod]
         public object BillCatch()
         {
+            //return string.Format("{0}  被调用了", DateTime.Now.ToShortDateString());
             return DataCatchSave.SaveData();
         }
 

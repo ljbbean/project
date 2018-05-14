@@ -18,34 +18,84 @@ namespace FCatch
     public partial class DataCatch : Form
     {
         Dictionary<CacthConfig, DataCatchLog> logWindows = new Dictionary<CacthConfig, DataCatchLog>();
-
+        private static object data = new object();
+        List<string> listMsg = new List<string>();
         bool isRuning = false;
         FiddlerCatch fdCatch = new FiddlerCatch();
+        
+        string oldFilter = "";
+
         public DataCatch()
         {
             InitializeComponent();
-            Thread thread = new Thread(CacthConfig.DataCatch);
-            var _this = this;
-            NotifyInvoke notify = new NotifyInvoke()
-            {
-                ConnnectionString = AppUtils.ConnectionString,
-                NotifyMsg = (user, msg) =>
-                {
-                    _this.Invoke(new AsynUpdateUI((sn) =>
-                    {
-                        var log = logWindows[CacthConfig.CatchDic[user]];
-                        log.SetTitle(user);
-                        log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), sn));
-                    }), msg);
-                    return msg;
-                }
-            };
-            thread.Start(notify);
+            this.textBoxUrl.LostFocus += new EventHandler(textBoxUrl_LostFocus);
             
+        }
+
+        void textBoxUrl_LostFocus(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBoxUrl.Text))
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(AppUtils.Pwd))
+            {
+                if (MessageBox.Show("确认设置密码？", "消息提醒", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+                {
+                    return;
+                }
+                Thread thread = new Thread(CacthConfig.DataCatch);
+                AppUtils.Pwd = textBoxUrl.Text;
+                textBoxUrl.Text = oldFilter;
+
+                var _this = this;
+                NotifyInvoke notify = new NotifyInvoke()
+                {
+                    ConnnectionString = AppUtils.ConnectionString,
+                    NotifyMsg = (user, msg) =>
+                    {
+                        if (_this.IsHandleCreated)
+                        {
+                            lock (data)
+                            {
+                                listMsg.Add(string.Format("{0} {1} {2}\r\n\r\n", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), msg));
+
+                                foreach (string m in listMsg)
+                                {
+                                    _this.Invoke(new AsynUpdateUI((sn) =>
+                                    {
+                                        var log = logWindows[CacthConfig.CatchDic[user]];
+                                        log.SetTitle(user);
+                                        log.SendMessage(m);
+                                    }), m);
+                                }
+
+                                listMsg.Clear();
+                            }
+                        }
+                        else
+                        {
+                            listMsg.Add(msg);
+                        }
+                        return msg;
+                    }
+                };
+                thread.Start(notify);
+
+            }
         }
 
         private void buttonCatch_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(AppUtils.Pwd))
+            {
+                MessageBox.Show("请在输入框中先输入密码");
+
+                oldFilter = textBoxUrl.Text;
+                textBoxUrl.Text = "";
+                textBoxUrl.Focus();
+                return;
+            }
             if (isRuning)
             {
                 fdCatch.Quit();

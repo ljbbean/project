@@ -23,7 +23,7 @@ namespace FCatch
 
         public void SendMessage(string text)
         {
-            textBox1.Text =string.Format("{0}\r\n{1}",textBox1.Text, text);
+            textBox1.Text =string.Format("{0}\r\n{1}",text, textBox1.Text);
         }
     }
 }

@@ -130,6 +130,7 @@ namespace Test001
                     StringBuilder doedIds = new StringBuilder();//影响到的主数据
                     foreach (DataRow row in table.Rows)
                     {
+                        string user = row["所属用户"].ToString();
                         var ddid = row["订单ID"].ToString();
                         string id = Cuid.NewCuid().GetHashCode().ToString();
                         string oldid;
@@ -147,7 +148,7 @@ namespace Test001
                         sformate.Append("), ");
 
                         count++;
-                        Dictionary<string, decimal> goodsRate = GetGoodsRate(db, row["所属用户"].ToString());
+                        Dictionary<string, decimal> goodsRate = GetGoodsRate(db, user);
                         GoodsInfo[] ginfos = serializer.Deserialize<GoodsInfo[]>(row["货物信息"].ToString());
 
                         var sendWay = TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]).IsEmptyObject() ? null : "快递";
@@ -167,7 +168,7 @@ namespace Test001
                                 string goodKey = GetGoodsKey(ginfo.Color, ginfo.Size, ginfo.Title);
                                 if (goodsRate == null || !goodsRate.ContainsKey(goodKey))
                                 {
-                                    throw new Exception(string.Format("color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title));
+                                    throw new Exception(string.Format("【{3}】   color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title, user));
                                 }
                                 decimal price = ginfo.PriceInfo / pall * total;
                                 if (j == 0)

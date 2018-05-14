@@ -111,12 +111,12 @@ namespace TaoBaoRequest
             {
                 NotifyInvoke invoke = (NotifyInvoke)data;
 
-                Thread.Sleep( 1000 * 10);
                 DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
                 foreach (CacthConfig value in catchDic.Values)
                 {
                     NetDataCatch(dataCatch, value, invoke.NotifyMsg);
                 }
+                Thread.Sleep(60 * 1000 * 10);
             } while (true);
         }
          
@@ -181,8 +181,8 @@ namespace TaoBaoRequest
                 {
                     config.CurrentMessage = null;
                     //发起网络调用,通知服务器端处理请求
-                    //string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
-                    string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
+                    string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
+                    //string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
                     HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
                     request.ProtocolVersion = HttpVersion.Version10;
                     request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压

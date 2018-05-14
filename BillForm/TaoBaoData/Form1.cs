@@ -42,7 +42,7 @@ namespace TaoBaoData
             }
             try
             {
-                DataCatch dataCatch = new DataCatch();
+                DataCatchRequest dataCatch = new DataCatchRequest(Utils.Connect);
                 DateTime time = dateTimePicker1.Value;
                 DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
                 string list = string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
