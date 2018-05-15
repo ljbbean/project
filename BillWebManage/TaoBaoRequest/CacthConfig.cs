@@ -25,7 +25,7 @@ namespace TaoBaoRequest
 
         public CacthConfig()
         {
-            DateTime temp = DateTime.Now.AddDays(-10);
+            DateTime temp = DateTime.Now.AddDays(-40);
             StartDate = new DateTime(temp.Year, temp.Month, temp.Day);
         }
 
@@ -116,7 +116,7 @@ namespace TaoBaoRequest
                 {
                     NetDataCatch(dataCatch, value, invoke.NotifyMsg);
                 }
-                Thread.Sleep(60 * 1000 * 10);
+                Thread.Sleep(60 * 1000 * 20);
             } while (true);
         }
          
