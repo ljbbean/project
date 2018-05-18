@@ -38,16 +38,21 @@ namespace Test001
             int index = 0;
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(string.Format("【买家留言：{0}】", mjly));
+                sbuilder.Append(ReplaceText(string.Format("【买家留言：{0}】", mjly)));
                 index++;
             }
 
             mjly = row["卖家留言"];
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(string.Format("【卖家留言：{0}】", mjly));
+                sbuilder.Append(ReplaceText(string.Format("【卖家留言：{0}】", mjly)));
             }
             return sbuilder.ToString();
+        }
+
+        private static string ReplaceText(string str)
+        {
+            return str.Replace("&times;", "*");
         }
 
         private static Dictionary<string, string> GetExistBills(DbHelper db, string sql)

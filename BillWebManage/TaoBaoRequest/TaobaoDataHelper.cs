@@ -327,6 +327,10 @@ namespace TaoBaoRequest
                 {
                     var contentItemValue = contentItem.GetValue<HashObject>("value");
                     string key = contentItemValue.GetValue<string>("name");
+                    if (!contentItemValue.ContainsKey("value"))
+                    {
+                        continue;
+                    }
                     if (contentItemValue["value"] is ArrayList)
                     {
                         orderInfo[key] = serializer.Serialize(contentItemValue["value"]);
