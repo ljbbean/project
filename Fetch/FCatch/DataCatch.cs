@@ -154,16 +154,16 @@ namespace FCatch
                 }
                 config.NewCookies = cookie;
 
-                DataCatchLog log = new DataCatchLog();
+                DataCatchLog log = new DataCatchLog(user);
                 if (!logWindows.TryGetValue(config, out log))
                 {
-                    log = new DataCatchLog();
+                    log = new DataCatchLog(user);
                     logWindows.Add(config, log);
                 }
                 if (log.IsDisposed)
                 {
                     logWindows.Remove(config);
-                    log = new DataCatchLog();
+                    log = new DataCatchLog(user);
                     logWindows.Add(config, log);
                 }
                 log.Show();
@@ -172,7 +172,6 @@ namespace FCatch
                 {
                     this.Invoke(new AsynUpdateUI((sn) =>
                     {
-                        log.SetTitle(tuser);
                         log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), sn));
                     }), msg);
 

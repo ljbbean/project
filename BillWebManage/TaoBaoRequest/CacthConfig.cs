@@ -116,7 +116,7 @@ namespace TaoBaoRequest
                 {
                     NetDataCatch(dataCatch, value, invoke.NotifyMsg);
                 }
-                Thread.Sleep(60 * 1000 * 20);
+                Thread.Sleep(60 * 1000 * 60 * 2);
             } while (true);
         }
          

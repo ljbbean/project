@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="数据抓取情况" ActionType="Test001.DataHandler.DataCatchFromTBAction, DataHandler/DataCatchFromTB.js" OnLoaded="doDataFormLoaded">
+  <VPanel>
+    <HiddenField DataField="socketurl" Value="${socketurl}"/>
+    <HiddenField DataField="uid" Value="${uid}"/>
+    <Grid ID="grid" Pager="None" Width="800" Height="500">
+      <TextColumn Caption="发送时间" DataField="date" Width="160"/>
+      <TextColumn Caption="数据来源" DataField="fuid"/>
+      <TextColumn Caption="消息内容" DataField="msg" Width="450"/>
+    </Grid>
+  </VPanel>
+</Page>

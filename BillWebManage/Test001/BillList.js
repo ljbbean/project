@@ -312,6 +312,11 @@ Test001.BillListAction.prototype = {
     doDataCatch: function (sender) {
         var form = new Sys.UI.Form(sender);
         form.showModal("DataCatch.gspx");
+    },
+
+    doCatchFromTB: function (sender) {
+        var form = new Sys.UI.Form(sender);
+        form.showModal("DataHandler/DataCatchFromTB.gspx");
     }
 }
 Test001.BillListAction.registerClass('Test001.BillListAction', Sys.UI.PageAction);

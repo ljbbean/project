@@ -59,6 +59,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Carpa.Web.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="EngineIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EngineIoClientDotNet.1.0.6\lib\net40\EngineIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI, Version=2.1.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\NPOI.dll</HintPath>
@@ -75,6 +81,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\NPOI.OpenXmlFormats.dll</HintPath>
     </Reference>
+    <Reference Include="SocketIoClientDotNet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SocketIoClientDotNet.1.0.6\lib\net40\SocketIoClientDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.10.0.0, Culture=neutral, PublicKeyToken=ee9af13f57f00acc, processorArchitecture=MSIL">
+      <HintPath>..\packages\SuperSocket.ClientEngine.Core.0.10.0\lib\net40-client\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -90,6 +102,9 @@
       <HintPath>bin\log4net</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebSocket4Net, Version=0.15.2.11, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocket4Net.0.15.2\lib\net40\WebSocket4Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BillList.gspx">
@@ -104,6 +119,7 @@
     <EmbeddedResource Include="ExcelSure.gspx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\DataCatchFromTB.gspx" />
     <None Include="docs\carpa-vsdoc.js" />
     <None Include="docs\Readme.txt" />
     <EmbeddedResource Include="Login.gspx">
@@ -128,6 +144,10 @@
     <EmbeddedResource Include="FundsManager\BackSectionDetailManager.gspx" />
     <EmbeddedResource Include="FundsManager\BackSection.gspx" />
     <EmbeddedResource Include="FundsManager\BackSectionManager.gspx" />
+    <EmbeddedResource Include="DataHandler\DataCatchFromTB.js">
+      <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BillList.js">
@@ -383,6 +403,7 @@
     <EmbeddedResource Include="LogisticsSendBill.js">
       <DependentUpon>LogisticsSendBill.gspx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="scripts\socket.io.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -402,6 +423,9 @@
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
     <Compile Include="DataCatchSave.cs" />
+    <Compile Include="DataHandler\DataCatchFromTB.cs">
+      <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
+    </Compile>
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />
     <Compile Include="common\Utils.cs" />

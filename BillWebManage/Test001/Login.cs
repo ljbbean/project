@@ -25,6 +25,12 @@ namespace Test001
         }
 
         [WebMethod]
+        public void SendUrl(string key, string url)
+        {
+
+        }
+
+        [WebMethod]
         public string UserLogin(int width, int height, string name, string pwd)
         {
             Session[Settings.ClientWidthContextName] = width ;

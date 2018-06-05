@@ -38,22 +38,23 @@ namespace Test001
             int index = 0;
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(ReplaceText(string.Format("【买家留言：{0}】", mjly)));
+                sbuilder.Append(ReplaceHtmlText(string.Format("【买家留言：{0}】", mjly)));
                 index++;
             }
 
             mjly = row["卖家留言"];
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(ReplaceText(string.Format("【卖家留言：{0}】", mjly)));
+                sbuilder.Append(ReplaceHtmlText(string.Format("【卖家留言：{0}】", mjly)));
             }
             return sbuilder.ToString();
         }
 
-        private static string ReplaceText(string str)
+        private static string ReplaceHtmlText(string str)
         {
-            return str.Replace("&times;", "*");
+            return str.Replace("&times;", "*").Replace("&middot;", "。").Replace("&mdash;", "—");
         }
+        
 
         private static Dictionary<string, string> GetExistBills(DbHelper db, string sql)
         {
@@ -164,6 +165,7 @@ namespace Test001
                         decimal btotal = 0;
                         decimal allPrice = 0;
 
+                        string address = ReplaceHtmlText(row["具体地址"].ToString());
                         if (!dicDetail.Contains(ddid))
                         {
                             detailCount++;
@@ -186,7 +188,7 @@ namespace Test001
                                 decimal tltotal = price - tbtotal;
                                 string sDetailFormate = "({0}, {1}, '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, '{9}',{10}, '{11}', {12}, '{13}', {14}),";
                                 //构建明细数据
-                                insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, row["具体地址"], row["区域"], price, remark, tltotal, ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay, tbtotal);
+                                insertBillDetailBuilder.AppendFormat(sDetailFormate, Cuid.NewCuid().GetHashCode(), id, ddid, ginfo.Size, ginfo.Amount, ginfo.Color, address, row["区域"], price, remark, tltotal, ginfo.Title, int.Parse(row["发货状态status"].ToString()) >= 1 ? 2 : 1, sendWay, tbtotal);
                             }
                             ltotal = total - btotal;
                         }
@@ -196,7 +198,7 @@ namespace Test001
                             continue;
                         }
                         //构建主表数据，如果已经存在，直接更改数据
-                        insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], row["具体地址"], row["区域"]
+                        insertBillBuilder.AppendFormat(sformate.ToString(), id, row["付款时间"], row["旺旺名称"], row["收货客户"], row["联系电话"], address, row["区域"]
                             , remark, ltotal, row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                             , row["创建时间"], row["支付宝交易号"], ddid, total, btotal, GetDate(sendDate), GetDate(successDate));
                     }
