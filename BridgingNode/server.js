@@ -1,7 +1,26 @@
 var http = require("http");
 var express = require("express");
 var socketIo = require("socket.io");
+var bodyParser = require("body-parser")
+var cp = require("child_process")
 var app = new express();
+
+function getCurrentDate() {
+    let date = new Date();
+    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${date.getMilliseconds()}`
+}
+
+app.use(bodyParser.json())
+app.post("/tb_qr", function (req, res) {
+    let data = req.body
+    let cid = userMap[data.uid]
+    if (cid) {
+        let socket = io.to(cid)
+        socket.emit("exec", { type: 'doing', msg: '二维码成功返回,可以用千牛或淘宝手机端扫描授权抓取了', date: getCurrentDate() })
+        socket.emit("tb_qr_url", { url: data.url })//二维码地址
+    }
+    res.end()
+})
 var server = http.createServer(app);
 var io = new socketIo(server);
 server.listen(8080);
@@ -40,16 +59,11 @@ io.on("connection", function (clientSocket) {
         return io.eio.clients[id] ? true : false
     }
 
-    function getData(data){
-        if(Object.prototype.toString.call(data) === "[object String]"){
+    function getData(data) {
+        if (Object.prototype.toString.call(data) === "[object String]") {
             return JSON.parse(data);
         }
         return data;
-    }
-
-    function getCurrentDate(){
-        let date = new Date();
-        return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} ${date.getMilliseconds()}`
     }
 
     clientSocket.on("login", (data) => {
@@ -101,6 +115,13 @@ io.on("connection", function (clientSocket) {
         }
         delete users[clientSocket.id]
         delete userMap[data.uid]
+    })
+
+    clientSocket.on("getTB_QR", function (data) {
+        cp.exec(`python C:\\Users\\ljb\\Desktop\\Bill\\project\\project\\Fetch\\autoFreshWeb.py `+ data.uid, (err, stdout, stderr)=>{
+            clientSocket.emit("exec", { type: 'failed', msg: '获取二维码错误' + stderr, date: getCurrentDate() })
+        })
+        clientSocket.emit("exec", { type: 'doing', msg: '正在获取二维码', date: getCurrentDate() })
     })
 
     clientSocket.on("sendMsg", function (data) {

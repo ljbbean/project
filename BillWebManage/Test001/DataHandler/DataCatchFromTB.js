@@ -22,6 +22,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
             source = [];
         }
         Array.insert(source, 0, data);
+        $debug.traceDump(data)
         grid.dataBind(source);
     },
 
@@ -37,6 +38,10 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
         }
         var _this = this;
         this.socket = io.connect(url);
+        this.socket.on("tb_qr_url", function (data) {
+            form.qr.set_src(data.url);
+            form.qr.set_visible(true);
+        });
         this.socket.on("receiveMsg", function (data) {
             _this.gridDataBind(grid, data);
         });
@@ -66,12 +71,15 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
                 case "failed":
                     msg = '服务器推送';
                     break;
+                case "doing":
+                    msg = data.msg;
+                    break;
                 default:
                     msg = data.type + '  为非法命令';
             }
 
             _this.gridDataBind(grid, {
-                data: data.date,
+                date: data.date,
                 msg: msg,
                 fuid: '服务器推送'
             })
@@ -89,6 +97,17 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
         }
 
         socket.emit("login", { uid: uid })
+    },
+
+    doGetQR: function (sender) {
+        var form = sender.get_form();
+        var uid = form.uid.get_value();
+        if (this.socket == null) {
+            alert('还未登录，请关闭当前页面后重新进入');
+            return;
+        }
+
+        this.socket.emit("getTB_QR", {uid:uid})
     }
 }
 Test001.DataHandler.DataCatchFromTBAction.registerClass('Test001.DataHandler.DataCatchFromTBAction', Sys.UI.PageAction);

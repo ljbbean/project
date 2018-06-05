@@ -3,6 +3,8 @@
   <VPanel>
     <HiddenField DataField="socketurl" Value="${socketurl}"/>
     <HiddenField DataField="uid" Value="${uid}"/>
+    <Button Text="授权登录" OnClick="doGetQR"/>
+    <Image ID="qr" Visible="false" Width="160" Height="160" />
     <Grid ID="grid" Pager="None" Width="800" Height="500">
       <TextColumn Caption="发送时间" DataField="date" Width="160"/>
       <TextColumn Caption="数据来源" DataField="fuid"/>
