@@ -58,3 +58,9 @@ ADD COLUMN udate datetime
 /*标记当前单据是否有更新*/
 ALTER TABLE tbill
 ADD COLUMN hasUpdate INT DEFAULT 1
+
+
+
+UPDATE `user` 
+SET NAME='ljbbean'
+WHERE id=2

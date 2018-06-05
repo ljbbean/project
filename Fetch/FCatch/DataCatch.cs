@@ -154,7 +154,7 @@ namespace FCatch
                 }
                 config.NewCookies = cookie;
 
-                DataCatchLog log = new DataCatchLog(user);
+                DataCatchLog log;
                 if (!logWindows.TryGetValue(config, out log))
                 {
                     log = new DataCatchLog(user);

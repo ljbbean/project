@@ -22,7 +22,6 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
             source = [];
         }
         Array.insert(source, 0, data);
-        $debug.traceDump(data)
         grid.dataBind(source);
     },
 
@@ -39,8 +38,8 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
         var _this = this;
         this.socket = io.connect(url);
         this.socket.on("tb_qr_url", function (data) {
-            form.qr.set_src(data.url);
-            form.qr.set_visible(true);
+            //form.qr.set_src(data.url);
+            //form.qr.set_visible(true);
         });
         this.socket.on("receiveMsg", function (data) {
             _this.gridDataBind(grid, data);
@@ -55,6 +54,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
 
         this.socket.on("exec", function (data) {
             var msg = "";
+            var url = "";
             switch (data.type) {
                 case "exit":
                     msg = '退出连接';
@@ -73,6 +73,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
                     break;
                 case "doing":
                     msg = data.msg;
+                    url = data.url;
                     break;
                 default:
                     msg = data.type + '  为非法命令';
@@ -81,6 +82,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
             _this.gridDataBind(grid, {
                 date: data.date,
                 msg: msg,
+                url: url,
                 fuid: '服务器推送'
             })
         })

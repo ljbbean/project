@@ -16,8 +16,7 @@ app.post("/tb_qr", function (req, res) {
     let cid = userMap[data.uid]
     if (cid) {
         let socket = io.to(cid)
-        socket.emit("exec", { type: 'doing', msg: '二维码成功返回,可以用千牛或淘宝手机端扫描授权抓取了', date: getCurrentDate() })
-        socket.emit("tb_qr_url", { url: data.url })//二维码地址
+        socket.emit("exec", { type: 'doing', msg: '二维码成功返回,可以用千牛或淘宝手机端扫描授权抓取了', date: getCurrentDate(),url: data.url })
     }
     res.end()
 })
@@ -49,7 +48,7 @@ io.on("connection", function (clientSocket) {
 
     function checkUser(uid) {
         if (userMap[uid] != clientSocket.id) {
-            io.to(ncid).emit("exec", { type: 'failed', msg: '消息发送者和对应的登录信息不一致，无法继续操作', date: getCurrentDate() })
+            clientSocket.emit("exec", { type: 'failed', msg: '消息发送者和对应的登录信息不一致，无法继续操作', date: getCurrentDate() })
             return false;
         }
         return true;

@@ -19,7 +19,7 @@ namespace FCatch
                 Application.EnableVisualStyles();
                 Application.ApplicationExit += new EventHandler(Application_ApplicationExit);
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new DataCatchLog("ljb"));
+                Application.Run(new DataCatch());
             }
             catch (Exception e)
             {
