@@ -20,6 +20,19 @@ app.post("/tb_qr", function (req, res) {
     }
     res.end()
 })
+app.post("/tb_qr_status", function (req, res) {
+    //未扫描
+    //已扫描，未确认
+    //已确认，正在跳转
+    //已调转，准备下载数据
+    let data = req.body
+    let cid = userMap[data.uid]
+    if (cid) {
+        let socket = io.to(cid)
+        socket.emit("exec", { type: 'doing', msg: '未接受到授权，请用千牛或淘宝手机端授权', date: getCurrentDate(),url: data.url })
+    }
+    res.end()
+})
 var server = http.createServer(app);
 var io = new socketIo(server);
 server.listen(8080);
