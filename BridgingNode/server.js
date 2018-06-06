@@ -117,7 +117,7 @@ io.on("connection", function (clientSocket) {
     })
 
     clientSocket.on("getTB_QR", function (data) {
-        cp.exec(`python C:\\Users\\ljb\\Desktop\\Bill\\project\\project\\Fetch\\autoFreshWeb.py `+ data.uid, (err, stdout, stderr)=>{
+        cp.exec(`python ..\\Fetch\\autoFreshWeb.py `+ data.uid, (err, stdout, stderr)=>{
             clientSocket.emit("exec", { type: 'failed', msg: '获取二维码错误' + stderr, date: getCurrentDate() })
         })
         clientSocket.emit("exec", { type: 'doing', msg: '正在获取二维码', date: getCurrentDate() })

@@ -22,7 +22,7 @@ namespace FCatch
                         ip = "localhost";
                     }
                 }
-                return string.Format("server={0};database=bill;User ID=root;Password={1};Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8;Allow User Variables=True;", ip, password);
+                return string.Format("server={0};database=billtest;User ID=root;Password={1};Charset=utf8; Allow Zero Datetime=True;OldSyntax=true;port=3306;Character Set=utf8;Allow User Variables=True;", ip, password);
             }
         }
 

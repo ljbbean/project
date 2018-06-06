@@ -181,7 +181,7 @@ namespace TaoBaoRequest
                 {
                     config.CurrentMessage = null;
                     //发起网络调用,通知服务器端处理请求
-                    string url = "http://120.25.122.148/test/Test001/Test001.Login.ajax/BillCatch";
+                    string url = "http://120.25.122.148/newtest/Test001/Test001.Login.ajax/BillCatch";
                     //string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
                     HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
                     request.ProtocolVersion = HttpVersion.Version10;
