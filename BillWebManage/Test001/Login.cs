@@ -7,6 +7,8 @@ using System.Text;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
+using Quobject.SocketIoClientDotNet.Client;
+using TaoBaoRequest;
 
 namespace Test001
 {
@@ -18,10 +20,29 @@ namespace Test001
         }
 
         [WebMethod]
-        public object BillCatch()
+        public void BillCatch(string user)
         {
-            //return string.Format("{0}  被调用了", DateTime.Now.ToShortDateString());
-            return DataCatchSave.SaveData();
+            var socket = IO.Socket("http://localhost:8080");
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                Data data = new Data(user);
+                data.comefrom = "数据分析";
+                socket.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
+                
+                DataCatchSave.SaveData((text) =>
+                {
+                    SendMsg msg = new SendMsg(user);
+                    msg.comefrom = "数据分析";
+                    msg.touid = user;
+                    msg.msg = text;
+                    socket.Emit("sendMsg", JavaScriptSerializer.CreateInstance().Serialize(msg));
+                    if (text.StartsWith("Exception") || text.StartsWith("OK:"))
+                    {
+                        socket.Disconnect();
+                        socket = null;
+                    }
+                });
+            });
         }
 
         [WebMethod]

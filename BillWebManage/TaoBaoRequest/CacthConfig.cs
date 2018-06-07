@@ -25,7 +25,7 @@ namespace TaoBaoRequest
 
         public CacthConfig()
         {
-            DateTime temp = DateTime.Now.AddDays(-1);
+            DateTime temp = DateTime.Now.AddDays(-20);
             StartDate = new DateTime(temp.Year, temp.Month, temp.Day);
         }
 
@@ -185,39 +185,46 @@ namespace TaoBaoRequest
             if (message.EndsWith("(finish)"))
             {
                 CacthConfig config = CacthConfig.CatchDic[user];
-                try
-                {
-                    config.CurrentMessage = null;
-                    //发起网络调用,通知服务器端处理请求
-                    string url = "http://120.25.122.148/newtest/Test001/Test001.Login.ajax/BillCatch";
-                    //string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
-                    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-                    request.ProtocolVersion = HttpVersion.Version10;
-                    request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
-                    request.Accept = "*/*";
-                    request.ContentType = "application/json; charset=UTF-8";
-                    request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
-                    request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
-                    request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
-                    request.Method = "POST";
-                    request.ContentLength = 0;
-                    
-                    WebResponse response = request.GetResponse();
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
-                    {
-                        config.CurrentMessage = reader.ReadToEnd();
-                    }
-                    config.ErrorMessage = null;
-                }
-                catch (Exception e)
-                {
-                    config.ErrorMessage = e.Message;
-                }
-                finally
-                {
-                    config.IsCacthing = false;
-                    config.Cookies = CacthConfig.CatchDic[user].NewCookies;
-                }
+                config.IsCacthing = false;
+                config.Cookies = CacthConfig.CatchDic[user].NewCookies;
+                //try
+                //{
+                //    config.CurrentMessage = null;
+                //    //发起网络调用,通知服务器端处理请求
+                //    //string url = "http://120.25.122.148/newtest/Test001/Test001.Login.ajax/BillCatch";
+                //    string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
+                //    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                //    request.ProtocolVersion = HttpVersion.Version10;
+                //    request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
+                //    request.Accept = "*/*";
+                //    request.ContentType = "application/json; charset=UTF-8";
+                //    request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
+                //    request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
+                //    request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
+                //    request.Method = "POST";
+                //    string data = "{\"user\":\"" + user + "\"}";
+                //    request.ContentLength = data.Length;
+                //    using (StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.GetEncoding("gbk")))
+                //    {
+                //        writer.Write(data);
+                //        writer.Flush();
+                //    }
+                //    WebResponse response = request.GetResponse();
+                //    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
+                //    {
+                //        config.CurrentMessage = reader.ReadToEnd();
+                //    }
+                //    config.ErrorMessage = null;
+                //}
+                //catch (Exception e)
+                //{
+                //    config.ErrorMessage = e.Message;
+                //}
+                //finally
+                //{
+                //    config.IsCacthing = false;
+                //    config.Cookies = CacthConfig.CatchDic[user].NewCookies;
+                //}
             }
         }
     }

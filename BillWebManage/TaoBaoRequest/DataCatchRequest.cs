@@ -105,7 +105,7 @@ namespace TaoBaoRequest
                 detailSetate(string.Format("总共有{0}条明细需要下载", dictionary.Count));
                 if (dictionary.Count == 0)
                 {
-                    detailSetate(string.Format("【{0}】:下载结束(finish)", user));
+                    detailSetate(string.Format("【{0}】:抓取结束(finish)", user));
                     return;
                 }
             }

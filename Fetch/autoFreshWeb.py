@@ -70,7 +70,7 @@ class TBBrower:
         if self.browser.current_url.lower().startswith(self.listUrl):
             # 已跳转到对应页面，准备抓取数据
             #print u'已跳转到对应页面，准备抓取数据'
-            self.sendMsgToNode('已跳转到对应页面，准备抓取数据', '')
+            self.sendMsgToNode('可以获取订单数据，准备接入抓取接口', '')
             self.search(self.browser)
             return  # 跳出线程
         else:

@@ -51,6 +51,7 @@
     <Compile Include="DataCatchRequest.cs" />
     <Compile Include="GoodsInfo.cs" />
     <Compile Include="HashObjectExt.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="NetDataHandler.cs" />
     <Compile Include="NotifyInvoke.cs" />
     <Compile Include="ObjectExt.cs" />

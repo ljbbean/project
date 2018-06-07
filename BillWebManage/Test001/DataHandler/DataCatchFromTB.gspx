@@ -5,9 +5,9 @@
     <HiddenField DataField="uid" Value="${uid}"/>
     <Button Text="授权登录" OnClick="doGetQR"/>
     <Image ID="qr" Visible="false" Width="160" Height="160" />
-    <Grid ID="grid" Pager="None" Width="820" Height="500">
+    <Grid ID="grid" Pager="None" Width="860" Height="500">
       <TextColumn Caption="发送时间" DataField="date" Width="160"/>
-      <TextColumn Caption="数据来源" DataField="fuid"/>
+      <TextColumn Caption="数据来源" DataField="fuid" Width="120"/>
       <TextColumn Caption="消息内容" DataField="msg" Width="350"/>
       <ImageColumn Caption="图片" DataField="url" UseResource="false" Width="165"/>
     </Grid>

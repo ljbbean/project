@@ -10,6 +10,8 @@ using Carpa.Web.Ajax;
 
 namespace Test001
 {
+    internal delegate void CallBackMsg(string msg);
+
     public class DataCatchSave
     {
         private static Dictionary<string, Dictionary<string, decimal>> userGoodsDictionary = new Dictionary<string, Dictionary<string, decimal>>();
@@ -110,12 +112,13 @@ namespace Test001
             return dictionary;
         }
 
-        public static object SaveData()
+        internal static void SaveData(CallBackMsg callBack)
         {
             DataTable table = TaoBaoRequest.TaobaoDataHelper.GetDetailData(AppUtils.ConnectionString, true);
             if(table.Rows.Count == 0)
             {
-                return "没有需要保存的数据";
+                callBack("没有需要分析的数据");
+                return ;
             }
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
 
@@ -133,6 +136,8 @@ namespace Test001
                         ltotal,sourceTitle,goodsstatus,sendway, btotal) values");
                     int count = 0;
                     int detailCount = 0;
+                    callBack("开始分析数据");
+                    callBack("开始构建数据");
                     StringBuilder doedIds = new StringBuilder();//影响到的主数据
                     foreach (DataRow row in table.Rows)
                     {
@@ -202,6 +207,8 @@ namespace Test001
                             , remark, ltotal, row["发货状态status"], TaobaoDataHelper.GetLogisticsInfo(row["物流单号"]), TaobaoDataHelper.GetLogisticsInfo(row["快递公司"]), GetUser(row["所属用户"]), 1, "抓取"
                             , row["创建时间"], row["支付宝交易号"], ddid, total, btotal, GetDate(sendDate), GetDate(successDate));
                     }
+                    callBack("构建数据完毕");
+                    callBack("开始保存数据");
                     string insertBill = insertBillBuilder.ToString();
                     insertBill = insertBill.Substring(0, insertBill.Length - 2);
                     string insertBillDetail = insertBillDetailBuilder.ToString();
@@ -219,7 +226,7 @@ namespace Test001
                         db.BatchExecute(string.Format("update bill set ltotal = 0, total=0, btotal=0 where status=9 and id in ({0})", doedIds.ToString().Substring(0, doedIds.Length - 1)));
                         db.CommitTransaction();
                     }
-                    return string.Format("处理了{0}条数据", count);
+                    callBack(string.Format("OK:数据保存成功，分析处理了{0}条数据", count));
                 }
                 catch (Exception e1)
                 {
@@ -227,8 +234,9 @@ namespace Test001
                     {
                         db.RollbackTransaction();
                     }
-                    return string.Format(e1.Message);
+                    callBack(string.Format("Exception:{0}", e1.Message));
                 }
+                return;
             }
         }
 
