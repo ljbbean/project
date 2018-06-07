@@ -18,10 +18,12 @@ namespace FCatch
     {
         Socket socket;
         string user;
+        const string pre = "client_";
+
         public DataCatchLog(string user)
         {
             InitializeComponent();
-            this.user = user;
+            this.user = string.Formate("{0}{1}", pre, user);
             
             socket = IO.Socket("http://localhost:8080");
             socket.On(Socket.EVENT_CONNECT, () =>
@@ -97,7 +99,7 @@ namespace FCatch
                 return;
             }
             SendMsg msg = new SendMsg(this.user);
-            msg.touid = this.user;
+            msg.touid = this.user.subString(pre.Length);
             msg.msg = text;
             socket.Emit("sendMsg", JavaScriptSerializer.CreateInstance().Serialize(msg));
         }
