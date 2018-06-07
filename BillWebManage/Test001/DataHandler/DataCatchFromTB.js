@@ -21,6 +21,11 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
         if (!source) {
             source = [];
         }
+        if (data.url) {
+            for (var i in source) {
+                source[i].url = "";//清空之前的连接
+            }
+        }
         Array.insert(source, 0, data);
         grid.dataBind(source);
     },
@@ -69,11 +74,12 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
                     msg = '拒绝在其他地方登录';
                     break;
                 case "failed":
-                    msg = '服务器推送';
+                    msg = data.msg && data.msg.length != 0 ? data.msg:'服务器推送';
                     break;
                 case "doing":
                     msg = data.msg;
                     url = data.url;
+
                     break;
                 default:
                     msg = data.type + '  为非法命令';

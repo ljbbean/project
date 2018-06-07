@@ -13,7 +13,7 @@ function getCurrentDate() {
 app.use(bodyParser.json())
 app.post("/tb_qr", function (req, res) {
     let data = req.body
-    console.log(JSON.stringify(data))
+    //console.log(JSON.stringify(data))
     let cid = userMap[data.uid]
     if (cid) {
         let socket = io.to(cid)
@@ -119,7 +119,7 @@ io.on("connection", function (clientSocket) {
     })
 
     clientSocket.on("getTB_QR", function (data) {
-        cp.exec(`python ..\\Fetch\\autoFreshWeb.py ` + data.uid, (err, stdout, stderr) => {
+        cp.exec(`python ${__dirname}\\..\\Fetch\\autoFreshWeb.py ` + data.uid, { windowsHide: false }, (err, stdout, stderr) => {
             clientSocket.emit("exec", { type: 'failed', msg: '获取二维码错误' + stderr, date: getCurrentDate() })
         })
         clientSocket.emit("exec", { type: 'doing', msg: '正在获取二维码', date: getCurrentDate() })

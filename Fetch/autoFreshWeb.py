@@ -58,7 +58,7 @@ class TBBrower:
             self.sendMsgToNode('', src)
             self.sendedQR = True
             # 发送二维码地址
-            print u'二维码地址：', src
+            #print u'二维码地址：', src
         else:
             # 点击右上角的按钮，切换出二维码
             if self.isExitElementByClassName(self.browser, self.login_switch):
@@ -69,7 +69,7 @@ class TBBrower:
     def getStatus(self):
         if self.browser.current_url.lower().startswith(self.listUrl):
             # 已跳转到对应页面，准备抓取数据
-            print u'已跳转到对应页面，准备抓取数据'
+            #print u'已跳转到对应页面，准备抓取数据'
             self.sendMsgToNode('已跳转到对应页面，准备抓取数据', '')
             self.search(self.browser)
             return  # 跳出线程
@@ -77,7 +77,7 @@ class TBBrower:
             # 二维码已过期
             if self.isExitElementByClassName(self.browser, self.qrcode_login_error):
                 # 二维码已过期，请等待最新的二维码
-                print u'二维码已过期，请等待最新的二维码'
+                #print u'二维码已过期，请等待最新的二维码'
                 self.sendMsgToNode('二维码已过期，请等待最新的二维码', '')
                 self.browser.find_element_by_class_name(
                     self.J_QRCodeRefresh).click()
@@ -88,7 +88,7 @@ class TBBrower:
                 if not self.sendedWaiting:
                     # 发送通知，正处于已扫描待确认阶段
                     self.sendedWaiting = True
-                    print u'处于已扫描待确认阶段'
+                    #print u'处于已扫描待确认阶段'
                     self.sendMsgToNode('处于已扫描待确认阶段', '')
             else:
                 self.getQRSrc()
