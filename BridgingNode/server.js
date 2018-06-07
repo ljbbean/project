@@ -13,23 +13,12 @@ function getCurrentDate() {
 app.use(bodyParser.json())
 app.post("/tb_qr", function (req, res) {
     let data = req.body
+    console.log(JSON.stringify(data))
     let cid = userMap[data.uid]
     if (cid) {
         let socket = io.to(cid)
-        socket.emit("exec", { type: 'doing', msg: '二维码成功返回,可以用千牛或淘宝手机端扫描授权抓取了', date: getCurrentDate(),url: data.url })
-    }
-    res.end()
-})
-app.post("/tb_qr_status", function (req, res) {
-    //未扫描
-    //已扫描，未确认
-    //已确认，正在跳转
-    //已调转，准备下载数据
-    let data = req.body
-    let cid = userMap[data.uid]
-    if (cid) {
-        let socket = io.to(cid)
-        socket.emit("exec", { type: 'doing', msg: '未接受到授权，请用千牛或淘宝手机端授权', date: getCurrentDate(),url: data.url })
+        let msg = data.msg.length > 0 ? data.msg : '二维码成功返回,可以用千牛或淘宝手机端扫描授权抓取了'
+        socket.emit("exec", { type: 'doing', msg: msg, date: getCurrentDate(), url: data.url })
     }
     res.end()
 })
@@ -130,7 +119,7 @@ io.on("connection", function (clientSocket) {
     })
 
     clientSocket.on("getTB_QR", function (data) {
-        cp.exec(`python ..\\Fetch\\autoFreshWeb.py `+ data.uid, (err, stdout, stderr)=>{
+        cp.exec(`python ..\\Fetch\\autoFreshWeb.py ` + data.uid, (err, stdout, stderr) => {
             clientSocket.emit("exec", { type: 'failed', msg: '获取二维码错误' + stderr, date: getCurrentDate() })
         })
         clientSocket.emit("exec", { type: 'doing', msg: '正在获取二维码', date: getCurrentDate() })
