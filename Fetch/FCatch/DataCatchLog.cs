@@ -37,16 +37,26 @@ namespace FCatch
 
         public void SetTitle(string title)
         {
-            this.Text = title;
+            this.Text = title; 
+            SendMsgToNode("已接入抓取接口，准备发起抓取请求");
         }
 
         public void SendMessage(string text)
         {
-            textBox1.Text =string.Format("{0}\r\n{1}",text, textBox1.Text);
+            textBox1.Text = string.Format("{0}\r\n{1}", text, textBox1.Text);
+            SendMsgToNode(text);
+            if (text.EndsWith("(finish)"))
+            {
+                SendMsgToNode("数据抓取已完成，已转移到数据分析操作，请等待");
+                this.Close();
+            }
+        }
+
+        private void SendMsgToNode(string text)
+        {
             SendMsg msg = new SendMsg(this.user);
             msg.touid = this.user;
             msg.msg = text;
-
             socket.Emit("sendMsg", JavaScriptSerializer.CreateInstance().Serialize(msg));
         }
 

@@ -25,7 +25,7 @@ namespace TaoBaoRequest
 
         public CacthConfig()
         {
-            DateTime temp = DateTime.Now.AddDays(-40);
+            DateTime temp = DateTime.Now.AddDays(-1);
             StartDate = new DateTime(temp.Year, temp.Month, temp.Day);
         }
 
@@ -103,21 +103,29 @@ namespace TaoBaoRequest
         public string CurrentMessage { get; set; }
 
         /// <summary>
-        /// 10分钟自动下载一次
+        /// 10分钟自动下载一次/只做一次请求
         /// </summary>
         public static void DataCatch(object data)
         {
-            do
-            {
-                NotifyInvoke invoke = (NotifyInvoke)data;
+            //do
+            //{
+            //    NotifyInvoke invoke = (NotifyInvoke)data;
 
-                DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
-                foreach (CacthConfig value in catchDic.Values)
-                {
-                    NetDataCatch(dataCatch, value, invoke.NotifyMsg);
-                }
-                Thread.Sleep(60 * 1000 * 60 * 2);
-            } while (true);
+            //    DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
+            //    foreach (CacthConfig value in catchDic.Values)
+            //    {
+            //        NetDataCatch(dataCatch, value, invoke.NotifyMsg);
+            //    }
+            //    Thread.Sleep(60 * 1000 * 60 * 2);
+            //} while (true);
+
+            NotifyInvoke invoke = (NotifyInvoke)data;
+
+            DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
+            foreach (CacthConfig value in catchDic.Values)
+            {
+                NetDataCatch(dataCatch, value, invoke.NotifyMsg);
+            }
         }
          
         public static object NetDataCatch(DataCatchRequest dataCatch, CacthConfig config, NotifyMessage notifyMsg = null)
