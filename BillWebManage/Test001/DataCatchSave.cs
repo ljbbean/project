@@ -112,7 +112,7 @@ namespace Test001
             return dictionary;
         }
 
-        internal static string SaveData(CallBackMsg callBack)
+        internal static string SaveData(CallBackMsg callBack, bool onlyAdd = true)
         {
             DataTable table = TaoBaoRequest.TaobaoDataHelper.GetDetailData(AppUtils.ConnectionString, true);
             if(table.Rows.Count == 0)
@@ -140,14 +140,18 @@ namespace Test001
                     StringBuilder doedIds = new StringBuilder();//影响到的主数据
                     foreach (DataRow row in table.Rows)
                     {
-                        string user = row["所属用户"].ToString();
                         var ddid = row["订单ID"].ToString();
                         string id = Cuid.NewCuid().GetHashCode().ToString();
                         string oldid;
                         if (dic.TryGetValue(ddid, out oldid))
                         {
+                            if (onlyAdd)
+                            {
+                                continue;
+                            }
                             id = oldid;
                         }
+                        string user = row["所属用户"].ToString();
                         doedIds.AppendFormat("{0},", id);
                         object sendDate = row["发货时间"];
                         object successDate = row["成交时间"];
