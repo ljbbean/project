@@ -30,6 +30,55 @@ namespace Test001
             return JavaScriptSerializer.CreateInstance().Serialize(cmsg);
         }
         
+        /// <summary>
+        /// 获取单据抓取开始值
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [WebMethod]
+        public string GetBillBeginValue(string user)
+        {
+            using(DbHelper db = AppUtils.CreateDbHelper())
+            {
+                db.AddParameter("uid", GetId(db, user));
+                var list = db.Select("SELECT MAX(DATE) as ndate FROM bill WHERE billfrom IS NOT NULL AND uid = @uid ORDER BY DATE DESC");
+                if(list.Count == 0)
+                {
+                    return "";
+                }
+
+                DateTime dateTime = list[0].GetValue<DateTime>("ndate");
+                if(dateTime == new DateTime())
+                {
+                    return "";
+                }
+                dateTime = dateTime.AddDays(-2);//往后推2天
+                return MilliTimeStamp(dateTime).ToString();
+            }
+        }
+        public long MilliTimeStamp(DateTime TheDate)
+        {
+            DateTime d1 = new DateTime(1970, 1, 1);
+            DateTime d2 = TheDate.ToUniversalTime();
+            TimeSpan ts = new TimeSpan(d2.Ticks - d1.Ticks);
+            return (long)ts.TotalMilliseconds;
+        }
+
+        private ulong GetId(DbHelper db, string user)
+        {
+            user = user.ToLower();
+            if (user == "ljbbean")
+            {
+                db.AddParameter("name", "ljb");
+            } 
+            if(user== "annychenzy")
+            {
+                db.AddParameter("name", "cy");
+            }
+
+            return db.SelectSingleRow("select id from `user` where name =@name").GetValue<ulong>("id");
+        }
+
         [WebMethod]
         public void BillCatch(string user)
         {
@@ -42,43 +91,6 @@ namespace Test001
             {
                 IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
             })));
-
-            //string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
-            //var socket = IO.Socket("http://localhost:8080");
-            //socket.On(Socket.EVENT_CONNECT, () =>
-            //{
-            //    Data data = new Data(user);
-            //    data.comefrom = comefrom;
-
-            //    socket.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
-            //    socket.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData((text) =>
-            //    {
-            //        socket.Emit("sendMsg", GetMessage(user, comefrom, text));
-            //    })));
-            //    Data edata = new Data(user);
-            //    edata.comefrom = comefrom;
-            //    socket.Emit("exit", JavaScriptSerializer.CreateInstance().Serialize(edata));
-            //    socket.Disconnect();
-            //    socket = null;
-            //});
-            //socket.Emit("sendMsg", GetMessage(user, comefrom, "准备分析"));
-
-
-
-            //SendMsg cmsg = new SendMsg("sjfx");
-            //cmsg.comefrom = "数据分析";
-            //cmsg.msg = "成功接入数据分析接口";
-            //cmsg.touid = user;
-            //IOUtils.Emit("sendMsg", JavaScriptSerializer.CreateInstance().Serialize(cmsg));
-
-            //DataCatchSave.SaveData((text) =>
-            //{
-            //    SendMsg msg = new SendMsg(user);
-            //    msg.comefrom = "数据分析";
-            //    msg.touid = user;
-            //    msg.msg = text;
-            //    IOUtils.Emit("sendMsg", JavaScriptSerializer.CreateInstance().Serialize(msg));
-            //});
         }
 
         [WebMethod]
