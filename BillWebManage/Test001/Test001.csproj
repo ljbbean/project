@@ -426,6 +426,7 @@
     <Compile Include="DataHandler\DataCatchFromTB.cs">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </Compile>
+    <Compile Include="DataHandler\IOUtils.cs" />
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />
     <Compile Include="common\Utils.cs" />

@@ -4,6 +4,7 @@ using Carpa.Web.Common;
 using Carpa.Web.Script;
 using Carpa.Web.Script.UI;
 using System.Threading;
+using Test001.DataHandler;
 
 namespace Test001
 {
@@ -20,6 +21,7 @@ namespace Test001
             Page.RegisterLoginPage("Login.gspx", "user");
             //Thread thread = new Thread(CacthConfig.DataCatch);
             //thread.Start();
+            IOUtils.Init();
         }
 
         protected void Application_Error(object sender, EventArgs e)

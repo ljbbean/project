@@ -112,13 +112,12 @@ namespace Test001
             return dictionary;
         }
 
-        internal static void SaveData(CallBackMsg callBack)
+        internal static string SaveData(CallBackMsg callBack)
         {
             DataTable table = TaoBaoRequest.TaobaoDataHelper.GetDetailData(AppUtils.ConnectionString, true);
             if(table.Rows.Count == 0)
             {
-                callBack("没有需要分析的数据");
-                return ;
+                return "OK:没有需要分析的数据";
             }
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
 
@@ -226,7 +225,7 @@ namespace Test001
                         db.BatchExecute(string.Format("update bill set ltotal = 0, total=0, btotal=0 where status=9 and id in ({0})", doedIds.ToString().Substring(0, doedIds.Length - 1)));
                         db.CommitTransaction();
                     }
-                    callBack(string.Format("OK:数据保存成功，分析处理了{0}条数据", count));
+                    return string.Format("OK:数据保存成功，分析处理了{0}条数据", count);
                 }
                 catch (Exception e1)
                 {
@@ -234,9 +233,8 @@ namespace Test001
                     {
                         db.RollbackTransaction();
                     }
-                    callBack(string.Format("Exception:{0}", e1.Message));
+                    return string.Format("Exception:{0}", e1.Message);
                 }
-                return;
             }
         }
 
