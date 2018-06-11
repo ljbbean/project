@@ -7,6 +7,7 @@ using Carpa.Logging;
 using System.Net;
 using System.IO;
 using System.Text;
+using Carpa.Web.Script;
 
 namespace TaoBaoRequest
 {
@@ -127,18 +128,6 @@ namespace TaoBaoRequest
         /// </summary>
         public static void DataCatch(object data)
         {
-            //do
-            //{
-            //    NotifyInvoke invoke = (NotifyInvoke)data;
-
-            //    DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
-            //    foreach (CacthConfig value in catchDic.Values)
-            //    {
-            //        NetDataCatch(dataCatch, value, invoke.NotifyMsg);
-            //    }
-            //    Thread.Sleep(60 * 1000 * 60 * 2);
-            //} while (true);
-
             NotifyInvoke invoke = (NotifyInvoke)data;
 
             DataCatchRequest dataCatch = new DataCatchRequest(invoke.ConnnectionString);
@@ -147,7 +136,57 @@ namespace TaoBaoRequest
                 NetDataCatch(dataCatch, value, invoke.NotifyMsg);
             }
         }
-         
+
+        public static void AnsyDataCatch(CacthConfig config, NotifyMessage notifyMsg)
+        {
+            Thread thread = new Thread(AnsyNetDataCatch);
+            AnsyNetData adata = new AnsyNetData();
+            adata.NotifyMsg = notifyMsg;
+            adata.Config = config;
+            adata.DataCatch = new DataCatchRequest();
+            thread.Start(adata);
+        }
+
+        private class AnsyNetData
+        {
+            public DataCatchRequest DataCatch{get;set;}
+            public CacthConfig Config { get; set; }
+            public NotifyMessage NotifyMsg { get; set; }
+        }
+
+        private static void AnsyNetDataCatch(object data)
+        {
+            AnsyNetData adata = (AnsyNetData)data;
+            DataCatchRequest dataCatch = adata.DataCatch;
+            CacthConfig config = adata.Config;
+            NotifyMessage notifyMsg = adata.NotifyMsg;
+            SendDetailState detailState = new SendDetailState((msg) =>
+            {
+                ShowMessage(msg);
+
+                notifyMsg(config.user, msg);
+            });
+            if (config.IsCacthing != null && config.IsCacthing.Value)
+            {
+                detailState("之前的抓取正在进行");
+                return;
+            }
+
+            config.IsCacthing = true;
+
+            try
+            {
+                List<HashObject> listData = dataCatch.GetDataList(config.StartDate, config.Cookies);
+                detailState(string.Format("成功下载{0}条主订单信息",listData.Count));
+                dataCatch.GetDetailsData(config.Cookies, listData, detailState);
+                //保存数据
+            }
+            catch (Exception t)
+            {
+                detailState(string.Format("错误消息:{0}", t.Message));
+            }
+        }
+
         public static object NetDataCatch(DataCatchRequest dataCatch, CacthConfig config, NotifyMessage notifyMsg = null)
         {
             notifyMsg = notifyMsg == null ? (tuser, msg) => { return msg; } : notifyMsg;
@@ -239,44 +278,6 @@ namespace TaoBaoRequest
                 CacthConfig config = CacthConfig.CatchDic[user];
                 config.IsCacthing = false;
                 config.Cookies = CacthConfig.CatchDic[user].NewCookies;
-                //try
-                //{
-                //    config.CurrentMessage = null;
-                //    //发起网络调用,通知服务器端处理请求
-                //    //string url = "http://120.25.122.148/newtest/Test001/Test001.Login.ajax/BillCatch";
-                //    string url = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
-                //    HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-                //    request.ProtocolVersion = HttpVersion.Version10;
-                //    request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
-                //    request.Accept = "*/*";
-                //    request.ContentType = "application/json; charset=UTF-8";
-                //    request.Headers.Add(HttpRequestHeader.AcceptEncoding, "gzip, deflate, br");
-                //    request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
-                //    request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
-                //    request.Method = "POST";
-                //    string data = "{\"user\":\"" + user + "\"}";
-                //    request.ContentLength = data.Length;
-                //    using (StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.GetEncoding("gbk")))
-                //    {
-                //        writer.Write(data);
-                //        writer.Flush();
-                //    }
-                //    WebResponse response = request.GetResponse();
-                //    using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
-                //    {
-                //        config.CurrentMessage = reader.ReadToEnd();
-                //    }
-                //    config.ErrorMessage = null;
-                //}
-                //catch (Exception e)
-                //{
-                //    config.ErrorMessage = e.Message;
-                //}
-                //finally
-                //{
-                //    config.IsCacthing = false;
-                //    config.Cookies = CacthConfig.CatchDic[user].NewCookies;
-                //}
             }
         }
     }

@@ -23,79 +23,13 @@ namespace FCatch
         bool isRuning = false;
         FiddlerCatch fdCatch = new FiddlerCatch();
         
-        string oldFilter = "";
-
         public DataCatch()
         {
             InitializeComponent();
-            this.textBoxUrl.LostFocus += new EventHandler(textBoxUrl_LostFocus);
-            
-        }
-
-        void textBoxUrl_LostFocus(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty(textBoxUrl.Text))
-            {
-                return;
-            }
-            if (string.IsNullOrEmpty(AppUtils.Pwd))
-            {
-                if (MessageBox.Show("确认设置密码？", "消息提醒", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-                {
-                    return;
-                }
-                Thread thread = new Thread(CacthConfig.DataCatch);
-                AppUtils.Pwd = textBoxUrl.Text;
-                textBoxUrl.Text = oldFilter;
-
-                var _this = this;
-                NotifyInvoke notify = new NotifyInvoke()
-                {
-                    ConnnectionString = AppUtils.ConnectionString,
-                    NotifyMsg = (user, msg) =>
-                    {
-                        if (_this.IsHandleCreated)
-                        {
-                            lock (data)
-                            {
-                                listMsg.Add(string.Format("{0} {1} {2}\r\n\r\n", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), msg));
-
-                                foreach (string m in listMsg)
-                                {
-                                    _this.Invoke(new AsynUpdateUI((sn) =>
-                                    {
-                                        var log = logWindows[CacthConfig.CatchDic[user]];
-                                        log.SetTitle(user);
-                                        log.SendMessage(m);
-                                    }), m);
-                                }
-
-                                listMsg.Clear();
-                            }
-                        }
-                        else
-                        {
-                            listMsg.Add(msg);
-                        }
-                        return msg;
-                    }
-                };
-                thread.Start(notify);
-
-            }
         }
 
         private void buttonCatch_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(AppUtils.Pwd))
-            {
-                MessageBox.Show("请在输入框中先输入密码");
-
-                oldFilter = textBoxUrl.Text;
-                textBoxUrl.Text = "";
-                textBoxUrl.Focus();
-                return;
-            }
             if (isRuning)
             {
                 fdCatch.Quit();
@@ -143,10 +77,9 @@ namespace FCatch
             {
                 HTTPRequestHeaders header = (HTTPRequestHeaders)obj;
                 string cookie = header["Cookie"];
-                DataCatch dataCatch = new DataCatch();
                 string user = DataCatchRequest.GetUser(cookie);
 
-                CacthConfig config = new CacthConfig();
+                CacthConfig config;
                 if (!CacthConfig.CatchDic.TryGetValue(user, out config))
                 {
                     config = new CacthConfig() { Cookies = cookie };
@@ -154,21 +87,8 @@ namespace FCatch
                 }
                 config.NewCookies = cookie;
 
-                DataCatchLog log;
-                if (!logWindows.TryGetValue(config, out log))
-                {
-                    log = new DataCatchLog(user);
-                    logWindows.Add(config, log);
-                }
-                if (log.IsDisposed)
-                {
-                    logWindows.Remove(config);
-                    log = new DataCatchLog(user);
-                    logWindows.Add(config, log);
-                }
-                log.Show();
-                DataCatchRequest request = new DataCatchRequest(AppUtils.ConnectionString);
-                CacthConfig.NetDataCatch(request, config, (tuser, msg) =>
+                DataCatchLog log = GetCatchLog(user, config);
+                CacthConfig.AnsyDataCatch(config, (tuser, msg) =>
                 {
                     this.Invoke(new AsynUpdateUI((sn) =>
                     {
@@ -185,6 +105,24 @@ namespace FCatch
                     this.textBox1.Text = sn.ToString();
                 }), e.Message);
             }
+        }
+
+        private DataCatchLog GetCatchLog(string user, CacthConfig config)
+        {
+            DataCatchLog log;
+            if (!logWindows.TryGetValue(config, out log))
+            {
+                log = new DataCatchLog(user);
+                logWindows.Add(config, log);
+            }
+            if (log.IsDisposed)
+            {
+                logWindows.Remove(config);
+                log = new DataCatchLog(user);
+                logWindows.Add(config, log);
+            }
+            log.Show();
+            return log;
         }
 
         private void button1_Click(object sender, EventArgs e)

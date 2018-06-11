@@ -78,7 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppUtils.cs" />
     <Compile Include="DataCatch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +120,6 @@
     <EmbeddedResource Include="TranResult.resx">
       <DependentUpon>TranResult.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

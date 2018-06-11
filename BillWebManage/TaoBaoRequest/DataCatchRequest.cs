@@ -19,6 +19,10 @@ namespace TaoBaoRequest
         {
             this.connectString = connectString;
         }
+        public DataCatchRequest()
+        {
+        }
+
         private void ChangeData()
         {
             using (DbHelper db = new DbHelper(connectString))
@@ -47,6 +51,81 @@ namespace TaoBaoRequest
                 db.BatchExecute(string.Format("{0} on duplicate key update `status`=values(`status`);", temp));
             }
         }
+
+        public void GetDetailsData(string cookies, List<HashObject> billDataList, SendDetailState detailSetate = null)
+        {
+            if (string.IsNullOrEmpty(cookies))
+            {
+                throw new Exception("请输入cookies");
+            }
+            string user = GetUser(cookies);
+            Dictionary<ulong, string> dictionary = new Dictionary<ulong, string>();
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            for (int i = 0; i < billDataList.Count; i++)
+            {
+                IHashObject item = billDataList[i];
+                string status = item.GetValue<string>("status");
+                if ("等待买家付款".Equals(status))
+                {
+                    continue;
+                }
+                HashObject tempHash = serializer.Deserialize<HashObject>(item["content"].ToString());
+                if (tempHash == null)
+                {
+                    continue;
+                }
+                ArrayList array = (ArrayList)((HashObject)tempHash["statusInfo"])["operations"];
+
+                foreach (HashObject aitem in array)
+                {
+                    if (!"详情".Equals(aitem.GetValue<string>("text")))
+                    {
+                        continue;
+                    }
+                    string url = string.Format("https:{0}", aitem.GetValue<string>("url"));
+                    string tbid = item.GetValue<string>("tbid");
+
+                    HashObject detail = GetBillDetail(tbid, url, cookies, i + 1, billDataList.Count, detailSetate);
+                    //if (detail == null)//下载出错，直接移除
+                    //{
+                    //    billDataList.RemoveAt(i);
+                    //    i--;
+                    //}
+                    item.Add("detail", detail);
+                    break;
+                }
+            }
+        }
+
+        private HashObject GetBillDetail(string tbid, string url, string cookies, int downedCount, int allCount, SendDetailState detailSetate = null)
+        {
+            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+
+            string user = GetUser(cookies);
+            HashObject detail = new HashObject();
+            try
+            {
+                detail.Add("tbid", tbid);
+                detail.Add("content", bill.GetBillDetailByUrl(url, cookies));
+                detail.Add("user", user);
+
+                if (detailSetate != null)
+                {
+                    detailSetate(allCount == downedCount ? string.Format("【{1}】:{0}条明细下载完毕(finish)", allCount, user) :
+                        string.Format("【{3}】:总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", allCount, downedCount, allCount - downedCount, user));
+                }
+            }
+            catch (Exception e)
+            {
+                if (detailSetate != null)
+                {
+                    detailSetate(string.Format("【{1}】订单号【{2}】下载明细时出错：{0}", e.Message, user, tbid));
+                }
+                return null;
+            }
+            return detail;
+        }
+
 
         struct Details
         {
@@ -185,6 +264,54 @@ namespace TaoBaoRequest
             }
 
             throw new Exception("cookies数据不正确");
+        }
+
+        [WebMethod]
+        public List<HashObject> GetDataList(DateTime date, string cookie)
+        {
+            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+            List<string> list = bill.GetBillList<string>(date, cookie);
+
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            string user = GetUser(cookie);
+
+            StringBuilder sbuilder = new StringBuilder();
+            DateTime cdate = DateTime.Now;
+            List<HashObject> rtList = new List<HashObject>();
+            foreach (string str in list)
+            {
+                List<HashObject> tempList = GetBillList(serializer, str, date, user);
+                rtList.AddRange(tempList.ToArray());
+            }
+
+            return rtList;
+        }
+
+        private List<HashObject> GetBillList(JavaScriptSerializer serializer, string str, DateTime date, string user)
+        {
+            string[] keys = { "mainOrders" };
+            HashObject hash = (HashObject)serializer.DeserializeObject(str);
+            HashObject vhash = hash.GetHashValue(keys)[0];
+
+            List<object> list = new List<object>();
+            list.AddRange(vhash["mainOrders"] as object[]);
+
+            List<HashObject> rtlist = new List<HashObject>();
+            foreach (HashObject row in list)
+            {
+                var id = row["id"].ToString();
+                string content = serializer.Serialize(row);
+                string status = ((HashObject)row["statusInfo"])["text"].ToString();
+                HashObject rtData = new HashObject();
+                rtData.Add("bid", id);
+                rtData.Add("content", serializer.Serialize(row));
+                rtData.Add("cdate", date);
+                rtData.Add("status", status);
+                rtData.Add("user", user);
+                rtlist.Add(rtData);
+            }
+
+            return rtlist;
         }
 
         [WebMethod]
