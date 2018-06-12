@@ -18,7 +18,6 @@ namespace Test001
             DateTime time = DateTime.Now;
             Context["startDate"] = new DateTime(time.Year, time.Month, 1);
             Context["backSection"] = user.Power == 99;
-            Context["downStatus"] = JavaScriptSerializer.CreateInstance().Serialize(CacthConfig.CatchDic);
             using (DbHelper db = AppUtils.CreateDbHelper())
             {
                 IHashObject data = db.SelectFirstRow("select sum(total) as total, sum(paytotal) as paytotal, max(month) as month from backsection");

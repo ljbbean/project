@@ -4,7 +4,6 @@
     <HPanel>
       <TextEdit Label="订单号" DataField="code" Width="200"/>
       <TextEdit Label="快递单号" DataField="scode" Width="200"/>
-      <TextEdit Label="当前下载情况" Text="${downStatus}" Visible="false"/>
       <HPanel Label="日期">
         <DateEdit DataField="startDate" Value="${startDate}"/>
         <Label Text="-"/>

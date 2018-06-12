@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TaoBaoRequest;
 using System.IO;
 using Carpa.Web.Ajax;
+using Common;
 
 namespace FCatch
 {

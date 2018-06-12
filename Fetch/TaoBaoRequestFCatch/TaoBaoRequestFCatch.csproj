@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{323E521E-1558-459B-8854-F0979B44C8F9}</ProjectGuid>
+    <ProjectGuid>{16C90C90-4F59-4941-A2F9-97BFFE2BBA30}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TaoBaoRequest</RootNamespace>
-    <AssemblyName>TaoBaoRequest</AssemblyName>
+    <RootNamespace>TaoBaoRequestFCatch</RootNamespace>
+    <AssemblyName>TaoBaoRequestFCatch</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Carpa">
-      <HintPath>..\Test001\bin\Carpa.dll</HintPath>
+      <HintPath>..\FCatch\bin\Debug\Carpa.dll</HintPath>
     </Reference>
     <Reference Include="Carpa.Web">
-      <HintPath>..\Test001\bin\Carpa.Web.dll</HintPath>
+      <HintPath>..\FCatch\bin\Debug\Carpa.Web.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,13 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GoodsInfo.cs" />
+    <Compile Include="AnsyNet.cs" />
+    <Compile Include="CacthConfig.cs" />
+    <Compile Include="DataCatchRequest.cs" />
+    <Compile Include="NotifyInvoke.cs" />
+    <Compile Include="NotifyMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaobaoDataHelper.cs" />
+    <Compile Include="ActionMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\Common.csproj">
-      <Project>{1dd20c10-3fa7-41a8-84f0-a4f03e6df2c2}</Project>
+      <Project>{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}</Project>
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>

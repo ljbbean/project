@@ -8,7 +8,7 @@ using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections.Generic;
 using Quobject.SocketIoClientDotNet.Client;
-using TaoBaoRequest;
+using Common;
 using Test001.DataHandler;
 using System.Threading;
 
@@ -80,8 +80,13 @@ namespace Test001
         }
 
         [WebMethod]
-        public void BillCatch(string user)
+        public void BillCatch(string user, ulong key, object dataList)
         {
+            if (!IOUtils.IsPostDataRequest(key))
+            {
+                throw new Exception("抓取数据未被验证，非法请求");
+            }
+
             string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
             Data data = new Data(user);
             data.comefrom = comefrom;

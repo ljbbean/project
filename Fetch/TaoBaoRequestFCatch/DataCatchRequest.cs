@@ -1,16 +1,16 @@
 ﻿using System;
 using Carpa.Web.Script;
 using Carpa.Web.Ajax;
-using TaoBaoRequest;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
 using System.Threading;
 using System.Collections;
+using Common;
 
-namespace TaoBaoRequest
+namespace TaoBaoRequestFCatch
 {
-    public delegate void SendDetailState(string message);
+    
 
     public class DataCatchRequest
     {
@@ -21,35 +21,6 @@ namespace TaoBaoRequest
         }
         public DataCatchRequest()
         {
-        }
-
-        private void ChangeData()
-        {
-            using (DbHelper db = new DbHelper(connectString))
-            {
-                IHashObjectList list = db.Select("select * from tbill");
-                JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-                Dictionary<ulong, string> dictionary = new Dictionary<ulong, string>();
-                foreach(HashObject item in list)
-                {
-                    HashObject tempHash = serializer.Deserialize<HashObject>(item["content"].ToString());
-                    if (tempHash == null)
-                    {
-                        continue;
-                    }
-                    dictionary.Add(item.GetValue<ulong>("tbid"), ((HashObject)tempHash["statusInfo"])["text"].ToString());
-                }
-
-                StringBuilder sbuilder = new StringBuilder("insert into tbill (tbid, `status`) values");
-                foreach(ulong key in dictionary.Keys)
-                {
-                    sbuilder.AppendFormat("({0}, '{1}'), ", key, dictionary[key]);
-                }
-                string temp = sbuilder.ToString();
-                temp = temp.Substring(0, temp.Length - 2);
-
-                db.BatchExecute(string.Format("{0} on duplicate key update `status`=values(`status`);", temp));
-            }
         }
 
         public void GetDetailsData(string cookies, List<HashObject> billDataList, SendDetailState detailSetate = null)
@@ -99,7 +70,8 @@ namespace TaoBaoRequest
 
         private HashObject GetBillDetail(string tbid, string url, string cookies, int downedCount, int allCount, SendDetailState detailSetate = null)
         {
-            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+            Thread.Sleep(1000);//休眠1s
+            BillManage bill = new BillManage();
 
             string user = GetUser(cookies);
             HashObject detail = new HashObject();
@@ -111,8 +83,7 @@ namespace TaoBaoRequest
 
                 if (detailSetate != null)
                 {
-                    detailSetate(allCount == downedCount ? string.Format("【{1}】:{0}条明细下载完毕(finish)", allCount, user) :
-                        string.Format("【{3}】:总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", allCount, downedCount, allCount - downedCount, user));
+                    detailSetate(string.Format("【{3}】:总共有{0}条明细，已下载{1}条明细，还剩{2}条明细未下", allCount, downedCount, allCount - downedCount, user));
                 }
             }
             catch (Exception e)
@@ -194,7 +165,7 @@ namespace TaoBaoRequest
         
         private void GetBillDetail(object param)
         {
-            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+            BillManage bill = new BillManage();
             Details details = (Details)param;
             Dictionary<ulong, string> dictionary = details.Dictionary;
 
@@ -269,7 +240,7 @@ namespace TaoBaoRequest
         [WebMethod]
         public List<HashObject> GetDataList(DateTime date, string cookie)
         {
-            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+            BillManage bill = new BillManage();
             List<string> list = bill.GetBillList<string>(date, cookie);
 
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
@@ -317,7 +288,7 @@ namespace TaoBaoRequest
         [WebMethod]
         public object GetData(DateTime date, string cookie)
         {
-            TaoBaoRequest.BillManage bill = new TaoBaoRequest.BillManage();
+            BillManage bill = new BillManage();
             List<string> list = bill.GetBillList<string>(date, cookie);
 
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();

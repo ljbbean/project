@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Carpa.Web.Script;
 
-namespace TaoBaoRequest
+namespace Common
 {
     public static class HashObjectExt
     {
@@ -163,5 +163,4 @@ namespace TaoBaoRequest
             return root;
         }
     }
-
 }

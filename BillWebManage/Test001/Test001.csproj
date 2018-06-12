@@ -481,6 +481,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{1dd20c10-3fa7-41a8-84f0-a4f03e6df2c2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TaoBaoRequest\TaoBaoRequest.csproj">
       <Project>{323E521E-1558-459B-8854-F0979B44C8F9}</Project>
       <Name>TaoBaoRequest</Name>

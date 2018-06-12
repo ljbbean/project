@@ -132,9 +132,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BillWebManage\TaoBaoRequest\TaoBaoRequest.csproj">
-      <Project>{323E521E-1558-459B-8854-F0979B44C8F9}</Project>
-      <Name>TaoBaoRequest</Name>
+    <ProjectReference Include="..\..\Common\Common.csproj">
+      <Project>{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TaoBaoRequestFCatch\TaoBaoRequestFCatch.csproj">
+      <Project>{16C90C90-4F59-4941-A2F9-97BFFE2BBA30}</Project>
+      <Name>TaoBaoRequestFCatch</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

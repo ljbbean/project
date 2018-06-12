@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using Fiddler;
-using TaoBaoRequest;
+using TaoBaoRequestFCatch;
 using System.Net;
 using System.IO;
 using Carpa.Web.Ajax;
@@ -88,13 +88,15 @@ namespace FCatch
                 config.NewCookies = cookie;
 
                 DataCatchLog log = GetCatchLog(user, config);
-                CacthConfig.AnsyDataCatch(config, (tuser, msg) =>
+                AnsyNet.AnsyDataCatch(config, (tuser, msg) =>
                 {
-                    this.Invoke(new AsynUpdateUI((sn) =>
+                    UpdateUI(log, msg.Message);
+                    switch (msg.Action)
                     {
-                        log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), sn));
-                    }), msg);
-
+                        case ActionType.SendRequestData:
+                            log.EmitPostDataRequestMsg(msg.Data);
+                            break;
+                    }
                     return msg;
                 });
             }
@@ -105,6 +107,15 @@ namespace FCatch
                     this.textBox1.Text = sn.ToString();
                 }), e.Message);
             }
+        }
+
+        private void UpdateUI(DataCatchLog log, object msg)
+        {
+            //异步更新UI
+            this.Invoke(new AsynUpdateUI((newMsg) =>
+            {
+                log.SendMessage(string.Format("{0} {1} {2}", DateTime.Now.ToLongDateString(), DateTime.Now.ToLongTimeString(), newMsg));
+            }), msg);
         }
 
         private DataCatchLog GetCatchLog(string user, CacthConfig config)

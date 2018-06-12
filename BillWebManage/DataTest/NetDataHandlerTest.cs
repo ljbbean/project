@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TaoBaoRequest;
 using System.IO;
 using System.Text;
+using Common;
+
 
 namespace DataTest
 {
@@ -16,7 +18,7 @@ namespace DataTest
             using (StreamReader reader = new StreamReader("ListData.txt", Encoding.GetEncoding("gbk")))
             {
                 string str = reader.ReadToEnd();
-                data = NetDataHandler.ListDataTransformation(str);
+                data = Common.NetDataHandler.ListDataTransformation(str);
             }
             Assert.IsNotNull(data);
         }

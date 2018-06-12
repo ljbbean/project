@@ -4,8 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Common;
 
-namespace TaoBaoRequest
+namespace Common
 {
     /// <summary>
     /// 网络数据处理器

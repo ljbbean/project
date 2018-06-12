@@ -7,6 +7,7 @@ using Carpa.Web.Script;
 using System.Text;
 using TaoBaoRequest;
 using Carpa.Web.Ajax;
+using Common;
 
 namespace Test001
 {

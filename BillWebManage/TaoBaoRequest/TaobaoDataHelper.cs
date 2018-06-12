@@ -7,6 +7,7 @@ using Carpa.Web.Ajax;
 using Carpa.Web.Script;
 using System.Collections;
 using TaoBaoRequest;
+using Common;
 
 namespace TaoBaoRequest
 {
@@ -155,7 +156,7 @@ namespace TaoBaoRequest
             return table;
         }
         
-        private static object GetKeyObject(List<TaoBaoRequest.HashObjectExt.KeyValue> list, string key)
+        private static object GetKeyObject(List<HashObjectExt.KeyValue> list, string key)
         {
             for (int i = 0; i < list.Count; i++)
             {
