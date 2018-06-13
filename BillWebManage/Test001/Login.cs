@@ -65,7 +65,7 @@ namespace Test001
             return (long)ts.TotalMilliseconds;
         }
 
-        private ulong GetId(DbHelper db, string user)
+        private long GetId(DbHelper db, string user)
         {
             user = user.ToLower();
             if (user == "ljbbean")
@@ -77,7 +77,9 @@ namespace Test001
                 db.AddParameter("name", "cy");
             }
 
-            return db.SelectSingleRow("select id from `user` where name =@name").GetValue<ulong>("id");
+            IHashObjectList list = db.Select("select id from `user` where name =@name");
+
+            return list.Count == 0 ? -1 : list[0].GetValue<long>("id");
         }
 
         /// <summary>
@@ -117,7 +119,25 @@ namespace Test001
 
         private void SaveDataToTBill(IList data)
         {
+            string insertTbill = "insert into tbill(tbid, bid, content, cdate, status, user) values";
+            string insertTbillDetail = "insert into tbilldetail(tbdid, tbid, content,user) values";
+            using (DbHelper db = AppUtils.CreateDbHelper())
+            {
+                db.Select(string.Format("select * from tbill where bid in {0}", GetAllIdString(data)));
+            }
+        }
 
+        /// <summary>
+        /// 获取所有ID构成的sql查询集
+        /// </summary>
+        private string GetAllIdString(IList data)
+        {
+            StringBuilder sbuilder = new StringBuilder("(");
+            foreach(HashObject hash in data)
+            {
+                sbuilder.AppendFormat("{0},");
+            }
+            return sbuilder.ToString().Substring(0, sbuilder.Length - 1) + ")";
         }
 
         private static IList GetAllList(ulong key, IList dataList)

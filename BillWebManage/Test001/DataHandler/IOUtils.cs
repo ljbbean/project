@@ -11,15 +11,29 @@ using Carpa.Web.Script;
 
 namespace Test001.DataHandler
 {
+    /// <summary>
+    /// 计数器
+    /// </summary>
+    internal struct Counter
+    {
+        /// <summary>
+        /// 总的数量
+        /// </summary>
+        public ulong All { get; set; }
+        /// <summary>
+        /// 已处理数量
+        /// </summary>
+        public ulong Doned { get; set; }
+    }
     public class IOUtils
     {
-        private static Dictionary<ulong, ulong> PostDataRequestList { get; }
+        private static Dictionary<ulong, Counter> PostDataRequestList { get; }
         private static object obj = new object();
 
         static Socket socket;
         static IOUtils()
         {
-            PostDataRequestList = new Dictionary<ulong, ulong>();
+            PostDataRequestList = new Dictionary<ulong, Counter>();
             if (ConfigurationManager.ConnectionStrings["socketio"] != null)
             {
                 socket = IO.Socket(ConfigurationManager.ConnectionStrings["socketio"].ToString());
@@ -38,20 +52,23 @@ namespace Test001.DataHandler
         /// </remarks>
         public static bool IsPostDataRequest(ulong key, ulong currentCount)
         {
-            ulong count = 0;
-            if (PostDataRequestList.TryGetValue(key, out count))
+            Counter counter;
+            if (PostDataRequestList.TryGetValue(key, out counter))
             {
                 lock (obj)
                 {
-                    if (count == currentCount)
+                    ulong all = counter.All;
+                    ulong newDoned = currentCount + counter.Doned;
+                    if (all == newDoned)
                     {
                         PostDataRequestList.Remove(key);
-                    } else  if (count < currentCount)
+                    } else  if (all < newDoned)
                     {
                         throw new Exception("请求令牌数不对，非法请求");
                     } else
                     {
-                        PostDataRequestList[key] = count - currentCount;
+                        counter.Doned = newDoned;
+                        PostDataRequestList[key] = counter;
                     }
                 }
                 return true;
@@ -81,7 +98,10 @@ namespace Test001.DataHandler
                 nmsg.comefrom = "net";
                 nmsg.touid = hash.GetValue<string>("fuid");
                 ulong key = Cuid.NewCuid();
-                PostDataRequestList.Add(key, hash.GetValue<ulong>("msg"));
+                Counter counter = new Counter();
+                counter.All = hash.GetValue<ulong>("msg");
+                counter.Doned = 0;
+                PostDataRequestList.Add(key, counter);
                 nmsg.msg = key.ToString();//回传一个唯一标记
                 socket.Emit("postDataSure", serializer.Serialize(nmsg));
             });
