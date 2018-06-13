@@ -13,12 +13,13 @@ namespace Test001.DataHandler
 {
     public class IOUtils
     {
-        private static List<ulong> PostDataRequestList { get; }
+        private static Dictionary<ulong, ulong> PostDataRequestList { get; }
+        private static object obj = new object();
 
         static Socket socket;
         static IOUtils()
         {
-            PostDataRequestList = new List<ulong>();
+            PostDataRequestList = new Dictionary<ulong, ulong>();
             if (ConfigurationManager.ConnectionStrings["socketio"] != null)
             {
                 socket = IO.Socket(ConfigurationManager.ConnectionStrings["socketio"].ToString());
@@ -35,14 +36,32 @@ namespace Test001.DataHandler
         /// <remarks>
         /// 只做一次请求
         /// </remarks>
-        public static bool IsPostDataRequest(ulong key)
+        public static bool IsPostDataRequest(ulong key, ulong currentCount)
         {
-            if (PostDataRequestList.Contains(key))
+            ulong count = 0;
+            if (PostDataRequestList.TryGetValue(key, out count))
             {
-                PostDataRequestList.Remove(key);
+                lock (obj)
+                {
+                    if (count == currentCount)
+                    {
+                        PostDataRequestList.Remove(key);
+                    } else  if (count < currentCount)
+                    {
+                        throw new Exception("请求令牌数不对，非法请求");
+                    } else
+                    {
+                        PostDataRequestList[key] = count - currentCount;
+                    }
+                }
                 return true;
             }
             return false;
+        }
+
+        public static bool HasKey(ulong key)
+        {
+            return PostDataRequestList.ContainsKey(key);
         }
 
         public static void Init()
@@ -62,7 +81,7 @@ namespace Test001.DataHandler
                 nmsg.comefrom = "net";
                 nmsg.touid = hash.GetValue<string>("fuid");
                 ulong key = Cuid.NewCuid();
-                PostDataRequestList.Add(key);
+                PostDataRequestList.Add(key, hash.GetValue<ulong>("msg"));
                 nmsg.msg = key.ToString();//回传一个唯一标记
                 socket.Emit("postDataSure", serializer.Serialize(nmsg));
             });

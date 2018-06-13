@@ -12,6 +12,7 @@ using TaoBaoRequestFCatch;
 using System.Net;
 using System.IO;
 using Carpa.Web.Ajax;
+using System.Collections;
 
 namespace FCatch
 {
@@ -94,7 +95,7 @@ namespace FCatch
                     switch (msg.Action)
                     {
                         case ActionType.SendRequestData:
-                            log.EmitPostDataRequestMsg(msg.Data);
+                            log.EmitPostDataRequestMsg((IList)msg.Data);
                             break;
                     }
                     return msg;

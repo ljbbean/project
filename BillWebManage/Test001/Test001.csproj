@@ -47,14 +47,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Carpa, Version=1.0.6688.18690, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Carpa.dll</HintPath>
-    </Reference>
-    <Reference Include="Carpa.Web, Version=1.0.6688.18731, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Carpa.Web.dll</HintPath>
-    </Reference>
     <Reference Include="Carpa.Web.Extensions, Version=1.0.6053.26526, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Carpa.Web.Extensions.dll</HintPath>
@@ -488,6 +480,14 @@
     <ProjectReference Include="..\TaoBaoRequest\TaoBaoRequest.csproj">
       <Project>{323E521E-1558-459B-8854-F0979B44C8F9}</Project>
       <Name>TaoBaoRequest</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\work\Test\carpanet\src\Carpa.Web\Carpa.Web.csproj">
+      <Project>{b8a7f847-f1f2-48d3-8112-396b3e3658d9}</Project>
+      <Name>Carpa.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\work\Test\carpanet\src\Carpa\Carpa.csproj">
+      <Project>{f14bdc11-8681-4729-a19c-5e11dce4d86c}</Project>
+      <Name>Carpa</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

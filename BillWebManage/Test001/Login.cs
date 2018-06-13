@@ -11,6 +11,7 @@ using Quobject.SocketIoClientDotNet.Client;
 using Common;
 using Test001.DataHandler;
 using System.Threading;
+using System.Collections;
 
 namespace Test001
 {
@@ -79,23 +80,60 @@ namespace Test001
             return db.SelectSingleRow("select id from `user` where name =@name").GetValue<ulong>("id");
         }
 
+        /// <summary>
+        /// 保存未一次性传入的数据
+        /// </summary>
+        private static Dictionary<ulong, IList> backDataList = new Dictionary<ulong, IList>();
         [WebMethod]
-        public void BillCatch(string user, ulong key, object dataList)
+        public void BillCatch(string user, ulong key, IList dataList)
         {
-            if (!IOUtils.IsPostDataRequest(key))
+            if (!IOUtils.IsPostDataRequest(key, (ulong)dataList.Count))
             {
                 throw new Exception("抓取数据未被验证，非法请求");
             }
+            IList list = GetAllList(key, dataList);
+            if (IOUtils.HasKey(key))
+            {
+                dataList.Clear();
+                return;//还有未传完的数据
+            }
 
+            backDataList.Remove(key);//清除备份，做一次性数据处理
             string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
             Data data = new Data(user);
             data.comefrom = comefrom;
 
             IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
+
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
+            SaveDataToTBill(list);
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
+
             IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData((text) =>
             {
                 IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
             })));
+        }
+
+        private void SaveDataToTBill(IList data)
+        {
+
+        }
+
+        private static IList GetAllList(ulong key, IList dataList)
+        {
+            IList list;
+            if (!backDataList.TryGetValue(key, out list))
+            {
+                list = new List<object>();
+                backDataList.Add(key, list);
+            }
+
+            foreach (var item in dataList)
+            {
+                list.Add(item);
+            }
+            return list;
         }
 
         [WebMethod]

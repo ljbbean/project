@@ -12,6 +12,7 @@ using Common;
 using System.Net;
 using System.IO;
 using Carpa.Web.Script;
+using System.Collections;
 
 namespace FCatch
 {
@@ -24,7 +25,7 @@ namespace FCatch
         private string socketUrl = "http://localhost:8080";
         private string analysisUrl = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
         private ulong postDataCuid = 0;
-        private object listData = null;
+        private IList listData = null;
 
         public DataCatchLog(string user)
         {
@@ -106,13 +107,22 @@ namespace FCatch
             if (postDataCuid != 0)
             {
                 SendMsgToNode("数据抓取已完成，已发起服务器分析请求");
-                SendToAnalysis();
+                int length = 100;//一次性请求发送100个订单
+                for (int i = 0; i < listData.Count; i = i + length)
+                {
+                    List<object> newData = new List<object>();
+                    for (int j = 0; j < length && i + j < listData.Count; j++)
+                    {
+                        newData.Add(listData[i + j]);
+                    }
+                    SendToAnalysis(newData);
+                }
                 SocketClose();
-                //this.Close();
+                this.Close();
             }
         }
 
-        private void SendToAnalysis()
+        private void SendToAnalysis(object billData)
         {
             string url = analysisUrl;
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -124,24 +134,28 @@ namespace FCatch
             request.Headers.Add(HttpRequestHeader.AcceptLanguage, "zh-CN,zh;q=0.8");
             request.UserAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36";
             request.Method = "POST";
+            request.Headers.Add("X-JSONFormat", "true");
             HashObject hash = new HashObject();
             hash.Add("user", toUser);
             hash.Add("key", postDataCuid);
-            hash.Add("dataList", listData);
+            hash.Add("dataList", billData);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            string data = serializer.Serialize(hash);
-            request.ContentLength = data.Length;
-            using (StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.GetEncoding("gbk")))
+
+            string data = serializer.Serialize(hash, JavaScriptSerializer.SerializationFormat.JSON);
+            byte[] bs = Encoding.UTF8.GetBytes(data);
+            request.ContentLength = bs.Length;
+
+            using (Stream reqStream = request.GetRequestStream())
             {
-                int length = 10000;
-                int index = 0;
-                int dataLength = data.Length;
-                while (dataLength > index)
-                {
-                    writer.Write(data.ToCharArray(index, length));
-                    index += length;
-                    writer.Flush();
-                }
+                reqStream.Write(bs, 0, bs.Length);
+                reqStream.Flush();
+            }
+
+            WebResponse response = request.GetResponse();
+            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
+            {
+                string rdata = reader.ReadToEnd();
+                MessageBox.Show(rdata);
             }
         }
 
@@ -160,7 +174,7 @@ namespace FCatch
         /// <summary>
         /// 发送确认消息
         /// </summary>
-        internal bool EmitPostDataRequestMsg(object data)
+        internal bool EmitPostDataRequestMsg(IList data)
         {
             if (socket == null)
             {
@@ -170,15 +184,22 @@ namespace FCatch
             listData = data;
             SendMsg msg = new SendMsg(this.user);
             msg.touid = "net_server";
-            msg.msg = msg.GetHashCode().ToString();
+            msg.msg = ((IList)data).Count.ToString();
             socket.Emit("postDataRequest", JavaScriptSerializer.CreateInstance().Serialize(msg));
             return true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listData = new HashObject();
-            SendToAnalysis();
+            try
+            {
+                listData = new List<object>();
+                SendToAnalysis(listData);
+            }
+            catch (Exception t)
+            {
+                MessageBox.Show(t.Message);
+            }
             //EmitPostDataRequestMsg("dd");
             //SendMessage("结算抓取  (finish)");
         }
