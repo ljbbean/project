@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Threading;
-using Carpa.Logging;
 using System.Net;
 using System.IO;
 using System.Text;

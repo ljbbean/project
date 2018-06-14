@@ -72,7 +72,6 @@ namespace FCatch
             }
             int urlIndex = oS.fullUrl.ToLower().IndexOf(url.ToString());
             int pIndex = oS.fullUrl.ToLower().IndexOf("?");
-
             if (urlIndex < 0 || pIndex >= 0 && urlIndex > pIndex || oS.fullUrl.Equals("http://trade.taobao.com:443") || oS.fullUrl.Equals("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=Utf8&"))
             {
                 return;

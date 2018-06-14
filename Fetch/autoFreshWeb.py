@@ -20,10 +20,12 @@ class TBBrower:
     sendedWaiting = False  # 已经发生等待确认信息
     buttonName = "button-mod__primary___1tmFA"  # 搜索按钮
     url = "http://localhost:8080/tb_qr"
+    js = ""
 
     def __init__(self):
         self.browser = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
         self.browser.get(self.listUrl)
+        self.js = sys.argv[1]
 
     def sendMsgToNode(self, msg, url):
         data = {
@@ -43,6 +45,8 @@ class TBBrower:
 
     # 执行浏览器查询操作
     def search(self, browser):
+        self.browser.execute_script(self.js)
+        sleep(2)
         button = self.browser.find_element_by_class_name(self.buttonName)
         button.click()
         sleep(10)

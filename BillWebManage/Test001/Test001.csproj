@@ -120,6 +120,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="DataHandler\DataCatchFromTB.gspx" />
+    <EmbeddedResource Include="DataHandler\DataCatchFromTBExample.gspx" />
     <None Include="docs\carpa-vsdoc.js" />
     <None Include="docs\Readme.txt" />
     <EmbeddedResource Include="Login.gspx">
@@ -146,6 +147,9 @@
     <EmbeddedResource Include="FundsManager\BackSectionManager.gspx" />
     <EmbeddedResource Include="DataHandler\DataCatchFromTB.js">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\Copy of DataCatchFromTB.js">
+      <DependentUpon>DataCatchFromTBExample.gspx</DependentUpon>
     </EmbeddedResource>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -423,6 +427,9 @@
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
     <Compile Include="DataCatchSave.cs" />
+    <Compile Include="DataHandler\Copy of DataCatchFromTB.cs">
+      <DependentUpon>DataCatchFromTBExample.gspx</DependentUpon>
+    </Compile>
     <Compile Include="DataHandler\DataCatchFromTB.cs">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </Compile>
@@ -536,7 +543,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
-    </VisualStudio>-->
+    </VisualStudio>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
@@ -545,6 +552,23 @@
           <DevelopmentServerPort>18281</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:9613/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>-->
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2833</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

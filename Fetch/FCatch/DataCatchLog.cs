@@ -39,6 +39,11 @@ namespace FCatch
             InitSocket(user);
         }
 
+        internal void SetToUser(string touid)
+        {
+            toUser = touid;
+        }
+
         private void InitSocket(string user)
         {
             socket = IO.Socket(socketUrl);

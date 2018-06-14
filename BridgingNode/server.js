@@ -126,7 +126,7 @@ io.on("connection", function (clientSocket) {
         cp.exec(`python ${__dirname}\\..\\Fetch\\autoFreshWeb.py ` + data.uid, { windowsHide: false }, (err, stdout, stderr) => {
             clientSocket.emit("exec", { type: 'failed', msg: '获取二维码错误' + stderr, date: getCurrentDate() })
         })
-        clientSocket.emit("exec", { type: 'doing', msg: '正在获取二维码', date: getCurrentDate() })
+        clientSocket.emit("exec", { type: 'doing', msg: '正在获取授权二维码，请等待', date: getCurrentDate() })
     })
 
     clientSocket.on("sendMsg", function (data) {

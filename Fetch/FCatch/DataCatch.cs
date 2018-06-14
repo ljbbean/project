@@ -58,7 +58,8 @@ namespace FCatch
                     {
                         if (session.fullUrl.Equals("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=utf8"))
                         {
-                            GetBill(session.RequestHeaders);
+                            string touid = GetTOUIDFromWindowTitle(session);
+                            GetBill(touid, session.RequestHeaders);
                         }
                         else
                         {
@@ -72,23 +73,36 @@ namespace FCatch
             }
         }
 
-        private void GetBill(object obj)
+        private string GetTOUIDFromWindowTitle(Session session)
+        {
+            string browerTitle = System.Diagnostics.Process.GetProcessById(session.LocalProcessID).MainWindowTitle;
+            int index = browerTitle.IndexOf('-');
+            if (index >= 0)
+            {
+                browerTitle = browerTitle.Substring(0, index).Trim();
+            }
+
+            return browerTitle;
+        }
+
+        private void GetBill(string touid, object obj)
         {
             try
             {
                 HTTPRequestHeaders header = (HTTPRequestHeaders)obj;
                 string cookie = header["Cookie"];
                 string user = DataCatchRequest.GetUser(cookie);
-
+                string key = string.Format("{0}&{1}", user, touid);
                 CacthConfig config;
-                if (!CacthConfig.CatchDic.TryGetValue(user, out config))
+                if (!CacthConfig.CatchDic.TryGetValue(key, out config))
                 {
                     config = new CacthConfig() { Cookies = cookie };
-                    CacthConfig.CatchDic.Add(user, config);
+                    CacthConfig.CatchDic.Add(key, config);
                 }
                 config.NewCookies = cookie;
 
                 DataCatchLog log = GetCatchLog(user, config);
+                log.SetToUser(touid);
                 AnsyNet.AnsyDataCatch(config, (tuser, msg) =>
                 {
                     UpdateUI(log, msg.Message);
