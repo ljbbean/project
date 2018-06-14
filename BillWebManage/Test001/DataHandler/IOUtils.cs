@@ -27,7 +27,7 @@ namespace Test001.DataHandler
     }
     public class IOUtils
     {
-        private static Dictionary<ulong, Counter> PostDataRequestList { get; }
+        private static Dictionary<ulong, Counter> PostDataRequestList { get; set; }
         private static object obj = new object();
 
         static Socket socket;

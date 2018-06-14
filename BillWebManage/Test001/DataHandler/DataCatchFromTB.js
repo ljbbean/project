@@ -26,6 +26,10 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
                 source[i].url = "";//清空之前的连接
             }
         }
+        var fuid = data.fuid;
+        if (fuid.indexOf('_') >= 0) {
+            data.fuid = fuid.substring(0, fuid.indexOf('_'));
+        }
         Array.insert(source, 0, data);
         grid.dataBind(source);
     },

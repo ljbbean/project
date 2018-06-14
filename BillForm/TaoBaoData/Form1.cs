@@ -11,6 +11,7 @@ using Test001;
 using TaoBaoRequest;
 using Carpa.Web.Ajax;
 using System.Collections;
+using Common;
 
 namespace TaoBaoData
 {
@@ -30,7 +31,7 @@ namespace TaoBaoData
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(DataCatchSave.SaveData().ToString());
+            //MessageBox.Show(DataCatchSave.SaveData().ToString());
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -42,12 +43,12 @@ namespace TaoBaoData
             }
             try
             {
-                DataCatchRequest dataCatch = new DataCatchRequest(Utils.Connect);
-                DateTime time = dateTimePicker1.Value;
-                DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
-                string list = string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
-                SendDetailState detailState = new SendDetailState(ShowMessage);
-                dataCatch.GetDetailsData(textBox1.Text, detailState);
+                //DataCatchRequest dataCatch = new DataCatchRequest(Utils.Connect);
+                //DateTime time = dateTimePicker1.Value;
+                //DateTime newTime = new DateTime(time.Year, time.Month, time.Day, 0, 0, 0);
+                //string list = string.Format("列表插入数据：{0}", dataCatch.GetData(newTime, textBox1.Text));
+                //SendDetailState detailState = new SendDetailState(ShowMessage);
+                //dataCatch.GetDetailsData(textBox1.Text, detailState);
             }
             catch (Exception t)
             {

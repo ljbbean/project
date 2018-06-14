@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TaoBaoRequest;
+using Common;
 using System.Net;
 using System.IO;
 using Carpa.Web.Ajax;

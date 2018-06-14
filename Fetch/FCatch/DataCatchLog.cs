@@ -98,10 +98,16 @@ namespace FCatch
             {
                 return;
             }
-            this.Invoke(new AsynUpdateUI((sn) =>
+            if (!this.IsDisposed)
             {
-                textBox1.Text = string.Format("{0}\r\n{1}", sn, textBox1.Text);
-            }), text);
+                this.Invoke(new AsynUpdateUI((sn) =>
+                {
+                    if (!this.IsDisposed)
+                    {
+                        textBox1.Text = string.Format("{0}\r\n{1}", sn, textBox1.Text);
+                    }
+                }), text);
+            }
             
             SendMsgToNode(text);
             if (postDataCuid != 0)
@@ -118,7 +124,9 @@ namespace FCatch
                     SendToAnalysis(newData);
                 }
                 SocketClose();
-                this.Close();
+                this.Invoke(new AsynUpdateUI((sn) =>{
+                    this.Close();
+                }), "");
             }
         }
 
@@ -149,13 +157,6 @@ namespace FCatch
             {
                 reqStream.Write(bs, 0, bs.Length);
                 reqStream.Flush();
-            }
-
-            WebResponse response = request.GetResponse();
-            using (StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("gbk")))
-            {
-                string rdata = reader.ReadToEnd();
-                MessageBox.Show(rdata);
             }
         }
 

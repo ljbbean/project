@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Carpa.Web.Ajax;
 using Carpa.Web.Script;
-using TaoBaoRequest;
+using Common;
 using System.Collections;
 using System.IO;
 
