@@ -42,31 +42,27 @@ namespace TaoBaoRequest
             return table;
         }
 
-        public static DataTable GetDetailData(string connectString, bool hasUpdate = false)
+        public static DataTable GetDetailData(string user, string connectString, bool hasUpdate = false)
         {
-            string[] dusers = users;
-
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             DataTable table = MessageTable();
-
-            foreach (string duser in dusers)
+            IHashObjectList list = new HashObjectList();
+            
+            using (DbHelper db = new DbHelper(connectString, true))
             {
-                IHashObjectList list = new HashObjectList();
-                using (DbHelper db = new DbHelper(connectString, true))
+                db.AddParameter("user", user);
+                if (hasUpdate)
                 {
-                    db.AddParameter("user", duser);
-                    if (hasUpdate)
-                    {
-                        //获取有更新的数据
-                        list = db.Select("SELECT tbd.content, (SELECT tb.status FROM tbill tb WHERE tb.tbid = tbd.tbid) AS tstatus FROM tbilldetail tbd JOIN tbill tbl ON tbl.tbid = tbd.tbid WHERE tbl.hasupdate=1 and tbd.`user`=@user");
-                    }
-                    else
-                    {
-                        //获取所有数据
-                        list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
-                    }
+                    //获取有更新的数据
+                    list = db.Select("SELECT tbd.content, (SELECT tb.status FROM tbill tb WHERE tb.tbid = tbd.tbid) AS tstatus FROM tbilldetail tbd JOIN tbill tbl ON tbl.tbid = tbd.tbid WHERE tbl.hasupdate=1 and tbd.`user`=@user");
                 }
-                string[] keys = {
+                else
+                {
+                    //获取所有数据
+                    list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
+                }
+            }
+            string[] keys = {
                                     "mainOrder/payInfo/actualFee/value",
                                     "mainOrder/buyer/nick",
                                     "mainOrder/id",
@@ -76,82 +72,81 @@ namespace TaoBaoRequest
                                     "operationsGuide"//卖家备注
                             };
 
-                foreach (HashObject hash in list)
+            foreach (HashObject hash in list)
+            {
+                var hashObject = new HashObject();
+                string content = hash.GetValue<string>("content");
+                try
                 {
-                    var hashObject = new HashObject();
-                    string content = hash.GetValue<string>("content");
-                    try
-                    {
-                        hashObject = serializer.Deserialize<HashObject>(content);
-                    }
-                    catch (Exception t)
-                    {
-                        continue;
-                    }
-
-                    DataRow row = table.NewRow();
-                    HashObject addressAndLogistics = GeAddressAndLogisticsInfo(hashObject);
-                    foreach (string key in addressAndLogistics.Keys)
-                    {
-                        row[key] = addressAndLogistics[key];
-                    }
-                    var newHash = hashObject.GetHashValue(keys);
-                    row["订单ID"] = newHash.GetDataEx<string>("id");
-                    row["旺旺名称"] = newHash.GetDataEx<string>("nick");
-                    row["买家留言"] = newHash.GetDataEx<string>("buyMessage");
-
-                    row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
-                    ArrayList linesList = newHash.GetDataEx<ArrayList>("lines");
-                    IHashObjectList orderInfoList = GetOrderInfoList(serializer, linesList);
-                    if (orderInfoList.Count > 1 || orderInfoList.Count == 0)
-                    {
-                        throw new Exception("订单信息存在多个时间，请重新核实");
-                    }
-                    IHashObject tempOrderInfoList = orderInfoList[0];
-                    row["支付宝交易号"] = tempOrderInfoList.GetValue<string>("支付宝交易号:", "");
-                    row["创建时间"] = tempOrderInfoList.GetValue<string>("创建时间:", null);
-                    row["付款时间"] = tempOrderInfoList.GetValue<string>("付款时间:", null);
-                    var sendDate = tempOrderInfoList.GetValue<string>("发货时间:", null);
-                    row["发货时间"] = sendDate;
-                    if (sendDate != null)
-                    {
-                        row["发货状态"] = "已发货";
-                        row["发货状态status"] = "1";
-                    }
-
-                    var successDate = tempOrderInfoList.GetValue<string>("成交时间:", null);
-                    if (successDate != null)
-                    {
-                        row["发货状态"] = "已收货";
-                        row["发货状态status"] = "2";
-                    }
-                    row["成交时间"] = successDate;
-
-                    //后期单据退款(各种原因的退款)
-                    if ("交易关闭".Equals(hash.GetValue<string>("tstatus")))
-                    {
-                        row["支付金额"] = 0;
-                        row["发货状态"] = "已关闭";
-                        row["发货状态status"] = "9";
-                    }
-                    else
-                    {
-                        row["支付金额"] = newHash.GetDataEx<string>("value");//支付总金额
-                        newHash.GetDataEx<string>("value");//支付总金额
-                    }
-
-                    ArrayList subOrders = newHash.GetDataEx<ArrayList>("subOrders");
-                    List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
-                    decimal all = 0;
-                    foreach (GoodsInfo info in gList)
-                    {
-                        all += info.PriceInfo;
-                    }
-                    row["拍下总金额"] = all;
-                    row["货物信息"] = serializer.Serialize(gList);
-                    row["所属用户"] = duser;
-                    table.Rows.Add(row);
+                    hashObject = serializer.Deserialize<HashObject>(content);
                 }
+                catch (Exception t)
+                {
+                    continue;
+                }
+
+                DataRow row = table.NewRow();
+                HashObject addressAndLogistics = GeAddressAndLogisticsInfo(hashObject);
+                foreach (string key in addressAndLogistics.Keys)
+                {
+                    row[key] = addressAndLogistics[key];
+                }
+                var newHash = hashObject.GetHashValue(keys);
+                row["订单ID"] = newHash.GetDataEx<string>("id");
+                row["旺旺名称"] = newHash.GetDataEx<string>("nick");
+                row["买家留言"] = newHash.GetDataEx<string>("buyMessage");
+
+                row["卖家留言"] = GetSaleMessage(GetKeyObject(newHash, "operationsGuide"));
+                ArrayList linesList = newHash.GetDataEx<ArrayList>("lines");
+                IHashObjectList orderInfoList = GetOrderInfoList(serializer, linesList);
+                if (orderInfoList.Count > 1 || orderInfoList.Count == 0)
+                {
+                    throw new Exception("订单信息存在多个时间，请重新核实");
+                }
+                IHashObject tempOrderInfoList = orderInfoList[0];
+                row["支付宝交易号"] = tempOrderInfoList.GetValue<string>("支付宝交易号:", "");
+                row["创建时间"] = tempOrderInfoList.GetValue<string>("创建时间:", null);
+                row["付款时间"] = tempOrderInfoList.GetValue<string>("付款时间:", null);
+                var sendDate = tempOrderInfoList.GetValue<string>("发货时间:", null);
+                row["发货时间"] = sendDate;
+                if (sendDate != null)
+                {
+                    row["发货状态"] = "已发货";
+                    row["发货状态status"] = "1";
+                }
+
+                var successDate = tempOrderInfoList.GetValue<string>("成交时间:", null);
+                if (successDate != null)
+                {
+                    row["发货状态"] = "已收货";
+                    row["发货状态status"] = "2";
+                }
+                row["成交时间"] = successDate;
+
+                //后期单据退款(各种原因的退款)
+                if ("交易关闭".Equals(hash.GetValue<string>("tstatus")))
+                {
+                    row["支付金额"] = 0;
+                    row["发货状态"] = "已关闭";
+                    row["发货状态status"] = "9";
+                }
+                else
+                {
+                    row["支付金额"] = newHash.GetDataEx<string>("value");//支付总金额
+                    newHash.GetDataEx<string>("value");//支付总金额
+                }
+
+                ArrayList subOrders = newHash.GetDataEx<ArrayList>("subOrders");
+                List<GoodsInfo> gList = GetSubOrderSkuList(subOrders);
+                decimal all = 0;
+                foreach (GoodsInfo info in gList)
+                {
+                    all += info.PriceInfo;
+                }
+                row["拍下总金额"] = all;
+                row["货物信息"] = serializer.Serialize(gList);
+                row["所属用户"] = user;
+                table.Rows.Add(row);
             }
             return table;
         }
@@ -342,6 +337,88 @@ namespace TaoBaoRequest
                 orderInfoList.Add(orderInfo);
             }
             return orderInfoList;
+        }
+
+        private static string SpliteContentUrl(string content)
+        {
+            if (content == null)
+            {
+                return "";
+            }
+            string flag = "\"/trade/memo/update_sell_memo.htm?";
+            int index = content.IndexOf(flag);
+            if (index < 0)
+            {
+                return content;
+            }
+            string tempString = content.Substring(flag.Length + index);
+            return content.Substring(0, index + 1) + tempString.Substring(tempString.IndexOf("\""));
+        }
+        /// <summary>
+        /// 获取所有ID构成的sql查询集
+        /// </summary>
+        private static string GetAllIdString(IList data)
+        {
+            StringBuilder sbuilder = new StringBuilder("(");
+            foreach (HashObject hash in data)
+            {
+                sbuilder.AppendFormat("'{0}',", hash.GetValue<string>("bid"));
+            }
+            return sbuilder.ToString().Substring(0, sbuilder.Length - 1) + ")";
+        }
+
+        public static void SaveDataToTBill(string user, string connection, IList data)
+        {
+            DateTime date = DateTime.Now;
+            using (DbHelper db = new DbHelper(connection))
+            {
+                IHashObjectList bidList = db.Select(string.Format("select * from tbill where bid in {0}", GetAllIdString(data)));
+                //根据单号获取对应的字典信息
+                Dictionary<string, HashObject> bidDictionary = new Dictionary<string, HashObject>();
+                foreach (HashObject item in bidList)
+                {
+                    bidDictionary.Add(item.GetValue<string>("bid"), item);
+                }
+
+                //筛选数据，对于已插入的数据做数据对比，当数据没有变化时，不做数据修改,反之则修改数据。没有的数据直接插入
+                StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate, hasUpdate) values");
+                string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail, hasUpdate = @hasUpdate where tbid=@tbid";
+                bool hasInsert = false;
+                foreach (HashObject row in data)
+                {
+                    var id = row.GetValue<string>("bid");
+                    string content = row.GetValue<string>("content");
+                    string status = row.GetValue<string>("status");
+                    HashObject item;
+                    ulong tbid = Cuid.NewCuid();
+                    if (bidDictionary.TryGetValue(id, out item))
+                    {
+                        tbid = item.GetValue<ulong>("tbid");
+                        if (SpliteContentUrl(item.GetValue<string>("content")).Equals(SpliteContentUrl(content)) && item.GetValue<string>("status").Equals(status))
+                        {
+                            //数据相同直接返回
+                            continue;
+                        }
+                        db.AddParameter("content", content);
+                        db.AddParameter("udate", date);//更新时间
+                        db.AddParameter("status", status);
+                        db.AddParameter("tbid", tbid);
+                        //存在不同的，标记全部更新明细
+                        db.AddParameter("downeddetail", 0);
+                        db.AddParameter("hasUpdate", 1);
+                        db.ExecuteIntSQL(updateSql);//更新已下载数据
+                        continue;
+                    }
+                    hasInsert = true;
+                    insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}', 1),", tbid, id, content, date, status, user, date);
+                }
+                if (!hasInsert)
+                {
+                    return;
+                }
+                string insertData = insertbuilder.ToString();
+                db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
+            }
         }
 
     }

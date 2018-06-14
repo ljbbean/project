@@ -112,6 +112,10 @@ namespace Test001.DataHandler
 
         public static void Emit(string command, string msg)
         {
+            if (socket == null)
+            {
+                Init();
+            }
             socket.Emit(command, msg);
         }
 

@@ -53,6 +53,7 @@ namespace TaoBaoRequestFCatch
 
             try
             {
+                detailState(string.Format("开始下载【{0}】到当前时间产生的订单", config.StartDate));
                 List<HashObject> listData = dataCatch.GetDataList(config.StartDate, config.Cookies);
                 detailState(string.Format("成功下载{0}条主订单信息", listData.Count));
                 dataCatch.GetDetailsData(config.Cookies, listData, detailState);

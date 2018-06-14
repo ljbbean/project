@@ -13,6 +13,7 @@ using System.Net;
 using System.IO;
 using Carpa.Web.Script;
 using System.Collections;
+using System.Threading;
 
 namespace FCatch
 {
@@ -21,6 +22,7 @@ namespace FCatch
         private Socket socket;
         private string user;
         private string toUser;
+        private string sUser;
         private bool socketConnected = false;
         private string socketUrl = "http://localhost:8080";
         private string analysisUrl = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatch";
@@ -29,10 +31,16 @@ namespace FCatch
 
         public DataCatchLog(string user)
         {
+            sUser = user;
             InitializeComponent();
             toUser = user;
             user = string.Format("{0}_{1}", user, this.GetHashCode());
             this.user = user;
+            InitSocket(user);
+        }
+
+        private void InitSocket(string user)
+        {
             socket = IO.Socket(socketUrl);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             socket.On(Socket.EVENT_CONNECT, () =>
@@ -43,6 +51,7 @@ namespace FCatch
                 }
                 socketConnected = true;
                 Data data = new Data(user);
+                data.needAsk = false;
                 socket.Emit("login", serializer.Serialize(data));
                 SendMsgToNode("已接入抓取接口，准备发起抓取请求");
             });
@@ -91,7 +100,8 @@ namespace FCatch
         {
             if (!socketConnected)
             {
-                MessageBox.Show("未启动socket");
+                InitSocket(sUser);
+                SendMsgToNode(text);
                 return;
             }
             if (string.IsNullOrEmpty(text))
@@ -112,8 +122,15 @@ namespace FCatch
             SendMsgToNode(text);
             if (postDataCuid != 0)
             {
-                SendMsgToNode("数据抓取已完成，已发起服务器分析请求");
                 int length = 100;//一次性请求发送100个订单
+                if (listData.Count == 0)
+                {
+                    SendMsgToNode("没有抓取到订单");
+                }
+                else
+                {
+                    SendMsgToNode("数据抓取已完成，已发起服务器分析请求");
+                }
                 for (int i = 0; i < listData.Count; i = i + length)
                 {
                     List<object> newData = new List<object>();
@@ -123,6 +140,7 @@ namespace FCatch
                     }
                     SendToAnalysis(newData);
                 }
+                Thread.Sleep(1000);
                 SocketClose();
                 this.Invoke(new AsynUpdateUI((sn) =>{
                     this.Close();

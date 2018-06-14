@@ -12,6 +12,7 @@ using Common;
 using Test001.DataHandler;
 using System.Threading;
 using System.Collections;
+using TaoBaoRequest;
 
 namespace Test001
 {
@@ -45,7 +46,7 @@ namespace Test001
                 var list = db.Select("SELECT MAX(DATE) as ndate FROM bill WHERE billfrom IS NOT NULL AND uid = @uid ORDER BY DATE DESC");
                 if(list.Count == 0)
                 {
-                    return "";
+                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
                 }
 
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
@@ -108,94 +109,13 @@ namespace Test001
             IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
 
             IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
-            SaveDataToTBill(user, list);
+            TaobaoDataHelper.SaveDataToTBill(user, AppUtils.ConnectionString, list);
             IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
 
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData((text) =>
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData(user, (text) =>
             {
                 IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
             })));
-        }
-
-        private void SaveDataToTBill(string user, IList data)
-        {
-            DateTime date = DateTime.Now;
-            using (DbHelper db = AppUtils.CreateDbHelper())
-            {
-                IHashObjectList bidList = db.Select(string.Format("select * from tbill where bid in {0}", GetAllIdString(data)));
-                //根据单号获取对应的字典信息
-                Dictionary<string, HashObject> bidDictionary = new Dictionary<string, HashObject>();
-                foreach (HashObject item in bidList)
-                {
-                    bidDictionary.Add(item.GetValue<string>("bid"), item);
-                }
-
-                //筛选数据，对于已插入的数据做数据对比，当数据没有变化时，不做数据修改,反之则修改数据。没有的数据直接插入
-                StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate, hasUpdate) values");
-                string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail, hasUpdate = @hasUpdate where tbid=@tbid";
-                bool hasInsert = false;
-                foreach (HashObject row in data)
-                {
-                    var id = row.GetValue<string>("bid");
-                    string content = row.GetValue<string>("content");
-                    string status = row.GetValue<string>("status");
-                    HashObject item;
-                    ulong tbid = Cuid.NewCuid();
-                    if (bidDictionary.TryGetValue(id, out item))
-                    {
-                        tbid = item.GetValue<ulong>("tbid");
-                        if (SpliteContentUrl(item.GetValue<string>("content")).Equals(SpliteContentUrl(content)) && item.GetValue<string>("status").Equals(status))
-                        {
-                            //数据相同直接返回
-                            continue;
-                        }
-                        db.AddParameter("content", content);
-                        db.AddParameter("udate", date);//更新时间
-                        db.AddParameter("status", status);
-                        db.AddParameter("tbid", tbid);
-                        //存在不同的，标记全部更新明细
-                        db.AddParameter("downeddetail", 0);
-                        db.AddParameter("hasUpdate", 1);
-                        db.ExecuteIntSQL(updateSql);//更新已下载数据
-                        continue;
-                    }
-                    hasInsert = true;
-                    insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}', 1),", tbid, id, content, date, status, user, date);
-                }
-                if (!hasInsert)
-                {
-                    return;
-                }
-                string insertData = insertbuilder.ToString();
-                db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
-            }
-        }
-        private static string SpliteContentUrl(string content)
-        {
-            if (content == null)
-            {
-                return "";
-            }
-            string flag = "\"/trade/memo/update_sell_memo.htm?";
-            int index = content.IndexOf(flag);
-            if (index < 0)
-            {
-                return content;
-            }
-            string tempString = content.Substring(flag.Length + index);
-            return content.Substring(0, index + 1) + tempString.Substring(tempString.IndexOf("\""));
-        }
-        /// <summary>
-        /// 获取所有ID构成的sql查询集
-        /// </summary>
-        private string GetAllIdString(IList data)
-        {
-            StringBuilder sbuilder = new StringBuilder("(");
-            foreach(HashObject hash in data)
-            {
-                sbuilder.AppendFormat("'{0}',", hash.GetValue<string>("bid"));
-            }
-            return sbuilder.ToString().Substring(0, sbuilder.Length - 1) + ")";
         }
 
         private static IList GetAllList(ulong key, IList dataList)
@@ -212,12 +132,6 @@ namespace Test001
                 list.Add(item);
             }
             return list;
-        }
-
-        [WebMethod]
-        public void SendUrl(string key, string url)
-        {
-
         }
 
         [WebMethod]

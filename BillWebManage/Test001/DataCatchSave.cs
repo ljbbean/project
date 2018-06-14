@@ -113,9 +113,9 @@ namespace Test001
             return dictionary;
         }
 
-        internal static string SaveData(CallBackMsg callBack, bool onlyAdd = true)
+        internal static string SaveData(string suser, CallBackMsg callBack, bool onlyAdd = true)
         {
-            DataTable table = TaoBaoRequest.TaobaoDataHelper.GetDetailData(AppUtils.ConnectionString, true);
+            DataTable table = TaobaoDataHelper.GetDetailData(suser, AppUtils.ConnectionString, true);
             if(table.Rows.Count == 0)
             {
                 return "OK:没有需要分析的数据";
@@ -153,6 +153,10 @@ namespace Test001
                             id = oldid;
                         }
                         string user = row["所属用户"].ToString();
+                        if(user != suser)
+                        {
+                            throw new Exception("分析用户和数据保存用户不匹配，无法做数据保存");
+                        }
                         doedIds.AppendFormat("{0},", id);
                         object sendDate = row["发货时间"];
                         object successDate = row["成交时间"];

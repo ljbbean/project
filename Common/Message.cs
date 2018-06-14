@@ -9,6 +9,7 @@ namespace Common
     {
         private string _uid;
         public Data(string uid)
+            :this()
         {
             _uid = uid;
             comefrom = "数据抓取";
@@ -16,8 +17,10 @@ namespace Common
 
         internal Data()
         {
-
+            needAsk = true;
         }
+
+        public bool needAsk { get; set; }
 
         public string uid
         {

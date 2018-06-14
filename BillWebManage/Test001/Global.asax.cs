@@ -27,11 +27,13 @@ namespace Test001
         protected void Application_Error(object sender, EventArgs e)
         {
             Carpa.Web.Common.WebUtils.LogApplicationError();
+            IOUtils.DisConnect();
         }
 
         protected void Application_End(object sender, EventArgs e)
         {
             Carpa.Web.Common.WebUtils.LogApplicationEnd();
+            IOUtils.DisConnect();
         }
     }
 }

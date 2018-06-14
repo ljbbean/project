@@ -35,7 +35,8 @@ var users = {
                 ok:fn,
                 no:fn
             }
-        }
+        },
+        needAsk:true/false
     }
      */
 };
@@ -76,7 +77,8 @@ io.on("connection", function (clientSocket) {
             io.to(ncid).emit("exec", { type: 'reLogin', date: getCurrentDate() })
             return;
         }
-        if (cid && isOnline(cid)) {//已经登录，并且之前的连接还存在，询问是否退出之前的登录信息
+        
+        if (cid && isOnline(cid) && users[cid].needAsk !== false) {//已经登录，并且之前的连接还存在，询问是否退出之前的登录信息
             let id = Date.now()
             let oldUser = users[cid]
             oldUser[id] = {}
@@ -93,7 +95,9 @@ io.on("connection", function (clientSocket) {
             }
             io.to(cid).emit("ask", { id: id, msg: "有其他客户端接入登录，是否退出当前登录？" })
         } else {
-            users[ncid] = {}
+            users[ncid] = {
+                needAsk : data.needAsk
+            }
             userMap[uid] = ncid
             io.to(ncid).emit("exec", { type: 'loginSuccess', date: getCurrentDate() })
         }
