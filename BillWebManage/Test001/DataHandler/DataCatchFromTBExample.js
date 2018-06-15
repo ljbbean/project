@@ -35,6 +35,35 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
         grid.dataBind(source);
     },
 
+    _getTempData: function (form, id, callBack) {
+        form.get_service().GetTempData(id, function (tData) {
+
+            var bill = tData.bill;
+            for (var i = 0; i < bill.length; i++) {
+                var item = bill[i];
+                if (item.senddate == "null") {
+                    item.senddate = "";
+                }
+                if (item.successdate == "null") {
+                    item.successdate = "";
+                }
+                if (item.date == "null") {
+                    item.date = "";
+                }
+                bill[i] = item;
+            }
+            tData.bill = bill;
+            callBack(tData);
+            var billForm = new Sys.UI.Form(form);
+            billForm.data = tData;
+            billForm.add_loaded(function () {
+                billForm.grid.dataBind(tData.bill);
+            })
+            billForm.showModal("BillList.gspx");
+            return;
+        })
+    },
+
     _connectWebsocket: function (form) {
         var url = form.socketurl.get_value();
         var grid = form.grid;
@@ -50,7 +79,18 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
         this.socket.on("tb_qr_url", function (data) {
         });
         this.socket.on("receiveMsg", function (data) {
-            _this.gridDataBind(grid, data);
+            var key = "OK:url:";
+            if (data.msg.indexOf(key) == 0) {
+                //直接预览
+                var id = data.msg.substring(key.length);
+                _this._getTempData(form, id, function (ndata) {
+                    data.msg = "新数据已下载，可以通过双击本条数据查看新数据";
+                    data.data = ndata;
+                    _this.gridDataBind(grid, data);
+                });
+            } else {
+                _this.gridDataBind(grid, data);
+            }
         });
         this.socket.on("ask", function (data) {
             if (confirm(data.msg)) {
@@ -118,6 +158,21 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
         }
 
         this.socket.emit("getTB_QR", {uid:uid})
+    },
+
+    doGridDbClick: function (sender) {
+        var form = sender.get_form();
+        var data = form.grid.get_selectedRowData();
+        if (!data) {
+            return;
+        }
+        var form1 = new Sys.UI.Form(sender);
+        form1.add_loaded(function () {
+            var ndata = data.data;
+            form1.data = ndata;
+            form1.grid.dataBind(ndata.bill);
+        });
+        form1.showModal("BillList.gspx");
     }
 }
 Test001.DataHandler.DataCatchFromTBExampleAction.registerClass('Test001.DataHandler.DataCatchFromTBExampleAction', Sys.UI.PageAction);

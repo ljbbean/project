@@ -62,10 +62,17 @@ namespace TaoBaoRequest
                 }
             }
 
-            return SpliteContentToDataTable(user, list);
+            List<CatchDataTemplate> tList = new List<CatchDataTemplate>();
+
+            foreach (HashObject hash in list)
+            {
+                tList.Add(new CatchDataTemplate() { DetailContent = hash.GetValue<string>("content"), Status = hash.GetValue<string>("tstatus") });
+            }
+
+            return SpliteContentToDataTable(user, tList);
         }
 
-        private static DataTable SpliteContentToDataTable(string user, IHashObjectList list)
+        public static DataTable SpliteContentToDataTable(string user, List<CatchDataTemplate> list)
         {
             DataTable table = MessageTable();
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
@@ -78,10 +85,10 @@ namespace TaoBaoRequest
                                     "buyMessage",//买家备注
                                     "operationsGuide"//卖家备注
                             };
-            foreach (HashObject hash in list)
+            foreach (CatchDataTemplate template in list)
             {
                 var hashObject = new HashObject();
-                string content = hash.GetValue<string>("content");
+                string content = template.DetailContent;
                 try
                 {
                     hashObject = serializer.Deserialize<HashObject>(content);
@@ -130,7 +137,7 @@ namespace TaoBaoRequest
                 row["成交时间"] = successDate;
 
                 //后期单据退款(各种原因的退款)
-                if ("交易关闭".Equals(hash.GetValue<string>("tstatus")))
+                if ("交易关闭".Equals(template.Status))
                 {
                     row["支付金额"] = 0;
                     row["发货状态"] = "已关闭";

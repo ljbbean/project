@@ -121,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataHandler\DataCatchFromTB.gspx" />
     <EmbeddedResource Include="DataHandler\DataCatchFromTBExample.gspx" />
+    <EmbeddedResource Include="DataHandler\BillList.gspx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="docs\carpa-vsdoc.js" />
     <None Include="docs\Readme.txt" />
     <EmbeddedResource Include="Login.gspx">
@@ -147,6 +150,9 @@
     <EmbeddedResource Include="FundsManager\BackSectionManager.gspx" />
     <EmbeddedResource Include="DataHandler\DataCatchFromTB.js">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\BillList.js">
+      <DependentUpon>BillList.gspx</DependentUpon>
     </EmbeddedResource>
     <Content Include="DataHandler\DataCatchFromTBExample.js" />
     <Content Include="packages.config" />
@@ -425,6 +431,9 @@
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
     <Compile Include="DataCatchSave.cs" />
+    <Compile Include="DataHandler\BillList.cs">
+      <DependentUpon>BillList.gspx</DependentUpon>
+    </Compile>
     <Compile Include="DataHandler\DataCatchFromTB.cs">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </Compile>

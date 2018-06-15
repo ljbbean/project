@@ -105,14 +105,17 @@ namespace Test001
 
             IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
 
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
-            TaobaoDataHelper.SaveDataToTBill(user, AppUtils.ConnectionString, list);
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
-
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData(user, (text) =>
+            HashObject hash = DataCatchSave.AnalysisData(user, list, (text) =>
             {
                 IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
-            })));
+            });
+            if (hash == null)
+            {
+                return;
+            }
+            string id = Cuid.NewCuid().ToString();
+            DataCatchFromTBExample.SetTempData(id, hash);
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, string.Format("OK:url:{0}", id)));
         }
 
         /// <summary>
