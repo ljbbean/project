@@ -105,7 +105,10 @@ namespace FCatch
                 log.SetToUser(touid);
                 AnsyNet.AnsyDataCatch(config, (tuser, msg) =>
                 {
-                    UpdateUI(log, msg.Message);
+                    if (!string.IsNullOrEmpty(msg.Message))
+                    {
+                        UpdateUI(log, msg.Message);
+                    }
                     switch (msg.Action)
                     {
                         case ActionType.SendRequestData:

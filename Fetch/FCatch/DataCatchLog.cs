@@ -130,7 +130,8 @@ namespace FCatch
                 int length = 100;//一次性请求发送100个订单
                 if (listData.Count == 0)
                 {
-                    SendMsgToNode("没有抓取到订单");
+                    SendMsgToNode("此时间段没有订单信息");
+                    return;
                 }
                 else
                 {
@@ -147,10 +148,16 @@ namespace FCatch
                 }
                 Thread.Sleep(1000);
                 SocketClose();
-                this.Invoke(new AsynUpdateUI((sn) =>{
-                    this.Close();
-                }), "");
+                FormClose();
             }
+        }
+
+        private void FormClose()
+        {
+            this.Invoke(new AsynUpdateUI((sn) =>
+            {
+                this.Close();
+            }), "");
         }
 
         private void SendToAnalysis(object billData)
@@ -200,6 +207,12 @@ namespace FCatch
         /// </summary>
         internal bool EmitPostDataRequestMsg(IList data)
         {
+            if (data.Count == 0)
+            {
+                SendMsgToNode("此时间段没有订单信息");
+                FormClose();
+                return true;
+            }
             if (socket == null)
             {
                 SendMessage(string.Format("下载数据为:{0}", JavaScriptSerializer.CreateInstance().Serialize(data)));

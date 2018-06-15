@@ -55,9 +55,14 @@ namespace TaoBaoRequestFCatch
             {
                 detailState(string.Format("开始下载【{0}】到当前时间产生的订单", config.StartDate));
                 List<HashObject> listData = dataCatch.GetDataList(config.StartDate, config.Cookies);
-                detailState(string.Format("成功下载{0}条主订单信息", listData.Count));
-                dataCatch.GetDetailsData(config.Cookies, listData, detailState);
-                detailState(new ActionMessage() { Message = string.Format("明细数据下载完成"), Action = ActionType.SendRequestData, Data = listData });
+                ActionMessage action = new ActionMessage() { Action = ActionType.SendRequestData, Data = listData };
+                if (listData.Count != 0)
+                {
+                    detailState(string.Format("成功下载{0}条主订单信息", listData.Count));
+                    dataCatch.GetDetailsData(config.Cookies, listData, detailState);
+                    action.Message = string.Format("明细数据下载完成");
+                }
+                detailState(action);
                 config.IsCacthing = false;
             }
             catch (Exception t)

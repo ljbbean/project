@@ -10,6 +10,7 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
     initialize: function () {
         Test001.DataHandler.DataCatchFromTBExampleAction.callBaseMethod(this, 'initialize');
         this.socket = null;
+        this.doDataFormLoaded(this.get_form());
     },
 
     dispose: function () {
@@ -21,7 +22,7 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
         if (!source) {
             source = [];
         }
-        if (data.url) {
+        if (data.url || data.msg.indexOf("OK:") == 0 || data.msg.indexOf("Exception:") == 0) {
             for (var i in source) {
                 source[i].url = "";//清空之前的连接
             }
@@ -105,7 +106,6 @@ Test001.DataHandler.DataCatchFromTBExampleAction.prototype = {
             $debug("当前用户："+ uid);
             return;
         }
-
         socket.emit("login", { uid: uid })
     },
 

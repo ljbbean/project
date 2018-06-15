@@ -52,7 +52,7 @@ namespace Test001
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
                 if(dateTime == new DateTime())
                 {
-                    return "";
+                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
                 }
                 dateTime = dateTime.AddDays(-2);//往后推2天
                 return MilliTimeStamp(dateTime).ToString();
@@ -81,6 +81,38 @@ namespace Test001
             IHashObjectList list = db.Select("select id from `user` where name =@name");
 
             return list.Count == 0 ? -1 : list[0].GetValue<long>("id");
+        }
+
+        private static Dictionary<ulong, IList> backDemoDataList = new Dictionary<ulong, IList>();
+        [WebMethod]
+        public void BillCatchDemo(string user, ulong key, IList dataList)
+        {
+            if (!IOUtils.IsPostDataRequest(key, (ulong)dataList.Count))
+            {
+                throw new Exception("抓取数据未被验证，非法请求");
+            }
+            IList list = GetAllList(key, dataList);
+            if (IOUtils.HasKey(key))
+            {
+                dataList.Clear();
+                return;//还有未传完的数据
+            }
+
+            backDemoDataList.Remove(key);//清除备份，做一次性数据处理
+            string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
+            Data data = new Data(user);
+            data.comefrom = comefrom;
+
+            IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
+
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
+            TaobaoDataHelper.SaveDataToTBill(user, AppUtils.ConnectionString, list);
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
+
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData(user, (text) =>
+            {
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
+            })));
         }
 
         /// <summary>

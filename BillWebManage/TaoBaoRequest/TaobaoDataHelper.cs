@@ -13,8 +13,6 @@ namespace TaoBaoRequest
 {
     public class TaobaoDataHelper
     {
-        private static string[] users = { "ljbbean", "annychenzy", "风灵415743757" };
-
         private static DataTable MessageTable()
         {
             DataTable table = new DataTable();
@@ -42,12 +40,13 @@ namespace TaoBaoRequest
             return table;
         }
 
-        public static DataTable GetDetailData(string user, string connectString, bool hasUpdate = false)
+        /// <summary>
+        /// 拆分明细数据到表
+        /// </summary>
+        public static DataTable SpliteContentToDataTableByUser(string user, string connectString, bool hasUpdate = false)
         {
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            DataTable table = MessageTable();
             IHashObjectList list = new HashObjectList();
-            
+
             using (DbHelper db = new DbHelper(connectString, true))
             {
                 db.AddParameter("user", user);
@@ -62,6 +61,14 @@ namespace TaoBaoRequest
                     list = db.Select("select tbd.content, (select tb.status from tbill tb where tb.tbid = tbd.tbid) as tstatus from tbilldetail tbd where tbd.`user`=@user");
                 }
             }
+
+            return SpliteContentToDataTable(user, list);
+        }
+
+        private static DataTable SpliteContentToDataTable(string user, IHashObjectList list)
+        {
+            DataTable table = MessageTable();
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             string[] keys = {
                                     "mainOrder/payInfo/actualFee/value",
                                     "mainOrder/buyer/nick",
@@ -71,7 +78,6 @@ namespace TaoBaoRequest
                                     "buyMessage",//买家备注
                                     "operationsGuide"//卖家备注
                             };
-
             foreach (HashObject hash in list)
             {
                 var hashObject = new HashObject();
@@ -148,9 +154,10 @@ namespace TaoBaoRequest
                 row["所属用户"] = user;
                 table.Rows.Add(row);
             }
+
             return table;
         }
-        
+
         private static object GetKeyObject(List<HashObjectExt.KeyValue> list, string key)
         {
             for (int i = 0; i < list.Count; i++)

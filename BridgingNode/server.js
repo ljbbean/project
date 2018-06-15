@@ -13,7 +13,6 @@ function getCurrentDate() {
 app.use(bodyParser.json())
 app.post("/tb_qr", function (req, res) {
     let data = req.body
-    //console.log(JSON.stringify(data))
     let cid = userMap[data.uid]
     if (cid) {
         let socket = io.to(cid)
@@ -21,6 +20,16 @@ app.post("/tb_qr", function (req, res) {
         socket.emit("exec", { type: 'doing', msg: msg, date: getCurrentDate(), url: data.url })
     }
     res.end()
+})
+//确认python 发起用户ID是否存在，如果不存在，则关闭浏览器
+app.post("sureExitId",function(req, res){
+    let data = req.body
+    let cid = userMap[data.uid]
+    if (cid && io.eio.clients[cid]) {
+        res.end("true")
+        return;
+    }
+    res.end("false")
 })
 var server = http.createServer(app);
 var io = new socketIo(server);

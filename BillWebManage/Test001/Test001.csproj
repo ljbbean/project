@@ -148,9 +148,7 @@
     <EmbeddedResource Include="DataHandler\DataCatchFromTB.js">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataHandler\Copy of DataCatchFromTB.js">
-      <DependentUpon>DataCatchFromTBExample.gspx</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="DataHandler\DataCatchFromTBExample.js" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -427,12 +425,10 @@
       <DependentUpon>BillSimpleManange.gspx</DependentUpon>
     </Compile>
     <Compile Include="DataCatchSave.cs" />
-    <Compile Include="DataHandler\Copy of DataCatchFromTB.cs">
-      <DependentUpon>DataCatchFromTBExample.gspx</DependentUpon>
-    </Compile>
     <Compile Include="DataHandler\DataCatchFromTB.cs">
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </Compile>
+    <Compile Include="DataHandler\DataCatchFromTBExample.cs" />
     <Compile Include="DataHandler\IOUtils.cs" />
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />
@@ -563,12 +559,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2833</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:9613/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

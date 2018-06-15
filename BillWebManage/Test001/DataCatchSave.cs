@@ -115,7 +115,7 @@ namespace Test001
 
         internal static string SaveData(string suser, CallBackMsg callBack, bool onlyAdd = true)
         {
-            DataTable table = TaobaoDataHelper.GetDetailData(suser, AppUtils.ConnectionString, true);
+            DataTable table = TaobaoDataHelper.SpliteContentToDataTableByUser(suser, AppUtils.ConnectionString, true);
             if(table.Rows.Count == 0)
             {
                 return "OK:没有需要分析的数据";
