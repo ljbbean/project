@@ -21,6 +21,18 @@ app.post("/tb_qr", function (req, res) {
     }
     res.end()
 })
+
+app.post("/sendData", function (req, res) {
+    let data = req.body
+    res.end()
+})
+
+app.get("/getFilter", function(req, res){
+    res.send({
+        url:"https://trade.taobao.com/trade/security/auth_user_info.htm"
+    })
+    res.end()
+})
 //确认python 发起用户ID是否存在，如果不存在，则关闭浏览器
 app.post("sureExitId",function(req, res){
     let data = req.body

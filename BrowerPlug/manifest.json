@@ -1,0 +1,18 @@
+{
+    "name": "GetCookie",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "This is use to get cookie for client!",
+    "browser_action": {
+        "default_icon": "icon.png"
+    },
+    "background":{
+        "scripts":["./background.js"]
+    },
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+		"http://*/*", // 可以通过executeScript或者insertCSS访问的网站
+		"https://*/*" // 可以通过executeScript或者insertCSS访问的网站
+    ]
+}
