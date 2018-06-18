@@ -23,6 +23,8 @@ namespace FCatch
         List<string> listMsg = new List<string>();
         bool isRuning = false;
         FiddlerCatch fdCatch = new FiddlerCatch();
+        private string socketUrl = "http://localhost:8080";
+        private string analysisUrl = "http://120.25.122.148/testold/Test001/Test001.Login.ajax/";
         
         public DataCatch()
         {
@@ -58,8 +60,10 @@ namespace FCatch
                     {
                         if (session.fullUrl.Equals("https://trade.taobao.com/trade/itemlist/asyncSold.htm?event_submit_do_query=1&_input_charset=utf8"))
                         {
-                            string touid = GetTOUIDFromWindowTitle(session);
-                            GetBill(touid, session.RequestHeaders);
+                            string keyMsg = GetTOUIDFromWindowTitle(session);
+                            string[] item = keyMsg.Split('_');
+                            //7829标记下载后需要保存到数据库
+                            GetBill(item[0], !"7829".Equals(item[1]), session.RequestHeaders);
                         }
                         else
                         {
@@ -85,7 +89,7 @@ namespace FCatch
             return browerTitle;
         }
 
-        private void GetBill(string touid, object obj)
+        private void GetBill(string touid, bool isDemo, object obj)
         {
             try
             {
@@ -96,12 +100,12 @@ namespace FCatch
                 CacthConfig config;
                 if (!CacthConfig.CatchDic.TryGetValue(key, out config))
                 {
-                    config = new CacthConfig() { Cookies = cookie };
+                    config = new CacthConfig(string.Format("{0}GetBillBeginValue", analysisUrl)) { Cookies = cookie };
                     CacthConfig.CatchDic.Add(key, config);
                 }
                 config.NewCookies = cookie;
 
-                DataCatchLog log = GetCatchLog(user, config);
+                DataCatchLog log = GetCatchLog(user, isDemo, config);
                 log.SetToUser(touid);
                 AnsyNet.AnsyDataCatch(config, (tuser, msg) =>
                 {
@@ -136,18 +140,19 @@ namespace FCatch
             }), msg);
         }
 
-        private DataCatchLog GetCatchLog(string user, CacthConfig config)
+        private DataCatchLog GetCatchLog(string user, bool isDemo, CacthConfig config)
         {
+            string tempUrl = string.Format("{0}{1}", analysisUrl, isDemo?"BillCatchDemo":"BillCatch");
             DataCatchLog log;
             if (!logWindows.TryGetValue(config, out log))
             {
-                log = new DataCatchLog(user);
+                log = new DataCatchLog(user, socketUrl, tempUrl);
                 logWindows.Add(config, log);
             }
             if (log.IsDisposed)
             {
                 logWindows.Remove(config);
-                log = new DataCatchLog(user);
+                log = new DataCatchLog(user, socketUrl, tempUrl);
                 logWindows.Add(config, log);
             }
             log.Show();

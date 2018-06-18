@@ -24,13 +24,15 @@ namespace FCatch
         private string toUser;
         private string sUser;
         private bool socketConnected = false;
-        private string socketUrl = "http://localhost:8080";
-        private string analysisUrl = "http://localhost:9613/Test001/Test001.Login.ajax/BillCatchDemo";
         private ulong postDataCuid = 0;
         private IList listData = null;
+        private string socketUrl;
+        private string analysisUrl;
 
-        public DataCatchLog(string user)
+        public DataCatchLog(string user, string socketUrl, string analysisUrl)
         {
+            this.socketUrl = socketUrl;
+            this.analysisUrl = analysisUrl;
             sUser = user;
             InitializeComponent();
             toUser = user;

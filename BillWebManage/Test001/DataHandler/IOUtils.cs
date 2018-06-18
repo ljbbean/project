@@ -34,15 +34,19 @@ namespace Test001.DataHandler
         static IOUtils()
         {
             PostDataRequestList = new Dictionary<ulong, Counter>();
+            SocketIOUrl = "http://localhost:8080";
             if (ConfigurationManager.ConnectionStrings["socketio"] != null)
             {
-                socket = IO.Socket(ConfigurationManager.ConnectionStrings["socketio"].ToString());
+                SocketIOUrl = ConfigurationManager.ConnectionStrings["socketio"].ToString();
+                socket = IO.Socket(SocketIOUrl);
             }
             else
             {
-                socket = IO.Socket("http://localhost:8080");
+                socket = IO.Socket(SocketIOUrl);
             }
         }
+
+        public static string SocketIOUrl { get; private set; }
 
         /// <summary>
         /// 验证是否是请求值

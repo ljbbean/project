@@ -119,7 +119,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
             return;
         }
 
-        this.socket.emit("getTB_QR", {uid:uid})
+        this.socket.emit("getTB_QR", {uid:uid,demo:"7829"})
     }
 }
 Test001.DataHandler.DataCatchFromTBAction.registerClass('Test001.DataHandler.DataCatchFromTBAction', Sys.UI.PageAction);

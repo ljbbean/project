@@ -11,7 +11,7 @@ namespace Test001.DataHandler
         {
             base.Initialize();
             Login.User user = (Login.User)Session["user"];
-            Context["socketurl"] = "http://localhost:8080";
+            Context["socketurl"] = IOUtils.SocketIOUrl;
             Context["uid"] = Cuid.NewCuid().ToString();
             
         }

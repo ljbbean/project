@@ -24,12 +24,13 @@ namespace TaoBaoRequestFCatch
         private string newCookies;
         private string user;
         private string errorMessage;
-        private string startDateUrl = "http://localhost:9613/Test001/Test001.Login.ajax/GetBillBeginValue";
+        private string startDateUrl;
         private readonly long datetimeMinTimeTicks = (new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks;
 
 
-        public CacthConfig()
+        public CacthConfig(string netUrl)
         {
+            startDateUrl = netUrl;
         }
 
         private DateTime startDate = new DateTime();

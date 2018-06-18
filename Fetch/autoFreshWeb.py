@@ -22,7 +22,7 @@ class TBBrower:
     http = "http://localhost:8080/"
     qrUrl = http + "tb_qr"
     sureExitIdUrl =  http + "sureExitId"
-    js = "document.title=\"" + sys.argv[1] +"\""
+    js = "document.title=\"" + sys.argv[1] + "_" + sys.argv[2] +"\""
 
     def __init__(self):
         self.browser = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe")
