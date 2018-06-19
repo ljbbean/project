@@ -153,6 +153,15 @@ namespace Test001
             })));
         }
 
+        [WebMethod]
+        public void Test()
+        {
+            DataCatchSave.SaveData("ljbbean", (text) =>
+            {
+
+            });
+        }
+
         private static IList GetAllList(ulong key, IList dataList)
         {
             IList list;

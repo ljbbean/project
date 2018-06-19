@@ -403,7 +403,7 @@ namespace TaoBaoRequest
                 foreach (HashObject row in data)
                 {
                     var id = row.GetValue<string>("bid");
-                    string content = row.GetValue<string>("content");
+                    string content = ReplaceHtmlText(row.GetValue<string>("content"));
                     string status = row.GetValue<string>("status");
                     HashObject item;
                     ulong tbid = Cuid.NewCuid();
@@ -429,7 +429,7 @@ namespace TaoBaoRequest
                     {
                         hasDetail = true;
                         HashObject detail = row.GetValue<HashObject>("detail");
-                        string str = detail.GetValue<string>("content");
+                        string str = ReplaceHtmlText(detail.GetValue<string>("content"));
                         insertDetailbuilder.AppendFormat("({0},{1},'{2}', '{3}'),", Cuid.NewCuid(), tbid, str, detail.GetValue<string>("user"));
                     }
                     hasInsert = true;
@@ -459,6 +459,10 @@ namespace TaoBaoRequest
                 }
             }
         }
-
+        
+        public static string ReplaceHtmlText(string str)
+        {
+            return str.Replace("&times;", "*").Replace("&middot;", "。").Replace("&mdash;", "—");
+        }
     }
 }

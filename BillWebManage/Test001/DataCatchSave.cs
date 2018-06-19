@@ -42,21 +42,16 @@ namespace Test001
             int index = 0;
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(ReplaceHtmlText(string.Format("【买家留言：{0}】", mjly)));
+                sbuilder.Append(TaobaoDataHelper.ReplaceHtmlText(string.Format("【买家留言：{0}】", mjly)));
                 index++;
             }
 
             mjly = row["卖家留言"];
             if (!mjly.IsEmptyObject())
             {
-                sbuilder.Append(ReplaceHtmlText(string.Format("【卖家留言：{0}】", mjly)));
+                sbuilder.Append(TaobaoDataHelper.ReplaceHtmlText(string.Format("【卖家留言：{0}】", mjly)));
             }
             return sbuilder.ToString();
-        }
-
-        private static string ReplaceHtmlText(string str)
-        {
-            return str.Replace("&times;", "*").Replace("&middot;", "。").Replace("&mdash;", "—");
         }
         
 
@@ -274,7 +269,7 @@ namespace Test001
                 decimal btotal = 0;
                 decimal allPrice = 0;
 
-                string address = ReplaceHtmlText(row["具体地址"].ToString());
+                string address = TaobaoDataHelper.ReplaceHtmlText(row["具体地址"].ToString());
                 if (!dicDetail.Contains(ddid))
                 {
                     for (int j = ginfos.Length - 1; j >= 0; j--)

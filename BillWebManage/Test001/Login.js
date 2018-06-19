@@ -18,6 +18,10 @@ Test001.LoginAction.prototype = {
 
     doLogin: function (sender) {
         var form = sender.get_form();
+        //form.get_service().Test(function () {
+        //    alert('success')
+        //})
+        //return;
         form.get_service().UserLogin(window.screen.availWidth, window.screen.availHeight, form.name.get_value(), form.pwd.get_value(), function () {
             if (form.isChecked.get_checked()) {
                 window.location = "SendSimpleTemplateBill.gspx";
