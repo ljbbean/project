@@ -396,8 +396,10 @@ namespace TaoBaoRequest
 
                 //筛选数据，对于已插入的数据做数据对比，当数据没有变化时，不做数据修改,反之则修改数据。没有的数据直接插入
                 StringBuilder insertbuilder = new StringBuilder("insert into tbill(tbid,bid,content, cdate, status, `user`, downeddetail, udate, hasUpdate) values");
+                StringBuilder insertDetailbuilder = new StringBuilder("insert into tbilldetail(tbdid,tbid,content,user) values");
                 string updateSql = "update tbill set content = @content, udate = @udate, status=@status, downeddetail=@downeddetail, hasUpdate = @hasUpdate where tbid=@tbid";
                 bool hasInsert = false;
+                bool hasDetail = false;
                 foreach (HashObject row in data)
                 {
                     var id = row.GetValue<string>("bid");
@@ -423,6 +425,13 @@ namespace TaoBaoRequest
                         db.ExecuteIntSQL(updateSql);//更新已下载数据
                         continue;
                     }
+                    else
+                    {
+                        hasDetail = true;
+                        HashObject detail = row.GetValue<HashObject>("detail");
+                        string str = detail.GetValue<string>("content");
+                        insertDetailbuilder.AppendFormat("({0},{1},'{2}', '{3}'),", Cuid.NewCuid(), tbid, str, detail.GetValue<string>("user"));
+                    }
                     hasInsert = true;
                     insertbuilder.AppendFormat("({0},'{1}','{2}', '{3}', '{4}', '{5}', 0, '{6}', 1),", tbid, id, content, date, status, user, date);
                 }
@@ -430,8 +439,24 @@ namespace TaoBaoRequest
                 {
                     return;
                 }
-                string insertData = insertbuilder.ToString();
-                db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
+                try
+                {
+                    db.BeginTransaction();
+                    string insertData = insertbuilder.ToString();
+                    db.BatchExecute(insertData.Substring(0, insertData.Length - 1));
+
+                    if (hasDetail)
+                    {
+                        string insertDetailData = insertDetailbuilder.ToString();
+                        db.BatchExecute(insertDetailData.Substring(0, insertDetailData.Length - 1));
+                    }
+                    db.CommitTransaction();
+                }
+                catch(Exception t)
+                {
+                    db.RollbackTransaction();
+                    throw t;
+                }
             }
         }
 
