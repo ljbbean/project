@@ -78,7 +78,7 @@ namespace FCatch
                 finally
                 {
                     postDataCuid = 0;
-                    listData = null;
+                    //listData = null;
                 }
             });
         }
@@ -129,28 +129,33 @@ namespace FCatch
             SendMsgToNode(text);
             if (postDataCuid != 0)
             {
-                int length = 100;//一次性请求发送100个订单
-                if (listData.Count == 0)
-                {
-                    SendMsgToNode("此时间段没有订单信息");
-                    return;
-                }
-                else
-                {
-                    SendMsgToNode("数据抓取已完成，已发起服务器分析请求");
-                }
-                for (int i = 0; i < listData.Count; i = i + length)
-                {
-                    List<object> newData = new List<object>();
-                    for (int j = 0; j < length && i + j < listData.Count; j++)
-                    {
-                        newData.Add(listData[i + j]);
-                    }
-                    SendToAnalysis(newData);
-                }
+                Send();
                 Thread.Sleep(1000);
                 SocketClose();
-                FormClose();
+                //FormClose();
+            }
+        }
+
+        private void Send()
+        {
+            int length = 100;//一次性请求发送100个订单
+            if (listData.Count == 0)
+            {
+                SendMsgToNode("此时间段没有订单信息");
+                return;
+            }
+            else
+            {
+                SendMsgToNode("数据抓取已完成，已发起服务器分析请求");
+            }
+            for (int i = 0; i < listData.Count; i = i + length)
+            {
+                List<object> newData = new List<object>();
+                for (int j = 0; j < length && i + j < listData.Count; j++)
+                {
+                    newData.Add(listData[i + j]);
+                }
+                SendToAnalysis(newData);
             }
         }
 
@@ -230,17 +235,7 @@ namespace FCatch
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                listData = new List<object>();
-                SendToAnalysis(listData);
-            }
-            catch (Exception t)
-            {
-                MessageBox.Show(t.Message);
-            }
-            //EmitPostDataRequestMsg("dd");
-            //SendMessage("结算抓取  (finish)");
+            Send();
         }
     }
 }

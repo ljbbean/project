@@ -18,7 +18,7 @@ Test001.LoginAction.prototype = {
 
     doLogin: function (sender) {
         var form = sender.get_form();
-        //form.get_service().Test(function () {
+        //form.get_service().ReBillCatch("ljbbean", function () {
         //    alert('success')
         //})
         //return;

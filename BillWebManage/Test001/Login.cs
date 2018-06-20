@@ -141,6 +141,11 @@ namespace Test001
         }
 
         /// <summary>
+        /// 记录websocket用户，确保信息通畅
+        /// </summary>
+        private static Dictionary<string, int> wsUserDictionary = new Dictionary<string, int>();
+
+        /// <summary>
         /// 保存未一次性传入的数据
         /// </summary>
         private static Dictionary<ulong, IList> backDataList = new Dictionary<ulong, IList>();
@@ -157,9 +162,15 @@ namespace Test001
                 dataList.Clear();
                 return;//还有未传完的数据
             }
-
+            if (wsUserDictionary.ContainsKey(user))
+            {
+                wsUserDictionary.Remove(user);
+            }
+            int id = DateTime.Now.GetHashCode();
+            wsUserDictionary.Add(user, id);
+            DataCatchSave.ClearUserGoodsCache(user);
             backDataList.Remove(key);//清除备份，做一次性数据处理
-            string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
+            string comefrom = string.Format("数据分析_{0}", id);
             Data data = new Data(user);
             data.comefrom = comefrom;
 
@@ -174,11 +185,15 @@ namespace Test001
                 IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
             })));
         }
-
-        [WebMethod]
-        public void ReBillCatch(string user)
+        
+        internal void ReBillCatch(string user)
         {
-            string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
+            int id = 0;
+            if(!wsUserDictionary.TryGetValue(user, out id))
+            {
+                id = DateTime.Now.GetHashCode();
+            }
+            string comefrom = string.Format("数据分析_{0}", id);
             IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "成功保存商品配置信息，系统将继续分析下载数据"));
             DataCatchSave.SaveData(user, (text) =>
             {
