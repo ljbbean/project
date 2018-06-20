@@ -16,7 +16,28 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
         Test001.DataHandler.DataCatchFromTBAction.callBaseMethod(this, 'dispose');
     },
 
+    endWith: function (str, match) {
+        var index = str.indexOf(match);
+        return index + match.length == str.length;
+    },
+
+    //是否是货物匹配通知消息
+    isGoodMatchRate: function (msg) {
+        return msg.indexOf("Exception:") == 0 && this.endWith(msg, "goodMatchRate");
+    },
+
+    getUser: function (data) {
+        var leftIndex = data.indexOf('【');
+        var rightIndex = data.indexOf('】');
+        return data.substr(leftIndex + 1, rightIndex - leftIndex - 1);
+    },
+
     gridDataBind: function (grid, data) {
+        if (this.isGoodMatchRate(data.msg)) {
+            var billForm = new Sys.UI.Form(grid);
+            billForm.showModal("GoodsMatchRate.gspx?user=" + this.getUser(data.msg));
+            return;
+        }
         var source = grid.get_dataSource()
         if (!source) {
             source = [];
@@ -70,6 +91,7 @@ Test001.DataHandler.DataCatchFromTBAction.prototype = {
                     break;
                 case "loginSuccess":
                     msg = '登录成功';
+                    //msg = "Exception:【ljbbean】goodMatchRate"
                     break;
                 case "reLogin":
                     msg = '重新登录成功';

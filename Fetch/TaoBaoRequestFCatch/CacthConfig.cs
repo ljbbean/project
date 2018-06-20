@@ -26,11 +26,20 @@ namespace TaoBaoRequestFCatch
         private string errorMessage;
         private string startDateUrl;
         private readonly long datetimeMinTimeTicks = (new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).Ticks;
+        private DateTime serverCurrentDate;
 
 
         public CacthConfig(string netUrl)
         {
             startDateUrl = netUrl;
+        }
+
+        public DateTime ServerCurrentData
+        {
+            get
+            {
+                return serverCurrentDate;
+            }
         }
 
         private DateTime startDate = new DateTime();
@@ -45,7 +54,11 @@ namespace TaoBaoRequestFCatch
                 {
                     return startDate;
                 }
+                
                 string temp = GetNetData(startDateUrl, "{\"user\":\"" + User + "\"}");
+                HashObject hash = JavaScriptSerializer.CreateInstance().Deserialize<HashObject>(temp);
+                temp = hash.GetValue<string>("startDate");
+                serverCurrentDate = new DateTime(hash.GetValue<long>("currentDate") * 10000 + datetimeMinTimeTicks, DateTimeKind.Utc).ToLocalTime();
                 if (string.IsNullOrEmpty(temp))
                 {
                     DateTime ntemp = DateTime.Now.AddDays(-10);

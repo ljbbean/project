@@ -13,6 +13,7 @@ using System.Net;
 using System.IO;
 using Carpa.Web.Ajax;
 using System.Collections;
+using Carpa.Configuration;
 
 namespace FCatch
 {
@@ -29,6 +30,16 @@ namespace FCatch
         public DataCatch()
         {
             InitializeComponent();
+            string tsocketUrl = AppSettings.GetString("socketUrl");
+            if (!string.IsNullOrEmpty(tsocketUrl))
+            {
+                socketUrl = tsocketUrl;
+            }
+            string tanalysisUrl = AppSettings.GetString("analysisUrl");
+            if (!string.IsNullOrEmpty(tanalysisUrl))
+            {
+                analysisUrl = tanalysisUrl;
+            }
         }
 
         private void buttonCatch_Click(object sender, EventArgs e)
@@ -63,7 +74,7 @@ namespace FCatch
                             string keyMsg = GetTOUIDFromWindowTitle(session);
                             string[] item = keyMsg.Split('_');
                             //7829标记下载后需要保存到数据库
-                            GetBill(item[0], !"7829".Equals(item[1]), session.RequestHeaders);
+                            GetBill(item[0], item.Length == 2 ? !"7829".Equals(item[1]) : false, session.RequestHeaders);
                         }
                         else
                         {

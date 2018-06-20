@@ -9,6 +9,7 @@ using TaoBaoRequest;
 using Carpa.Web.Ajax;
 using Common;
 using System.Collections;
+using Test001.DataHandler;
 
 namespace Test001
 {
@@ -18,6 +19,11 @@ namespace Test001
     {
         private static Dictionary<string, Dictionary<string, decimal>> userGoodsDictionary = new Dictionary<string, Dictionary<string, decimal>>();
         
+        internal static void ClearUserGoodsCache(string uname)
+        {
+            userGoodsDictionary.Remove(uname);
+        }
+
         private static string GetTaobaoBillID(DataTable table)
         {
             StringBuilder sbuilder = new StringBuilder("(");
@@ -180,7 +186,7 @@ namespace Test001
                     foreach (HashObject item in detailList)
                     {
                         //构建明细数据
-                        insertBillDetailBuilder.AppendFormat(sDetailFormate, item["id"], item["bid"], item["code"], item["size"], item["amount"], item["color"], item["address, area, total"], item["remark"], item["ltotal"], item["sourceTitle"], item["goodsstatus"], item["sendway"], item["btotal"]);
+                        insertBillDetailBuilder.AppendFormat(sDetailFormate, item["id"], item["bid"], item["code"], item["size"], item["amount"], item["color"], item["address"], item["area"], item["total"], item["remark"], item["ltotal"], item["sourceTitle"], item["goodsstatus"], item["sendway"], item["btotal"]);
                     }
 
                     string insertBillDetail = insertBillDetailBuilder.ToString();
@@ -193,12 +199,12 @@ namespace Test001
                     foreach (HashObject item in billList)
                     {
                         StringBuilder sformate = new StringBuilder("({0}, '{1}', '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, {9},'{10}', '{11}', {12}, {13}, '{14}','{15}', '{16}', '{17}', {18},{19} ");
-                        sformate.Append(IsNullDate(item["sendDate"]) ? ",{20}" : ",'{20}'");
-                        sformate.Append(IsNullDate(item["successDate"]) ? ",{21}" : ",'{21}'");
+                        sformate.Append(IsNullDate(item["senddate"]) ? ",{20}" : ",'{20}'");
+                        sformate.Append(IsNullDate(item["successdate"]) ? ",{21}" : ",'{21}'");
                         sformate.Append("), ");
                         doedIds.AppendFormat("{0},", item["id"]);
                         //构建主表数据，如果已经存在，直接更改数据
-                        insertBillBuilder.AppendFormat(sformate.ToString(), item["id"], item["date"], item["taobaocode"], item["cname"], item["ctel"], item["caddress"], item[" carea"], item["cremark"],
+                        insertBillBuilder.AppendFormat(sformate.ToString(), item["id"], item["date"], item["taobaocode"], item["cname"], item["ctel"], item["caddress"], item["carea"], item["cremark"],
                         item["ltotal"], item["status"], item["scode"], item["sname"], item["uid"], item["goodsstatus"], item["billfrom"], item["createdate"], item["zfbpaycode"], item["tbcode"], item["total"], item["btotal"], item["senddate"], item["successdate"]);
                     }
                     string insertBill = insertBillBuilder.ToString();
@@ -279,7 +285,7 @@ namespace Test001
                         decimal rate = 0;
                         if (db != null && (goodsRate == null || !goodsRate.ContainsKey(goodKey)))
                         {
-                            throw new Exception(string.Format("【{3}】   color:{0} size:{1} title:{2}没有设置比例", ginfo.Color, ginfo.Size, ginfo.Title, user));
+                            throw new Exception(string.Format("【{3}】   color:{0} size:{1} title:{2}没有设置比例goodMatchRate", ginfo.Color, ginfo.Size, ginfo.Title, user));
                         }
                         else
                         {

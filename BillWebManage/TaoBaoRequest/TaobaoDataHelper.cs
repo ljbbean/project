@@ -462,7 +462,7 @@ namespace TaoBaoRequest
         
         public static string ReplaceHtmlText(string str)
         {
-            return str.Replace("&times;", "*").Replace("&middot;", "。").Replace("&mdash;", "—");
+            return str.Replace("&times;", "*").Replace("&middot;", "。").Replace("&mdash;", "—").Replace("\\\"", "");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace TaoBaoData
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataTable table = TaobaoDataHelper.GetDetailData(Utils.Connect);
+            DataTable table = TaobaoDataHelper.SpliteContentToDataTableByUser("ljbbean", Utils.Connect, true);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             isAdd = true;
             using (DbHelper db = new DbHelper(Utils.Connect, true))
@@ -130,15 +130,15 @@ namespace TaoBaoData
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataTable table = TaobaoDataHelper.GetDetailData(Utils.Connect);
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            isAdd = false;
-            using (DbHelper db = new DbHelper(Utils.Connect, true))
-            {
-                DataTable ctable = db.ExecuteSQL("select * from commissionrate");
+            //DataTable table = TaobaoDataHelper.GetDetailData(Utils.Connect);
+            //JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            //isAdd = false;
+            //using (DbHelper db = new DbHelper(Utils.Connect, true))
+            //{
+            //    DataTable ctable = db.ExecuteSQL("select * from commissionrate");
 
-                dataGridView1.DataSource = ctable;
-            }
+            //    dataGridView1.DataSource = ctable;
+            //}
         }
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {

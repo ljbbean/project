@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="下载商品配置设置" ActionType="Test001.DataHandler.GoodsMatchRateAction, DataHandler/GoodsMatchRate.js" DataSource="${data}">
+  <VPanel>
+    <Grid ID="grid" Pager="None" DataField="grid" Width="860" Height="500" ReadOnly="false">
+      <TextColumn Caption="颜色" DataField="color" Width="200"  ReadOnly="true"/>
+      <TextColumn Caption="尺码" DataField="size" Width="160" ReadOnly="true"/>
+      <TextColumn Caption="网络标题" DataField="sourceTitle" Width="350" ReadOnly="true"/>
+      <NumberColumn Caption="分成比例(%)" DataField="rate" MinValue="0" MaxValue="100"/>
+    </Grid>
+    <HPanel HAlign="Right">
+      <HiddenField DataField="user"/>
+      <Button Text="保存" OnClick="doButtonSave"/>
+    </HPanel>
+  </VPanel>
+</Page>

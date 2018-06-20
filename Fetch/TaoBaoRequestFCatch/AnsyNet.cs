@@ -64,6 +64,7 @@ namespace TaoBaoRequestFCatch
                 }
                 detailState(action);
                 config.IsCacthing = false;
+                config.StartDate = config.ServerCurrentData;
             }
             catch (Exception t)
             {

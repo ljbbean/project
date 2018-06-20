@@ -13,6 +13,7 @@ using Test001.DataHandler;
 using System.Threading;
 using System.Collections;
 using TaoBaoRequest;
+using Carpa.Logging;
 
 namespace Test001
 {
@@ -38,19 +39,36 @@ namespace Test001
         /// <param name="user"></param>
         /// <returns></returns>
         [WebMethod]
-        public string GetBillBeginValue(string user)
+        public HashObject GetBillBeginValue(string user)
         {
-            using(DbHelper db = AppUtils.CreateDbHelper())
+            try
+            {
+                HashObject data = new HashObject();
+                data.Add("startDate",  GetStartDate(user));
+                data.Add("currentDate", MilliTimeStamp(DateTime.Now.AddDays(-1)));
+                return data;
+            }
+            catch (Exception e)
+            {
+                Log.Error(string.Format("user:{0}   message:{1}", user, e.Message));
+                throw e;
+            }
+        }
+
+        private string GetStartDate(string user)
+        {
+            using (DbHelper db = AppUtils.CreateDbHelper())
             {
                 db.AddParameter("uid", GetId(db, user));
+
                 var list = db.Select("SELECT MAX(DATE) as ndate FROM bill WHERE billfrom IS NOT NULL AND uid = @uid ORDER BY DATE DESC");
-                if(list.Count == 0)
+                if (list == null || list.Count == 0)
                 {
                     return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
                 }
 
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
-                if(dateTime == new DateTime())
+                if (dateTime == new DateTime())
                 {
                     return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
                 }
@@ -58,6 +76,7 @@ namespace Test001
                 return MilliTimeStamp(dateTime).ToString();
             }
         }
+
         public long MilliTimeStamp(DateTime TheDate)
         {
             DateTime d1 = new DateTime(1970, 1, 1);
@@ -72,15 +91,18 @@ namespace Test001
             if (user == "ljbbean")
             {
                 db.AddParameter("name", "ljb");
-            } 
-            if(user== "annychenzy")
+            } else if(user== "annychenzy")
             {
                 db.AddParameter("name", "cy");
+            } else
+            {
+                return -1;
             }
 
-            IHashObjectList list = db.Select("select id from `user` where name =@name");
+            
+            IHashObject hash = db.SelectFirstRow("select id from `user` where name =@name");
 
-            return list.Count == 0 ? -1 : list[0].GetValue<long>("id");
+            return hash == null ? -1 : hash.GetValue<long>("id");
         }
 
         private static Dictionary<ulong, IList> backDemoDataList = new Dictionary<ulong, IList>();
@@ -154,11 +176,13 @@ namespace Test001
         }
 
         [WebMethod]
-        public void Test()
+        public void ReBillCatch(string user)
         {
-            DataCatchSave.SaveData("ljbbean", (text) =>
+            string comefrom = string.Format("数据分析_{0}", DateTime.Now.GetHashCode());
+            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "成功保存商品配置信息，系统将继续分析下载数据"));
+            DataCatchSave.SaveData(user, (text) =>
             {
-
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
             });
         }
 

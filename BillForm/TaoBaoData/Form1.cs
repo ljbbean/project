@@ -26,7 +26,7 @@ namespace TaoBaoData
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = TaobaoDataHelper.GetDetailData(Utils.Connect);
+            //dataGridView1.DataSource = TaobaoDataHelper.GetDetailData(Utils.Connect);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

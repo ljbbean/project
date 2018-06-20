@@ -129,6 +129,7 @@
     <EmbeddedResource Include="DataHandler\BillList.gspx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\GoodsMatchRate.gspx" />
     <None Include="docs\carpa-vsdoc.js" />
     <None Include="docs\Readme.txt" />
     <EmbeddedResource Include="Login.gspx">
@@ -160,6 +161,7 @@
       <DependentUpon>BillList.gspx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataHandler\DataCatchFromTBExample.js" />
+    <Content Include="DataHandler\GoodsMatchRate.js" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -443,6 +445,7 @@
       <DependentUpon>DataCatchFromTB.gspx</DependentUpon>
     </Compile>
     <Compile Include="DataHandler\DataCatchFromTBExample.cs" />
+    <Compile Include="DataHandler\GoodsMatchRate.cs" />
     <Compile Include="DataHandler\IOUtils.cs" />
     <Compile Include="ExcelSure.cs" />
     <Compile Include="BTypeConfig.cs" />
