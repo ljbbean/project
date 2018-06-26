@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="主页" ActionType="WebMain.DefaultAction, Default.js">
+  <VBlock CssClass="main">
+
+    <HPanel>
+      <HPanel>
+        <Label Text="统计" CssClass="button" OnClick="chatItemClick" DataField="tj"/>
+        <Label Text="订单" CssClass="buttonNoSelected" OnClick="chatItemClick" DataField="dd"/>
+      </HPanel>
+      <HPanel Width="1000" HAlign="Right" CssClass="toppanel">
+        <Label Text="千牛网店组"/>
+        <RadioButtonList LayoutDirection="Horz" ShowBorder="false" DataField="area" SelectedIndex="0" OnChange="doAreaChange">
+          <ListItem Text="今天" Selected="true" Value="0"/>
+          <ListItem Text="本周" Value="1"/>
+          <ListItem Text="本月" Value="2"/>
+        </RadioButtonList>
+      </HPanel>
+    </HPanel>
+    <Block ID="container">
+      
+    </Block>
+  </VBlock>
+  <Style>
+    .main{background:#ddeeee;}
+    .button{border:1px solid #ffffff;background:#0077ee;border-radius:6px;width:25px;fontsize:16;margin:5px;padding:3px;cursor:pointer;}
+    .button:hover{border:1px solid #525622}
+    .buttonNoSelected{border:1px solid #ffffff;background:#cccccc;border-radius:6px;width:25px;fontsize:16;margin:5px;padding:3px;cursor:pointer;}
+    .buttonNoSelected:hover{border:1px solid #525622}
+    .border {border:0px solid #29a939;border-radius:6px;}
+    // .border:hover{border:1px solid #525622}
+    .chat{margin:10px;background:#ffffff}
+    .sumitem{margin:10px;width:240px;height:100px;cursor:pointer;}
+    .chat{height:500px;}
+  </Style>
+</Page>

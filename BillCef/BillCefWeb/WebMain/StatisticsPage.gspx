@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="标题" ActionType="WebMain.StatisticsPageAction, StatisticsPage.js" OnLoaded="doStaticsLoaded">
+  <HiddenField DataField="area" Value="${area}"/>
+  <VBlock CssClass="main">
+    <HBlock CssClass="itempanel">
+      <VBlock CssClass="border sumitem" CssStyle="background:#66ddff;width:280px;">
+        <VSpacer Height="10"/>
+        <Label Text="支付总金额(含退款)" CssStyle="color:white; margin:20px;font-size:15px;font-weight:800;"/>
+        <VSpacer Height="10"/>
+        <HBlock>
+          <VBlock>
+            <HPanel>
+              <HSpacer Width="80"/>
+              <Label Text="${zfzje}" CssStyle="color:white;font-size:20px;font-weight:900;"/>
+            </HPanel>
+            <VSpacer Height="10"/>
+            <HPanel>
+              <HPanel>
+                <Label Text="退款金：${tkzje}" Label=""  CssStyle="color:white;font-weight:blod;margin-left:10px;"/>
+              </HPanel>
+              <HPanel Width="180" HAlign="Right">
+                <Label Label="" Text="支付订单数:${zfzbs}" CssStyle="color:white;"/>
+              </HPanel>
+            </HPanel>
+          </VBlock>
+        </HBlock>
+      </VBlock>
+
+      <VBlock CssClass="border sumitem" CssStyle="background:#ffdd66">
+        <VSpacer Height="10"/>
+        <Label Text="发货情况" CssStyle="color:white; margin:20px;font-size:15px;font-weight:800;"/>
+        <VSpacer Height="10"/>
+        <HBlock>
+          <Block Width="80" Height="80"/>
+          <VBlock>
+            <HPanel>
+              <Label Text="未发货:${wfhbs}单" CssStyle="color:white;font-size:20px;font-weight:900;"/>
+            </HPanel>
+            <VSpacer Height="10"/>
+            <HPanel Width="150" HAlign="Right">
+              <Label Text="已发货:${yfhbs}" CssStyle="color:white;"/>
+            </HPanel>
+          </VBlock>
+        </HBlock>
+      </VBlock>
+      <VBlock CssClass="border sumitem" CssStyle="background:#ff99cc">
+        <VSpacer Height="10"/>
+        <Label Text="退款中" CssStyle="color:white; margin:20px;font-size:15px;font-weight:800;"/>
+        <VSpacer Height="10"/>
+        <HBlock>
+          <Block Width="80" Height="80"/>
+          <VBlock>
+            <HPanel>
+              <Label Text="${tkzzje}" CssStyle="color:white;font-size:20px;font-weight:900;"/>
+            </HPanel>
+            <VSpacer Height="10"/>
+            <HPanel Width="150" HAlign="Right">
+              <Label Text="订单数：${tkzzbs}" CssStyle="color:white;"/>
+            </HPanel>
+          </VBlock>
+        </HBlock>
+      </VBlock>
+      <VBlock CssClass="border sumitem" CssStyle="background:#bbaaff">
+        <VSpacer Height="10"/>
+        <Label Text="确认收货" CssStyle="color:white; margin:20px;font-size:15px;font-weight:800;"/>
+        <VSpacer Height="10"/>
+        <HBlock>
+          <Block Width="80" Height="80"/>
+          <VBlock>
+            <HPanel>
+              <Label Text="${qrzje}" CssStyle="color:white;font-size:20px;font-weight:900;"/>
+            </HPanel>
+            <VSpacer Height="10"/>
+            <HPanel Width="150" HAlign="Right">
+              <Label Text="订单数：${qrzbs}" CssStyle="color:white;"/>
+            </HPanel>
+          </VBlock>
+        </HBlock>
+      </VBlock>
+
+    </HBlock>
+    <HPanel CssClass="chat" >
+      <VPanel>
+        <Label Text="订单总数" CssClass="button" OnClick="chatItemClick" Tag="0" DataField="ddzs"/>
+        <Label Text="支付金额" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="1" DataField="zfje"/>
+        <Label Text="退款单数" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="2" DataField="tkds"/>
+        <Label Text="订单来源" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="3" DataField="ddly"/>
+      </VPanel>
+      <Block CssClass="border chat item" Width="1000">
+        <ECharts ID="mychart" Width="1000" Height="500"/>
+      </Block>
+    </HPanel>
+  </VBlock>
+</Page>
