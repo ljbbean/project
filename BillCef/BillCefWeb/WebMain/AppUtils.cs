@@ -7,7 +7,7 @@ using Carpa.Web.Script;
 
 namespace WebMain
 {
-    public class Utils
+    public class AppUtils
     {
         public static string ConnectionString
         {

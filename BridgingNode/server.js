@@ -219,4 +219,40 @@ io.on("connection", function (clientSocket) {
         //回发给自己
         clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
     })
+
+    clientSocket.on("consultationEnabledUpdate", function(data){
+        data = getData(data);
+        if (!checkUser(data.uid)) {
+            return;
+        }
+        let toucid = userMap[data.touid]
+        if (toucid && isOnline(toucid)) {
+            io.to(toucid).emit("consultationEnabledUpdate", {
+                fuid: data.uid,//消息来源
+                date: getCurrentDate(),//发送时间
+                msg: data.msg//消息内容
+            })
+            return
+        }
+        //回发给自己
+        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
+    })
+
+    clientSocket.on("sureEnabledUpdate", function(data){
+        data = getData(data);
+        if (!checkUser(data.uid)) {
+            return;
+        }
+        let toucid = userMap[data.touid]
+        if (toucid && isOnline(toucid)) {
+            io.to(toucid).emit("sureEnabledUpdate", {
+                fuid: data.uid,//消息来源
+                date: getCurrentDate(),//发送时间
+                msg: data.msg//消息内容
+            })
+            return
+        }
+        //回发给自己
+        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
+    })
 });

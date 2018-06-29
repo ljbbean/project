@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using Carpa.Web.Common;
+using WebMain.DataHandler;
 
 namespace WebMain
 {
@@ -9,6 +10,7 @@ namespace WebMain
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            IOUtils.Init();
         }
 
         protected void Application_End(object sender, EventArgs e)

@@ -45,10 +45,6 @@ namespace TaoBaoRequestFCatch
             {
                 IHashObject item = billDataList[i];
                 string status = item.GetValue<string>("status");
-                if ("等待买家付款".Equals(status))
-                {
-                    continue;
-                }
                 HashObject tempHash = serializer.Deserialize<HashObject>(item["content"].ToString());
                 if (tempHash == null)
                 {
