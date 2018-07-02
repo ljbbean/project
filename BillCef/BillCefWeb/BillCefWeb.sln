@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{00000000-0000-0000-0000-000000000000}") = "WebMain", "WebMain\WebMain.csproj", "{0AC9CCD1-97A1-4E1F-99DF-6DBC5CE0D296}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMain", "WebMain\WebMain.csproj", "{0AC9CCD1-97A1-4E1F-99DF-6DBC5CE0D296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\..\Common\Common.csproj", "{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaoBaoRequest", "..\..\BillWebManage\TaoBaoRequest\TaoBaoRequest.csproj", "{323E521E-1558-459B-8854-F0979B44C8F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{0AC9CCD1-97A1-4E1F-99DF-6DBC5CE0D296}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC9CCD1-97A1-4E1F-99DF-6DBC5CE0D296}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC9CCD1-97A1-4E1F-99DF-6DBC5CE0D296}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD20C10-3FA7-41A8-84F0-A4F03E6DF2C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323E521E-1558-459B-8854-F0979B44C8F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

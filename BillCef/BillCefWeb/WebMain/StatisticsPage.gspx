@@ -84,7 +84,7 @@
         <Label Text="订单总数" CssClass="button" OnClick="chatItemClick" Tag="0" DataField="ddzs"/>
         <Label Text="支付金额" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="1" DataField="zfje"/>
         <Label Text="退款单数" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="2" DataField="tkds"/>
-        <Label Text="订单来源" CssClass="buttonNoSelected" OnClick="chatItemClick" Tag="3" DataField="ddly"/>
+        <Label Text="订单来源" CssClass="buttonNoSelected" Visible="${ddlyVisible}" OnClick="chatItemClick" Tag="3" DataField="ddly"/>
       </VPanel>
       <Block CssClass="border chat item" Width="1000">
         <ECharts ID="mychart" Width="1000" Height="500"/>

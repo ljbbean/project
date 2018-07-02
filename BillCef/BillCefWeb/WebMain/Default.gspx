@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="gb2312" ?>
 <Page xmlns="Carpa.UI" Title="主页" ActionType="WebMain.DefaultAction, Default.js">
-  <VBlock CssClass="main">
-
+  <HiddenField DataField="user" Value="${user}"/>
+  <Label Text="${text}" ID="reload" CssClass="buttonNoSelected" CssStyle="width:120px; color:red;" OnClick="onReload"/>
+  <VBlock CssClass="main" Visible="${visible}">
     <HPanel>
       <HPanel>
-        <Label Text="统计" CssClass="button" OnClick="chatItemClick" DataField="tj"/>
-        <Label Text="订单" CssClass="buttonNoSelected" OnClick="chatItemClick" DataField="dd"/>
+        <HPanel>
+          <Label Text="订单统计" CssClass="buttonNoSelected" OnClick="chatItemClick" DataField="tj" Tag="0"/>
+          <Label Text="订单详情" CssClass="button" OnClick="chatItemClick" DataField="dd" Tag="1"/>
+          <Label Text="军情侦查" CssClass="buttonNoSelected" OnClick="chatItemClick" DataField="jqzc" Tag="2"/>
+          <Label Text="重新加载" CssClass="buttonNoSelected" OnClick="doRefresh"/>
+        </HPanel>
       </HPanel>
-      <HPanel Width="1000" HAlign="Right" CssClass="toppanel">
-        <Label Text="千牛网店组"/>
+      <HPanel Width="700" HAlign="Right" CssClass="toppanel">
+        <Label Text="店铺名称【${user}】"/>
         <RadioButtonList LayoutDirection="Horz" ShowBorder="false" DataField="area" SelectedIndex="0" OnChange="doAreaChange">
           <ListItem Text="今天" Selected="true" Value="0"/>
           <ListItem Text="本周" Value="1"/>
           <ListItem Text="本月" Value="2"/>
+          <ListItem Text="近期30天" Value="3"/>
         </RadioButtonList>
       </HPanel>
     </HPanel>

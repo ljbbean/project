@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="单据列表" ActionType="WebMain.BillListAction, BillList.js">
+  <HiddenField ID="user" Value="${user}"/>
+  <HiddenField ID="area" Value="${area}"/>
+  <VPanel>
+    <Grid ID="grid" Pager="Bottom" DataSource="${grid}" AutoDefaultRowCount="true"
+          AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" ShowFooter="true"
+          Width="1100" Height="380" OnSelectionChanged="doGridSelectedChanged"
+          PagerInnerBlockID="pager1Block">
+      <TextColumn Caption="订单日期" DataField="date" ReadOnly="true"/>
+      <TextColumn Caption="姓名" Width="160" DataField="cname" ReadOnly="true"/>
+      <TextColumn Caption="联系电话" Width="160" DataField="ctel" ReadOnly="true"/>
+      <TextColumn Caption="淘宝账号" Width="160" DataField="taobaocode" ReadOnly="true"/>
+      <TextColumn Caption="联系地址" DataField="caddress" Width="500"/>
+      <DynamicButtonColumn Caption="发货信息" Width="210" HeaderAlign="Center" TextAlign="Center" DataField="sender" ReadOnly="true"/>
+      <TextColumn Caption="订单状态" DataField="process"/>
+      <!--<NumberColumn Caption="订单提成" DataField="btotal" ReadOnly="true"/>-->
+      <NumberColumn Caption="订单回款" DataField="ltotal" ReadOnly="true"/>
+      <!--<NumberColumn Caption="订单优惠" DataField="preferential" ReadOnly="true"/>-->
+    </Grid>
+
+    <InnerBlock ID="pager1Block">
+      <HPanel>
+        <Button Text="导出Excel" OnClick="doExport"/>
+      </HPanel>
+    </InnerBlock>
+    <Grid ID="gridDetail" Pager="Bottom" Width="1100" AllowResize="true" AllowConfig="true" Height="180">
+      <TextColumn Caption="订单号" DataField="code" Width="150"/>
+      <TextColumn Caption="商品" DataField="sourcetitle" Width="340"/>
+      <TextColumn Caption="尺寸" DataField="size"/>
+      <TextColumn Caption="花色" DataField="color" Width="200"/>
+      <NumberColumn Caption="数量" DataField="amount" Width="60"/>
+      <!--<TextColumn Caption="派送方式" DataField="sendway"/>-->
+      <TextColumn Caption="备注" DataField="remark"/>
+      <TextColumn Caption="原价" DataField="stotal" Width="60" Visible="false"/>
+      <NumberColumn Caption="优惠" DataField="preferential"  Width="60"/>
+      <NumberColumn Caption="实收款" DataField="total"  Width="60"/>
+      <!--<NumberColumn Caption="提成" DataField="btotal" Width="60"/>-->
+      <!--<NumberColumn Caption="回款" DataField="ltotal" Width="60"/>-->
+    </Grid>
+  </VPanel>
+</Page>

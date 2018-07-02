@@ -195,17 +195,18 @@ namespace WebHandler.DataHandler
 
                     StringBuilder doedIds = new StringBuilder();//影响到的主数据
                     StringBuilder insertBillBuilder = new StringBuilder(@"insert into bill(id, date, taobaocode,cname,ctel,caddress,carea,cremark,
-                        ltotal,status, scode, sname, uid, goodsstatus, billfrom, createdate, zfbpaycode,tbcode, total, btotal, senddate, successdate) values");
+                        ltotal,status, scode, sname, uid, goodsstatus, billfrom, createdate, zfbpaycode,tbcode, total, btotal, senddate, successdate, `user`) values");
                     foreach (HashObject item in billList)
                     {
                         StringBuilder sformate = new StringBuilder("({0}, '{1}', '{2}', '{3}', '{4}','{5}', '{6}', '{7}', {8}, {9},'{10}', '{11}', {12}, {13}, '{14}','{15}', '{16}', '{17}', {18},{19} ");
                         sformate.Append(IsNullDate(item["senddate"]) ? ",{20}" : ",'{20}'");
                         sformate.Append(IsNullDate(item["successdate"]) ? ",{21}" : ",'{21}'");
+                        sformate.Append(",'{22}'");
                         sformate.Append("), ");
                         doedIds.AppendFormat("{0},", item["id"]);
                         //构建主表数据，如果已经存在，直接更改数据
                         insertBillBuilder.AppendFormat(sformate.ToString(), item["id"], item["date"], item["taobaocode"], item["cname"], item["ctel"], item["caddress"], item["carea"], item["cremark"],
-                        item["ltotal"], item["status"], item["scode"], item["sname"], item["uid"], item["goodsstatus"], item["billfrom"], item["createdate"], item["zfbpaycode"], item["tbcode"], item["total"], item["btotal"], item["senddate"], item["successdate"]);
+                        item["ltotal"], item["status"], item["scode"], item["sname"], item["uid"], item["goodsstatus"], item["billfrom"], item["createdate"], item["zfbpaycode"], item["tbcode"], item["total"], item["btotal"], item["senddate"], item["successdate"], suser);
                     }
                     string insertBill = insertBillBuilder.ToString();
                     insertBill = insertBill.Substring(0, insertBill.Length - 2);

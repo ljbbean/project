@@ -3,9 +3,11 @@ using Carpa.Web.Script;
 using Carpa.Web.Ajax;
 using System.Collections.Generic;
 using WebMain.chat;
+using WebMain.Common;
 
 namespace WebMain
 {
+    [NeedLogin]
     public class StatisticsPage : Page
     {
         public override void Initialize()
@@ -22,25 +24,29 @@ namespace WebMain
             Context["tkzzbs"] = 234.2;//退款中总笔数
             Context["qrzje"] = 2344.2;//确认总金额
             Context["qrzbs"] = 234;//确认总笔数
+            Context["ddlyVisible"] = false;
         }
         [WebMethod]
         public object GetData(SearchArea area, SearchKind method)
         {
-            HashObject areaData = GetAreaData(area);
+            HashObject areaData = Utils.GetAreaData(area);
             List<string> xAxisData;
             Dictionary<string, Dictionary<string, decimal>> data = GetChatData(areaData.GetValue<string>("startDate"), areaData.GetValue<string>("endDate"), out xAxisData);
 
-            return GetPieData(data, xAxisData);
+            if (method == SearchKind.ComeFrom)
+            {
+                return GetPieData(data, xAxisData);
+            }
             switch (area)
             {
                 case SearchArea.Today:
                     return GetBarData(data, xAxisData);
                 case SearchArea.Month:
                 case SearchArea.Week:
+                case SearchArea.DaysOf30:
                     return GetLineData(data, xAxisData);
             }
-            return GetBarData(data, xAxisData);
-            //return GetLineData(data, xAxisData);
+            return GetLineData(data, xAxisData);
         }
 
         private object GetLineData(Dictionary<string, Dictionary<string, decimal>> data, List<string> xAxisData)
@@ -171,29 +177,6 @@ namespace WebMain
             return root;
         }
 
-        private HashObject GetAreaData(SearchArea area)
-        {
-            HashObject data = new HashObject();
-            switch (area)
-            {
-                case SearchArea.Today:
-                    data.Add("startDate", DateTime.Now.ToString("yyyy-MM-dd 00:00:00"));
-                    data.Add("endDate", DateTime.Now.ToString("yyyy-MM-dd 23:59:59"));
-                    break;
-                case SearchArea.Week:
-                    int dayofWeek = (int)DateTime.Now.DayOfWeek;
-                    data.Add("startDate", DateTime.Now.AddDays(-dayofWeek).ToString("yyyy-MM-dd 00:00:00"));
-                    data.Add("endDate", DateTime.Now.ToString("yyyy-MM-dd 23:59:59"));
-                    break;
-                case SearchArea.Month:
-                    data.Add("startDate", DateTime.Now.ToString("yyyy-MM-01 00:00:00"));
-                    data.Add("endDate", DateTime.Now.ToString("yyyy-MM-dd 23:59:59"));
-                    break;
-            }
-
-            return data;
-        }
-
         /// <summary>
         /// 获取图标数据
         /// </summary>
@@ -234,10 +217,13 @@ namespace WebMain
             {
                 db.AddParameter("startDate", startDate);
                 db.AddParameter("endDate", endDate);
+                UserInfo info = (UserInfo)Session["user"];
+                db.AddParameter("user", info.User);
+
                 return db.Select(@"
                     SELECT COUNT(1) AS amount,sourceTitle,DATE_FORMAT(createdate, '%Y-%m-%d') AS paydate FROM bill b
                      JOIN billdetail bd ON b.id = bd.bid 
-                    where createdate BETWEEN @startDate and @endDate GROUP BY sourceTitle ,DATE_FORMAT(createdate, '%Y-%m-%d')");
+                    where `user`=@user and createdate BETWEEN @startDate and @endDate GROUP BY sourceTitle ,DATE_FORMAT(createdate, '%Y-%m-%d')");
             }
         }
     }

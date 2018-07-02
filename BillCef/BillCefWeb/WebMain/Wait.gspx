@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="标题" ActionType="WebMain.WaitAction, Wait.js">
+  <VPanel HAlign="Center" VAlign="Middle">
+    <Label FontSize="32" BoldFont="true" Text="近期将推广，敬请期待" />
+  </VPanel>
+</Page>

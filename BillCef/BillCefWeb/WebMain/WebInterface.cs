@@ -10,6 +10,7 @@ using Common;
 using WebMain.DataHandler;
 using WebHandler.DataHandler;
 using TaoBaoRequest;
+using WebMain.Common;
 
 namespace WebMain
 {
@@ -77,13 +78,13 @@ namespace WebMain
                 var list = db.Select("SELECT MAX(DATE) as ndate FROM bill WHERE billfrom IS NOT NULL AND uid = @uid ORDER BY DATE DESC");
                 if (list == null || list.Count == 0)
                 {
-                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
+                    return MilliTimeStamp(DateTime.Now.AddDays(-2)).ToString();
                 }
 
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
                 if (dateTime == new DateTime())
                 {
-                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
+                    return MilliTimeStamp(DateTime.Now.AddDays(-2)).ToString();
                 }
                 dateTime = dateTime.AddDays(-2);//往后推2天
                 return MilliTimeStamp(dateTime).ToString();
@@ -197,6 +198,31 @@ namespace WebMain
                 list.Add(item);
             }
             return list;
+        }
+
+        [WebMethod]
+        public object GetDownData(string token)
+        {
+            //UserInfo info = (UserInfo)Session["user"];
+            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            using (DbHelper db = AppUtils.CreateDbHelper())
+            {
+                string sql = "select `condition`, user from downtoken where  `token`=@token";
+                db.AddParameter("token", token);
+                IHashObject data = db.SelectSingleRow(sql);//只用一次
+                db.AddParameter("token", token);
+                db.AddParameter("ntoken", Guid.NewGuid());
+                db.ExecuteIntSQL("update downtoken set `token`=@ntoken where token=@token");
+                string user = data.GetValue<string>("user");
+                //if (!info.User.Equals(user))
+                //{
+                //    throw new Exception("非法请求");
+                //}
+                HashObject condition = serializer.Deserialize<HashObject>(data.GetValue<string>("condition"));
+
+                string dataSql = WebMain.BillList.list.GetBillSql(db, user, (SearchArea)Enum.Parse(typeof(SearchArea), condition.GetValue<string>("area")));
+                return db.Select(dataSql);
+            }
         }
     }
 }

@@ -121,6 +121,63 @@ namespace WebMain.DataHandler
                 WebInterface.SureUpdateIds.Remove(key);
                 socket.Emit("sureEnabledUpdate", serializer.Serialize(nmsg));//确认可以做什么操作
             });
+            socket.On("getLoginToken", (data) =>//客户端登录
+            {
+                HashObject hash = serializer.Deserialize<HashObject>(data.ToString());
+                SendMsg nmsg = new SendMsg("server");
+                nmsg.comefrom = "net";
+                nmsg.touid = hash.GetValue<string>("fuid");
+                try
+                {
+
+                    string key = Guid.NewGuid().ToString().Replace("-", "");
+                    nmsg.msg = key;
+                    using (DbHelper db = AppUtils.CreateDbHelper())
+                    {
+                        string sql = "insert into logintoken (`user`, `token`,updatedate) values(@user, @token,@updatedate) on duplicate key update `token` = values(`token`),`updatedate` = values(`updatedate`);";
+                        db.AddParameter("user", hash.GetValue<string>("msg"));
+                        db.AddParameter("token", key);
+                        db.AddParameter("updatedate", DateTime.Now);
+                        db.ExecuteIntSQL(sql);
+                    }
+                    socket.Emit("sendLoginToken", serializer.Serialize(nmsg));//确认可以做什么操作
+                }
+                catch (Exception e)
+                {
+                    nmsg.msg = string.Format("Exception:{0}", e.Message);
+                    socket.Emit("sendLoginToken", serializer.Serialize(nmsg));//确认可以做什么操作
+                }
+            });
+            socket.On("getDownDataToken", (data) =>
+            {
+                HashObject hash = serializer.Deserialize<HashObject>(data.ToString());
+                SendMsg nmsg = new SendMsg("server");
+                nmsg.comefrom = "net";
+                nmsg.touid = hash.GetValue<string>("fuid");
+
+                try
+                {
+                    string key = Guid.NewGuid().ToString().Replace("-", "");
+                    nmsg.msg = key;
+                    string conditionMsg = hash.GetValue<string>("msg");
+                    HashObject condition = serializer.Deserialize<HashObject>(conditionMsg);
+                    using (DbHelper db = AppUtils.CreateDbHelper())
+                    {
+                        string sql = "insert into downtoken (`user`, `token`,getDate, `condition`) values(@user, @token,@getDate, @condition) on duplicate key update `token` = values(`token`),`getDate` = values(`getDate`),`condition` = values(`condition`);";
+                        db.AddParameter("user", condition.GetValue<string>("user"));
+                        db.AddParameter("token", key);
+                        db.AddParameter("getDate", DateTime.Now);
+                        db.AddParameter("condition", conditionMsg);
+                        db.ExecuteIntSQL(sql);
+                    }
+                    socket.Emit("sendDownDataToken", serializer.Serialize(nmsg));//确认可以做什么操作
+                }
+                catch (Exception e)
+                {
+                    nmsg.msg = string.Format("Exception:{0}", e.Message);
+                    socket.Emit("sendLoginToken", serializer.Serialize(nmsg));//确认可以做什么操作
+                }
+            });
             IsConnected = false;
         }
 

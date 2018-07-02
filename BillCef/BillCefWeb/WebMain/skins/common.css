@@ -1,0 +1,1150 @@
+﻿html body {
+    margin: 0px;
+    padding: 0;
+    min-width: 1024px;
+}
+
+.Menu { z-index: 990; }
+
+.topbar {
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid #38557c;
+    position: relative;
+    color: #fff;
+    background: #476f9a url("common/images/logo.png") no-repeat 20px center;
+}
+
+.topbar .container {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.topbar .notice {
+    float: left;
+    background-color: #3f5e80;
+    height: 19px;
+    width: 220px;
+    margin-right: 20px;
+}
+
+.topbar .notice .noticeicon {
+    float: left;
+    background: url("common/images/trumpet.png") no-repeat;
+    width: 19px;
+    height: 19px;
+    margin-left: -7px;
+}
+
+.topbar .notice button {
+    width: 19px;
+    height: 19px;
+}
+
+.topbar .control { float: right; }
+
+.topbar .controlitem {
+    float: left;
+    font-size: 14px;
+    width: 80px;
+    height: 35px;
+    cursor: default
+}
+
+.topbar .contentitem { padding-top: 9px; }
+
+.topbar .contentmenu {
+    display: none;
+    margin-top: 7px;
+    color: #476f9a;
+    width: auto;
+    position: relative;
+    background-color: #fff;
+    z-index: 19;
+}
+
+.helpitem .contentmenu {
+    width: 150px;
+    margin-left: -70px;
+}
+
+.serviceitem .contentmenu {
+    width: 190px;
+    margin-left: -110px;
+}
+
+.useritem .contentmenu {
+    width: 140px;
+    margin-left: -30px;
+}
+
+.topbar .contentmenu:hover, .menuitem:hover .contentmenu { display: block; }
+
+.topbar .contentmenu ul {
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.topbar .contentmenu a {
+    text-decoration: none;
+    color: #476f9a;
+    margin: 0;
+    padding: 8px 0;
+    display: block
+}
+
+.topbar .contentmenu li:hover { background: #476f9a; }
+
+.topbar .contentmenu li:hover span { color: #fff; }
+
+.topbar .contentmenu li:hover a { color: #fff; }
+
+.topbar .contentmenu .Label {
+    margin: 0;
+    padding: 8px 0;
+    display: block
+}
+
+.serviceitem .contentmenu .Label {
+    padding:0;
+    margin-top: 3px;
+    color: #666;
+}
+
+.topbar .topicon {
+    display: block;
+    margin-left: 5px;
+    margin-top: 4px;
+    margin-left: 20px;
+    margin-right: -8px;
+    float: left;
+}
+
+.topbar .controlitem.menuitem:hover {
+    color: #476f9a;
+    background-color: #fff;
+}
+
+.topbar .menuitem:hover .pulldown {
+    background: url("common/images/down_hover.png") no-repeat;
+    margin-left: 10px;
+    width: 10px;
+    height: 7px;
+}
+
+.topbar .menuitem .helpicon {
+    background: url("common/images/helpicon.png") no-repeat;
+    padding-left: 19px;
+}
+
+.topbar .menuitem:hover .helpicon {
+    background: url("common/images/helpicon_hover.png") no-repeat;
+}
+
+.topbar .menuitem .usericon {
+    background: url("common/images/usericon.png") no-repeat;
+    padding-left: 18px;
+}
+
+.topbar .menuitem:hover .usericon { background: url("common/images/usericon_hover.png") no-repeat; }
+
+.topbar .menuitem .interacticon {
+    background: url("common/images/interacticon.png") no-repeat;
+    width: 14px;
+    height: 13px;
+}
+
+.topbar .menuitem:hover .interacticon {
+    background: url("common/images/interact_hover.png") no-repeat;
+    width: 14px;
+    height: 13px;
+}
+
+.topbar .mobileitem {
+    width: 150px;
+    background: url("common/images/phoneicon.png") no-repeat 10px center;
+    margin-top: 0;
+    line-height: 35px;
+    height: 35px;
+}
+
+.topbar .serviceicon {
+    background: url("common/images/phone_normal.png") no-repeat;
+    padding-left: 19px;
+}
+
+.topbar .menuitem:hover .serviceicon{
+    background-image: url("common/images/phone_hover.png");
+}
+
+.topbar .pulldown {
+    background: url("common/images/down_normal.png") no-repeat;
+    margin-left: 10px;
+    width: 10px;
+    height: 7px;
+}
+
+.topbar .pulldown:hover {
+    background: url("common/images/down_hover.png") no-repeat;
+    margin-left: 10px;
+    width: 10px;
+    height: 7px;
+}
+
+/***顶部菜单下拉样式   end ***/
+
+
+
+.popContainer {
+    border: 1px solid #000;
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: none;
+}
+
+.syncContainer {
+    height: 31px;
+    width: 105px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 61px;
+    right: 0px;
+    text-align: center;
+}
+
+.syncButton {
+    background-color: #dddbdc;
+    height: 100%;
+    font-size: 15px;
+    color: #fafafa;
+    line-height: 31px;
+    cursor: pointer;
+}
+
+.hide { display: none; }
+
+.show { display: block; }
+
+
+/****************************导航CSS****************************************/
+
+.mainblock {
+    height: 500px;
+    position: relative;
+    margin: 35px 0 35px 50px;
+}
+
+.guideleft {
+    float: left;
+    background-color: white;
+    font-size: 14px;
+    z-index: 1;
+    position: relative;
+}
+
+.guideleft .li {
+    line-height: 45px;
+    height: 45px;
+    text-align: center;
+    margin-bottom: 8px;
+    background: url("common/images/tab_normal.png") no-repeat;
+}
+
+.guideleft .li .guidetab {
+    text-align: center;
+    float: left;
+    width: 70px;
+    height: 40px;
+}
+
+.guidetab span {
+    display: block;
+    padding: 5px;
+}
+
+.guidechoose {
+    border-left: 3px solid #ffa004;
+    border-top: 1px solid #efeeee;
+    border-bottom: 1px solid #efeeee;
+    border-right: 3px solid white;
+    background-image: none !important;
+}
+
+.guidechoose div {
+    position: relative;
+    margin-top: 1px;
+    padding-bottom: 3px;
+    background-color: #fff;
+}
+
+.guideright {
+    float: left;
+    width: 400px;
+    height: 500px;
+    margin-left: -6px;
+    border: 1px solid #efeeee; /*z-index: 1;*/
+    position: relative;
+}
+
+.content_top { height: 50px; }
+
+.content_top ul {
+    width: 180px;
+    margin-left: 450px;
+    margin-top: 8px;
+}
+
+.content_nav .userdefined { margin-left: 40px; }
+
+.content_nav .li {
+    float: left;
+    padding-left: 10px;
+    width: 150px;
+}
+
+.blockIcon {
+    float: left;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.blockarrows {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+}
+
+.nav_arrows_down {
+    background: url("common/images/nav_arrows_down.png") no-repeat;
+    width: 14px;
+    height: 26px;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.nav_arrows_left {
+    background: url("common/images/nav_arrows_left.png") no-repeat;
+    width: 26px;
+    height: 14px;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+.nav_arrows_right {
+    background: url("common/images/nav_arrows_right.png") no-repeat;
+    width: 26px;
+    height: 14px;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+.content_nav li {
+    width: 160px;
+    color: #404040;
+    font-size: 13px;
+    float: left;
+    height: 200px;
+}
+
+.checkbox {
+    width: 0px;
+    height: 0px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    opacity: 0;
+}
+
+.checkboxback {
+    display: inline-block;
+    width: 32px;
+    height: 20px;
+    position: relative;
+    background: url("common/images/check.png") no-repeat;
+    background-position: 0 0px;
+    margin-bottom: -25px;
+    margin-left: 18px;
+}
+
+.guide_checked { background: url("common/images/checked.png") no-repeat; }
+
+.button_normal {
+    background: url("common/images/btn_01.png") no-repeat;
+    width: 120px;
+    height: 41px;
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    line-height: 38px;
+}
+
+.button_normal:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button_normal:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.button_normal:hover { background: url("common/images/btn_03.png") no-repeat; }
+
+/****新手上路图标****/
+
+.nav_industry {
+    display: block;
+    background: url("common/images/nav/industry_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_industry:hover { background: url("common/images/nav/industry_hover.png") no-repeat; }
+
+.nav_newshop {
+    display: block;
+    background: url("common/images/nav/newshop_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_newshop:hover { background: url("common/images/nav/newshop_hover.png") no-repeat; }
+
+.nav_goodsmatch {
+    display: block;
+    background: url("common/images/nav/goodsmatch_normal.png") no-repeat;
+    width: 73px;
+    height: 72px;
+    margin-left: 8px;
+}
+
+.nav_goodsmatch:hover { background: url("common/images/nav/goodsmatch_hover.png") no-repeat; }
+
+.nav_orderaudit {
+    display: block;
+    background: url("common/images/nav/orderaudit_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_orderaudit:hover { background: url("common/images/nav/orderaudit_hover.png") no-repeat; }
+
+.nav_print {
+    display: block;
+    background: url("common/images/nav/print_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_print:hover { background: url("common/images/nav/print_hover.png") no-repeat; }
+
+.nav_examinegoods_normal {
+    display: block;
+    background: url("common/images/nav/examinegoods_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_examinegoods_normal:hover { background: url("common/images/nav/examinegoods_hover.png") no-repeat; }
+
+.nav_examinegoods_enabled {
+    background: url("common/images/nav/examinegoods_enabled.png") no-repeat;
+    display: block;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_weigh_normal {
+    display: block;
+    background: url("common/images/nav/weigh_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_weigh_normal:hover { background: url("common/images/nav/weigh_hover.png") no-repeat; }
+
+.nav_weigh_enabled {
+    display: block;
+    width: 72px;
+    height: 72px;
+    background: url("common/images/nav/weigh_enabled.png") no-repeat;
+}
+
+.nav_financedata {
+    display: block;
+    background: url("common/images/nav/financedata_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_financedata:hover { background: url("common/images/nav/financedata_hover.png") no-repeat; }
+
+.nav_finance {
+    display: block;
+    background: url("common/images/nav/finance_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_finance:hover { background: url("common/images/nav/finance_hover.png") no-repeat; }
+
+.nav_apar {
+    display: block;
+    background: url("common/images/nav/apar_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+    margin-left: 8px;
+}
+
+.nav_apar:hover { background: url("common/images/nav/apar_hover.png") no-repeat; }
+
+.nav_stockdata {
+    display: block;
+    background: url("common/images/nav/stockdata_normal.png") no-repeat;
+    width: 77px;
+    height: 75px;
+}
+
+.nav_stockdata:hover { background: url("common/images/nav/stockdata_hover.png") no-repeat; }
+
+.nav_instock {
+    display: block;
+    background: url("common/images/nav/instock_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_instock:hover { background: url("common/images/nav/instock_hover.png") no-repeat; }
+
+.nav_shopdata {
+    display: block;
+    background: url("common/images/nav/shopdata_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_shopdata:hover { background: url("common/images/nav/shopdata_hover.png") no-repeat; }
+
+.nav_goodssend {
+    display: block;
+    background: url("common/images/nav/goodssend_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_goodssend:hover { background: url("common/images/nav/goodssend_hover.png") no-repeat; }
+
+.nav_label {
+    display: block;
+    text-align: center;
+}
+
+.PtypeRelationTree { margin-left: 5px; }
+
+
+/***********************分销******************************/
+
+.block_fx .li_right { float: right; }
+
+.block_fx li { width: 160px; }
+
+.nav_fxprice {
+    display: block;
+    background: url("common/images/nav/fxprice_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_fxprice:hover { background: url("common/images/nav/fxprice_hover.png") no-repeat; }
+
+.nav_createorder {
+    display: block;
+    background: url("common/images/nav/createorder_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_createorder:hover { background: url("common/images/nav/createorder_hover.png") no-repeat; }
+
+.nav_fxbusiness {
+    display: block;
+    background: url("common/images/nav/fxbusiness_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_fxbusiness:hover { background: url("common/images/nav/fxbusiness_hover.png") no-repeat; }
+
+.nav_searchbill {
+    display: block;
+    background: url("common/images/nav/searchbill_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_searchbill:hover { background: url("common/images/nav/searchbill_hover.png") no-repeat; }
+
+.nav_collectingbill {
+    display: block;
+    background: url("common/images/nav/collectingbill_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_collectingbill:hover {
+    display: block;
+    background: url("common/images/nav/collectingbill_hover.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+/***********************物流宝****************************/
+
+.block_kjds .li {
+    width: 220px;
+    height: 250px;
+}
+
+.block_kjds .blockarrows { margin-top: 60px; }
+
+.nav_syncorder {
+    display: block;
+    background: url("common/images/nav/syncorder_normal.png") no-repeat;
+    width: 136px;
+    height: 136px;
+}
+
+.nav_syncorder:hover { background: url("common/images/nav/syncorder_hover.png") no-repeat; }
+
+.nav_originalorder {
+    display: block;
+    background: url("common/images/nav/originalorder_normal.png") no-repeat;
+    width: 136px;
+    height: 136px;
+}
+
+.nav_originalorder:hover { background: url("common/images/nav/originalorder_hover.png") no-repeat; }
+
+.nav_orderpost {
+    display: block;
+    background: url("common/images/nav/orderpost_normal.png") no-repeat;
+    width: 136px;
+    height: 136px;
+}
+
+.nav_orderpost:hover { background: url("common/images/nav/orderpost_hover.png") no-repeat; }
+
+/**********************待运营****************************/
+
+.nav_syncordersmall {
+    display: block;
+    background: url("common/images/nav/syncordersmall_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_syncordersmall:hover { background: url("common/images/nav/syncordersmall_hover.png") no-repeat; }
+
+.nav_originalordersmall {
+    display: block;
+    background: url("common/images/nav/originalordersmall_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_originalordersmall:hover { background: url("common/images/nav/originalordersmall_hover.png") no-repeat; }
+
+.nav_originalsaletotal {
+    display: block;
+    background: url("common/images/nav/originalsaletotal_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_originalsaletotal:hover { background: url("common/images/nav/originalsaletotal_hover.png") no-repeat; }
+
+.nav_export {
+    display: block;
+    background: url("common/images/nav/export_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_export:hover { background: url("common/images/nav/export_hover.png") no-repeat; }
+
+.nav_importlogistic {
+    display: block;
+    background: url("common/images/nav/importlogistic_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+}
+
+.nav_importlogistic:hover { background: url("common/images/nav/importlogistic_hover.png") no-repeat; }
+
+/***********************进销存*************************/
+
+.nav_instockdata {
+    background: url("common/images/nav/instockdata_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+    display: block;
+}
+
+.nav_instockdata:hover {
+    background: url("common/images/nav/instockdata_hover.png") no-repeat;
+}
+
+.nav_saleoutstock {
+    background: url("common/images/nav/saleoutstock_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+    display: block;
+}
+
+.nav_saleoutstock:hover {
+    background: url("common/images/nav/saleoutstock_hover.png") no-repeat;
+}
+
+.nav_saledata {
+    background: url("common/images/nav/saledata_normal.png") no-repeat;
+    width: 72px;
+    height: 72px;
+    display: block;
+}
+
+.nav_saledata:hover {
+    background: url("common/images/nav/saledata_hover.png") no-repeat;
+}
+
+.gray {
+    -webkit-filter: grayscale(100%); /* webkit内核支持程度较好 */
+    -moz-filter: grayscale(100%); /* 其他内核现在并不支持，为了将来兼容性书写 */
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%); /* 标准写法 */
+    filter: gray;
+}
+
+
+
+/***********************按钮图标*****************************/
+
+.pleft17{padding-left:23px;}
+.pleft11{padding-left:11px;}
+
+.focusColor {
+    border-color:#e5551c;
+    background-color:#f25a1e;
+    color: white;
+}
+
+/*手工开单*/
+.btn_create {
+    background-image: url("common/images/buttonIcon/create.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+.btn_create:hover {
+    background-image: url("common/images/buttonIcon/create_hover.png");
+    background-repeat: no-repeat;
+}
+
+/*导入订单*/
+.btn_import {
+    background-image: url("common/images/buttonIcon/import.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_import:hover {
+    background-image: url("common/images/buttonIcon/import_hover.png");
+    background-repeat: no-repeat;
+}
+
+/*不发货*/
+.btn_nosend {
+    background-image: url("common/images/buttonIcon/nosend.png");
+    background-position:5% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_nosend:hover {
+    background-image: url("common/images/buttonIcon/nosend_hover.png");
+    background-repeat: no-repeat;
+}
+
+/*提交*/
+.btn_submit {
+    background-image: url("common/images/buttonIcon/submit.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+.btn_submit:hover,.btn_submit_focus:hover {
+    background-image: url("common/images/buttonIcon/submit_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_submit_focus {
+    background-image: url("common/images/buttonIcon/submit_hover.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: white;
+    border-color:#e5551c;
+    background-color:#f25a1e;
+}
+
+.btn_more {
+    background-image: url("common/images/buttonIcon/more.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_more:hover {
+    background-image: url("common/images/buttonIcon/more_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_match {
+    background-image: url("common/images/buttonIcon/match.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_match:hover {
+    background-image: url("common/images/buttonIcon/match_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_tactics {
+    background-image: url("common/images/buttonIcon/tactics.png");
+    background-position:5% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_tactics:hover {
+    background-image: url("common/images/buttonIcon/tactics_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_mark {
+    background-image: url("common/images/buttonIcon/mark.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_mark:hover {
+    background-image: url("common/images/buttonIcon/mark_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_gift {
+    background-image: url("common/images/buttonIcon/gift.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_gift:hover {
+    background-image: url("common/images/buttonIcon/gift_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_edit {
+    background-image: url("common/images/buttonIcon/edit.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_edit:hover {
+    background-image: url("common/images/buttonIcon/edit_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_merge {
+    background-image: url("common/images/buttonIcon/merge.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_merge:hover {
+    background-image: url("common/images/buttonIcon/merge_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_split {
+    background-image: url("common/images/buttonIcon/split.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_split:hover {
+    background-image: url("common/images/buttonIcon/split_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_audit {
+    background-image: url("common/images/buttonIcon/audit.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_audit_focus {
+    background-image: url("common/images/buttonIcon/audit_hover.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: white;
+    border-color:#e5551c;
+    background-color:#f25a1e;
+}
+
+.btn_audit_short {
+    background-image: url("common/images/buttonIcon/audit.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_audit_short:hover,.btn_audit:hover {
+    background-image: url("common/images/buttonIcon/audit_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_audit_short_focus {
+    background-image: url("common/images/buttonIcon/audit_hover.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+    color: white;
+    border-color:#e5551c;
+    background-color:#f25a1e;
+}
+
+.btn_audit_short_focus:hover,.btn_audit_focus:hover {
+    background-image: url("common/images/buttonIcon/audit_hover.png");
+    background-repeat: no-repeat;
+    /*color: #3a4044;
+    border-color:#c9c9c9;
+    background-color:#f6f6f6;*/
+}
+
+
+
+.btn_stockup {
+    background-image: url("common/images/buttonIcon/stockup.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_stockup:hover {
+    background-image: url("common/images/buttonIcon/stockup_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_back {
+    background-image: url("common/images/buttonIcon/back.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_back:hover {
+    background-image: url("common/images/buttonIcon/back_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_config {
+    background-image: url("common/images/buttonIcon/config.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_config:hover {
+    background-image: url("common/images/buttonIcon/config_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_printbatch {
+    background-image: url("common/images/buttonIcon/printbatch.png");
+    background-position:5% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_printbatch:hover {
+    background-image: url("common/images/buttonIcon/printbatch_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_delete {
+    background-image: url("common/images/buttonIcon/delete.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_delete:hover {
+    background-image: url("common/images/buttonIcon/delete_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_print {
+    background-image: url("common/images/buttonIcon/print.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_print:hover {
+    background-image: url("common/images/buttonIcon/print_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_update {
+    background-image: url("common/images/buttonIcon/update.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_update:hover {
+    background-image: url("common/images/buttonIcon/update_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_export {
+    background-image: url("common/images/buttonIcon/export.png");
+    background-position:5% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_export:hover {
+    background-image: url("common/images/buttonIcon/export_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_search {
+    background-image: url("common/images/buttonIcon/mirror.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_search:hover {
+    background-image: url("common/images/buttonIcon/mirror_hover.png");
+    background-repeat: no-repeat;
+}
+
+.btn_clear {
+    background-image: url("common/images/buttonIcon/del.png");
+    background-position:10% 50%;
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.btn_clear:hover {
+    background-image: url("common/images/buttonIcon/del_hover.png");
+    background-repeat: no-repeat;
+}
+
+.data_download
+{
+     background-image: url("common/images/buttonIcon/data_download.png");
+    background-repeat: no-repeat;
+}
+.notice
+{
+     background-image: url("common/images/buttonIcon/notice.png");
+    background-repeat: no-repeat;
+}
+.sales_promotion
+{
+     background-image: url("common/images/buttonIcon/sales_promotion.png");
+    background-repeat: no-repeat;
+}
+ /**取消框架间距**/
+ .distrib_mar *,.nav_grid
+ {
+     margin:0px;
+     padding:0px;
+ }
+.nav_button
+{
+    display: block;
+    width:262px;
+    height:80px;
+}
+.nav_title
+{
+    margin:0 0 0 -2px;
+    color:#1B97BB;
+    background-color:#F7F7F7;
+    font-weight:900;
+    font-family:宋体;
+    border:1px solid #F6F6F6;
+    padding:0 0 0 10px;
+}   
+.distrib_mar .Pager
+{
+    border:1px solid #F6F6F6;
+                 
+}
+table .GridBodyCell
+{
+    margin:0 1px 0 1px;
+}
+.distrib_mar .GridBodyCellText
+{
+    margin:0 0 0 3px;
+} 
+.distrib_mar .GridHeaderCaption
+{
+      background-color:#FFFFFF;
+      border:0px;
+      margin:0 0 0 3px;
+}
+.distrib_mar .GridHeaderCaptionText
+{
+    text-align:center;
+    border:0px;
+}
+.distrib_mar .RowNoConfigIcon{ display:none; }
+.distrib_mar .GridHeader{
+    cursor: default;
+    height: 30px;
+    padding-bottom: 0;
+    background-color: #F6F6F6;
+    margin-left: 0px;
+}
+
+/*列表样式*/
+.SubmitButton{background:#56c358;border-color:#56c358;height:40px;line-height:40px;border-radius:6px;font-size:15px;}
+        
+        .CustomView{width:90%;border-color:#eee;background-color:#fefefe;margin-left:10px;box-shadow:2px 2px 2px #ccc;margin:20px 0;}
+        .CustomView .UI_ListItem{width:auto;}
+        .CustomView .UI_ListLayout{border:none;background:transparent;}
+        .CustomView .MenuText{float:left;line-height:21px;height:21px;font-weight:800;color:#A5682A;}
+        .CustomView .MenuText.cur{color:#5AA93A;font-weight:800;}
+        .CustomView .s{color:#ccc;margin-left:13px;float:left;}

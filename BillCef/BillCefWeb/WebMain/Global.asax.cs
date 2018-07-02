@@ -2,6 +2,8 @@
 using System.Web;
 using Carpa.Web.Common;
 using WebMain.DataHandler;
+using Carpa.Web.Script;
+using Carpa.Web.Script.UI;
 
 namespace WebMain
 {
@@ -10,6 +12,10 @@ namespace WebMain
 
         protected void Application_Start(object sender, EventArgs e)
         {
+            Page.RegisterLoginPage("Default.gspx", "user");
+
+            ThemeManager.RegisterTheme("cef", typeof(Global).Assembly, "skins/travel/");
+            
             IOUtils.Init();
         }
 

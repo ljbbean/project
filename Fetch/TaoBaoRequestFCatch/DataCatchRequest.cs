@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Collections;
 using Common;
+using System.Web;
+using System.Text.RegularExpressions;
 
 namespace TaoBaoRequestFCatch
 {
@@ -110,10 +112,20 @@ namespace TaoBaoRequestFCatch
             {
                 string subCookies = cookie.Substring(index + flag.Length);
                 index = subCookies.IndexOf(";");
-                return subCookies.Substring(0, index);
+                string userName = subCookies.Substring(0, index);
+
+                userName = HttpUtility.UrlDecode(userName);
+                userName = UnicodeToString(userName);
+                return userName;
             }
 
             throw new Exception("cookies数据不正确");
+        }
+
+        public static string UnicodeToString(string srcText)
+        {
+            Regex reg = new Regex(@"(?i)\\[uU]([0-9a-f]{4})");
+            return reg.Replace(srcText, (m) => { return ((char)Convert.ToInt32(m.Groups[1].Value, 16)).ToString(); });
         }
 
         private List<HashObject> GetBillList(JavaScriptSerializer serializer, string str, DateTime date, string user)

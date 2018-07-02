@@ -1,4 +1,4 @@
-var http = require("http");
+﻿var http = require("http");
 var express = require("express");
 var socketIo = require("socket.io");
 var bodyParser = require("body-parser")
@@ -91,6 +91,7 @@ io.on("connection", function (clientSocket) {
 
     clientSocket.on("login", (data) => {
         data = getData(data);
+        console.log("login", data);
         let uid = data.uid
         let cid = userMap[uid]
         let ncid = clientSocket.id//新客户端ID
@@ -183,76 +184,27 @@ io.on("connection", function (clientSocket) {
         //回发给自己
         clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
     })
+    let items = ["postDataRequest", "postDataSure", "consultationEnabledUpdate", "sureEnabledUpdate", "getLoginToken", "sendLoginToken","getDownDataToken","sendDownDataToken"]
 
-    clientSocket.on("postDataRequest", function(data){
-        data = getData(data);
-        if (!checkUser(data.uid)) {
-            return;
-        }
-        let toucid = userMap[data.touid]
-        if (toucid && isOnline(toucid)) {
-            io.to(toucid).emit("postDataRequest", {
-                fuid: data.uid,//消息来源
-                date: getCurrentDate(),//发送时间
-                msg: data.msg//消息内容
-            })
-            return
-        }
-        //回发给自己
-        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
-    })
-
-    clientSocket.on("postDataSure", function(data){
-        data = getData(data);
-        if (!checkUser(data.uid)) {
-            return;
-        }
-        let toucid = userMap[data.touid]
-        if (toucid && isOnline(toucid)) {
-            io.to(toucid).emit("postDataSure", {
-                fuid: data.uid,//消息来源
-                date: getCurrentDate(),//发送时间
-                msg: data.msg//消息内容
-            })
-            return
-        }
-        //回发给自己
-        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
-    })
-
-    clientSocket.on("consultationEnabledUpdate", function(data){
-        data = getData(data);
-        if (!checkUser(data.uid)) {
-            return;
-        }
-        let toucid = userMap[data.touid]
-        if (toucid && isOnline(toucid)) {
-            io.to(toucid).emit("consultationEnabledUpdate", {
-                fuid: data.uid,//消息来源
-                date: getCurrentDate(),//发送时间
-                msg: data.msg//消息内容
-            })
-            return
-        }
-        //回发给自己
-        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
-    })
-
-    clientSocket.on("sureEnabledUpdate", function(data){
-        data = getData(data);
-        if (!checkUser(data.uid)) {
-            return;
-        }
-        let toucid = userMap[data.touid]
-        if (toucid && isOnline(toucid)) {
-            io.to(toucid).emit("sureEnabledUpdate", {
-                fuid: data.uid,//消息来源
-                date: getCurrentDate(),//发送时间
-                msg: data.msg//消息内容
-            })
-            return
-        }
-        //回发给自己
-        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
+    items.forEach((item)=>{
+        clientSocket.on(item, function(data){
+            data = getData(data);
+            
+            console.log(item, data);
+            if (!checkUser(data.uid)) {
+                return;
+            }
+            let toucid = userMap[data.touid]
+            if (toucid && isOnline(toucid)) {
+                io.to(toucid).emit(item, {
+                    fuid: data.uid,//消息来源
+                    date: getCurrentDate(),//发送时间
+                    msg: data.msg//消息内容
+                })
+                return
+            }
+            //回发给自己
+            clientSocket.emit("exec", { type: 'failed', msg: `${item}未找到对应的接收方，可能对象已下线`, date: getCurrentDate() })
+        })
     })
 });
