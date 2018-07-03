@@ -161,7 +161,7 @@
       <DependentUpon>BillList.gspx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataHandler\DataCatchFromTBExample.js" />
-    <Content Include="DataHandler\GoodsMatchRate.js" />
+    <EmbeddedResource Include="DataHandler\GoodsMatchRate.js" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

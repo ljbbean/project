@@ -24,7 +24,7 @@ namespace FCatch
         List<string> listMsg = new List<string>();
         bool isRuning = false;
         FiddlerCatch fdCatch = new FiddlerCatch();
-        private string socketUrl = "http://localhost:8080";
+        private string socketUrl = "http://localhost:8081";
         private string analysisUrl = "http://localhost:6369/Test001/Test001.Login.ajax/";
         
         public DataCatch()

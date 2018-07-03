@@ -22,7 +22,7 @@ WebMain.DefaultAction.prototype = {
 
     loadForm: function (form, tag) {
         this.showPageTag = tag;
-        if (tag == "0" || tag == "2") {
+        if (tag == "0") {
             this.childForm.refresh("Wait.gspx");
             return;
         }
@@ -32,7 +32,18 @@ WebMain.DefaultAction.prototype = {
         this.childForm.set_clientSize("ClientHeight=" + (content.offsetHeight) + ",ClientWidth=" + (content.offsetWidth - 30));
         this.childForm._contentElement = content;
         this.childForm.add_loaded(this.doMiddleFormLoaded, this);
-        var url = tag == "1" ? "~/BillList.gspx" : "~/StatisticsPage.gspx";
+        var url; ;
+        switch (tag) {
+            case "0":
+                url = "~/StatisticsPage.gspx";
+                break;
+            case "1":
+                url = "~/BillList.gspx";
+                break;
+            case "2":
+                url = "~/DataHandler/MilitaryInvestigation.gspx";
+                break;
+        }
         url = url + "?area=" + form.area.get_value();
         this.childForm.refresh(url);
     },
@@ -42,7 +53,7 @@ WebMain.DefaultAction.prototype = {
     },
 
     chatItemClick: function (sender) {
-        var buttonArray = ["tj", "dd","jqzc"];
+        var buttonArray = ["tj", "dd", "jqzc"];
         var form = sender.get_form();
         for (var i in buttonArray) {
             form[buttonArray[i]].get_element().className = "buttonNoSelected";

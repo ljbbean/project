@@ -87,10 +87,14 @@
     <EmbeddedResource Include="BillList.gspx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\MilitaryInvestigation.gspx" />
     <None Include="docs\carpa-vsdoc.js" />
     <EmbeddedResource Include="StatisticsPage.gspx" />
     <EmbeddedResource Include="BillList.js">
       <DependentUpon>BillList.gspx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataHandler\MilitaryInvestigation.js">
+      <DependentUpon>MilitaryInvestigation.gspx</DependentUpon>
     </EmbeddedResource>
     <Content Include="packages.config" />
     <EmbeddedResource Include="Wait.gspx" />
@@ -387,6 +391,9 @@
     <Compile Include="Common\UserInfo.cs" />
     <Compile Include="Common\Utils.cs" />
     <Compile Include="DataHandler\DataCatchSave.cs" />
+    <Compile Include="DataHandler\MilitaryInvestigation.cs">
+      <DependentUpon>MilitaryInvestigation.gspx</DependentUpon>
+    </Compile>
     <Compile Include="EchartModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -132,7 +132,7 @@ namespace FCatch
                 Send();
                 Thread.Sleep(1000);
                 SocketClose();
-                //FormClose();
+                FormClose();
             }
         }
 

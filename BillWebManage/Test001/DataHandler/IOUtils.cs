@@ -34,7 +34,7 @@ namespace Test001.DataHandler
         static IOUtils()
         {
             PostDataRequestList = new Dictionary<ulong, Counter>();
-            SocketIOUrl = "http://localhost:8080";
+            SocketIOUrl = "http://localhost:8081";
             if (ConfigurationManager.ConnectionStrings["socketio"] != null)
             {
                 SocketIOUrl = ConfigurationManager.ConnectionStrings["socketio"].ToString();

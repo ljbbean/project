@@ -60,18 +60,13 @@ namespace Test001
             using (DbHelper db = AppUtils.CreateDbHelper())
             {
                 db.AddParameter("uid", GetId(db, user));
-
+                Log.Info(string.Format("GetStartDate:{0}", user));
                 var list = db.Select("SELECT MAX(DATE) as ndate FROM bill WHERE billfrom IS NOT NULL AND uid = @uid ORDER BY DATE DESC");
-                if (list == null || list.Count == 0)
+                if (list == null || list.Count == 0 || list[0].GetValue<DateTime>("ndate") == new DateTime())
                 {
-                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
+                    return MilliTimeStamp(DateTime.Now.AddDays(-2)).ToString();
                 }
-
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
-                if (dateTime == new DateTime())
-                {
-                    return MilliTimeStamp(DateTime.Now.AddDays(-1)).ToString();
-                }
                 dateTime = dateTime.AddDays(-2);//往后推2天
                 return MilliTimeStamp(dateTime).ToString();
             }

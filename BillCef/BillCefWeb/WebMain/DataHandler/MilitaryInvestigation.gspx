@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="军情侦查" ActionType="WebMain.DataHandler.MilitaryInvestigationAction, DataHandler/MilitaryInvestigation.js">
+  <VPanel>
+    <HPanel Width="1090" HAlign="Right">
+      <TextEdit NullDisplayText="输入需要侦查的关键字" ID="condition" Width="500"/>
+      <Button Text="侦查" OnClick="doSearch"/>
+      <Button Text="刷新" OnClick="doRefresh"/>
+    </HPanel>
+    <VPanel>
+      <Grid ID="grid" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" Width="1090" Height="350" OnSelectionChanged="doGridChange">
+        <TextColumn Caption="标题" DataField="raw_title" Width="400"/>
+        <ImageColumn Caption="主图地址" DataField="pic_url" UseResource="false" ImageWidth="100" ImageHeight="100" Width="120"/>
+        <TextColumn Caption="物流地址" DataField="item_log"/>
+        <TextColumn Caption="店铺名称" DataField="nick"/>
+        <TextColumn Caption="已销售数量" DataField="view_sales"/>
+        <TextColumn Caption="显示单价" DataField="view_price"/>
+        <DynamicButtonColumn  Caption="商品地址" DataField="buttons" TextAlign="Center" OnButtonClick="doButtonClick"  />
+      </Grid>
+      <HPanel ID="bottom">
+        <VPanel Width="500">
+          <Label Label="发货地" ID="fhd"/>
+          <Label Label="确认量" ID="qrl"/>
+          <Label Label="销售量" ID="xsl"/>
+          <Label Label="支付方式" ID="zffs"/>
+          <Label Label="服务" ID="fw"/>
+          <Label Label="优惠券" ID="yhj"/>
+        </VPanel>
+        <Grid ID="gridSku" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" Width="590">
+          <TextColumn Caption="SKU名称" DataField="Title" Width="260"/>
+          <TextColumn Caption="成交单价" DataField="PromotionPrice"/>
+          <TextColumn Caption="原始单价" DataField="OriginalPrice"/>
+          <TextColumn Caption="库存数量" DataField="Stock"/>
+        </Grid>
+      </HPanel>
+    </VPanel>
+  </VPanel>
+</Page>
