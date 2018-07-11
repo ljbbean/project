@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="gb2312" ?>
-<Page xmlns="Carpa.UI" Title="主页" ActionType="WebMain.DefaultAction, Default.js">
+<Page xmlns="Carpa.UI" Title="主页" ActionType="WebMain.DefaultAction, Default.js, scripts/socket.io.js">
   <HiddenField DataField="user" Value="${user}"/>
   <Label Text="${text}" ID="reload" CssClass="buttonNoSelected" CssStyle="width:120px; color:red;" OnClick="onReload"/>
   <VBlock CssClass="main" Visible="${visible}">
@@ -12,7 +12,7 @@
           <Label Text="重新加载" CssClass="buttonNoSelected" OnClick="doRefresh"/>
         </HPanel>
       </HPanel>
-      <HPanel Width="700" HAlign="Right" CssClass="toppanel">
+      <HPanel Width="700" HAlign="Right" VAlign="Middle" CssClass="toppanel">
         <Label Text="店铺名称【${user}】"/>
         <RadioButtonList LayoutDirection="Horz" ShowBorder="false" DataField="area" SelectedIndex="0" OnChange="doAreaChange">
           <ListItem Text="今天" Selected="true" Value="0"/>
@@ -22,13 +22,11 @@
         </RadioButtonList>
       </HPanel>
     </HPanel>
-    <Block ID="container">
-      
-    </Block>
   </VBlock>
+  <MDIPanel ID="mdi" ShowTabHeader="false"/>
   <Style>
     .main{background:#ddeeee;}
-    .button{border:1px solid #ffffff;background:#0077ee;border-radius:6px;width:25px;fontsize:16;margin:5px;padding:3px;cursor:pointer;}
+    .button{border:1px solid #ffffff;background:#36a6d0;border-radius:6px;width:25px;fontsize:16;margin:5px;padding:3px;cursor:pointer;color:#ffffff}
     .button:hover{border:1px solid #525622}
     .buttonNoSelected{border:1px solid #ffffff;background:#cccccc;border-radius:6px;width:25px;fontsize:16;margin:5px;padding:3px;cursor:pointer;}
     .buttonNoSelected:hover{border:1px solid #525622}

@@ -20,18 +20,12 @@ WebMain.DefaultAction.prototype = {
         }
     },
 
-    loadForm: function (form, tag) {
+    loadForm: function (form, tag, re) {
         this.showPageTag = tag;
         if (tag == "0") {
-            this.childForm.refresh("Wait.gspx");
+            form.mdi.showPage("Wait.gspx");
             return;
         }
-        var content = form.container.get_element();
-        this.childForm = new Sys.UI.CustomForm(this);
-        // 中间栏目的子窗体，用于显示其它控件页面
-        this.childForm.set_clientSize("ClientHeight=" + (content.offsetHeight) + ",ClientWidth=" + (content.offsetWidth - 30));
-        this.childForm._contentElement = content;
-        this.childForm.add_loaded(this.doMiddleFormLoaded, this);
         var url; ;
         switch (tag) {
             case "0":
@@ -44,12 +38,12 @@ WebMain.DefaultAction.prototype = {
                 url = "~/DataHandler/MilitaryInvestigation.gspx";
                 break;
         }
-        url = url + "?area=" + form.area.get_value();
-        this.childForm.refresh(url);
-    },
-
-    doMiddleFormLoaded: function (frm) {
-        frm._initialized = true;
+        if (re) {
+            url = url + "?area=" + form.area.get_value() + "&re=" + re;
+        } else {
+            url = url + "?area=" + form.area.get_value();
+        }
+        form.mdi.showPage(url);
     },
 
     chatItemClick: function (sender) {
@@ -67,10 +61,10 @@ WebMain.DefaultAction.prototype = {
         var form = sender.get_form();
         switch (this.showPageTag) {
             case "0":
-                this.childForm.refresh("~/StatisticsPage.gspx?area=" + sender.get_value());
+                form.mdi.showPage("~/StatisticsPage.gspx?area=" + sender.get_value());
                 break;
             case "1":
-                this.childForm.refresh("~/BillList.gspx?area=" + sender.get_value());
+                form.mdi.showPage("~/BillList.gspx?area=" + sender.get_value());
                 break;
         }
     },
@@ -82,7 +76,7 @@ WebMain.DefaultAction.prototype = {
 
     doRefresh: function (sender) {
         var form = sender.get_form();
-        this.loadForm(form, this.showPageTag);
+        this.loadForm(form, this.showPageTag, new Date());
     }
 }
 WebMain.DefaultAction.registerClass('WebMain.DefaultAction', Sys.UI.PageAction);

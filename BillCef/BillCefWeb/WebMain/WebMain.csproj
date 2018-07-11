@@ -87,9 +87,13 @@
     <EmbeddedResource Include="BillList.gspx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataHandler\MilitaryInvestigation.gspx" />
+    <EmbeddedResource Include="DataHandler\MilitaryInvestigation.gspx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="docs\carpa-vsdoc.js" />
-    <EmbeddedResource Include="StatisticsPage.gspx" />
+    <EmbeddedResource Include="StatisticsPage.gspx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="BillList.js">
       <DependentUpon>BillList.gspx</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +170,7 @@
     <EmbeddedResource Include="skins\beefun\tree\none.gif" />
     <EmbeddedResource Include="skins\beefun\tree\noneLine.png" />
     <EmbeddedResource Include="skins\beefun\tree\plus.png" />
+    <EmbeddedResource Include="scripts\socket.io.js" />
     <Content Include="skins\common.css" />
     <Content Include="skins\common\images\btn_01.png" />
     <Content Include="skins\common\images\btn_02.png" />

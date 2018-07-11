@@ -20,5 +20,13 @@ namespace Common
 
             throw new Exception("cookies数据不正确");
         }
+
+        public static string ConvertUnixDate(long tick)
+        {
+            DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            long lTime = long.Parse(tick + "0000000");
+            TimeSpan toNow = new TimeSpan(lTime);
+            return dtStart.Add(toNow).ToString("yyyy/MM/dd HH:mm:ss");
+        }
     }
 }

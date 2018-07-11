@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="gb2312" ?>
 <Page xmlns="Carpa.UI" Title="军情侦查" ActionType="WebMain.DataHandler.MilitaryInvestigationAction, DataHandler/MilitaryInvestigation.js">
   <VPanel>
+    <HiddenField DataField="socketurl" Value="${socketurl}"/>
+    <HiddenField DataField="user" Value="${user}"/>
     <HPanel Width="1090" HAlign="Right">
-      <TextEdit NullDisplayText="输入需要侦查的关键字" ID="condition" Width="500"/>
-      <Button Text="侦查" OnClick="doSearch"/>
+      <TextEdit NullDisplayText="输入需要侦查的关键字,店铺名称或者商品地址" DataField="condition" Required="true" Label="搜索内容" Width="500"/>
+      <Button Text="商店侦查" OnClick="doGet" Visible="false"/>
+      <Button Text="关键字侦查" OnClick="doSearch"/>
       <Button Text="刷新" OnClick="doRefresh"/>
     </HPanel>
     <VPanel>
-      <Grid ID="grid" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" Width="1090" Height="350" OnSelectionChanged="doGridChange">
+      <Grid ID="grid" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" Width="1090" Height="350" OnSelectionChanged="doGridChange">
         <TextColumn Caption="标题" DataField="raw_title" Width="400"/>
         <ImageColumn Caption="主图地址" DataField="pic_url" UseResource="false" ImageWidth="100" ImageHeight="100" Width="120"/>
         <TextColumn Caption="物流地址" DataField="item_log"/>
@@ -16,21 +19,35 @@
         <TextColumn Caption="显示单价" DataField="view_price"/>
         <DynamicButtonColumn  Caption="商品地址" DataField="buttons" TextAlign="Center" OnButtonClick="doButtonClick"  />
       </Grid>
-      <HPanel ID="bottom">
-        <VPanel Width="500">
-          <Label Label="发货地" ID="fhd"/>
-          <Label Label="确认量" ID="qrl"/>
-          <Label Label="销售量" ID="xsl"/>
-          <Label Label="支付方式" ID="zffs"/>
-          <Label Label="服务" ID="fw"/>
-          <Label Label="优惠券" ID="yhj"/>
-        </VPanel>
-        <Grid ID="gridSku" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" AllowConfig="true" ReadOnly="true" Width="590">
-          <TextColumn Caption="SKU名称" DataField="Title" Width="260"/>
-          <TextColumn Caption="成交单价" DataField="PromotionPrice"/>
-          <TextColumn Caption="原始单价" DataField="OriginalPrice"/>
-          <TextColumn Caption="库存数量" DataField="Stock"/>
-        </Grid>
+      <HPanel>
+        <VBlock Width="390">
+          <HPanel>
+            <Label Label="发货地区:" ID="fhd" Width="60"/>
+            <Label Label="确认总量:" ID="qrl" Width="60"/>
+            <Label Label="销售总量:" ID="xsl" Width="60"/>
+          </HPanel>
+          <HPanel ColSpan="3">
+            <Label Label="上架时间:" ID="start" Width="120" />
+            <Label Label="下架时间:" ID="end" Width="120"/>
+          </HPanel>
+          <HPanel ColSpan="3">
+            <Label Label="支付方式:" ID="zffs"/>
+          </HPanel>
+          <HPanel ColSpan="3">
+            <Label Label="商品服务:" ID="fw"/>
+          </HPanel>
+          <HPanel ColSpan="3">
+            <Label Label="   优惠券:" ID="yhj"/>
+          </HPanel>
+        </VBlock>
+        <HBlock>
+          <Grid ID="gridSku" AutoDefaultRowCount="true" AllowSort="true" AllowResize="true" Height="220" AllowConfig="true" ReadOnly="true" Width="690">
+            <TextColumn Caption="SKU名称" DataField="Title" Width="260"/>
+            <TextColumn Caption="成交单价" DataField="PromotionPrice"/>
+            <TextColumn Caption="原始单价" DataField="OriginalPrice"/>
+            <TextColumn Caption="库存数量" DataField="Stock"/>
+          </Grid>
+        </HBlock>
       </HPanel>
     </VPanel>
   </VPanel>

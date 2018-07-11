@@ -184,7 +184,27 @@ io.on("connection", function (clientSocket) {
         //回发给自己
         clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
     })
-    let items = ["postDataRequest", "postDataSure", "consultationEnabledUpdate", "sureEnabledUpdate", "getLoginToken", "sendLoginToken","getDownDataToken","sendDownDataToken"]
+
+    clientSocket.on("getGoodMsg", function(data){
+        console.log("getGoodMsg", data);
+        data = getData(data);
+        if (!checkUser(data.uid)) {
+            return;
+        }
+        let toucid = userMap["net_tools"]
+        if (toucid && isOnline(toucid)) {
+            io.to(toucid).emit("getGoodMsg", {
+                fuid: data.uid,//消息来源
+                date: getCurrentDate(),//发送时间
+                msg: data.msg//消息内容
+            })
+            return
+        }
+        //回发给自己
+        clientSocket.emit("exec", { type: 'failed', msg: '未找到对应的接收方，可能对象已下线', date: getCurrentDate() })
+    })
+
+    let items = ["postDataRequest", "postDataSure", "consultationEnabledUpdate", "sureEnabledUpdate", "getLoginToken", "sendLoginToken","getDownDataToken","sendDownDataToken", "goodMsg"]
 
     items.forEach((item)=>{
         clientSocket.on(item, function(data){
@@ -196,8 +216,12 @@ io.on("connection", function (clientSocket) {
             }
             let toucid = userMap[data.touid]
             if (toucid && isOnline(toucid)) {
+                let uid = data.uid;
+                if("goodMsg" == item){
+                    uid = "";
+                }
                 io.to(toucid).emit(item, {
-                    fuid: data.uid,//消息来源
+                    fuid: uid,//消息来源
                     date: getCurrentDate(),//发送时间
                     msg: data.msg//消息内容
                 })

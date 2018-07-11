@@ -51,6 +51,7 @@
     <Compile Include="BillManage.cs" />
     <Compile Include="HashObjectExt.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="Net.cs" />
     <Compile Include="NetDataHandler.cs" />
     <Compile Include="ObjectExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
