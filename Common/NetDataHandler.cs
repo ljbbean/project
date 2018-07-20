@@ -1,10 +1,10 @@
-﻿using Carpa.Web.Ajax;
-using Carpa.Web.Script;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Common;
+using Common.Script;
 
 namespace Common
 {
@@ -25,11 +25,11 @@ namespace Common
                 info.ErrorMsg = "网络数据为空";
                 return info;
             }
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            HashObject hash = null;
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
+            HashMap hash = null;
             try
             {
-                hash = (HashObject)serializer.DeserializeObject(rdata);
+                hash = (HashMap)serializer.DeserializeObject(rdata);
             }
             catch (Exception e)
             {
@@ -50,7 +50,7 @@ namespace Common
                     "page/totalNumber",
                     "page/totalPage"};
 
-            HashObject vhash = hash.GetHashValue(keys)[0];
+            HashMap vhash = hash.GetHashValue(keys)[0];
             info.MainOrders = (IList<object>)vhash["mainOrders"];
             info.CurrentPage = hash.GetHashValue(keys)[1].GetValue<int>("currentPage");
             info.TotalNumber = hash.GetHashValue(keys)[2].GetValue<int>("totalNumber");
@@ -64,9 +64,9 @@ namespace Common
         /// <param name="rdata">明细数据</param>
         public static object DetailDataTransformation(string rdata)
         {
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
             string tempJson = GetDetailDataFromHtml(rdata);
-            HashObject data = (HashObject)serializer.DeserializeObject(tempJson);
+            HashMap data = (HashMap)serializer.DeserializeObject(tempJson);
             string[] keys = { "tabs/content/alingPhone",
                     "tabs/content/logisticsName",
                     "tabs/content/address",
@@ -83,7 +83,7 @@ namespace Common
             json = json.Substring(0, json.IndexOf(script));
             json = json.Substring(0, json.LastIndexOf('}') + 1);//去掉尾部
             json = string.Format("\"{0}\"", json);
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
             return serializer.DeserializeObject(json).ToString();
         }
     }

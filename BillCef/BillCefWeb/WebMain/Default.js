@@ -77,6 +77,11 @@ WebMain.DefaultAction.prototype = {
     doRefresh: function (sender) {
         var form = sender.get_form();
         this.loadForm(form, this.showPageTag, new Date());
+    },
+
+    doButtonClick: function (sender) {
+        var form = sender.get_form();
+        form.get_service().Test();
     }
 }
 WebMain.DefaultAction.registerClass('WebMain.DefaultAction', Sys.UI.PageAction);

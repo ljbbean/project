@@ -126,7 +126,7 @@ WebMain.DataHandler.MilitaryInvestigationAction.prototype = {
 
         if (detail.error) {
             delete this.detailArray[detail_url];
-            consle.log(detail.error);
+            console.log(detail.error);
             return;
         }
         form.gridSku.dataBind(detail.List);

@@ -100,8 +100,14 @@
     <EmbeddedResource Include="DataHandler\MilitaryInvestigation.js">
       <DependentUpon>MilitaryInvestigation.gspx</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="imgs\jdt.ico" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Wait.gspx" />
+    <EmbeddedResource Include="PlugManager.gspx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlugList.gspx" />
+    <EmbeddedResource Include="scripts\iconfont.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -171,6 +177,17 @@
     <EmbeddedResource Include="skins\beefun\tree\noneLine.png" />
     <EmbeddedResource Include="skins\beefun\tree\plus.png" />
     <EmbeddedResource Include="scripts\socket.io.js" />
+    <EmbeddedResource Include="PlugManager.js">
+      <DependentUpon>PlugManager.gspx</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlugList.js">
+      <DependentUpon>PlugList.gspx</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="PlugList.htm" />
+    <EmbeddedResource Include="scripts\service.js" />
+    <EmbeddedResource Include="scripts\service.css" />
+    <EmbeddedResource Include="scripts\demo_fontclass.html" />
+    <EmbeddedResource Include="scripts\iconfont.css" />
     <Content Include="skins\common.css" />
     <Content Include="skins\common\images\btn_01.png" />
     <Content Include="skins\common\images\btn_02.png" />
@@ -352,6 +369,7 @@
     <EmbeddedResource Include="skins\travel\pager\nextPage.gif" />
     <EmbeddedResource Include="skins\travel\pager\prevPage.gif" />
     <EmbeddedResource Include="skins\travel\pager\refresh.gif" />
+    <Content Include="skins\main.css" />
     <Content Include="skins\travel\skin.css" />
     <Content Include="skins\travel\skin.js" />
     <EmbeddedResource Include="skins\travel\splitter\left.png" />
@@ -405,6 +423,12 @@
     </Compile>
     <Compile Include="DataHandler\IOUtils.cs" />
     <Compile Include="Model\Area.cs" />
+    <Compile Include="PlugList.cs">
+      <DependentUpon>PlugList.gspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlugManager.cs">
+      <DependentUpon>PlugManager.gspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatisticsPage.cs">
       <DependentUpon>StatisticsPage.gspx</DependentUpon>

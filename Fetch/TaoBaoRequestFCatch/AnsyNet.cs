@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using Common;
-using Carpa.Web.Script;
-using Carpa.Web.Ajax;
+using Common.Script;
 
 namespace TaoBaoRequestFCatch
 {
@@ -55,7 +54,7 @@ namespace TaoBaoRequestFCatch
             {
                 detailState(string.Format("开始下载【{0}】到当前时间产生的订单", config.StartDate));
                 Thread.Sleep(2000);//停留2s
-                List<HashObject> listData = dataCatch.GetDataList(config.StartDate, config.Cookies);
+                List<HashMap> listData = dataCatch.GetDataList(config.StartDate, config.Cookies);
                 ActionMessage action = new ActionMessage() { Action = ActionType.SendRequestData, Data = listData };
                 if (listData.Count != 0)
                 {

@@ -6,9 +6,8 @@ using System.Threading;
 using System.Net;
 using System.IO;
 using System.Text;
-using Carpa.Web.Script;
 using Common;
-using Carpa.Web.Ajax;
+using Common.Script;
 
 namespace TaoBaoRequestFCatch
 {
@@ -56,7 +55,7 @@ namespace TaoBaoRequestFCatch
                 }
                 
                 string temp = GetNetData(startDateUrl, "{\"user\":\"" + User + "\"}");
-                HashObject hash = JavaScriptSerializer.CreateInstance().Deserialize<HashObject>(temp);
+                HashMap hash = JsonSerializer.CreateInstance().Deserialize<HashMap>(temp);
                 temp = hash.GetValue<string>("startDate");
                 serverCurrentDate = new DateTime(hash.GetValue<long>("currentDate") * 10000 + datetimeMinTimeTicks, DateTimeKind.Utc).ToLocalTime();
                 if (string.IsNullOrEmpty(temp))

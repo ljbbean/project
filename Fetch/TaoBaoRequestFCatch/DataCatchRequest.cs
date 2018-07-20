@@ -1,6 +1,4 @@
 ﻿using System;
-using Carpa.Web.Script;
-using Carpa.Web.Ajax;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
@@ -9,32 +7,33 @@ using System.Collections;
 using Common;
 using System.Web;
 using System.Text.RegularExpressions;
+using Common.Script;
 
 namespace TaoBaoRequestFCatch
 {
     public class DataCatchRequest
     {
-        public List<HashObject> GetDataList(DateTime date, string cookie)
+        public List<HashMap> GetDataList(DateTime date, string cookie)
         {
             BillManage bill = new BillManage();
             List<string> list = bill.GetBillList<string>(date, cookie);
 
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
             string user = GetUser(cookie);
 
             StringBuilder sbuilder = new StringBuilder();
             DateTime cdate = DateTime.Now;
-            List<HashObject> rtList = new List<HashObject>();
+            List<HashMap> rtList = new List<HashMap>();
             foreach (string str in list)
             {
-                List<HashObject> tempList = GetBillList(serializer, str, date, user);
+                List<HashMap> tempList = GetBillList(serializer, str, date, user);
                 rtList.AddRange(tempList.ToArray());
             }
 
             return rtList;
         }
 
-        internal void GetDetailsData(string cookies, List<HashObject> billDataList, SendDetailState detailSetate = null)
+        internal void GetDetailsData(string cookies, List<HashMap> billDataList, SendDetailState detailSetate = null)
         {
             if (string.IsNullOrEmpty(cookies))
             {
@@ -42,19 +41,19 @@ namespace TaoBaoRequestFCatch
             }
             string user = GetUser(cookies);
             Dictionary<ulong, string> dictionary = new Dictionary<ulong, string>();
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
             for (int i = 0; i < billDataList.Count; i++)
             {
-                IHashObject item = billDataList[i];
+                IHashMap item = billDataList[i];
                 string status = item.GetValue<string>("status");
-                HashObject tempHash = serializer.Deserialize<HashObject>(item["content"].ToString());
+                HashMap tempHash = serializer.Deserialize<HashMap>(item["content"].ToString());
                 if (tempHash == null)
                 {
                     continue;
                 }
-                ArrayList array = (ArrayList)((HashObject)tempHash["statusInfo"])["operations"];
+                ArrayList array = (ArrayList)((HashMap)tempHash["statusInfo"])["operations"];
 
-                foreach (HashObject aitem in array)
+                foreach (HashMap aitem in array)
                 {
                     if (!"详情".Equals(aitem.GetValue<string>("text")))
                     {
@@ -63,7 +62,7 @@ namespace TaoBaoRequestFCatch
                     string url = string.Format("https:{0}", aitem.GetValue<string>("url"));
                     string tbid = item.GetValue<string>("tbid");
 
-                    HashObject detail = GetBillDetail(tbid, url, cookies, i + 1, billDataList.Count, detailSetate);
+                    HashMap detail = GetBillDetail(tbid, url, cookies, i + 1, billDataList.Count, detailSetate);
                     //if (detail == null)//下载出错，直接移除
                     //{
                     //    billDataList.RemoveAt(i);
@@ -75,13 +74,13 @@ namespace TaoBaoRequestFCatch
             }
         }
 
-        private HashObject GetBillDetail(string tbid, string url, string cookies, int downedCount, int allCount, SendDetailState detailSetate = null)
+        private HashMap GetBillDetail(string tbid, string url, string cookies, int downedCount, int allCount, SendDetailState detailSetate = null)
         {
             Thread.Sleep(1000);//休眠1s
             BillManage bill = new BillManage();
 
             string user = GetUser(cookies);
-            HashObject detail = new HashObject();
+            HashMap detail = new HashMap();
             try
             {
                 detail.Add("tbid", tbid);
@@ -128,22 +127,22 @@ namespace TaoBaoRequestFCatch
             return reg.Replace(srcText, (m) => { return ((char)Convert.ToInt32(m.Groups[1].Value, 16)).ToString(); });
         }
 
-        private List<HashObject> GetBillList(JavaScriptSerializer serializer, string str, DateTime date, string user)
+        private List<HashMap> GetBillList(JsonSerializer serializer, string str, DateTime date, string user)
         {
             string[] keys = { "mainOrders" };
-            HashObject hash = (HashObject)serializer.DeserializeObject(str);
-            HashObject vhash = hash.GetHashValue(keys)[0];
+            HashMap hash = (HashMap)serializer.DeserializeObject(str);
+            HashMap vhash = hash.GetHashValue(keys)[0];
 
             List<object> list = new List<object>();
             list.AddRange(vhash["mainOrders"] as object[]);
 
-            List<HashObject> rtlist = new List<HashObject>();
-            foreach (HashObject row in list)
+            List<HashMap> rtlist = new List<HashMap>();
+            foreach (HashMap row in list)
             {
                 var id = row["id"].ToString();
                 string content = serializer.Serialize(row);
-                string status = ((HashObject)row["statusInfo"])["text"].ToString();
-                HashObject rtData = new HashObject();
+                string status = ((HashMap)row["statusInfo"])["text"].ToString();
+                HashMap rtData = new HashMap();
                 rtData.Add("bid", id);
                 rtData.Add("content", serializer.Serialize(row));
                 rtData.Add("cdate", date);

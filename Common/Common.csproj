@@ -31,15 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Carpa, Version=1.0.6688.18690, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BillWebManage\Test001\bin\Carpa.dll</HintPath>
-    </Reference>
-    <Reference Include="Carpa.Web, Version=1.0.6500.26940, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\BillWebManage\Test001\bin\Carpa.Web.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,14 +42,69 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillManage.cs" />
-    <Compile Include="HashObjectExt.cs" />
+    <Compile Include="Entity\EntityFactory.cs" />
+    <Compile Include="Entity\Internal\EntityMetadata.cs" />
+    <Compile Include="Entity\Internal\EntityMetadataCache.cs" />
+    <Compile Include="Entity\Internal\PropertyMetadata.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Net.cs" />
     <Compile Include="NetDataHandler.cs" />
     <Compile Include="ObjectExt.cs" />
+    <Compile Include="Part\AppSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\DataHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\DbIgnoreAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\FieldAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\IParamPropertySetter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\PropInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\ReflectionUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\Resources.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\ScriptIgnoreAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Part\StringUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Script\HashMap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Script\ObjectExt.cs" />
     <Compile Include="SearchOrderInfo.cs" />
     <Compile Include="SendDetailState.cs" />
+    <Compile Include="Serialization\JsonConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonDeserializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\JsonTypeResolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\ObjectConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="StringExt.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>

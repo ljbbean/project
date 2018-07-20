@@ -389,7 +389,7 @@ namespace WebHandler.DataHandler
             {
                 return 3;
             }
-            throw new Exception("不存在的用户");
+            return -1;
         }
     }
 }

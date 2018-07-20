@@ -51,6 +51,7 @@
     <Compile Include="CatchDataTemplate.cs" />
     <Compile Include="CommissionRateStruct.cs" />
     <Compile Include="GoodsInfo.cs" />
+    <Compile Include="HashObjectExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaobaoDataHelper.cs" />
   </ItemGroup>

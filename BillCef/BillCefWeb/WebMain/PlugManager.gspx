@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="gb2312" ?>
+<Page xmlns="Carpa.UI" Title="插件管理" ActionType="WebMain.PlugManagerAction, PlugManager.js">
+  <VPanel>
+    <Image Label="插件图标" DataField="pic"/>
+    <TextEdit Label="插件名称" DataField="name"/>
+    <TextEdit Label="插件描述" DataField="des"/>
+    <TextEdit Label="视频教学地址" DataField="learn"/>
+    <RadioButtonList Label="是否收费">
+      <ListItem Text="否" Value="0"/>
+      <ListItem Text="是" Value="1"/>
+    </RadioButtonList>
+    
+  </VPanel>
+</Page>

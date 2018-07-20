@@ -10,6 +10,7 @@
           <Label Text="订单详情" CssClass="button" OnClick="chatItemClick" DataField="dd" Tag="1"/>
           <Label Text="军情侦查" CssClass="buttonNoSelected" OnClick="chatItemClick" DataField="jqzc" Tag="2"/>
           <Label Text="重新加载" CssClass="buttonNoSelected" OnClick="doRefresh"/>
+          <Button Text="测试" OnClick="doButtonClick" Visible="false"/>
         </HPanel>
       </HPanel>
       <HPanel Width="700" HAlign="Right" VAlign="Middle" CssClass="toppanel">

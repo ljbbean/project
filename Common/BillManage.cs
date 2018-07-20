@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
-using Carpa.Web.Ajax;
-using Carpa.Web.Script;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Collections;
@@ -57,7 +55,7 @@ namespace Common
 
         public List<T> GetBillList<T>(DateTime startDate, string cookieStr)
         {
-            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            JsonSerializer serializer = JsonSerializer.CreateInstance();
             string dateTimeStr = serializer.Serialize(startDate).Substring(9).TrimEnd(')');
             string data = "auctionType=0&close=0&pageNum={0}&pageSize={1}&queryMore=true&rxAuditFlag=0&rxHasSendFlag=0&rxOldFlag=0&rxSendFlag=0&rxSuccessflag=0&tradeTag=0&useCheckcode=false&useOrderInfo=false&errorCheckcode=false&action=itemlist%2FSoldQueryAction&dateBegin=";
             data += dateTimeStr + "&prePageNo={2}&buyerNick=&dateEnd=0&logisticsService=&orderStatus=&queryOrder=desc&rateStatus=&refund=&sellerNick=&tabCode=latest3Months";

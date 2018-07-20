@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="./scripts/iconfont.css?v=2">
+    <link type="text/css" rel="Stylesheet" href="./scripts/service.css?v=3" />
+    <script type="text/javascript" src="./scripts/service.js?v=39" ></script>
+    <script type="text/javascript">
+    var captionArray = [{
+                width:70,
+                title:'图片'
+            },{
+                width:400,
+                title:'插件信息'
+            },{
+                width:100,
+                title:'视频样式'
+            },{
+                width:100,
+                title:'图片预览'
+            },{
+                width:100,
+                title:'版本号'
+            },{
+                width:100,
+                title:'更新日期'
+            },{
+                width:100,
+                title:'访问量'
+            },{
+                width:100,
+                title:' '
+            }];
+        function getItem(itemData, headers) {
+            var label = itemData.label;
+            var label1 = "";
+            var label2 = "";
+            var label3 = "";
+            if(label){
+                var labelArray = label.split(',');
+                label1 = labelArray[0] == undefined?"":labelArray[0];
+                label2 = labelArray[1] == undefined?"":labelArray[1];
+                label3 = labelArray[2] == undefined?"":labelArray[2];
+            }
+            var item = `<div class="item">
+                <div style="width:${headers[0].width}px;">
+                    <img src="${itemData.img}" class="img" width="60px" height="60px" />
+                </div>
+                <div class="content">
+                    <div class="caption" style="width:${headers[1].width}px;">
+                        <div style="margin:0px 0px -5px 0px;float:none;">
+                            <span class="name">${itemData.name}</span>
+                            <span class="label1" style="display:${label1 != ""?'':'none'}">${label1}</span>
+                            <span class="label2" style="display:${label2 != ""?'':'none'}">${label2}</span>
+                            <span class="label3" style="display:${label3 != ""?'':'none'}">${label3}</span>
+                        </div>
+                        <div>
+                            <p class="des">${itemData.des}</p>
+                        </div>
+                    </div>
+                    <div class="column" style="width:${headers[2].width}px;">
+                        <a href="${itemData.video}" class="iconfont icon-shipin">视频演示</a>
+                    </div>
+                    <div class="column" style="width:${headers[3].width}px;">
+                        <span tag="${itemData.ppics}" class="iconfont icon-msnui-thumb">图片预览</span>
+                    </div>
+                    <div class="column" style="width:${headers[4].width}px;">
+                        <span>${itemData.version}</span>
+                    </div>
+                    <div class="column" style="width:${headers[5].width}px;">
+                        <span>${itemData.pupdatedate}</span>
+                    </div>
+                    <div class="column" style="width:${headers[6].width}px;">
+                        <span>${itemData.view}</span>
+                    </div>
+                    <div class="column" style="width:${headers[7].width}px;">
+                        <span class="btn"><span class="iconfont icon-Versionupdaterule-copy" style="color:#a9392f;"/>更新</span>
+                    </div>
+                </div>
+            </div>`;
+            return item;
+        }
+
+        function getHeaders(headers){
+            var str = "";
+            for(var i in headers){
+                var header = headers[i];
+                str = str + `<div class="header" style="width:${header.width}px;">
+                    ${header.title}
+                </div>`;
+            }
+            return str;
+        }
+
+        function loadItems(){
+            var _this = this;
+            var headers = document.getElementById("headers");
+            headers.innerHTML = this.getHeaders(captionArray);
+
+            var details = document.getElementById("details");
+            details.innerHTML = "数据加载中……";
+
+            new cefnet().post("WebMain/WebMain.PlugList.ajax/GetItems", function(data){
+                var str = "";
+                for(var i = 0 , count = data.length;i < count;i ++){
+                    str = str + _this.getItem(data[i],captionArray);
+                }
+                details.innerHTML = str;
+            }, (error)=>{
+                details.innerHTML = error;
+            });
+        }
+    </script>
+</head>
+<body onload="loadItems();" style="height:100%;">
+    <div style="margin:0px; padding:0px;height:100%;">
+        <div style="background:#3a8cef">
+            <div style="height:100px;">
+                <div style="width:200px;height:100px;color:White; font-weight:bold; float:left;">
+                        <span style="font-size:36px; font-weight:bold;">
+                        简道通
+                        </span>
+                </div>
+                <div>
+                    <span>
+                        单据软件
+                    </span>
+                    <span>
+                        工具软件
+                    </span>
+                    <span>
+                        个人中心
+                    </span>
+                    <span>
+                        充值续费
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="left" style="float:left;background:#f5f5f5;height:100%;">
+            <nav>
+              <ul>
+                <li class="store"><span class="store-icon"></span><a href="#">全部软件</a></li>
+                <li class="movies"><span class="movies-icon"></span><a href="#">常用软件</a></li>
+              </ul>
+            </nav>
+        </div>
+        <div style="margin-left:200px">
+            <table>
+                <tr>
+                    <td>
+                        <div id="headers" class="headers" style="height:30px;" >
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="details" class="details">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

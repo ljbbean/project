@@ -24,7 +24,7 @@
         <Button Text="导出Excel" OnClick="doExport"/>
       </HPanel>
     </InnerBlock>
-    <Grid ID="gridDetail" Pager="Bottom" Width="1100" AllowResize="true" AllowConfig="true" Height="180">
+    <Grid ID="gridDetail" Pager="Bottom" Width="1100" AllowResize="true" AllowConfig="true" Height="165">
       <TextColumn Caption="订单号" DataField="code" Width="150"/>
       <TextColumn Caption="商品" DataField="sourcetitle" Width="340"/>
       <TextColumn Caption="尺寸" DataField="size"/>

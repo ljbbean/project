@@ -108,13 +108,13 @@ namespace FCatch
                 string cookie = header["Cookie"];
                 string user = DataCatchRequest.GetUser(cookie);
                 string key = string.Format("{0}&{1}", user, touid);
-                CacthConfig config;
-                if (!CacthConfig.CatchDic.TryGetValue(key, out config))
-                {
-                    config = new CacthConfig(string.Format("{0}GetBillBeginValue", analysisUrl)) { Cookies = cookie };
-                    CacthConfig.CatchDic.Add(key, config);
-                }
-                config.NewCookies = cookie;
+                CacthConfig config = new CacthConfig(string.Format("{0}GetBillBeginValue", analysisUrl)) { Cookies = cookie };
+                //if (!CacthConfig.CatchDic.TryGetValue(key, out config))
+                //{
+                //    config = new CacthConfig(string.Format("{0}GetBillBeginValue", analysisUrl)) { Cookies = cookie };
+                //    CacthConfig.CatchDic.Add(key, config);
+                //}
+                //config.NewCookies = cookie;
 
                 DataCatchLog log = GetCatchLog(user, isDemo, config);
                 log.SetToUser(touid);
@@ -158,7 +158,7 @@ namespace FCatch
             if (!logWindows.TryGetValue(config, out log))
             {
                 log = new DataCatchLog(user, socketUrl, tempUrl);
-                logWindows.Add(config, log);
+                //logWindows.Add(config, log);
             }
             if (log.IsDisposed)
             {

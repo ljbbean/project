@@ -221,7 +221,11 @@ namespace WebMain
                 HashObject condition = serializer.Deserialize<HashObject>(data.GetValue<string>("condition"));
 
                 string dataSql = WebMain.BillList.list.GetBillSql(db, user, (SearchArea)Enum.Parse(typeof(SearchArea), condition.GetValue<string>("area")));
-                return db.Select(dataSql);
+                HashObject rt = new HashObject();
+                rt.Add("data", db.Select(dataSql));
+                rt.Add("captions", new string[]{ "订单日期", "姓名", "联系电话", "淘宝账号", "联系地址", "发货信息", "订单状态", "订单回款" });
+                rt.Add("fields", new string[] { "date", "cname", "ctel", "taobaocode", "caddress", "sender", "process", "ltotal" });
+                return rt;
             }
         }
     }

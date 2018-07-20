@@ -6,6 +6,7 @@ using WebMain.Common;
 using System.Web;
 using System.Text;
 using WebMain.DataHandler;
+using WebHandler.DataHandler;
 
 namespace WebMain
 {
@@ -49,6 +50,15 @@ namespace WebMain
                 }
             }
             return false;
+        }
+
+        [WebMethod]
+        public void Test()
+        {
+            //DataCatchSave.SaveData("ÐÒÔËµÄ»ðÐÇ", (text) =>
+            //{
+            //    //IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
+            //});
         }
     }
 }
