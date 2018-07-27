@@ -52,9 +52,9 @@ namespace Common
 
             HashMap vhash = hash.GetHashValue(keys)[0];
             info.MainOrders = (IList<object>)vhash["mainOrders"];
-            info.CurrentPage = hash.GetHashValue(keys)[1].GetValue<int>("currentPage");
-            info.TotalNumber = hash.GetHashValue(keys)[2].GetValue<int>("totalNumber");
-            info.TotalPage = hash.GetHashValue(keys)[3].GetValue<int>("totalPage");
+            info.CurrentPage = hash.GetHashValue(keys)[1].Get<int>("currentPage");
+            info.TotalNumber = hash.GetHashValue(keys)[2].Get<int>("totalNumber");
+            info.TotalPage = hash.GetHashValue(keys)[3].Get<int>("totalPage");
             return info;
         }
 

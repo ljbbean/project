@@ -56,8 +56,8 @@ namespace TaoBaoRequestFCatch
                 
                 string temp = GetNetData(startDateUrl, "{\"user\":\"" + User + "\"}");
                 HashMap hash = JsonSerializer.CreateInstance().Deserialize<HashMap>(temp);
-                temp = hash.GetValue<string>("startDate");
-                serverCurrentDate = new DateTime(hash.GetValue<long>("currentDate") * 10000 + datetimeMinTimeTicks, DateTimeKind.Utc).ToLocalTime();
+                temp = hash.Get<string>("startDate");
+                serverCurrentDate = new DateTime(hash.Get<long>("currentDate") * 10000 + datetimeMinTimeTicks, DateTimeKind.Utc).ToLocalTime();
                 if (string.IsNullOrEmpty(temp))
                 {
                     DateTime ntemp = DateTime.Now.AddDays(-10);

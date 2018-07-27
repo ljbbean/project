@@ -51,6 +51,10 @@
       <HintPath>..\packages\EngineIoClientDotNet.1.0.6\lib\net40\EngineIoClientDotNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -101,6 +105,7 @@
       <DependentUpon>MilitaryInvestigation.gspx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="imgs\jdt.ico" />
+    <EmbeddedResource Include="imgs\jh.png" />
     <Content Include="packages.config" />
     <EmbeddedResource Include="Wait.gspx" />
     <EmbeddedResource Include="PlugManager.gspx">
@@ -188,6 +193,7 @@
     <EmbeddedResource Include="scripts\service.css" />
     <EmbeddedResource Include="scripts\demo_fontclass.html" />
     <EmbeddedResource Include="scripts\iconfont.css" />
+    <Content Include="scripts\plug.js" />
     <Content Include="skins\common.css" />
     <Content Include="skins\common\images\btn_01.png" />
     <Content Include="skins\common\images\btn_02.png" />
@@ -423,6 +429,7 @@
     </Compile>
     <Compile Include="DataHandler\IOUtils.cs" />
     <Compile Include="Model\Area.cs" />
+    <Compile Include="Model\Plug.cs" />
     <Compile Include="PlugList.cs">
       <DependentUpon>PlugList.gspx</DependentUpon>
     </Compile>

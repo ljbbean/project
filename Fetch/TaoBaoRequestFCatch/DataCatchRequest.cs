@@ -45,7 +45,7 @@ namespace TaoBaoRequestFCatch
             for (int i = 0; i < billDataList.Count; i++)
             {
                 IHashMap item = billDataList[i];
-                string status = item.GetValue<string>("status");
+                string status = item.Get<string>("status");
                 HashMap tempHash = serializer.Deserialize<HashMap>(item["content"].ToString());
                 if (tempHash == null)
                 {
@@ -55,12 +55,12 @@ namespace TaoBaoRequestFCatch
 
                 foreach (HashMap aitem in array)
                 {
-                    if (!"详情".Equals(aitem.GetValue<string>("text")))
+                    if (!"详情".Equals(aitem.Get<string>("text")))
                     {
                         continue;
                     }
-                    string url = string.Format("https:{0}", aitem.GetValue<string>("url"));
-                    string tbid = item.GetValue<string>("tbid");
+                    string url = string.Format("https:{0}", aitem.Get<string>("url"));
+                    string tbid = item.Get<string>("tbid");
 
                     HashMap detail = GetBillDetail(tbid, url, cookies, i + 1, billDataList.Count, detailSetate);
                     //if (detail == null)//下载出错，直接移除

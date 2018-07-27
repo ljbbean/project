@@ -37,7 +37,7 @@ namespace Common.Script
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
-        T GetValue<T>(string key);
+        T Get<T>(string key);
 
         /// <summary>
         /// 取指定的值，找不到则返回默认值
@@ -284,7 +284,7 @@ namespace Common.Script
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
         /// <returns></returns>
-        public T GetValue<T>(string key)
+        public T Get<T>(string key)
         {
             return GetValue<T>(key, default(T));
         }
@@ -584,8 +584,8 @@ namespace Common.Script
         {
             base.Sort(delegate(IHashMap obj1, IHashMap obj2)
             {
-                IComparable cmp1 = obj1.GetValue<IComparable>(key);
-                IComparable cmp2 = obj2.GetValue<IComparable>(key);
+                IComparable cmp1 = obj1.Get<IComparable>(key);
+                IComparable cmp2 = obj2.Get<IComparable>(key);
 
                 if (cmp1 == null) return ascending ? -1 : 1;
                 if (cmp2 == null) return ascending ? 1 : -1;

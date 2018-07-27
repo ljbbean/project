@@ -79,7 +79,7 @@ namespace Common.Entity
                 // 这种方式数据较多的情况下性能比较差
                 if (ho.ContainsKey(key))
                 {
-                    return ho.GetValue<object>(key);
+                    return ho.Get<object>(key);
                 }
                 return null;
 
@@ -169,7 +169,7 @@ namespace Common.Entity
                 // 这种方式数据较多的情况下性能比较差
                 if (ho.ContainsKey(key))
                 {
-                    return ho.GetValue<object>(key);
+                    return ho.Get<object>(key);
                 }
                 return null;
 
