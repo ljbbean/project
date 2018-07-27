@@ -1,49 +1,29 @@
 <?xml version="1.0" encoding="gb2312" ?>
 <Page xmlns="Carpa.UI" Title="插件列表" ActionType="WebMain.PlugListAction, PlugList.js">
-  <Style Src="./skins/plug.css?v=1.0"/>
-  <Block CssClass="plug">
-  <Block CssClass="SearchBar">
+  <VBlock>
     <HPanel HAlign="Right">
-      <TextEdit ID="txtEdit" NullDisplayText="输入随访人员查询" Width="300"/>
-      <Button Text="查询" OnClick="doSearch"/>
+      <TextEdit Label="插件名称"/>
+      <Button Text="搜索" OnClick="doSearch"/>
+      <Button Text="停用" OnClick="doStop"/>
+      <Button Text="新增" OnClick="doAdd"/>
     </HPanel>
-  </Block>
-
-  <!--Head部分-->
-  <ListView DataKeyField="id" ID="headView" CssClass="HeadView" Width="900" ItemWidth="-1" ItemHeight="-1" ItemMargin="-1" OnItemRendering="doHeadRender">
-    <ListTemplate>
-      <DataText DataField="caption" CssClass="col" OnClick="doHeadItemClick"/>
-    </ListTemplate>
-  </ListView>
-
-  <!--列表数据-->
-  <ListView DataKeyField="id" ID="sfView" ItemWidth="900" ItemHeight="0" ItemMargin="0"
-            Pager="Bottom" DataSource="${SFList}" OnItemRendering="doItemRender" OnAfterDataBind="doAfterDataBind">
-    <ListTemplate>
-      <HBlock>
-        <Block CssClass="img">
-          <DataImage Url="Content/focus_4.jpg" Width="60" Height="60" />
-        </Block>
-        <HBlock>
-          <VBlock>
-            <HBlock>
-              <DataText DataField="pname" CssClass="name" />
-              <DataText DataField="plabel" />
-            </HBlock>
-            <DataText DataField="pdes"/>
-          </VBlock>
-          <Block>
-            <DataText DataField="pvideo"/>
-          </Block>
-          <Block>
-            <DataText DataField="pversion" />
-          </Block>
-          <Block>
-            <HBlock DataField="pview" />
-          </Block>
-        </HBlock>
-      </HBlock>
-    </ListTemplate>
-  </ListView>
-</Block>
+    <HBlock>
+      <Grid ID="grid" Pager="Bottom" DataSource="${grid}" ShowFooter="true" Height="600" ReadOnly="false" OnRowDblClick="doRowDbClick" AutoPagerPageSize="true">
+        <MultiSelectColumn Caption="选择" DataField="selected" ReadOnly="false" Width="60"/>
+        <ImageColumn DataField="picon" Caption="插件图标" UseResource="false" ImageWidth="60" ImageHeight="60" ReadOnly="true"/>
+        <TextColumn DataField="pname" Caption="插件名称" ReadOnly="true"/>
+        <TextColumn DataField="pdes" Caption="插件描述" Width="300" ReadOnly="true"/>
+        <TextColumn DataField="pversion" Caption="插件版本" ReadOnly="true"/>
+        <TextColumn DataField="pview" Caption="下载量" ReadOnly="true" Width="80"/>
+        <DynamicButtonColumn Caption="资源地址" Width="120" TextAlign="Center" HeaderAlign="Center" LayoutDirection="Vert" DataField="info"/>
+        <TextColumn DataField="pkind" Caption="文件类别" ReadOnly="true"/>
+        <ImageColumn DataField="ppic1" Caption="预览图片1" UseResource="false" ImageWidth="60" ImageHeight="60" ReadOnly="true"/>
+        <ImageColumn DataField="ppic2" Caption="预览图片2" UseResource="false" ImageWidth="60" ImageHeight="60" ReadOnly="true"/>
+        <ImageColumn DataField="ppic3" Caption="预览图片3" UseResource="false" ImageWidth="60" ImageHeight="60" ReadOnly="true"/>
+        <TextColumn DataField="pshowway" Caption="显示方式" ReadOnly="true"/>
+        <TextColumn DataField="pwindowname" Caption="启动路径" ReadOnly="true"/>
+        <TextColumn DataField="plabel" Caption="标签" ReadOnly="true"/>
+      </Grid>
+    </HBlock>
+  </VBlock>
 </Page>

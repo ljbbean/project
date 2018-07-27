@@ -7,6 +7,7 @@ using System.Web;
 using System.Text;
 using WebMain.DataHandler;
 using WebHandler.DataHandler;
+using System.IO;
 
 namespace WebMain
 {
@@ -15,8 +16,23 @@ namespace WebMain
         public override void Initialize()
         {
             base.Initialize();
+
             string token = Request.QueryString["token"];
             string user = Request.QueryString["user"];
+            //using (Stream stream = Request.InputStream)
+            //{
+            //    if (stream.Length != 0)
+            //    {
+            //        using (StreamReader reader = new StreamReader(Request.InputStream))
+            //        {
+            //            JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
+            //            string text = reader.ReadToEnd();
+            //            HashObject hash = serializer.Deserialize<HashObject>(text);
+            //            user = hash.GetValue<string>("user");
+            //            token = hash.GetValue<string>("token");
+            //        }
+            //    }
+            //}
             if (WebLogin(token, user))
             {
                 Context["text"] = "³É¹¦µÇÂ¼";

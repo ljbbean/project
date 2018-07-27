@@ -1,14 +1,89 @@
 <?xml version="1.0" encoding="gb2312" ?>
-<Page xmlns="Carpa.UI" Title="插件管理" ActionType="WebMain.PlugManagerAction, PlugManager.js">
+<Page xmlns="Carpa.UI" Title="插件管理" ActionType="WebMain.PlugManagerAction, PlugManager.js" DataSource="${data}">
+  <FileUpload WebMethod="SaveDataImage">
+    <FileEdit DataField="FileIcon" Label="文件2" Width="200" Visible="false" OnChange="doImageSelecteChanged" />
+  </FileUpload>
   <VPanel>
-    <Image Label="插件图标" DataField="pic"/>
-    <TextEdit Label="插件名称" DataField="name"/>
-    <TextEdit Label="插件描述" DataField="des"/>
-    <TextEdit Label="视频教学地址" DataField="learn"/>
-    <RadioButtonList Label="是否收费">
-      <ListItem Text="否" Value="0"/>
-      <ListItem Text="是" Value="1"/>
-    </RadioButtonList>
-    
+    <HiddenField DataField="pid"/>
+    <HiddenField DataField="pdownpath" ID="hpdownpath"/>
+    <HiddenField DataField="pvideo" ID="hpvideo"/>
+    <HPanel>
+      <HPanel HAlign="Right" CssStyle="border:1px;border-style:solid;margin:0px;">
+        <Image DataField="picon" Url="imgs/jh.png" Width="140" Height="140" OnClick="doImageClick" CssStyle="margin:5px 10px 5px 10px;radius:10px;"/>
+      </HPanel>
+      <VPanel>
+        <HPanel>
+          <Label Text="插件名称"/>
+          <TextEdit DataField="pname"/>
+        </HPanel>
+        <HPanel>
+          <Label Text="插件版本"/>
+          <TextEdit DataField="pversion"/>
+        </HPanel>
+        <HPanel>
+          <Label Text="文件类别"/>
+          <TextEdit DataField="pkind"/>
+        </HPanel>
+        <HPanel>
+          <Label Text="显示方式"/>
+          <DropDownEdit SelectedIndex="0" Width="120" DataField="pshowway">
+            <ListItem Text="弹出" Value="0"/>
+            <ListItem Text="内嵌" Value="1"/>
+          </DropDownEdit>
+        </HPanel>
+        <HPanel>
+          <Label Text="启动路径"/>
+          <TextEdit DataField="pwindowname"/>
+        </HPanel>
+      </VPanel>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <HPanel>
+        <Label Text="显示标签"/>
+        <TextEdit DataField="plabel1" Width="100"/>
+        <TextEdit DataField="plabel2" Width="100"/>
+        <TextEdit DataField="plabel3" Width="100"/>
+      </HPanel>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <HPanel>
+        <Label Text="插件描述"/>
+        <MemoEdit DataField="pdes" Width="330" MaxByteLength="400" />
+      </HPanel>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <HPanel>
+        <Label Text="演示视频"/>
+        <FileUpload WebMethod="SaveDataVideo">
+          <FileEdit DataField="FileVideo" Label="上传视频" Width="330"  OnChange="doVideoSelecteChanged"/>
+        </FileUpload>
+      </HPanel>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <HPanel>
+        <Label Text="插件内容"/>
+        <FileUpload WebMethod="SaveDataZip">
+          <FileEdit DataField="FileZip" Label="上传内容" Width="330"  OnChange="doZipSelecteChanged"/>
+        </FileUpload>
+      </HPanel>
+    </HPanel>
+    <HPanel ColSpan="2" Height="300" Width="200" ShowBorder="true">
+      <HPanel>
+        <HPanel CssStyle="border:1px;border-style:solid;margin:5px;width:120px;height:120px;">
+          <Image Url="imgs/jh.png" DataField="ppic1" OnClick="doImageClick" Width="120" Height="120"/>
+        </HPanel>
+        <HPanel CssStyle="border:1px;border-style:solid;margin:5px;width:120px;height:120px;">
+          <Image Url="imgs/jh.png" DataField="ppic2" OnClick="doImageClick" Width="120" Height="120"/>
+        </HPanel>
+        <HPanel CssStyle="border:1px;border-style:solid;margin:5px;width:120px;height:120px;">
+          <Image Url="imgs/jh.png" DataField="ppic3" OnClick="doImageClick" Width="120" Height="120"/>
+        </HPanel>
+      </HPanel>
+    </HPanel>
+    <HPanel ColSpan="2">
+      <HPanel HAlign="Right">
+        <Button Text="保存插件" OnClick="doSave"/>
+      </HPanel>
+    </HPanel>
   </VPanel>
 </Page>
