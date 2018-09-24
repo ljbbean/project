@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillManage.cs" />
+    <Compile Include="DateTimeEx.cs" />
     <Compile Include="Entity\EntityFactory.cs" />
     <Compile Include="Entity\Internal\EntityMetadata.cs" />
     <Compile Include="Entity\Internal\EntityMetadataCache.cs" />

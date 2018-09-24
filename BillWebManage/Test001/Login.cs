@@ -66,6 +66,7 @@ namespace Test001
                 {
                     return MilliTimeStamp(DateTime.Now.AddDays(-2)).ToString();
                 }
+                return MilliTimeStamp(DateTime.Now.AddDays(-2)).ToString();
                 DateTime dateTime = list[0].GetValue<DateTime>("ndate");
                 dateTime = dateTime.AddDays(-2);//往后推2天
                 return MilliTimeStamp(dateTime).ToString();
@@ -166,19 +167,26 @@ namespace Test001
             DataCatchSave.ClearUserGoodsCache(user);
             backDataList.Remove(key);//清除备份，做一次性数据处理
             string comefrom = string.Format("数据分析_{0}", id);
-            Data data = new Data(user);
-            data.comefrom = comefrom;
-
-            IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
-
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
-            TaobaoDataHelper.SaveDataToTBill(user, AppUtils.ConnectionString, list);
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
-
-            IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData(user, (text) =>
+            try
             {
-                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
-            })));
+                Data data = new Data(user);
+                data.comefrom = comefrom;
+
+                IOUtils.Emit("login", JavaScriptSerializer.CreateInstance().Serialize(data));
+
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "准备保存下载数据"));
+                TaobaoDataHelper.SaveDataToTBill(user, AppUtils.ConnectionString, list);
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, "下载数据保存成功"));
+
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, DataCatchSave.SaveData(user, (text) =>
+                {
+                    IOUtils.Emit("sendMsg", GetMessage(user, comefrom, text));
+                })));
+            }
+            catch(Exception e)
+            {
+                IOUtils.Emit("sendMsg", GetMessage(user, comefrom, e.Message));
+            }
         }
         
         internal void ReBillCatch(string user)

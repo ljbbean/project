@@ -45,8 +45,8 @@ app.post("sureExitId",function(req, res){
 })
 var server = http.createServer(app);
 var io = new socketIo(server);
-server.listen(8080);
-console.log('server listen 8080');
+server.listen(8081);
+console.log('server listen 8081');
 var users = {
     /*
     clientSocketid:{

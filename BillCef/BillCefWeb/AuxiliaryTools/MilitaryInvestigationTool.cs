@@ -16,7 +16,7 @@ namespace AuxiliaryTools
         {
             IHashObjectList list = new HashObjectList();
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
-            string value = Net.GetNetData(taodaxingUrl, string.Format("pattern=0&{0}&goodid=&page=1", name), contentType);
+            string value = Net.GetNetDataPost(taodaxingUrl, string.Format("pattern=0&{0}&goodid=&page=1", name), contentType);
             HashObject hash = serializer.Deserialize<HashObject>(value);
             int code = hash.GetValue<int>("code");
             if (code == 1)
@@ -26,7 +26,7 @@ namespace AuxiliaryTools
             callBack((object)GetDataList(hash));
             while (code == 0) {
                 var post = hash.GetValue<HashObject>("post");
-                value = Net.GetNetData(taodaxingUrl, string.Format("pattern={0}&id={1}&page={2}&nt={3}", post["pattern"], post["id"], post["page"], post["nt"]), contentType);
+                value = Net.GetNetDataPost(taodaxingUrl, string.Format("pattern={0}&id={1}&page={2}&nt={3}", post["pattern"], post["id"], post["page"], post["nt"]), contentType);
                 hash = serializer.Deserialize<HashObject>(value);
                 code = hash.GetValue<int>("code");
                 if (code != 0)
@@ -40,7 +40,7 @@ namespace AuxiliaryTools
         internal object GetSingleGoodMsg(string id)
         {
             IHashObjectList list = new HashObjectList();
-            string value = Net.GetNetData(taodaxingUrl, string.Format("pattern=1&wwid=2&{0}&page=1", id), contentType);
+            string value = Net.GetNetDataPost(taodaxingUrl, string.Format("pattern=1&wwid=2&{0}&page=1", id), contentType);
             JavaScriptSerializer serializer = JavaScriptSerializer.CreateInstance();
             HashObject hash = serializer.Deserialize<HashObject>(value);
             if (hash.GetValue<int>("code") == 0)

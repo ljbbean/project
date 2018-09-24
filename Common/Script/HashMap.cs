@@ -46,7 +46,7 @@ namespace Common.Script
         /// <param name="key"></param>
         /// <param name="defaultValue">默认值</param>
         /// <returns></returns>
-        T GetValue<T>(string key, T defaultValue);
+        T Get<T>(string key, T defaultValue);
 
         /// <summary>
         /// key存在则保持已有值不变返回false；不存在则设置并返回 true
@@ -286,7 +286,7 @@ namespace Common.Script
         /// <returns></returns>
         public T Get<T>(string key)
         {
-            return GetValue<T>(key, default(T));
+            return Get<T>(key, default(T));
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace Common.Script
         /// <param name="key"></param>
         /// <param name="defaultValue"></param>
         /// <returns></returns>
-        public T GetValue<T>(string key, T defaultValue)
+        public T Get<T>(string key, T defaultValue)
         {
             try
             {
@@ -373,6 +373,12 @@ namespace Common.Script
             Key keytree = GetKeyTree(keys);
 
             return GetChildrenKeyValue(keytree, this);
+        }
+
+        public List<KeyValue> GetHashValue(string key)
+        {
+            string[] keys = new string[] { key };
+            return GetHashValue(keys);
         }
 
         private List<KeyValue> GetItemKeyValue(HashMap hash, Key key)
@@ -486,6 +492,73 @@ namespace Common.Script
             }
 
             return root;
+        }
+
+        public string GetKey(int index)
+        {
+            return this.GetKeys(index);
+        }
+
+        private string GetKeys(int index)
+        {
+            if (index >= base.Keys.Count)
+            {
+                throw new IndexOutOfRangeException("索引位置超过键值集合大小");
+            }
+            int num = 0;
+            foreach (string current in base.Keys)
+            {
+                if (num == index)
+                {
+                    return current;
+                }
+                num++;
+            }
+            return "";
+        }
+        public string GetStringValue(string key)
+        {
+            return this.Get<string>(key);
+        }
+
+        public int GetIntValue(string key)
+        {
+            return this.Get<int>(key);
+        }
+
+        public long GetLongValue(string key)
+        {
+            return this.Get<long>(key);
+        }
+
+        public bool GetBooleanValue(string key)
+        {
+            return this.Get<bool>(key);
+        }
+
+        public double GetDoubleValue(string key)
+        {
+            return this.Get<double>(key);
+        }
+
+        public float GetFloatValue(string key)
+        {
+            return this.Get<float>(key);
+        }
+
+        public byte GetByteValue(string key)
+        {
+            return this.Get<byte>(key);
+        }
+
+        public DateTime GetDateTimeValue(string key)
+        {
+            return this.Get<DateTime>(key);
+        }
+
+        public Array GetArrayValue(string key)
+        {
+            return this.Get<Array>(key);
         }
     }
 

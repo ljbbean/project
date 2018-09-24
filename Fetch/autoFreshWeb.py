@@ -1,4 +1,4 @@
-# coding=utf-8
+﻿# coding=utf-8
 
 from selenium import webdriver
 from time import sleep
@@ -18,8 +18,8 @@ class TBBrower:
     browser = None  # 浏览器对象
     sendedQR = False  # 已经发生二维码
     sendedWaiting = False  # 已经发生等待确认信息
-    buttonName = "button-mod__primary___1tmFA"  # 搜索按钮
-    http = "http://localhost:8080/"
+    buttonName = "button-mod__primary___17-Uv"  # 搜索按钮
+    http = "http://localhost:8081/"
     qrUrl = http + "tb_qr"
     sureExitIdUrl =  http + "sureExitId"
     js = "document.title=\"" + sys.argv[1] + "_" + sys.argv[2] +"\""
