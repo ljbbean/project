@@ -50,9 +50,29 @@ namespace Common
         public static string GetNetDataGet(string url, string encoding = "gbk", string contentType = "application/json; charset=UTF-8", string cookie = null, string refer = "https://www.taobao.com/")
         {
             string content = "";
-            for( int i = 0; i < 5 && string.IsNullOrEmpty(content); i++)//重试5次
+            for( int i = 0; i < 5; i++)//重试5次
             {
                 content = GetNetDoataGetData(url, encoding, contentType, cookie, refer);
+                if (!string.IsNullOrEmpty(content))
+                {
+                    break;
+                }
+                Thread.Sleep(500);
+            }
+
+            return content;
+        }
+
+        public static string GetNetDataGetByCookie(string url, string cookie, string encoding = "gbk", string contentType = "application/json; charset=UTF-8", string refer = "https://www.taobao.com/")
+        {
+            string content = "";
+            for (int i = 0; i < 5; i++)//重试5次
+            {
+                content = GetNetDoataGetData(url, encoding, contentType, cookie, refer);
+                if (!string.IsNullOrEmpty(content))
+                {
+                    break;
+                }
                 Thread.Sleep(500);
             }
 
@@ -62,7 +82,7 @@ namespace Common
         private static string GetNetDoataGetData(string url, string encoding, string contentType, string cookie, string refer)
         {
             HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
-            request.ProtocolVersion = HttpVersion.Version10;
+            request.ProtocolVersion = HttpVersion.Version11;
             request.AutomaticDecompression = DecompressionMethods.GZip;//回传数据被压缩，这里设置自动解压
             request.Accept = "*/*";
             request.ContentType = contentType;
