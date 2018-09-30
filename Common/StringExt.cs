@@ -43,10 +43,10 @@ namespace Common
             return html;
         }
 
-        public static string UrlEncode(this string text)
+        public static string UrlEncode(this string text, string encoding = "GBK")
         {
             StringBuilder locator = new StringBuilder();
-            foreach (var detail in Encoding.GetEncoding("GBK").GetBytes(text))
+            foreach (var detail in Encoding.GetEncoding(encoding).GetBytes(text))
             {
                 locator.Append(@"%" + Convert.ToString(detail, 16));
             }
